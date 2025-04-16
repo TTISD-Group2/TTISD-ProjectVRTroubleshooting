@@ -141,7 +141,11 @@ PlayerSettings:
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
   bundleVersion: 0.1.0
-  preloadedAssets: []
+  preloadedAssets:
+  - {fileID: 11400000, guid: 7c680d01e6f59b24c9fb6e679a361812, type: 2}
+  - {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  - {fileID: -6857784186096158433, guid: 60a8e88f66dbc7d4dba77a86bf9c666b, type: 2}
+  - {fileID: 8804127907912343133, guid: e61587e1045a1c4469ff77c3a0c06abe, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -845,7 +849,7 @@ PlayerSettings:
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
   metroPackageName: ARTroubleshooting
-  metroPackageVersion: 
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -853,7 +857,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: ARTroubleshooting
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: ARTroubleshooting
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
