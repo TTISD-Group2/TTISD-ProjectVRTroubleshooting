@@ -2,15 +2,15 @@ import os
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
+from process_links import process_links
+from globals import OUTPUT_DIR, DOMAIN, BASE_URL
 
-BASE_URL = "https://wiki.bambulab.com/en/a1"
-DOMAIN = "https://wiki.bambulab.com"
-OUTPUT_DIR = "replacement_guides"
 
-os.makedirs(OUTPUT_DIR, exist_ok=True)
-
-def save_response_html(response_text, filename="debug_response.html"):
-    """Sla de HTML-response op in een bestand voor debugging."""
+#
+# Saves a response to file.
+# The filename needs to account for the filetype extension
+#
+def save_response(response_text, filename):
     debug_file = os.path.join(OUTPUT_DIR, filename)
     with open(debug_file, "w", encoding="utf-8") as f:
         f.write(response_text)
@@ -41,19 +41,26 @@ def get_links_from_section(page_content, header_id = "part-replacement-guides"):
 
     return links
 
-
+#
+# Main function
+#
 def main():
+    # Create the output directory if it does not exist yet.
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+
     # Get the main page
     page = requests.get(BASE_URL)
 
     # Save the page to a html file for debugging purposes
-    page_contents_location = save_response_html(page.content.decode("utf-8"))
+    page_contents_location = save_response(page.content.decode("utf-8"), "debug_file_contents.html")
     print(f"✔️ HTML-response saved for debugging purposes: {page_contents_location}")
 
     # Get the outgoing links from the recuested section
     links = get_links_from_section(page.content, header_id="part-replacement-guides")
     if len(links) != 0 :
         print(f"✔️ Outgoing seciton links found - {len(links)} number of links found")
+
+    process_links(links)
 
     
 
