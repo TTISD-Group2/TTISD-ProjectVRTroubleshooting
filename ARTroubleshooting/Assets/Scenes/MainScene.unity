@@ -25401,6 +25401,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 930846486745340999}
+  - component: {fileID: 6466278495888624807}
   m_Layer: 0
   m_Name: PokeMenu
   m_TagString: Untagged
@@ -25408,6 +25409,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &6466278495888624807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6466278495888624806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ffd36808358549b6a3b8802d4dfff65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textDisplay: {fileID: 5223482177200620184}
+  fileName: textdata
 --- !u!4 &6704251379229402628
 Transform:
   m_ObjectHideFlags: 0
@@ -25628,7 +25643,19 @@ MonoBehaviour:
       m_Calls: []
   _whenSelect:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6466278495888624807}
+        m_TargetAssemblyTypeName: PokeMenuTextController, Assembly-CSharp
+        m_MethodName: ShowNextChunk
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   _whenUnselect:
     m_PersistentCalls:
       m_Calls: []
