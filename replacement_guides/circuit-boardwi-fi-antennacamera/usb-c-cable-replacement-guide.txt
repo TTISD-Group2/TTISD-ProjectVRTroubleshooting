@@ -1,303 +1,127 @@
 https://wiki.bambulab.com/en/a1/maintenance/usb-c-cable-replacement-guide
 
-
+[Image: usb-c-cable.png]
 ¶
 Applicable models
-
 Bambu Lab A1.
-
 ¶
 USB-C cable
-
 The USB-C cable connects the mainboard and the TH board.
-
 ¶
 When to use
-
-
 The USB-C cable is broken.
-
 The printer cannot detect the toolhead.
-
 Recommended by Bambu Lab Support.
-
-
 ¶
 Safety Warning
-
-
 IMPORTANT!
-
 It's crucial to
 power off the printer before conducting any maintenance work
 , including work on the printer's electronics and tool head wires. Performing tasks with the printer on can result in a short circuit, leading to electronic damage and safety hazards.
-
 During maintenance or troubleshooting, you may need to disassemble parts, including the hotend. This exposes wires and electrical components that could short circuit if they contact each other, other metal, or electronic components while the printer is still on.
 This can result in damage to the printer's electronics and additional issues.
-
 Therefore, it's crucial to
 turn off the printer and disconnect it from the power source before conducting any maintenance
 . This prevents short circuits or damage to the printer's electronics, ensuring safe and effective maintenance. For any concerns or questions about following this guide,
 open a new ticket in our support page
 and we will do our best to respond promptly and provide the assistance you need.
-
-
 ¶
 Tools and material needed
-
-
 A new USB-C cable
-
 H2.0 hex wrench
-
 H1.5 hex wrench
-
 20 minutes
-
-
 ¶
 Remove the old USB-C cable
-
 ¶
 Remove the USB-C cable from the toolhead
-
 Remove the four screws fixing the USB-C cable to the toolhead, and then pull it upwards to remove it.
-
-
+[Image: remove_usb_c_cable_from_a1_print_head.jpeg]
 ¶
 Remove the front cover of the X motor box and the wire attachment
-
 Step 1. Pry on the lower-right corner of the front cover to remove it.
-
-
+[Image: %E7%94%B5%E6%9C%BA%E7%BD%A9%E5%89%8D%E7%9B%96%E5%8D%A1%E6%89%A3.jpg]
 Step 2. Press both sides of the wire attachment with your hands and remove it.
-
-
+[Image: %E5%8F%8C%E6%89%8B%E6%8D%8F%E7%B4%A7%E7%BA%BF%E5%A4%B9.jpg]
 ¶
 Remove the USB-C cable fixture
-
 Use a flat screw or similar tool, pry on a side of the fixer on top of the X motor box to remove the fixture.
-
-
+[Image: %E7%94%B5%E6%9C%BA%E7%BD%A9%E9%A1%B6%E9%83%A8%E5%9B%BA%E5%AE%9A%E5%99%A8.jpg]
 ¶
 Remove the cable box
-
-
-
 For easy access to the bottom section of the A1, you need to place the printer on the front. Start by flipping the screen on its side, then gently place the printer on its front, as shown in the image below. Use a box of filament to keep the top side raised to avoid putting pressure on the extruder and the screen.
-
-
-
 Disconnect the cables of the camera, X-axis motor, and Z-axis motor; Loosen 1 screw; Push the cable bracket upwards, disconnect the USB data cable, and remove the cable bracket.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Image: 20241113-170747.jpg]
+[Image: %E5%8F%96%E5%87%BA%E7%BA%BF%E7%BC%86%E6%94%AF%E6%9E%B6.jpg]
 ¶
 Take out the USB-C cable from the cable box
-
 Step 1. Loosen the screw and open the cover.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Image: %E7%BA%BF%E7%BC%86%E7%9B%92%E8%9E%BA%E4%B8%9D.jpg]
+[Image: %E6%89%93%E5%BC%80%E7%BA%BF%E7%BC%86%E7%9B%96.jpg]
 Step 2. Open the USB-C bracket, and take out the USB-C cable.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Image: %E6%AD%A4%E5%A4%84%E6%9C%89%E5%8D%A1%E6%89%A3.jpg]
+[Image: %E6%89%93%E5%BC%80%E5%8D%A1%E6%89%A3%EF%BC%8C%E5%8F%96%E5%87%BAusb%E7%BA%BF.jpg]
 ¶
 Take out the USB-C cable from the metal sleeve
-
 Step 1. Tear away the tape on the metal sleeve.
-
-
 You can stick the tape on the printer or table for later use.
-
-
-
+[Image: %E9%86%8B%E9%85%B8%E8%83%B6%E5%B8%83.jpg]
 Step 2. Firstly, take out the end of the USB-C cable the with ferrite core attachment. Remove the attachment from the two buckles.
-
-
 Please remember the location of the ferrite core attachment on the USB-C cable. You need to install it to the new cable in the same location.
-
-
-
+[Image: %E7%A3%81%E7%8E%AF.jpg]
 Step 3. Take out the USB-C cable from the metal sleeve.
-
 ¶
 Remove the USB-C cable
-
 Remove the USB-C cable from the X motor box.
-
-
+[Image: %E5%8F%96%E5%87%BAusb-c%E7%BA%BF.jpg]
 ¶
 Install the new USB-C cable
-
 ¶
 Install the USB-C cable to the X motor box
-
 Take off the ferrite core attachment on the cable, and then guide the cable through the small hole above the X motor box.
-
-
 We recommend that you mark the location of the ferrite core attachment so that you can install the it back easily later.
-
-
-
+[Image: %E8%A3%85%E5%9B%9Eusb-c%E7%BA%BF.jpg]
 ¶
 Put the USB-C cable in the metal sleeve
-
 Step 1. Push the USB-C cable through the metal sleeve until it reaches the other end. It is easier to push the cable through after the press on the metal sleeve.
-
-
+[Image: compress_the_wire_loom.jpg]
 Step 2. Install the ferrite core attachment back to the cable in the original location.
-
-
+[Image: %E7%A3%81%E7%8E%AF.jpg]
 ¶
 Install the USB-C cable to the cable box
-
 Step 1. Put the USB-C cable in the cable box, and then close the buckle.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Image: %E6%89%93%E5%BC%80%E5%8D%A1%E6%89%A3%EF%BC%8C%E5%8F%96%E5%87%BAusb%E7%BA%BF.jpg]
+[Image: %E6%89%A3%E4%B8%8A%E5%8D%A1%E6%89%A3.jpg]
 Step 2. Put the cables of X motor, Z motor, and camera to their respective slots, close the buckle and tighten the screw.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Image: %E7%BA%BF%E7%BC%86%E6%8E%92%E5%B8%83.jpg]
+[Image: %E7%90%86%E7%BA%BF%E7%9B%92%E8%9E%BA%E4%B8%9D.jpg]
 Please pay attention that there is a small bump which should be on the side of the cable as shown below.
-
-
-
+[Image: usbc%E6%96%B9%E5%90%91.jpg]
 Step 3. Carefully align the wire bracket then push it downwards while making sure the USB cable is fully pushed against the printer frame. Then, tighten the screw shown in the image to lock it in place. Avoid overtightening the screw as this is screwed into the plastic frame.
-
-
+[Image: %E5%AE%89%E8%A3%85%E6%94%AF%E6%9E%B6.jpg]
 Step 4. Next, re-connect the Camera, X-axis motor and Z-axis motor cables to finish the installation.
-
-
 Note: The shorter cable on the right is the X-axis motor cable, which connects to the upper right connector; The longer cable on the right is the Z-axis motor cable, which connects to the lower right connector.
-
-
-
+[Image: %E6%8E%A5%E7%BA%BF%E7%BC%86.jpg]
 ¶
 Install the USB-C cable fixture and wire attachment
-
 Step 1. Install the fixture to the X motor box.
-
-
+[Image: usb-c_%E7%BA%BF%E5%9B%BA%E5%AE%9A%E5%99%A8.jpg]
 Step 2. Install the wire attachment as shown below.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Image: install_buckle.jpg]
+[Image: %E7%BA%BF%E5%A4%B9.jpg]
+[Image: %E7%BA%BF%E5%A4%B9%E5%B7%B2%E8%A3%85%E5%A5%BD.jpg]
 Step 3. Install the front cover back. You will hear a click sound that means success.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Image: %E8%A3%85%E5%9B%9Ex%E7%94%B5%E6%9C%BA%E7%BD%A9%E5%89%8D%E7%9B%961.jpg]
+[Image: %E8%A3%85%E5%9B%9Ex%E7%94%B5%E6%9C%BA%E7%BD%A9%E5%89%8D%E7%9B%962.jpg]
 ¶
 Fix the USB-C cable to the toolhead
-
 Insert the USB-C cable in the toolhead, then use the four screws to tighten it.
-
-
-
+[Image: usb_cable_orientation.jpeg]
 Important!
 Please do not overtighten the screws to avoid damaging the threads. Also, please pay attention that USB-C cable should be aligned with the slot on the toolhead before inserting it.
-
-
 ¶
 End Notes
-
-
 We hope the detailed guide provided has been helpful and informative.
-
 To ensure a safe and effective execution, if you have any concerns or questions about the process described in this article, we recommend submitting a
 technical ticket
 regarding your issue. Please include a picture or video illustrating the problem, as well as any additional information related to your inquiry.
-

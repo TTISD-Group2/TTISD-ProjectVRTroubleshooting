@@ -2,290 +2,119 @@ https://wiki.bambulab.com/en/a1/maintenance/a1-z-axis-leadscrew-kit-replacement-
 
 ¶
 Z-axis lead screw kit
-
 The Z-axis lead screw kit includes the Z-axis lead screws and screws for fixing them in place. It can be used to replace the lead screw that is deformed.
-
-
-
 ¶
 When to replace
-
 The lead screw is deformed.
-
-
-
 ¶
 Applicable model
-
 A1 and A1 combo.
-
-
-
 ¶
 Tools and materials needed
-
-
 Z-axis lead screw kit (if you need to replace it, please
 submit a technical ticket
 to request it.)
-
 H2.0 hex wrench
-
 H1.5 hex wrench
-
-
 ¶
 Safety Warning
-
-
 IMPORTANT!
-
 It's crucial to
 power off the printer before conducting any maintenance work
 , including work on the printer's electronics and tool head wires. Performing tasks with the printer on can result in a short circuit, leading to electronic damage and safety hazards.
-
-
-
 During maintenance or troubleshooting, you may need to disassemble parts, including the hotend. This exposes wires and electrical components that could short circuit if they contact each other, other metal, or electronic components while the printer is still on.
 This can result in damage to the printer's electronics and additional issues.
-
 Therefore, it's crucial to
 turn off the printer and disconnect it from the power source before conducting any maintenance
 . This prevents short circuits or damage to the printer's electronics, ensuring safe and effective maintenance. For any concerns or questions about following this guide,
 open a new ticket in our Support Page
 and we will do our best to respond promptly and provide the assistance you need.
-
-
 ¶
 Removement process
-
 ¶
 Remov the Y-axis cover
-
 Step 1: Turn off the printer.
-
 Step 2: Place the printer on the table, and move the X-axis to the top.
-
-
+[Image: raise_x_axis.jpg]
 Step 3: Move the heatbed to the end towards the screen, and then remove the Y-axis cover.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Image: move_heatbed.jpg]
+[Image: remove_y_cover.jpg]
 ¶
 Remove the Z-axis cover
-
 Step 1: Use the H2.0 hex wrench to remove the 4 screws highlighted in green.
-
-
+[Image: pic1.png]
 Step 2: Use the H2.0 hex wrench to loosen the two screws
 by one full rotation (do not loosen them entirely)
 .
-
-
 The tension screws for the Z -axis belt are near the right pillar. You can see them after moving the heatbed towards the screen.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Image: z_position_0.jpg]
+[Image: z_position.jpg]
 Step 3: Move the heatbed to the end towards the opposite of the screen, and then place the printer on its back on the table.
-
-
 We recommend that you cover the table with cardboard first to protect the printer.
-
-
 Step 4: Use the H2.0 hex wrench to remove the 15 screws highlighted below. Then you can remove the Z-axis cover.
-
-
-
-
+[Image: pic2.png]
 ¶
 Remove the Z belt
-
 Press and hold the tensioner to the left, and then pull the belt towards you to remove it.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Image: pic3.png]
+[Image: pic4.png]
 ¶
 Remove the lead screw
-
 Step 1: Use the H1.5 hex wrench to remove the 2 screws.
-
-
+[Image: pic5.png]
 Step 2: Rotate the lead screw counter-clockwise to remove it from the frame.
-
-
-
-
+[Image: pic6.png]
 ¶
 Installation process
-
 ¶
 Install the lead screw
-
 Step 1: Hold the bottom of the lead screw and insert it into the frame.
-
 Step 2: Align the lead screw to the threads, and then rotate it clockwise.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Image: pic8.png]
+[Image: pic7.png]
 Step 3: Use the H1.5 hex wrench to fix the 2 screws.
-
-
 Do not overtighten the screws to avoid stripped threds.
-
-
-
+[Image: pic5.png]
 Step 4: Push the X-axis to the top, and check if it is parallel to the top of the frame.
-
-
+[Image: pic11.png]
 If they are parallel, then the lead screw is successfully installed. If not, please see the next step.
-
 (Optional) Step 5: Push the lower side upwards until the X-axis is parallel to the top of the frame.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Image: pic9.png]
+[Image: pic10.png]
 ¶
 Install the Z belt
-
 Step 1: Install the belt to the pulley and tensioner in the lower-right corner.
-
-
+[Image: pic12.png]
 Step 2: Press and hold the tensioner to the left, and then install the belt to the pulley on the left.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Image: pic3.png]
+[Image: pic13.png]
 Step 3: Drag the belt to check if it can move smoothly.
-
 If not, please refer to the
 Install the lead screw section
 and check if the lead screw is aligned with the threads before being rotated in, and if the 2 screws for securing the lead screw are properly tightened.
-
-
-
-
+[Image: pic14.png]
 ¶
 Install the Z-axis cover
-
 Step 1: Place the cover, and then use the H2.0 hex wrench to tighten the 15 screws highlighted in green.
-
-
+[Image: pic2.png]
 Step 2: Place the printer on the table, and then use the H2.0 hex wrench to tighten the 4 screws highlighted in green.
-
-
+[Image: pic1.png]
 Step 3: Put back the Y-axis cover.
-
-
+[Image: remove_y_cover.jpg]
 ¶
 Tension the Z belt
-
 Step 1: Turn on the printer. Go to the screen below, and then perform a homing process.
-
-
+[Image: screen5.png]
 Step 2: After homing completes, press the up and down buttons on the right
 only once respectively,
 to move the X-axis up and down
 once
 .
-
-
 Before moving the X-axis down, please make sure that the nozzle will not touch the heatbed!
-
-
-
+[Image: screen7.png]
 Step 3: Use the H2.0 hex wrench to tighten the 2 tension screws.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Image: z_position_0.jpg]
+[Image: z_position.jpg]
 Step 4: In the
 Calibration
 screen, select only
@@ -293,30 +122,11 @@ Vibration Compensation
 , and then tap
 Start
 .
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Image: screen1.jpg]
+[Image: screen2.jpg]
 ¶
 End notes
-
-
 We hope the detailed guide provided has been helpful and informative.
-
 To ensure a safe and effective execution, if you have any concerns or questions about the process described in this article, we recommend submitting a
 Technical ticket
 regarding your issue. Please include a picture or video illustrating the problem, as well as any additional information related to your inquiry.
-

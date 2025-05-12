@@ -2,33 +2,17 @@ https://wiki.bambulab.com/en/a1/maintenance/z-motor-replacement-guide
 
 ¶
 Applicable models of printers
-
 A1
-
 ¶
 Z-axis motor
-
 The Z-axis motor is a stepper motor mounted on the bottom of the printer that drives the toolhead in the Z-axis.
-
 ¶
 What to use?
-
-
-
 Z-axis motor is burned out
-
-
-
 After analyzing the logs, official technical support confirmed that the Z-axis motor is faulty.
-
-
-
 ¶
 Safety warning
-
-
 Important!
-
 It's crucial to
 power off the printer before conducting any maintenance work
 , including work on the printer's electronics and tool head wires. Performing tasks with the printer on can result in a short circuit, leading to electronic damage and safety hazards.
@@ -40,283 +24,115 @@ turn off the printer and disconnect it from the power source before conducting a
 For any concerns or questions about following this guide, please
 open a new ticket in our Support Page
 and we will do our best to respond promptly and provide the assistance you need.
-
-
 ¶
 Tools and materials needed
-
-
 Z-axis motor for Bambu Lab A1（Contact Customer Support for purchase）
-
 H2.0 hex wrench
-
 20 minutes
-
-
 ¶
 Remove Z-axis motor
-
 ¶
 Remove the Y-axis top cover
-
 Step 1. Stand the printer upright and raise the X-axis to the top position.
-
-
+[Image: raise_x_axis.jpg]
 Step 2. Push the heatbed forward and take off the Y-axis Top Cover.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Image: move_heatbed.jpg]
+[Image: remove_y_cover.jpg]
 ¶
 Loosen the Z-axis belt tension screws
-
 Using an H2.0 hex wrench, loosen the Z-belt tension screws one turn (
 do not loosen completely
 ).
-
-
 The tension screws for the Z-belt is located in the base against the right column and can be seen by moving the heatbed forward.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Image: 4.png]
+[Image: z_position.jpg]
 ¶
 Disconnect the cables
-
 Step 1. Left side down the printer to expose the cable box on the bottom, and disconnect the camera cable, X motor cable, and Z-motor cable in sequence.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Image: side_down1.jpg]
+[Image: disconnect_cables_1_.jpg]
 Step 2. Loosen a silver screw and slide the cable box to disconnect the USB cable, then open the Z-motor cable cover and remove the Z-motor cable from the box.
-
+[Image: open_the_cover.jpg]
 |
-
 ¶
 Remove the bottom base assembly
-
 Move the heatbed forward and remove 10 screws with the H2.0 hex wrench. Then push the heatbed backward to the bottom and remove 2 screws with the H2.0 hex wrench. Finally, lift up one side of the base and remove the entire base.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Image: 10_screws.jpg]
+[Image: 2_screws.jpg]
 ¶
 Remove the metal base plate
-
 Unscrew the 8 long screws that lock the Z-axis column with the H2.0 hex wrench, and the 4 short screws at the middle part of the metal base plate.
-
-
+[Image: 8_and_4_screws.jpg]
 ¶
 Remove the Z-motor
-
 Step 1. Remove the tapes.
-
-
+[Image: tapes_2.jpg]
 Step 2. Unscrew the 4 screws with the H2.0 hex key, remove the Z-Motor, Z Belt and driving wheel.
-
-
-
+[Image: remove_z_motor.jpg]
 It is recommended that a corner of the tape be attached to the table and reused for subsequent installations.
-
-
 ¶
 Install the Z-motor
-
 ¶
 Raise the X-axis
-
 Raise the X-axis to the top position, and both left and right sides are pushed in the top, to avoid the X-axis being skewed.
-
-
+[Image: pic11.png]
 ¶
 Install the Z-motor
-
 Step 1. Install the driving wheel onto the new Z motor. Arrange the Z Belt according to the motion path, pass the Z-motor through the Z Belt and install it in place, lock in the 4 screws.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Image: 20240912-164730.jpg]
+[Image: install_belt_2.jpg]
+[Image: install_motor1.jpg]
 Step 2. Arrange the motor cable and secure it with tapes.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Image: lock_4_screws.jpg]
+[Image: tapes_3.jpg]
 ¶
 Install the metal base plate
-
 Install the metal base plate and confirm the installation direction according to the screw position. Lock 4 short screws marked orange in the middle part of the base plate. Pay attention to the position and do not lock them wrongly.
-
-
+[Image: 20240912-181507.jpg]
 ¶
 Install the bottom base assembly
-
 Step 1. Keep the Printer Frame upright and carefully install the bottom base assembly onto it, ensuring to avoid the Z-motor cable.
-
-
+[Image: remove_the_bottom_base.jpg]
 Step 2. Move the heatbed forward to its furthest position and securely fasten 10 screws. Then, move the heatbed backward to its furthest position and tighten 2 screws.
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Image: 10_screws.jpg]
 ¶
 Connect the cables
-
 Step 1. Place the printer in a backward position and connect the Z-motor cable to the cable management box.
-
-
+[Image: install_x_motor_cable_1.jpg]
 Step 2. Install the cable management box onto the bottom base, slide it along the slot direction, connect the USB cable, and tighten one silver screw.
-
-
+[Image: connect_usb.jpg]
 Step 3. Follow the text prompts and color labels to connect the X motor cable, Z motor cable, and camera cable. Organize the cables properly and ensure they are not being pressed or tangled.
-
-
+[Image: connect_cables.jpg]
 ¶
 Install Y-axis top cover
-
 Step 1. Place the printer upright and move the heatbed forward to its furthest position.
-
-
+[Image: move_heatbed_2.jpg]
 Step 2. Take the Y-axis Top Cover and pass it over through the bottom of the heatbed. Push the cover forward until it reaches the end, ensuring that the cover aligns with the clips.
-
-
+[Image: install_y_cover_2.jpg]
 Step 3. Install the cover in place easily by securing it onto the clips.
-
-
-
+[Image: install_y_cover_3.jpg]
 Special note
 : If the heatbed is not moved all the way to the end, the Y-axis Top Cover may get stuck in the wrong position. In such a case, you can manually lift the Y-axis cover slightly to assist in its installation.
-
-
-
+[Image: not_standard.jpg]
 ¶
 Tension the Z-belt
-
 Step 1. Turn on the printer. Go to the screen below, and then perform a homing process.
-
-
+[Image: screen5.png]
 Step 2. After homing completes, press the up and down buttons on the right only once respectively, to move the X-axis up and down once.
-
-
 Before moving the X-axis down, please make sure that the nozzle will not touch the heatbed!
-
-
-
+[Image: screen7.png]
 Step 3. Use the H2.0 hex wrench to tighten the 2 tension screws.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Image: 4.png]
+[Image: screenshot-20240912-171706.png]
 ¶
 Calibration Step
-
 In the Calibration screen, select only Vibration Compensation, and then tap Start.
-
 The calibration will confirm the printer is running as expected.
-
-
-
-
-
-
-
+[Image: screen1.jpg]
+[Image: screen2.jpg]
 ¶
 End notes
-
-
 We hope the detailed guide provided has been helpful and informative.
-
 To ensure a safe and effective execution, if you have any concerns or questions about the process described in this article, we recommend submitting a
 technical ticket
 regarding your issue. Please include a picture or video illustrating the problem, as well as any additional information related to your inquiry.
-

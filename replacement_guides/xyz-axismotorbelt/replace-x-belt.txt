@@ -2,361 +2,148 @@ https://wiki.bambulab.com/en/a1/maintenance/replace-x-belt
 
 ¶
 Applicable models of printers
-
 A1
-
 ¶
 X-belt for A1
-
 The X-belt is installed on the X-axis. It connects the toolhead with the X motor and drives the toolhead to move along the X-axis.
-
 ¶
 When to use?
-
-
 It is worn.
-
 It is broken.
-
-
 ¶
 Safety Warning
-
-
 IMPORTANT!
-
 It's crucial to
 power off the printer before conducting any maintenance work
 , including work on the printer's electronics and tool head wires. Performing tasks with the printer on can result in a short circuit, leading to electronic damage and safety hazards.
-
 During maintenance or troubleshooting, you may need to disassemble parts, including the hotend. This exposes wires and electrical components that could short circuit if they contact each other, other metal, or electronic components while the printer is still on.
 This can result in damage to the printer's electronics and additional issues.
-
 Therefore, it's crucial to
 turn off the printer and disconnect it from the power source before conducting any maintenance
 . This prevents short circuits or damage to the printer's electronics, ensuring safe and effective maintenance. For any concerns or questions about following this guide, we recommend submitting a
 technical ticket
 regarding your issue and we will do our best to respond promptly and provide the assistance you need.
-
-
 ¶
 Tools and materials needed
-
-
 New X-belt (Purchase link: Contact after-sales)
-
 H2.0 Allen key
-
 tweezer
-
 20 minutes
-
-
 ¶
 Remove X-belt
-
 ¶
-
 Remove the rear cover of the toolhead
-
 Step 1: Loosen the screw located underneath the purge wiper and slide the purge wiper out of the holder in the direction shown in the picture.
-
-
-
-
-
-
-
-
-
-
+[Image: slide_in_the_purge_wiper.jpeg]
+[Image: purge_wiper_screw.jpeg]
 Step 2: Use H2.0 hex wrench to remove a screw, and remove the X-axis cover.
-
-
 Note: The cover screw is shorter than the purge wiper screw. Please distinguish the two screws to avoid errors during subsequent installation.
-
-
-
-
-
-
-
-
-
-
-
+[Image: x%E8%BD%B4%E7%AB%AF%E7%9B%96-%E6%9C%AA%E5%8F%96%E4%B8%8B.jpg]
+[Image: x%E8%BD%B4%E7%AB%AF%E7%9B%96-%E5%8F%96%E4%B8%8B.jpg]
 ¶
 Remove the rear cover of the toolhead and left cable slot
-
 Step 1: Please carefully pull the bottom of the rear cover by hand, as shown below:
-
+[Image: remove_back_cover.jpeg]
 Step 2: Gently push the cable cover to the back of the toolhead, and then remove the cable cover on the left side. Please refer to the figure below for specific operations:
-
-
-
-
-
-
-
-
-
-
+[Image: %E5%B7%A6%E4%BE%A7%E7%BA%BF%E7%BC%86%E6%A7%BD%E6%BB%91%E5%87%BA.jpg]
+[Image: %E5%B7%A6%E4%BE%A7%E7%BA%BF%E7%BC%86%E6%A7%BD%E5%B7%B2%E7%A7%BB%E9%99%A4.jpg]
 ¶
 Remove the front cover of X-axis motor cover and X-axis motor cover
-
 Step 1: Apply force from the right side of the motor cover to remove its front cover.
-
+[Image: a1_%E5%B7%A5%E5%85%B7%E5%A4%B4%E5%89%8D%E7%9B%96.jpg]
 Step 2: Loosen the four screws shown in the picture below and remove the cable clamp.
-
-
-
-
-
-
-
-
-
-
+[Image: %E7%94%B5%E6%9C%BA%E7%BD%A9%E5%9B%BA%E5%AE%9A%E8%9E%BA%E4%B8%9D.jpg]
+[Image: %E7%BA%BF%E5%A4%B9.jpg]
 Then slide the rear cover of the motor cover backward, and then slide the motor cover forward (please slide it out carefully to avoid damaging the motor wire):
-
-
-
-
-
-
-
-
-
-
+[Image: %E6%BB%91%E5%87%BA%E7%94%B5%E6%9C%BA%E7%BD%A9%E5%90%8E%E7%9B%96.jpg]
+[Image: %E5%8F%96%E4%B8%8B-%E5%AE%89%E8%A3%85%E7%94%B5%E6%9C%BA%E7%BD%A9.jpg]
 ¶
 Remove the X-belt
-
 Step 1: Loosen two screws and pull the clamp out of the toolhead;
-
-
-
-
-
-
-
-
-
-
+[Image: %E5%8F%B3%E4%BE%A7%E5%8E%8B%E5%9D%97%E5%9B%BA%E5%AE%9A%E8%9E%BA%E4%B8%9D.jpg]
+[Image: %E5%8F%B3%E4%BE%A7%E5%8E%8B%E5%9D%97%E5%8F%96%E4%B8%8B.jpg]
 After loosening the belt, hold the belt clamp and remove the belt from the clamp.
-
-
-
-
-
-
-
-
-
-
-
+[Image: %E6%8E%A8%E5%87%BA%E5%8F%B3%E4%BE%A7%E6%96%99%E7%BA%BF%E5%8E%8B%E5%9D%971.jpg]
+[Image: %E6%8E%A8%E5%87%BA%E5%8F%B3%E4%BE%A7%E6%96%99%E7%BA%BF%E5%8E%8B%E5%9D%972.jpg]
+[Image: %E5%8F%B3%E4%BE%A7%E5%8E%8B%E5%9D%97%E4%B8%8E%E7%9A%AE%E5%B8%A6%E5%88%86%E7%A6%BB.jpg]
 Step 2: Loosen the screws behind the toolhead, and remove the screw and iron piece;
-
+[Image: %E8%83%8C%E9%83%A8%E8%9E%BA%E4%B8%9D%E5%92%8C%E9%93%81%E7%89%87.jpg]
 Loosen two screws, and remove the left clamp.
-
-
-
-
-
-
-
-
-
-
+[Image: %E5%B7%A6%E4%BE%A7%E5%8E%8B%E5%9D%97%E8%9E%BA%E4%B8%9D.jpg]
+[Image: %E5%8F%96%E5%87%BA%E5%B7%A6%E4%BE%A7%E5%8E%8B%E5%9D%97.jpg]
 Step 3: Hold the left belt clamp, and pull out the X-belt.
-
-
+[Image: %E5%8F%96%E5%87%BAx%E7%9A%AE%E5%B8%A6.jpg]
 ¶
 Install the X-belt
-
 ¶
 Thread the X-belt onto the X-axis
-
 Step 1: The left and right clamps are pre-installed on the X-belt, and the hole between the motor cover and the X-axis is small. Thus, after getting the new belt, please seperate the right clamp from the X-belt in advance, and then reinstall the right clamp after threading the X-belt. The method of removing the belt from the right clamp is as follows:
-
-
-
-
-
-
-
-
-
-
-
+[Image: %E6%8E%A8%E5%87%BA%E5%8F%B3%E4%BE%A7%E6%96%99%E7%BA%BF%E5%8E%8B%E5%9D%971.jpg]
+[Image: %E6%8E%A8%E5%87%BA%E5%8F%B3%E4%BE%A7%E6%96%99%E7%BA%BF%E5%8E%8B%E5%9D%972.jpg]
+[Image: %E5%8F%B3%E4%BE%A7%E5%8E%8B%E5%9D%97%E4%B8%8E%E7%9A%AE%E5%B8%A6%E5%88%86%E7%A6%BB.jpg]
 Step 2: Check the direction of the belt, with the tooth facing upward, and thread the belt through the X-axis from the lower side of the idler;
-
+[Image: %E8%A3%85%E5%9B%9Ex%E7%9A%AE%E5%B8%A6.jpg]
 Then clip the belt with tweezer, pass the X-belt around the motor drive wheel, and thread X-belt out through the small hole between the X-axis and the motor cover.
-
-
-
-
-
-
-
-
-
-
+[Image: %E9%95%8A%E5%AD%90%E7%BB%95%E7%9A%AE%E5%B8%A61.jpg]
+[Image: %E9%95%8A%E5%AD%90%E7%BB%95%E7%9A%AE%E5%B8%A62.jpg]
 Step 3: Insert the left clamp into the toolhead and tighten the screws. Then re-install the iron piece to the back of the toolhead and tighten the screw.
-
-
-
-
-
-
-
-
-
-
+[Image: %E5%B7%A6%E4%BE%A7%E5%8E%8B%E5%9D%97%E8%9E%BA%E4%B8%9D.jpg]
+[Image: %E8%83%8C%E9%83%A8%E8%9E%BA%E4%B8%9D%E5%92%8C%E9%93%81%E7%89%87.jpg]
 Step 4: Thread the belt through the right clamp, align the belt with the belt tensioner, and press them together into the clamp.
-
-
-
-
-
-
-
-
-
-
-
+[Image: pass_belt_(1).jpg]
+[Image: %E5%B0%86%E7%9A%AE%E5%B8%A6%E5%8E%8B%E7%B4%A7%E5%9D%97%E4%B8%8E%E7%9A%AE%E5%B8%A6%E5%AF%B9%E9%BD%90.webp]
+[Image: %E4%B8%80%E8%B5%B7%E5%8E%8B%E5%85%A5%E5%BC%A0%E7%B4%A7%E7%AB%AF%E7%9B%96.png]
 Then install the right clamp into the toolhead, and tighten the screws.
-
-
-
-
-
-
-
-
-
-
+[Image: %E8%A3%85%E5%85%A5%E5%8F%B3%E4%BE%A7%E5%8E%8B%E5%9D%97.jpg]
+[Image: %E5%8F%B3%E4%BE%A7%E5%8E%8B%E5%9D%97%E5%9B%BA%E5%AE%9A%E8%9E%BA%E4%B8%9D.jpg]
 ¶
 Reinstall the X-axis motor cover and motor cover
-
 Step 1: Slide the X-axis motor cover back to the X-axis motor from front to back and align it with the rear cover of the motor cover.
-
-
-
-
-
-
-
-
-
-
-
+[Image: %E5%8F%96%E4%B8%8B-%E5%AE%89%E8%A3%85%E7%94%B5%E6%9C%BA%E7%BD%A9.jpg]
+[Image: %E6%89%A3%E5%9B%9E%E7%94%B5%E6%9C%BA%E7%BD%A9%E5%90%8E%E7%9B%96.jpg]
+[Image: %E7%94%B5%E6%9C%BA%E7%BD%A9%E5%90%8E%E7%9B%96%E5%B7%B2%E5%AE%89%E8%A3%85.jpg]
 Step 2: Tighten the screws on X-axis motor cover.
-
-
+[Image: %E6%8B%A7%E5%9B%9B%E9%A2%97%E8%9E%BA%E4%B8%9D-%E6%B2%A1%E6%9C%89%E8%A3%85%E7%BA%BF%E5%A4%B9.jpg]
 Step 3: Reinstall the cable clamp (pay attention to the direction):
-
-
-
-
-
-
-
-
-
-
-
+[Image: install_buckle.jpg]
+[Image: %E7%BA%BF%E5%A4%B9.jpg]
+[Image: %E7%BA%BF%E5%A4%B9%E5%B7%B2%E8%A3%85%E5%A5%BD.jpg]
 Step 4: Then snap back the front cover of X-axis motor cover:
-
-
-
-
-
-
-
-
-
-
+[Image: %E8%A3%85%E5%9B%9Ex%E7%94%B5%E6%9C%BA%E7%BD%A9%E5%89%8D%E7%9B%961.jpg]
+[Image: %E8%A3%85%E5%9B%9Ex%E7%94%B5%E6%9C%BA%E7%BD%A9%E5%89%8D%E7%9B%962.jpg]
 ¶
 Reinstall the cover of left cable slot and rear cover of toolhead
-
 Step 1: Refer to the direction shown in the figure below,and push back the cover of left cable slot:
-
-
-
-
-
-
-
-
-
-
+[Image: %E5%B7%A6%E4%BE%A7%E7%BA%BF%E7%BC%86%E6%A7%BD%E6%BB%91%E5%9B%9E.jpg]
+[Image: %E5%B7%A6%E4%BE%A7%E7%BA%BF%E7%BC%86%E6%A7%BD%E8%A3%85%E5%9B%9E.jpg]
 Step 2: Use buckle to fix the rear cover. Just align two buckles on the rear cover and push the rear cover in until a few "clicks" can be heard.
-
-
+[Image: back_cover_of_the_print_head_a1m.jpeg]
 ¶
 Reinstall the purge wiper and X-axis cover
-
 Step 1: Insert the X-axis cover into X-axis, and tighten the screw.
-
-
 Note: The cover screw is shorter than the purge wiper screw. If used incorrectly, the purge wiper screw will hit the X-axis idler pulley, causing abnormal X-axis resistance and continuous step loss when homing.
-
-
-
-
-
-
-
-
-
-
-
+[Image: x%E8%BD%B4%E7%AB%AF%E7%9B%96-%E6%9C%AA%E5%8F%96%E4%B8%8B.jpg]
+[Image: x%E8%BD%B4%E7%AB%AF%E7%9B%96-%E5%8F%96%E4%B8%8B.jpg]
 Step 2: Align the slot of the purge wiper with the bracket, slide it in until the surface is flush, then reinsert the screw into the original position and tighten it again.
-
-
-
-
-
-
-
-
-
-
+[Image: slide_in_the_purge_wiper.jpeg]
+[Image: purge_wiper_screw.jpeg]
 ¶
 Reinstall the rear cover of toolhead
-
 Use buckle to fix the rear cover. Just align two buckles on the rear cover and push the rear cover in until a few "clicks" can be heard.
-
-
+[Image: back_cover_of_the_print_head_a1m.jpeg]
 ¶
 Tension the X-belt
-
 Step 1: Move the X-axis to the position close to the middle of the Z-axis to avoid scratching the hotbed when moving the toolhead, and turn off the printer;
-
+[Image: %E5%AE%89%E8%A3%85%E5%AE%8C%E6%88%90.webp]
 Step 2: Use the H2.0 hex wrench to loosen the tension screw one turn (do not loosen completely), move the toolhead back and forth along the X-axis three times by hand, and then re-tighten the tension screw.
-
-
-
-
-
-
-
+[Image: x轴张紧螺丝.jpg]
+[Image: 左右移动工具头.jpg]
 Step 3: Start the printer, select Vibration Compensation in the calibration menu, and complete the calibration process.
-
-
-
-
-
-
-
+[Image: screenshot-20240829-145512.png]
+[Image: screenshot-20240829-145659.png]
 ¶
-
 End Notes
-
-
 We hope the detailed guide provided has been helpful and informative.
-
 To ensure a safe and effective execution, if you have any concerns or questions about the process described in this article, we recommend submitting a
 technical ticket
 regarding your issue. Please include a picture or video illustrating the problem, as well as any additional information related to your inquiry.
-
