@@ -1,3 +1,553 @@
 https://wiki.bambulab.com/en/a1/maintenance/printer
 
-¶ A1 Installation Tutorial  This article offers instructions on how to disassemble the A1 printer into its main components and then reassemble it to form a complete printer. For detailed disassembly and assembly instructions for each specific component, please consult the corresponding guide page for more information.   ¶ Parts List  The following are the spare parts involved in this guide:                      No.  Descriptions  Pictures  NO.  Descriptions  Pictures    1  Y-axis Top Cover     2  Printer Frame         ¶ Module List  The assemblies require additional disassembly.                      NO.  Descriptions  Pictures  NO.  Descriptions  Pictures    1  X-axis Assembly     2  Bottom Base Assembly       3  Printer Frame               ¶ Screws List                            Model  Locations  Dimensions/Drawing    Model  Locations  Dimensions/Drawing    Screw A  B00240  Cable box（1PCS)    Screw B  B00235  Bottom base 12PCS      Screw C  B0063  X-axis (6PCS)                 ¶ Tool List   H2.0 Allen  Key   ¶ Safety Warning   IMPORTANT!  It's crucial to power off the printer before performing any maintenance work on the printer and its electronics, including tool head wires, because leaving the printer on while conducting such tasks can cause a short circuit, which can lead to additional electronic damage and safety hazards.  When you perform maintenane or troubleshooting on the printer, you may be required to disassemble some parts, including the hotend. This process can expose wires and electrical components that could potentially short circuit if they come into contact with each other or with other metal or electronic components while the printer is still on. This can damage the electronics of the printer and cause further damage.  Therefore, it's essential to switch off the printer and disconnect it from the power source before doing any maintenance work . This will prevent any short circuits or damage to the printer's electronics. By doing so, you can avoid potential damage to the printer's electronic components and ensure that the maintenance work is performed safely and effectively.  If you have any concerns or questions about following this guide, open a new ticket in our Support Page and we will do our best to respond promptly and provide you with the assistance you need.   ¶ Video Guide  The video is in progress, thank you for your patience!  ¶ A1 Disassembly  ¶ Step 1- Remove the Y-axis Top Cover  Stand the printer upright and raise the X-axis to the top position.   Push the heatbed forward and take off the Y-axis Top Cover.                        ¶ Step 2- Disconnect the cables  Left side down the printer to expose the cable box on the bottom, and disconnect the camera cable, X motor cable, and Z motor cable in sequence.  Loosen a silver screw and slide the cable box to disconnect the USB cable, then open the Z-motor cable cover and remove the Z-motor cable from the box.                             ¶ Step 3- Remove the Bottom Base Assembly  Move the heatbed forward and use an H2.0 hex key to remove 10 screws. Move the heatbed backward and use an H2.0 hex key to remove 2 screws.                        Lift one side of the bottom base assembly first, and then remove the entire assembly.   ¶ Step 4- Remove the X-axis Assembly  Remove the 6 screws located at the back of the X-axis and detach the X-axis assembly from the printer frame.                        ¶ A1 Assembly  ¶ Step 1- Install the X-axis Assembly  Align the X-axis with the locating pins on the two Z-axis sliders, then install it onto the Z-axis sliders. Finally, secure the X-axis assembly by tightening 3 screws on each side.                        ¶ Step 2- Install the Bottom Base Assembly  Keep the Printer Frame upright and carefully install the bottom base assembly onto it, ensuring to avoid the Z-motor cable.    Note: Be careful to avoid the Z-axis motor cable. | Correct position | Incorrect position | | --- | --- | |   |   |   Move the heatbed forward to its furthest position and securely fasten 10 screws. Then, move the heatbed backward to its furthest position and tighten 2 screws.                        ¶ Step 3- Connect the cables  Place the printer in a backward position and connect the Z-motor cable to the cable management box.  Install the cable management box onto the bottom base, slide it along the slot direction, connect the USB cable, and tighten one silver screw.  Follow the text prompts and color labels to connect the X motor cable, Z motor cable, and camera cable. Organize the cables properly and ensure they are not being pressed or tangled.                             ¶ Step 4- Install the Y-axis Top Cover  Place the printer upright and move the heatbed forward to its furthest position. Take the Y-axis Top Cover and pass it over through the bottom of the heatbed. Push the cover forward until it reaches the end, ensuring that the cover aligns with the clips. Install the cover in place easily by securing it onto the clips.                             Special note: If the heatbed is not moved all the way to the end, the Y-axis Top Cover may get stuck in the wrong position. In such a case, you can manually lift the Y-axis cover slightly to assist in its installation.   ¶ Verify the Functionality  Please verify that the printing is smooth and free from any shaking. If there is noticeable shaking, please double-check the correct installation of the bottom cable box and ensure that the cables are within the range of the cable buckle.   ¶ Calibration  It is recommended to perform a full calibration process before initiating any printing task.   ¶ End Notes   We hope that the detailed guide we shared with you was helpful and informative.  We want to ensure that you can perform it safely and effectively. If you have any concerns or questions regarding the process described in this article, we encourage you to reach out to our friendly customer service team before starting the operation. Our team is always ready to help you and answer any questions you may have.  Click here to open a new ticket in our Support Page .  We will do our best to respond promptly and provide you with the assistance you need.  
+¶
+A1 Installation Tutorial
+
+This article offers instructions on how to disassemble the A1 printer into its main components and then reassemble it to form a complete printer. For detailed disassembly and assembly instructions for each specific component, please consult the corresponding guide page for more information.
+
+
+¶
+Parts List
+
+The following are the spare parts involved in this guide:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+No.
+
+Descriptions
+
+Pictures
+
+NO.
+
+Descriptions
+
+Pictures
+
+
+
+1
+
+Y-axis Top Cover
+
+
+
+
+2
+
+Printer Frame
+
+
+
+
+
+
+
+
+¶
+Module List
+
+The assemblies require additional disassembly.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+NO.
+
+Descriptions
+
+Pictures
+
+NO.
+
+Descriptions
+
+Pictures
+
+
+
+1
+
+X-axis Assembly
+
+
+
+
+2
+
+Bottom Base Assembly
+
+
+
+
+
+
+3
+
+Printer Frame
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+¶
+Screws List
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Model
+
+Locations
+
+Dimensions/Drawing
+
+
+
+Model
+
+Locations
+
+Dimensions/Drawing
+
+
+
+Screw
+A
+
+B00240
+
+Cable box（1PCS)
+
+
+
+Screw
+B
+
+B00235
+
+Bottom base
+12PCS
+
+
+
+
+
+Screw
+C
+
+B0063
+
+X-axis
+(6PCS)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+¶
+Tool List
+
+
+H2.0 Allen  Key
+
+
+¶
+Safety Warning
+
+
+IMPORTANT!
+
+It's crucial to
+power off the printer before performing any maintenance work
+on the printer and its electronics, including tool head wires, because leaving the printer on while conducting such tasks can cause a short circuit, which can lead to additional electronic damage and safety hazards.
+
+When you perform maintenane or troubleshooting on the printer, you may be required to disassemble some parts, including the hotend. This process can expose wires and electrical components that could potentially short circuit if they come into contact with each other or with other metal or electronic components while the printer is still on.
+This can damage the electronics of the printer and cause further damage.
+
+Therefore, it's essential to
+switch off the printer and disconnect it from the power source before doing any maintenance work
+. This will prevent any short circuits or damage to the printer's electronics. By doing so, you can avoid potential damage to the printer's electronic components and ensure that the maintenance work is performed safely and effectively.
+
+If you have any concerns or questions about following this guide,
+open a new ticket in our Support Page
+and we will do our best to respond promptly and provide you with the assistance you need.
+
+
+¶
+Video Guide
+
+The video is in progress, thank you for your patience!
+
+¶
+A1 Disassembly
+
+¶
+Step 1- Remove the Y-axis Top Cover
+
+Stand the printer upright and raise the X-axis to the top position.
+
+
+Push the heatbed forward and take off the Y-axis Top Cover.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+¶
+Step 2- Disconnect the cables
+
+Left side down the printer to expose the cable box on the bottom, and disconnect the camera cable, X motor cable, and Z motor cable in sequence.
+
+Loosen a silver screw and slide the cable box to disconnect the USB cable, then open the Z-motor cable cover and remove the Z-motor cable from the box.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+¶
+Step 3- Remove the Bottom Base Assembly
+
+Move the heatbed forward and use an H2.0 hex key to remove 10 screws. Move the heatbed backward and use an H2.0 hex key to remove 2 screws.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Lift one side of the bottom base assembly first, and then remove the entire assembly.
+
+
+¶
+Step 4- Remove the X-axis Assembly
+
+Remove the 6 screws located at the back of the X-axis and detach the X-axis assembly from the printer frame.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+¶
+A1 Assembly
+
+¶
+Step 1- Install the X-axis Assembly
+
+Align the X-axis with the locating pins on the two Z-axis sliders, then install it onto the Z-axis sliders. Finally, secure the X-axis assembly by tightening 3 screws on each side.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+¶
+Step 2- Install the Bottom Base Assembly
+
+Keep the Printer Frame upright and carefully install the bottom base assembly onto it, ensuring to avoid the Z-motor cable.
+
+
+
+Note: Be careful to avoid the Z-axis motor cable.
+| Correct position | Incorrect position |
+| --- | --- |
+|
+
+
+|
+
+
+|
+
+
+Move the heatbed forward to its furthest position and securely fasten 10 screws. Then, move the heatbed backward to its furthest position and tighten 2 screws.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+¶
+Step 3- Connect the cables
+
+Place the printer in a backward position and connect the Z-motor cable to the cable management box.
+
+Install the cable management box onto the bottom base, slide it along the slot direction, connect the USB cable, and tighten one silver screw.
+
+Follow the text prompts and color labels to connect the X motor cable, Z motor cable, and camera cable. Organize the cables properly and ensure they are not being pressed or tangled.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+¶
+Step 4- Install the Y-axis Top Cover
+
+Place the printer upright and move the heatbed forward to its furthest position. Take the Y-axis Top Cover and pass it over through the bottom of the heatbed. Push the cover forward until it reaches the end, ensuring that the cover aligns with the clips. Install the cover in place easily by securing it onto the clips.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Special note: If the heatbed is not moved all the way to the end, the Y-axis Top Cover may get stuck in the wrong position. In such a case, you can manually lift the Y-axis cover slightly to assist in its installation.
+
+
+¶
+Verify the Functionality
+
+Please verify that the printing is smooth and free from any shaking. If there is noticeable shaking, please double-check the correct installation of the bottom cable box and ensure that the cables are within the range of the cable buckle.
+
+
+¶
+Calibration
+
+It is recommended to perform a full calibration process before initiating any printing task.
+
+
+¶
+End Notes
+
+
+We hope that the detailed guide we shared with you was helpful and informative.
+
+We want to ensure that you can perform it safely and effectively. If you have any concerns or questions regarding the process described in this article, we encourage you to reach out to our friendly customer service team before starting the operation. Our team is always ready to help you and answer any questions you may have.
+
+Click here to open a new ticket in our Support Page
+.
+
+We will do our best to respond promptly and provide you with the assistance you need.
+

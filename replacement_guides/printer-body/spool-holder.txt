@@ -1,3 +1,214 @@
 https://wiki.bambulab.com/en/a1/maintenance/spool-holder
 
-¶ A1 Spool Holder Installation Tutorial  This page provides instructions for removing and installing the  A1 Spool Holder, including the replacement of the PTFE Tube Connector.    Note: The following figure shows the new version of the spool holder. The new version does not need to be assembled and can be directly installed on the printer.  Please refer to the Install the Spool Holder - Step 3 - Install the Spool Holder in this article.    ¶ Parts List  The following are the spare parts involved in this guide.      No.  Descriptions  Pictures  NO.  Descriptions  Pictures    1  Spool Holder     2  PTFE Tube Connector         ¶ Module List  None  ¶ Screws List  None （The round head screw is included in the PTFE Tube Connector）  ¶ Tools  H2.0 Allen Key  ¶ Safety Warning   IMPORTANT!  It's crucial to power off the printer before performing any maintenance work on the printer and its electronics, including tool head wires, because leaving the printer on while conducting such tasks can cause a short circuit, which can lead to additional electronic damage and safety hazards.  When you perform maintenane or troubleshooting on the printer, you may be required to disassemble some parts, including the hotend. This process can expose wires and electrical components that could potentially short circuit if they come into contact with each other or with other metal or electronic components while the printer is still on. This can damage the electronics of the printer and cause further damage.  Therefore, it's essential to switch off the printer and disconnect it from the power source before doing any maintenance work . This will prevent any short circuits or damage to the printer's electronics. By doing so, you can avoid potential damage to the printer's electronic components and ensure that the maintenance work is performed safely and effectively.  If you have any concerns or questions about following this guide, open a new ticket in our Support Page and we will do our best to respond promptly and provide you with the assistance you need.   ¶ Video Guide     ¶ Remove the Spool Holder  ¶ Step 1 - Remove the Spool Holder  Note: Remove the filament spool first.  Move away the toolhead and lower the X-axis to make sufficient space, open the clip on the back of the holder, and remove the Spool Holder.                ¶ Step 2 - Remove the Spool Shaft  As shown in the figure, rotating counterclockwise can loosen and remove the Spool Shaft.   ¶ Step 3 - Remove the PTFE Tube Connector  Loosen the round head screw with an H2.0 Allen key until the entire PTFE Tube Connector is completely detached.                ¶ Install the Spool Holder  ¶ Step 1 - Install the PTFE Tube Connector  Align the slots on the holder, install the PTFE Tube Connector onto the holder, and tighten the round head screws.                ¶ Step 2 - Install the Spool Shaft  As shown in the figure, rotating clockwise to tighten the Spool Shaft.   ¶ Step 3 - Install the Spool Holder  Open the clip and facing backward, mount the Spool Holder onto the beam, and then fasten it upwards into place.                ¶ Verify the Functionality  Check the clip and confirm that it is not loose.  ¶ End Notes   We hope the detailed guide provided has been helpful and informative.  To ensure a safe and effective execution, if you have any concerns or questions about the process described in this article, we recommend submitting a technical ticket regarding your issue.  Please include a picture or video illustrating the problem, as well as any additional information related to your inquiry.  
+¶
+A1 Spool Holder Installation Tutorial
+
+This page provides instructions for removing and installing the  A1 Spool Holder, including the replacement of the PTFE Tube Connector.
+
+
+
+Note: The following figure shows the new version of the spool holder. The new version does not need to be assembled and can be directly installed on the printer.
+
+Please refer to the
+Install the Spool Holder - Step 3 - Install the Spool Holder
+in this article.
+
+
+
+¶
+Parts List
+
+The following are the spare parts involved in this guide.
+
+
+
+
+
+No.
+
+Descriptions
+
+Pictures
+
+NO.
+
+Descriptions
+
+Pictures
+
+
+
+1
+
+Spool Holder
+
+
+
+
+2
+
+PTFE Tube Connector
+
+
+
+
+
+
+
+
+¶
+Module List
+
+None
+
+¶
+Screws List
+
+None （The round head screw is included in the PTFE Tube Connector）
+
+¶
+Tools
+
+H2.0 Allen Key
+
+¶
+Safety Warning
+
+
+IMPORTANT!
+
+It's crucial to
+power off the printer before performing any maintenance work
+on the printer and its electronics, including tool head wires, because leaving the printer on while conducting such tasks can cause a short circuit, which can lead to additional electronic damage and safety hazards.
+
+When you perform maintenane or troubleshooting on the printer, you may be required to disassemble some parts, including the hotend. This process can expose wires and electrical components that could potentially short circuit if they come into contact with each other or with other metal or electronic components while the printer is still on.
+This can damage the electronics of the printer and cause further damage.
+
+Therefore, it's essential to
+switch off the printer and disconnect it from the power source before doing any maintenance work
+. This will prevent any short circuits or damage to the printer's electronics. By doing so, you can avoid potential damage to the printer's electronic components and ensure that the maintenance work is performed safely and effectively.
+
+If you have any concerns or questions about following this guide,
+open a new ticket in our Support Page
+and we will do our best to respond promptly and provide you with the assistance you need.
+
+
+¶
+Video Guide
+
+
+
+
+¶
+Remove the Spool Holder
+
+¶
+Step 1 - Remove the Spool Holder
+
+Note: Remove the filament spool first.
+
+Move away the toolhead and lower the X-axis to make sufficient space, open the clip on the back of the holder, and remove the Spool Holder.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+¶
+Step 2 - Remove the Spool Shaft
+
+As shown in the figure, rotating counterclockwise can loosen and remove the Spool Shaft.
+
+
+¶
+Step 3 - Remove the PTFE Tube Connector
+
+Loosen the round head screw with an H2.0 Allen key until the entire PTFE Tube Connector is completely detached.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+¶
+Install the Spool Holder
+
+¶
+Step 1 - Install the PTFE Tube Connector
+
+Align the slots on the holder, install the PTFE Tube Connector onto the holder, and tighten the round head screws.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+¶
+Step 2 - Install the Spool Shaft
+
+As shown in the figure, rotating clockwise to tighten the Spool Shaft.
+
+
+¶
+Step 3 - Install the Spool Holder
+
+Open the clip and facing backward, mount the Spool Holder onto the beam, and then fasten it upwards into place.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+¶
+Verify the Functionality
+
+Check the clip and confirm that it is not loose.
+
+¶
+End Notes
+
+
+We hope the detailed guide provided has been helpful and informative.
+
+To ensure a safe and effective execution, if you have any concerns or questions about the process described in this article, we recommend submitting a
+technical ticket
+regarding your issue.
+
+Please include a picture or video illustrating the problem, as well as any additional information related to your inquiry.
+

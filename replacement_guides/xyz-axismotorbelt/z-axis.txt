@@ -1,3 +1,629 @@
 https://wiki.bambulab.com/en/a1/maintenance/z-axis
 
-¶ A1 Printer Frame Installation Tutorial (excluding X-axis)  Provide guidance and precautions for the disassembly and assembly of the A1 Printer Frame, excluding the removal and reinstallation of the Printer Frame from the printer.   ¶ Parts List  The following are the spare parts involved in this guide.      No.  Descriptions  Pictures  NO.  Descriptions  Pictures    1  A1 Printer Frame     2  Z-axis Top Cover       3  Z Belt       4  Z Motor          5  Z-Axis Tensioner                               ¶ Module List  None  ¶ Screws List        Model  Locations  Dimensions/Drawing    Model  Locations  Dimensions/Drawing    Screw A   ST3-4.5  B0023    Around the reinforcing sheet metal  （8PCS）      Screw B      ST3-8  B00270   Bottom of the reinforcing sheet metal（3PCS）           Screw  C    M3-18  B00299   Z-axis column（8PCS）     Screw  D    ST3-4.5  B00269     The Metal Plate（4PCS）           Screw  E    M3-5  B0010   Z Motor（4PCS）         Screw  F    BT3-10  B00214   Tensioner adjustment screws（2PCS）           Screw  G    ST3-10  B00243    Z-Axis Tensioner  （3PCS）                 ¶ Tool List  H2.0 Hex Key  Flat tweezers  Cable ties  Cut pliers  ¶ Preliminary operation  Please refer to the A1 Installation Tutorial for how to remove the Printer Frame from the printer and install it back onto the printer.  ¶ Safety Warning   IMPORTANT!  It's crucial to power off the printer before performing any maintenance work on the printer and its electronics, including tool head wires, because leaving the printer on while conducting such tasks can cause a short circuit, which can lead to additional electronic damage and safety hazards.  When you perform maintenane or troubleshooting on the printer, you may be required to disassemble some parts, including the hotend. This process can expose wires and electrical components that could potentially short circuit if they come into contact with each other or with other metal or electronic components while the printer is still on. This can damage the electronics of the printer and cause further damage.  Therefore, it's essential to switch off the printer and disconnect it from the power source before doing any maintenance work . This will prevent any short circuits or damage to the printer's electronics. By doing so, you can avoid potential damage to the printer's electronic components and ensure that the maintenance work is performed safely and effectively.  If you have any concerns or questions about following this guide, open a new ticket in our Support Page and we will do our best to respond promptly and provide you with the assistance you need.   ¶ Video Guide     ¶ A1 Printer Frame Disassembly  ¶ Step 1- Bind the Z-axis sliders  Raise the Z-axis sliders to the top and secure them with ties to ensure that the slider is not loose.   ¶ Step 2- Remove the Z-axis Top Covers  Release the Z-axis cover horizontally outward with tweezers, then release the two corners upwards and remove the Z-axis Top Cover.                  ¶ Step 3- Remove the reinforcing sheet metal  Unscrew the 8 black screws around the sheet metal， and the 3 silver screws at the bottom, and remove the reinforcing sheet metal.                   ¶ Step 4- Remove the metal base plate  Unscrew the 8 long screws that lock the Z-axis column with the H2.0 hex key, and the 4 short screws at the middle part of the metal base plate.   ¶ Step 5- Remove the Z motor and Z Belt  Remove the tapes, unscrew the 4 screws with the H2.0 hex key, and remove the Z Motor and the Z Belt.                      ¶ Step 6- Remove the Z-Axis Tensioner  Unscrew the 2 tensioner adjustment screws with the H2.0 hex key, remove the 2 anti-rotation washers, and re-lock the 2 screws (Do not tighten them)  Unscrew the 3 screws with the H2.0 hex key and remove the Z Tensioner.                   ¶ A1 Printer Frame Assembly  ¶ Step 1- Remove the Z-Axis Tensioner  Align the installation square hole, install the Z Tensioner on the bottom beam, and lock in the 3 screws.                     ¶ Step 2- Install the Z Belt and the Z motor  Arrange the Z Belt according to the motion path, pass the Z Motor through the Z Belt and install it in place, lock in the 4 screws  Arrange the motor cable and secure it with tapes.                                   ¶ Step 3- Tensioning the Z Belt  Unscrew the 2 tensioner adjustment screws, place back the 2 anti-rotation washers, and re-lock the 2 screws (Do not tighten them);  Cut the ties and unlock the Z sliders, pull the belt to confirm the smooth movement;  Tighten the 2 tensioner adjustment screws.                                   ¶ Step 4- Install the metal base plate  Install the metal base plate and lock 4 long screws on both sides to lock the Z axis.  Lock 4 short screws in the middle part of the base plate. Pay attention to the position and do not lock them wrongly.     ¶ Step 5- Install the reinforcing sheet metal  Install the reinforcing sheet metal and lock 3 silver screws at the bottom, and lock 8 screws around the reinforcing sheet metal.                     ¶ Step 6- Install the Z-axis Top Covers  Align the installation groove and install the Z-axis Top Cover to the upper end of the Z-axis along the edge of the installation groove,push the Top cover inward to install it in place.  follow the same steps to install the other cover.                     ¶ Verify the Functionality  Check if the movement of the Z sliders is smooth or not.   ¶ Calibration  None  ¶ End Notes   We hope that the detailed guide we shared with you was helpful and informative.  We want to ensure that you can perform it safely and effectively. If you have any concerns or questions regarding the process described in this article, we encourage you to reach out to our friendly customer service team before starting the operation. Our team is always ready to help you and answer any questions you may have.  Click here to open a new ticket in our Support Page .  We will do our best to respond promptly and provide you with the assistance you need.  
+¶
+A1 Printer Frame Installation Tutorial (excluding X-axis)
+
+Provide guidance and precautions for the disassembly and assembly of the A1 Printer Frame, excluding the removal and reinstallation of the Printer Frame from the printer.
+
+
+¶
+Parts List
+
+The following are the spare parts involved in this guide.
+
+
+
+
+
+No.
+
+Descriptions
+
+Pictures
+
+NO.
+
+Descriptions
+
+Pictures
+
+
+
+1
+
+A1 Printer Frame
+
+
+
+
+2
+
+Z-axis Top Cover
+
+
+
+
+
+
+3
+
+Z Belt
+
+
+
+
+
+
+4
+
+Z Motor
+
+
+
+
+
+
+
+
+
+5
+
+Z-Axis Tensioner
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+¶
+Module List
+
+None
+
+¶
+Screws List
+
+
+
+
+
+
+
+Model
+
+Locations
+
+Dimensions/Drawing
+
+
+
+Model
+
+Locations
+
+Dimensions/Drawing
+
+
+
+Screw A
+
+
+ST3-4.5
+
+B0023
+
+
+
+Around the reinforcing sheet metal
+
+（8PCS）
+
+
+
+
+
+Screw B
+
+
+
+
+
+ST3-8
+
+B00270
+
+
+Bottom of the reinforcing sheet metal（3PCS）
+
+
+
+
+
+
+
+
+
+
+Screw
+
+C
+
+
+
+M3-18
+
+B00299
+
+
+Z-axis column（8PCS）
+
+
+
+
+Screw
+
+D
+
+
+
+ST3-4.5
+
+B00269
+
+
+
+
+The Metal Plate（4PCS）
+
+
+
+
+
+
+
+
+
+
+Screw
+
+E
+
+
+
+M3-5
+
+B0010
+
+
+Z Motor（4PCS）
+
+
+
+
+
+
+
+
+Screw
+
+F
+
+
+
+BT3-10
+
+B00214
+
+
+Tensioner adjustment screws（2PCS）
+
+
+
+
+
+
+
+
+
+
+Screw
+
+G
+
+
+
+ST3-10
+
+B00243
+
+
+
+Z-Axis Tensioner
+
+（3PCS）
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+¶
+Tool List
+
+H2.0 Hex Key
+
+Flat tweezers
+
+Cable ties
+
+Cut pliers
+
+¶
+Preliminary operation
+
+Please refer to the
+A1 Installation Tutorial
+for how to remove the Printer Frame from the printer and install it back onto the printer.
+
+¶
+Safety Warning
+
+
+IMPORTANT!
+
+It's crucial to
+power off the printer before performing any maintenance work
+on the printer and its electronics, including tool head wires, because leaving the printer on while conducting such tasks can cause a short circuit, which can lead to additional electronic damage and safety hazards.
+
+When you perform maintenane or troubleshooting on the printer, you may be required to disassemble some parts, including the hotend. This process can expose wires and electrical components that could potentially short circuit if they come into contact with each other or with other metal or electronic components while the printer is still on.
+This can damage the electronics of the printer and cause further damage.
+
+Therefore, it's essential to
+switch off the printer and disconnect it from the power source before doing any maintenance work
+. This will prevent any short circuits or damage to the printer's electronics. By doing so, you can avoid potential damage to the printer's electronic components and ensure that the maintenance work is performed safely and effectively.
+
+If you have any concerns or questions about following this guide,
+open a new ticket in our Support Page
+and we will do our best to respond promptly and provide you with the assistance you need.
+
+
+¶
+Video Guide
+
+
+
+
+¶
+A1 Printer Frame Disassembly
+
+¶
+Step 1- Bind the Z-axis sliders
+
+Raise the Z-axis sliders to the top and secure them with ties to ensure that the slider is not loose.
+
+
+¶
+Step 2- Remove the Z-axis Top Covers
+
+Release the Z-axis cover horizontally outward with tweezers, then release the two corners upwards and remove the Z-axis Top Cover.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+¶
+Step 3- Remove the reinforcing sheet metal
+
+Unscrew the 8 black screws around the sheet metal， and the 3 silver screws at the bottom, and remove the reinforcing sheet metal.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+¶
+Step 4- Remove the metal base plate
+
+Unscrew the 8 long screws that lock the Z-axis column with the H2.0 hex key, and the 4 short screws at the middle part of the metal base plate.
+
+
+¶
+Step 5- Remove the Z motor and Z Belt
+
+Remove the tapes, unscrew the 4 screws with the H2.0 hex key, and remove the Z Motor and the Z Belt.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+¶
+Step 6- Remove the Z-Axis Tensioner
+
+Unscrew the 2 tensioner adjustment screws with the H2.0 hex key, remove the 2 anti-rotation washers, and re-lock the 2 screws (Do not tighten them)
+
+Unscrew the 3 screws with the H2.0 hex key and remove the Z Tensioner.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+¶
+A1 Printer Frame Assembly
+
+¶
+Step 1- Remove the Z-Axis Tensioner
+
+Align the installation square hole, install the Z Tensioner on the bottom beam, and lock in the 3 screws.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+¶
+Step 2- Install the Z Belt and the Z motor
+
+Arrange the Z Belt according to the motion path, pass the Z Motor through the Z Belt and install it in place, lock in the 4 screws
+
+Arrange the motor cable and secure it with tapes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+¶
+Step 3- Tensioning the Z Belt
+
+Unscrew the 2 tensioner adjustment screws, place back the 2 anti-rotation washers, and re-lock the 2 screws (Do not tighten them);
+
+Cut the ties and unlock the Z sliders, pull the belt to confirm the smooth movement;
+
+Tighten the 2 tensioner adjustment screws.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+¶
+Step 4- Install the metal base plate
+
+Install the metal base plate and lock 4 long screws on both sides to lock the Z axis.
+
+Lock 4 short screws in the middle part of the base plate. Pay attention to the position and do not lock them wrongly.
+
+
+
+
+¶
+Step 5- Install the reinforcing sheet metal
+
+Install the reinforcing sheet metal and lock 3 silver screws at the bottom, and lock 8 screws around the reinforcing sheet metal.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+¶
+Step 6- Install the Z-axis Top Covers
+
+Align the installation groove and install the Z-axis Top Cover to the upper end of the Z-axis along the edge of the installation groove,push the Top cover inward to install it in place.
+
+follow the same steps to install the other cover.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+¶
+Verify the Functionality
+
+Check if the movement of the Z sliders is smooth or not.
+
+
+¶
+Calibration
+
+None
+
+¶
+End Notes
+
+
+We hope that the detailed guide we shared with you was helpful and informative.
+
+We want to ensure that you can perform it safely and effectively. If you have any concerns or questions regarding the process described in this article, we encourage you to reach out to our friendly customer service team before starting the operation. Our team is always ready to help you and answer any questions you may have.
+
+Click here to open a new ticket in our Support Page
+.
+
+We will do our best to respond promptly and provide you with the assistance you need.
+
