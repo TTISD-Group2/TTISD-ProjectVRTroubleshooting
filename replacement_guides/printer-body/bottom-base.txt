@@ -2,726 +2,265 @@ https://wiki.bambulab.com/en/a1/maintenance/bottom-base
 
 ¶
 A1 Bottom Base
-
 This article will provide guidelines and precautions for the disassembly and assembly of the bottom base assembly of A1. If your disassembly involves parts of the Printer Frame or the Heatbed Unit, please refer to the corresponding WIKI or Videos for details.
-
-
+[Image: bottom_base.jpg]
 ¶
 Parts List
-
 The following are the spare parts involved in this guide.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 No.
-
 Descriptions
-
 Pictures
-
 NO.
-
 Descriptions
-
 Pictures
-
-
-
 1
-
 Touch Screen
-
-
+[Image: screen.jpg]
 2
-
 AMS Connection Board
-
-
-
-
+[Image: ams_connection_board.jpg]
 3
-
 Power Supply
-
-
+[Image: power_module.jpg]
 4
-
 AC Board
-
-
-
-
+[Image: ac_board.jpg]
 5
-
 A1 Mainboard
-
-
+[Image: main_board.jpg]
 6
-
 Base Housing
-
-
-
-
+[Image: base_housing2.jpg]
 7
-
 WiFi Antenna
-
-
+[Image: wifi.jpg]
 8
-
 Printer Cable Pack (A1 only)
-
-
-
-
-
+[Image: cables.jpg]
 Note:
-
 1. If it involves replacing the main board, please provide both the SN of the new main board and the old SN of the printer to the Bambulab Service Team after replacing the mainboard. A SN activation is required.
 How to locate your printer's serial number(SN)
-
 2. If the Base Housing is replaced, the SN label attached to the back of the original Base Housing needs to be attached to the new one.
-
-
+[Image: a1_sn.jpg]
 ¶
 Module List
-
 Assemblies need to be further disassembled.
-
-
-
-
-
-
-
-
-
-
-
 NO.
-
 Descriptions
-
 Pictures
-
-
-
 1
-
 Y-axis assembly
-
-
-
-
-
+[Image: y_assembly.jpg]
 ¶
 Screws List
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Model
-
 Locations
-
 Dimensions/Drawing
-
-
 Model
-
 Locations
-
 Dimensions/Drawing
-
-
-
 Screw A
-
 B0026
-
 Screen hinge spring
-
-
+[Image: b0026.jpg]
 Screw
 B
-
 B0018
-
 Mainboard/AMS connection board
 (6PCS+2PCS)
-
-
-
-
+[Image: b0018.jpg]
 Screw
 C
-
 B0020
-
 Power supply
-
-
+[Image: b0020.jpg]
 Screw
 D
-
 B0022
-
 AC board
-
-
-
-
+[Image: b0022.jpg]
 Screw
 E
-
 B00222
-
 Heatsink plate
 2PCS
-
-
 Screw
 F
-
 B0063
-
 Heatsink plate
 1PCS
-
-
-
-
+[Image: b0063.jpg]
 Screw
 G
-
 B0060
-
 Ground cable
-
-
+[Image: b0060.jpg]
 Screw
 H
-
 B00236
-
 Y-axis assembly
-
-
-
-
-
 ¶
 Tool List
-
 H2.0/H1.5 Hex Key
-
 Cross screwdriver
-
 Flat tweezers
-
 ¶
 Preliminary operation
-
 Disconnect the printer power, remove the SD card (when disassembling the mainboard), and remove the bottom covers.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Image: disconnect_power.jpg]
+[Image: sd_card_removed.jpg]
+[Image: 16_screws.jpg]
 ¶
 Safety Warning
-
-
 IMPORTANT!
-
 It's crucial to
 power off the printer before performing any maintenance work
 on the printer and its electronics, including tool head wires, because leaving the printer on while conducting such tasks can cause a short circuit, which can lead to additional electronic damage and safety hazards.
-
 When you perform maintenane or troubleshooting on the printer, you may be required to disassemble some parts, including the hotend. This process can expose wires and electrical components that could potentially short circuit if they come into contact with each other or with other metal or electronic components while the printer is still on.
 This can damage the electronics of the printer and cause further damage.
-
 Therefore, it's essential to
 switch off the printer and disconnect it from the power source before doing any maintenance work
 . This will prevent any short circuits or damage to the printer's electronics. By doing so, you can avoid potential damage to the printer's electronic components and ensure that the maintenance work is performed safely and effectively.
-
 If you have any concerns or questions about following this guide,
 open a new ticket in our Support Page
 and we will do our best to respond promptly and provide you with the assistance you need.
-
-
 ¶
 Video Guide
-
 ¶
 A1 Bottom Base Disassembly
-
 ¶
 Step 1- Remove the Touch Screen
-
 1. Disconnect the Touch Screen connection flex cable, remove 2 screws with an H1.5 hex key, and remove the hinge spring;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Image: fps_and_screws.jpg]
+[Image: spring_plate.jpg]
 2. Rotate the screen so that the shaft is aligned with the notch, and pull out the screen.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Image: align_the_slot.jpg]
+[Image: pull_out_the_screen.jpg]
 ¶
 Step 2- Remove the AMS Connection Board
-
 Disconnect the cable, remove 2 screws with an H1.5 hex key, and remove the AMS Connection Board
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Image: ams_int_board_1.jpg]
+[Image: pry_up_the_interface_board.jpg]
 ¶
 Step 3- Remove the Power Supply
-
 1. Open the terminal cover, loosen 2 screws with a cross screwdriver, and pull out the mainboard power sockets;
-
-
+[Image: 2_screws_for_the_main_board_cable.jpg]
 2. Loosen 3 screws with a cross screwdriver and pull out the 2 ground cables;
-
-
+[Image: loose_3_screws_and_ground_cables.jpg]
 3. Remove 2 screws with an H2.0 Allen key, and remove the Power Supply (Glued on the side, you can remove it with force)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Image: 2_screws_power_board.jpg]
+[Image: remove_the_power_board.jpg]
 ¶
 Step 4- Remove the AC Board
-
 1. Remove the protective rubber sleeves, unlock the 2 plugs, and disconnect the power cables of the Power Supply; Remove the protective rubber sleeves, unlock the 3 plugs, and disconnect the power cable and the ground cable.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Image: 2_sleeves.jpg]
+[Image: unlock_the_2_sockets.jpg]
+[Image: 3_sockets.jpg]
 2. Disconnect the cable from the AC Board to the Mainboard, remove 1 screw with an H20 hex key, and remove the AC Board.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Image: 1_fpc_1screw.jpg]
+[Image: remove_ac_board.jpg]
 ¶
 Step 5- Remove the Mainboard
-
 1. Disconnect the cables connecting with the WIFI Antenna, Y Motor, AMS Connection Board, and AC Board in sequence.
-
-
+[Image: 4_cables.jpg]
 2. Remove 1 black screw (H2.0) and 2 silver screws (H1.5), pry up the heat sink plate slightly, and then remove the heat sink plate;
-
-
+[Image: heatsink_screws.jpg]
 3. Remove 6 screws with an H1.5 hex key and remove the Mainboard.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Image: 6_screws.jpg]
+[Image: remove_the_main_board.jpg]
 ¶
 Step 6- Remove the cables
-
 1. Release the AMS Connection Board cable from the buckles, and then pull it out towards the installation position of the AMS connection board;
-
-
+[Image: remove_the_m_to_ams_cable.jpg]
 2. Pry up the WIFI antenna board with tweezers and remove the WIFI Antenna.
-
-
+[Image: remove_wifi_cable.jpg]
 3. Remove the flex cable connecting the Mainboard to the AC Board.
-
-
+[Image: remove_the_m_t_ac_cable.jpg]
 ¶
 Step 7- Remove the Y-axis Assembly
-
 1. Loosen the Y motor cable from the buckles, and remove 1 screw to loosen the ground cable;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Image: release_the_motor_cable.jpg]
+[Image: ground_cable.jpg]
 2. Flip the bottom base so that the Y-axis Linear Rail is facing up; Remove 4 screws with an H2.0 hex key, and then take out the Y-axis assembly by lifting it first from the Y Motor;
-
-
 Note: There is grease on the Y-axis Linear Rail, avoid touching.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Image: y_rail_screws_1.jpg]
+[Image: y_rail_screws_2.jpg]
+[Image: remove_the_y_axis.jpg]
 ¶
 A1 Bottom Base Assembly
-
 ¶
 Step 1- Install the AC Board
-
 1. Install the AC Board and secure it with 1 screw;
-
-
+[Image: lock_ac_board.jpg]
 2. Connect the 3 power cables of the printer and install protective rubber sleeves.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Image: connect_power_cord.jpg]
+[Image: connect_power_cord_2.jpg]
 ¶
 Step 2- Install the Power Supply
-
 1. Install the Power Supply and secure it with 2 screws; Connect the power cables connecting the Power Supply to the AC board and tighten the 2 screws;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Image: %E5%AE%89%E8%A3%85%E7%94%B5%E6%BA%90%E6%A8%A1%E5%9D%97.jpg]
+[Image: connect_power_1.jpg]
 2. The left side near the edge of the AC plate is the neutral line, and the right side is the live line. After plugging in the terminal, a rubber protective sleeve needs to be installed.
-
-
+[Image: %E7%A1%85%E8%83%B6%E5%A5%97.png]
 ¶
 Step 3- Install the AMS Connection Board
-
 1. Install the AMS Connection Board, and press it firmly into place.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Image: install_ams_board.jpg]
+[Image: connect_m_to_am_cable_1.jpg]
 2. Lock in 2 screws, connect the cable if it is already there.
-
-
+[Image: lock_ams_board.jpg]
 ¶
 Step 4- Install the Mainboard
-
 1. Install the Mainboard, install the end with the SD card slot first, and lock in 6 screws;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Image: install_main_board.jpg]
+[Image: lock_main_board.jpg]
 2. Attach the WIFI antenna and connect the WIFI cable to the antenna interface on the Mainboard;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Image: attach_wifi.jpg]
+[Image: connect_wifi.jpg]
+[Image: connect_ac-m_2.jpg]
 3. Connect the flex cable that connects the AC board to the Mainboard;
-
-
+[Image: connect_ac-m_1.jpg]
 4. Connect the power cables of the Mainboard to the corresponding terminals on the Power Supply and tighten the 2 screws; Connect the Mainboard ground cable and the printer ground cable to the ground terminal on the Power Supply together, and tighten the screw;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Image: connect_main_power_cable1.jpg]
+[Image: 2_ground_cable.jpg]
 5. Install the heat sink (the Mainboard has been coated with heat dissipation silicone grease) , and secure it with 2 screws.
-
-
+[Image: install_heatsink.jpg]
 ¶
 Step 5- Connect the AMS Connection Board cable
-
 Pass the AMS Connection Board cable;
-
 Connect the cable to the connectors on the Mainboard and AMS Connection Board;
-
 Arrange the cable, take precautions to avoid damage from screws.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Image: install_the_m_t_a_cable.jpg]
+[Image: connect_ams_con.jpg]
+[Image: arrange_cable_1.jpg]
 ¶
 Step 6- Install the Y-axis Assembly
-
 1. Pass the Y Motor cable through the bottom base, install the Y-Axis Tensioner into the bottom base first, and then put the Y Motor in place, the big head screw can help you check if the Y-axis assembly is in place or not.Lock a total of 4 screws at both ends of the Y-axis Linear Rail;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Image: install_y_rail_2.jpg]
+[Image: y_rail_position.jpg]
+[Image: y_rail_screws_4.jpg]
 2. Turn over the bottom base, pass through the Y motor cable, connect the cable to the connector on the mainboard, lock the ground cable and the heat sink plate with screws, and arrange the motor cable.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Image: pass_through_the_motor_cable1_.jpg]
+[Image: connect_motor.jpg]
+[Image: arrange_cables_new.jpg]
 ¶
 Step 7- Install the Touch Screen
-
 1. Align the mounting grooves on the hinge, install the Touch Screen; Rotate it to the folded state, install the hinge spring,and  lock in the 2 screws.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Image: install_the_screen.jpg]
+[Image: align_the_slot.jpg]
+[Image: install_the_plate_new.jpg]
 2. Connect the display cable, insert it all the way in, make sure it is not skewed, and lock the connector.
-
-
+[Image: connect_screen_new.jpg]
 ¶
 Verify the Functionality
-
 1. Appearance inspection, check that all the connecting cables are connected correctly, and are properly organized  ;
-
 2. The newly replaced Y-axis Linear Rail needs lubrication. Please click
 Here
 for the specific operation.
-
 ¶
 End Notes
-
-
 We hope that the detailed guide we shared with you was helpful and informative.
-
 We want to ensure that you can perform it safely and effectively. If you have any concerns or questions regarding the process described in this article, we encourage you to reach out to our friendly customer service team before starting the operation. Our team is always ready to help you and answer any questions you may have.
-
 Click here to open a new ticket in our Support Page
 .
-
 We will do our best to respond promptly and provide you with the assistance you need.
-
