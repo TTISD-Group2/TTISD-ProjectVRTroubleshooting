@@ -7,27 +7,26 @@ public class PokeMenuTextController : MonoBehaviour
     public TMP_Text textDisplay;
     public string fileName = "textdata";
     
-    public float fontSize = 14f;
-
-    public int maxCharsPerPage = 200; // we need to adjust this based on testing
+    [Tooltip("Font size for the text display")]
+    public float fontSize = 12f;
     
     private List<string> textChunks = new List<string>();
-    private List<string> currentPages = new List<string>();
     private int currentChunkIndex = 0;
-    private int currentPageIndex = 0;
 
     void Start()
     {
         textDisplay.fontSize = fontSize;
-
+        
+        textDisplay.overflowMode = TextOverflowModes.Page;
+        
         LoadTextChunks();
-
+        
         if (textChunks.Count > 0)
         {
             DisplayCurrentChunk();
         }
     }
-
+    
     void LoadTextChunks()
     {
         TextAsset textFile = Resources.Load<TextAsset>(fileName);
@@ -40,68 +39,23 @@ public class PokeMenuTextController : MonoBehaviour
             Debug.LogError("Kon tekstbestand niet laden.");
         }
     }
-
+    
     void DisplayCurrentChunk()
     {
         if (currentChunkIndex >= 0 && currentChunkIndex < textChunks.Count)
         {
-            currentPages = SplitTextIntoPages(textChunks[currentChunkIndex]);
-            currentPageIndex = 0;
+            textDisplay.text = textChunks[currentChunkIndex];
             
-            if (currentPages.Count > 0)
-            {
-                textDisplay.text = currentPages[currentPageIndex];
-            }
+            textDisplay.pageToDisplay = 1;
         }
     }
-
-    List<string> SplitTextIntoPages(string text)
-    {
-        List<string> pages = new List<string>();
-        
-        if (text.Length <= maxCharsPerPage)
-        {
-            pages.Add(text);
-            return pages;
-        }
-        
-        //avoid cutting off mid-word
-        string[] words = text.Split(' ');
-        string currentPage = "";
-        
-        foreach (string word in words)
-        {
-            // Check if adding this word would exceed page limit otherwise add it to the next page
-            if ((currentPage + " " + word).Length > maxCharsPerPage && currentPage.Length > 0)
-            {
-                pages.Add(currentPage);
-                currentPage = word;
-            }
-            else
-            {
-                if (currentPage.Length > 0)
-                {
-                    currentPage += " ";
-                }
-                currentPage += word;
-            }
-        }
-        
-        if (currentPage.Length > 0)
-        {
-            pages.Add(currentPage);
-        }
-        
-        return pages;
-    }
-
+    
     //below not integerated yet, needs to be added to the UI when creating a second button
     public void ShowNextPage()
     {
-        if (currentPageIndex < currentPages.Count - 1)
+        if (textDisplay.pageToDisplay < textDisplay.textInfo.pageCount)
         {
-            currentPageIndex++;
-            textDisplay.text = currentPages[currentPageIndex];
+            textDisplay.pageToDisplay += 1;
         }
         else
         {
@@ -116,13 +70,12 @@ public class PokeMenuTextController : MonoBehaviour
             }
         }
     }
-
+    
     public void ShowPreviousPage()
     {
-        if (currentPageIndex > 0)
+        if (textDisplay.pageToDisplay > 1)
         {
-            currentPageIndex--;
-            textDisplay.text = currentPages[currentPageIndex];
+            textDisplay.pageToDisplay -= 1;
         }
         else
         {
@@ -131,8 +84,7 @@ public class PokeMenuTextController : MonoBehaviour
                 currentChunkIndex--;
                 DisplayCurrentChunk();
                 
-                currentPageIndex = currentPages.Count - 1;
-                textDisplay.text = currentPages[currentPageIndex];
+                textDisplay.pageToDisplay = textDisplay.textInfo.pageCount;
             }
         }
     }
