@@ -7,7 +7,8 @@ public class PokeMenuTextController : MonoBehaviour
     public TMP_Text textDisplay;
     public string fileName = "textdata";
     
-    [Tooltip("Maximum characters per page")]
+    public float fontSize = 14f;
+
     public int maxCharsPerPage = 200; // we need to adjust this based on testing
     
     private List<string> textChunks = new List<string>();
@@ -17,6 +18,8 @@ public class PokeMenuTextController : MonoBehaviour
 
     void Start()
     {
+        textDisplay.fontSize = fontSize;
+
         LoadTextChunks();
 
         if (textChunks.Count > 0)
@@ -92,4 +95,45 @@ public class PokeMenuTextController : MonoBehaviour
         return pages;
     }
 
+    //below not integerated yet, needs to be added to the UI when creating a second button
+    public void ShowNextPage()
+    {
+        if (currentPageIndex < currentPages.Count - 1)
+        {
+            currentPageIndex++;
+            textDisplay.text = currentPages[currentPageIndex];
+        }
+        else
+        {
+            if (currentChunkIndex < textChunks.Count - 1)
+            {
+                currentChunkIndex++;
+                DisplayCurrentChunk();
+            }
+            else
+            {
+                textDisplay.text = "Einde van de tekst.";
+            }
+        }
+    }
+
+    public void ShowPreviousPage()
+    {
+        if (currentPageIndex > 0)
+        {
+            currentPageIndex--;
+            textDisplay.text = currentPages[currentPageIndex];
+        }
+        else
+        {
+            if (currentChunkIndex > 0)
+            {
+                currentChunkIndex--;
+                DisplayCurrentChunk();
+                
+                currentPageIndex = currentPages.Count - 1;
+                textDisplay.text = currentPages[currentPageIndex];
+            }
+        }
+    }
 }
