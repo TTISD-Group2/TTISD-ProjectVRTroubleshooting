@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class PokeMenuTextController : MonoBehaviour
 {
@@ -27,7 +28,7 @@ public class PokeMenuTextController : MonoBehaviour
         }
     }
     
-    void LoadTextChunks()
+    public void LoadTextChunks()
     {
         TextAsset textFile = Resources.Load<TextAsset>(fileName);
         if (textFile != null)
@@ -40,19 +41,23 @@ public class PokeMenuTextController : MonoBehaviour
         }
     }
     
-    void DisplayCurrentChunk()
+    public void DisplayCurrentChunk()
     {
         if (currentChunkIndex >= 0 && currentChunkIndex < textChunks.Count)
         {
             textDisplay.text = textChunks[currentChunkIndex];
-            
+
             textDisplay.pageToDisplay = 1;
+            
+            textDisplay.ForceMeshUpdate();
+
         }
     }
     
     //below not integerated yet, needs to be added to the UI when creating a second button
     public void ShowNextPage()
     {
+        Debug.Log("this gets triggerd");
         if (textDisplay.pageToDisplay < textDisplay.textInfo.pageCount)
         {
             textDisplay.pageToDisplay += 1;
