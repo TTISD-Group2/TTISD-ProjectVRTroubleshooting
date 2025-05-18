@@ -1,0 +1,176 @@
+https://wiki.bambulab.com/en/a1-mini/maintenance/hotend-cooling-fan
+
+In this guide, we will show how to replace the Hotend Fan on the A1 mini.
+
+
+¶
+When to use?
+
+This guide is intended for use if there is a problem with the Hotend Fan
+
+Common issues that may indicate the need for replacement of the A1 mini Hotend Fan include:
+
+
+Hotend Fan is noisy
+
+Hotend Fan has failed and does not turn anymore
+
+Recommended by Bambu Lab Technical Support
+
+
+¶
+Tools and materials needed
+
+Bambu Lab Hotend Fan for A1
+
+
+H2.0 hex wrench
+
+H1.5 hex wrench
+
+25 minutes of your time
+
+
+¶
+Safety Warning
+
+
+IMPORTANT!
+
+It's crucial to
+power off the printer before conducting any maintenance work
+, including work on the printer's electronics and tool head wires. Performing tasks with the printer on can result in a short circuit, leading to electronic damage and safety hazards.
+
+During maintenance or troubleshooting, you may need to disassemble parts, including the hotend. This exposes wires and electrical components that could short circuit if they contact each other, other metal, or electronic components while the printer is still on.
+This can result in damage to the printer's electronics and additional issues.
+
+Therefore, it's crucial to
+turn off the printer and disconnect it from the power source before conducting any maintenance
+. This prevents short circuits or damage to the printer's electronics, ensuring safe and effective maintenance. For any concerns or questions about following this guide,
+open a new ticket in our Support Page
+and we will do our best to respond promptly and provide the assistance you need.
+
+
+¶
+Remove the Old Hotend Fan
+
+¶
+1. Remove the toolhead rear housing
+
+We start by removing the toolhead rear housing.
+Carefully pry open the toolhead rear housing by pulling on the bottom section as shown below.
+
+
+¶
+2. Disconnect the cable
+
+Remove the hotend fan cable attached to the TH Board.
+Carefully pull it out by the connector, and avoid pulling the cable from the connector.
+We recommend using a flat tool to gently pry them out to avoid any potential damage.
+
+
+¶
+3. Remove the toolhead front cover
+
+Grab the base of the front cover and gently pull towards you.
+The clips holding the cover in place will be released, allowing you to remove the front cover
+
+
+¶
+4. Remove the hotend
+
+Remove the silicone sock for hotend by gently pulling it towards you, then remove the hotend.
+All the steps are labeled on the extruder sticker.
+
+
+¶
+5. Remove the extruder screws
+
+Remove the screws as shown in the picture, and gently pull the extruder forward a little.
+Be careful when pulling it out, as you will need to carefully disconnect the filament sensor ribbon cable.
+
+
+¶
+6. Remove the left cable cover
+
+There are hotend fan cables and filament sensor cables in the left cable channel. Push the left cable cover backwards and remove it, then remove the hotend fan cable from the cable channel.
+
+
+¶
+7. Remove the hotend fan
+
+Remove the 2 screws, then pull out the fan from the toolhead.
+
+
+¶
+Install the New Hotend Fan
+
+¶
+1. Install the new hotend fan
+
+Install the new hotend fan onto the toolhead and tighten the 2 screws (two on each side and one on the back) that secure the fan.
+
+
+¶
+2. Install the left cable cover
+
+Carefully pass the hotend fan cable through the left cable channel and push the cable back in the direction shown.
+
+
+¶
+3. Install the extruder
+
+Secure the extruder to the toolhead using the 4 screws, as shown in the image below.
+
+
+¶
+4. Re-connect the cable
+
+Re-connect the
+Hotend Fan
+cable as shown below.
+
+
+¶
+5. Install the toolhead rear housing
+
+Simply align the two brackets on the rear housing towards the top, then push it until you hear a few clicks.
+
+
+¶
+6. Install the hotend and silicone sock for hotend
+
+Follow the guidance available on the extruder sticker to re-attach the hotend to the toolhead
+Then, lock it in place using the clip and install the silicone sock.
+
+
+¶
+7. Install the toolhead front cover
+
+Simply attach the toolhead front cover on the top of the toolhead by aligning the clips, then gently push on the bottom side. You will hear the clips when the installation is complete.
+
+
+¶
+Verify the function
+
+To make sure everything is working properly, turn on the printer and set the hotend temperature to 100°C. After a few seconds, the hotend fan should start to rotate, indicating that the above operations are correct.
+
+¶
+Calibration step after the operation
+
+We recommend conducting a full calibration of the printer after this operation.
+
+Additionally, it's strongly advised to
+wash the PEI textured plate before use
+, as it may have been contaminated during this process.
+
+¶
+End Notes
+
+
+We hope the detailed guide provided has been helpful and informative.
+
+To ensure a safe and effective execution, if you have any concerns or questions about the process described in this article, we recommend reaching out to technical support team before initiating the operation. We will do our best to respond promptly and provide the assistance you need.
+Click here to open a new ticket in our Support Page
+.
+
