@@ -60,19 +60,8 @@ public class PrinterAlignment : MonoBehaviour
 
     private void Update()
     {
-        // Visualize raycast from controller or camera
-        //Ray visualRay = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
-        //lineRenderer.SetPosition(0, visualRay.origin);
-        //lineRenderer.SetPosition(1, visualRay.origin + visualRay.direction * rayLength);
-        // Skip if we've already collected all required points
-        // Always show the laser from the right controller
-        Vector3 controllerPositio = Camera.main.transform.TransformPoint(OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch));
-        Quaternion controllerRotatio = OVRInput.GetLocalControllerRotation(OVRInput.Controller.RTouch);
-        Vector3 controllerForwar = controllerRotatio * Vector3.forward;
 
-        // Set laser line positions
-        lineRenderer.SetPosition(0, controllerPositio);
-        lineRenderer.SetPosition(1, controllerPositio + controllerForwar * rayLength);
+        
 
         if (worldPoints.Count >= requiredPoints)
             return;
@@ -81,74 +70,31 @@ public class PrinterAlignment : MonoBehaviour
             // Get reference to controller transforms - add this to your Start method
             Transform rightHandAnchor = GameObject.Find("RightHandAnchor")?.transform;
             Transform leftHandAnchor = GameObject.Find("LeftHandAnchor")?.transform;
+            // Set laser line positions
+            lineRenderer.SetPosition(0, rightHandAnchor.position);
+            lineRenderer.SetPosition(1, rightHandAnchor.position + rightHandAnchor.forward * rayLength);
 
-            // Then in your Update method
-            if (rightHandAnchor != null && 
-                (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) || 
+                // Then in your Update method
+            if (rightHandAnchor != null &&
+                (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) ||
                 OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger)))
             {
-                Ray ray = new Ray(rightHandAnchor.position, rightHandAnchor.forward);
-                // Perform raycast with this ray
+            Ray ray = new Ray(rightHandAnchor.position, rightHandAnchor.forward);
+            // Perform raycast with this ray
 
 
-                RaycastHit hit;
-                if (Physics.Raycast(ray, out hit, rayLength))
-                {
-                    // Hit something (e.g. your room mesh)
-                    Vector3 hitPoint = hit.point;
-                    Debug.Log($"Hit mesh at {hitPoint}");
-
-                    worldPoints.Add(hitPoint);
-
-                    if (pointMarkerPrefab != null)
-                    {
-                        Instantiate(pointMarkerPrefab, hitPoint, Quaternion.identity);
-                    }
-
-                    if (worldPoints.Count == requiredPoints)
-                    {
-                        AlignModel();
-                    }
-                }
-                else
-                {
-                    Debug.Log("Physics raycast did not hit any mesh");
-                }
-            }
-            /*
-
-            // For Meta Quest: Use controller trigger or hand pinch
-            if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) ||
-            OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, rayLength))
             {
-            // Get the ray from controller
-            //Transform controllerTransform = OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch);
-            //Ray ray = new Ray(controllerTransform.position, controllerTransform.forward);
+                // Hit something (e.g. your room mesh)
+                Vector3 hitPoint = hit.point;
+                Debug.Log($"Hit mesh at {hitPoint}");
 
-            // Get the ray from controller
-            // Vector3 controllerPosition = OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch);
-            //Vector3 controllerForward = OVRInput.GetLocalControllerRotation(OVRInput.Controller.RTouch) * Vector3.forward;
-            //Ray ray = new Ray(controllerPosition, controllerForward);
-
-            //Debug.Log($"Controller trigger pressed, casting ray from {ray.origin} in direction {ray.direction}");
-
-            // Perform raycast
-            Vector3 controllerPosition = Camera.main.transform.TransformPoint(OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch));
-            Quaternion controllerRotation = OVRInput.GetLocalControllerRotation(OVRInput.Controller.RTouch);
-            Vector3 controllerForward = controllerRotation * Vector3.forward;
-
-            Vector3 pointAlongRay = controllerPosition + controllerForward * 1.0f;
-            Vector3 screenPoint = Camera.main.WorldToScreenPoint(pointAlongRay);
-
-            if (raycastManager.Raycast(screenPoint, hits, TrackableType.PlaneWithinPolygon))
-            {
-                Pose hitPose = hits[0].pose;
-                worldPoints.Add(hitPose.position);
-                Debug.Log($"Captured AR point {worldPoints.Count}: {hitPose.position}");
+                worldPoints.Add(hitPoint);
 
                 if (pointMarkerPrefab != null)
                 {
-                    Instantiate(pointMarkerPrefab, hitPose.position, Quaternion.identity);
+                    Instantiate(pointMarkerPrefab, hitPoint, Quaternion.identity);
                 }
 
                 if (worldPoints.Count == requiredPoints)
@@ -158,11 +104,10 @@ public class PrinterAlignment : MonoBehaviour
             }
             else
             {
-                Debug.Log("AR raycast from controller did not hit any real-world plane");
+                Debug.Log("Physics raycast did not hit any mesh");
             }
-
-            }
-            */
+        }
+           
 
         // Handle touch input
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
@@ -227,12 +172,10 @@ public class PrinterAlignment : MonoBehaviour
             KabschSolver kabschSolver = new KabschSolver();
 
             // Properly convert and pass your points to the solver
-            Vector4[] sourcePoints = new Vector4[modelPoints.Length];
             Vector4[] targetPoints = new Vector4[worldPoints.Count];
             
             for (int i = 0; i < modelPoints.Length; i++)
             {
-                sourcePoints[i] = new Vector4(modelPoints[i].x, modelPoints[i].y, modelPoints[i].z, 1.0f);
                 targetPoints[i] = new Vector4(worldPoints[i].x, worldPoints[i].y, worldPoints[i].z, 1.0f);
             }
 
