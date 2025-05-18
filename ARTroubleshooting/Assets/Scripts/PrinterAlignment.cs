@@ -10,6 +10,9 @@ public class PrinterAlignment : MonoBehaviour
     [SerializeField] private GameObject printerModel;
     [SerializeField] private GameObject pointMarkerPrefab; // Add this to visualize your touch points
 
+    [SerializeField] private Transform rightControllerTransform;
+
+
     [Header("Calibration Settings")]
     [SerializeField] private int requiredPoints = 4;
 
@@ -62,19 +65,31 @@ public class PrinterAlignment : MonoBehaviour
         //lineRenderer.SetPosition(0, visualRay.origin);
         //lineRenderer.SetPosition(1, visualRay.origin + visualRay.direction * rayLength);
         // Skip if we've already collected all required points
+        // Always show the laser from the right controller
+        Vector3 controllerPositio = Camera.main.transform.TransformPoint(OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch));
+        Quaternion controllerRotatio = OVRInput.GetLocalControllerRotation(OVRInput.Controller.RTouch);
+        Vector3 controllerForwar = controllerRotatio * Vector3.forward;
+
+        // Set laser line positions
+        lineRenderer.SetPosition(0, controllerPositio);
+        lineRenderer.SetPosition(1, controllerPositio + controllerForwar * rayLength);
+
         if (worldPoints.Count >= requiredPoints)
             return;
             
             
-            if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) || 
-                OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))
-            {
-                // Get controller position and forward direction in world space
-                Vector3 controllerPosition = Camera.main.transform.TransformPoint(OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch));
-                Quaternion controllerRotation = OVRInput.GetLocalControllerRotation(OVRInput.Controller.RTouch);
-                Vector3 controllerForward = controllerRotation * Vector3.forward;
+            // Get reference to controller transforms - add this to your Start method
+            Transform rightHandAnchor = GameObject.Find("RightHandAnchor")?.transform;
+            Transform leftHandAnchor = GameObject.Find("LeftHandAnchor")?.transform;
 
-                Ray ray = new Ray(controllerPosition, controllerForward);
+            // Then in your Update method
+            if (rightHandAnchor != null && 
+                (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) || 
+                OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger)))
+            {
+                Ray ray = new Ray(rightHandAnchor.position, rightHandAnchor.forward);
+                // Perform raycast with this ray
+
 
                 RaycastHit hit;
                 if (Physics.Raycast(ray, out hit, rayLength))
