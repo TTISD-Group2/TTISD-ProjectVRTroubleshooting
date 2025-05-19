@@ -25151,7 +25151,7 @@ Transform:
   m_GameObject: {fileID: 5935639343871789974}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.02, y: -1.937, z: -1.63}
+  m_LocalPosition: {x: 1.669, y: -1.975, z: 0.878}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -25939,7 +25939,7 @@ MonoBehaviour:
   textDisplay: {fileID: 5223482177200620184}
   titleDisplay: {fileID: 4257112457442961554}
   fileName: textdata
-  fontSize: 6
+  fontSize: 3
   printerPartIndicator: {fileID: 191117046}
 --- !u!65 &6466278495888624809
 BoxCollider:

@@ -88,6 +88,26 @@ public class PokeMenuTextController : MonoBehaviour
         }
     }
 
+    private string FormatSectionText(string input)
+    {
+        // Verwijder PAGEBREAK markers
+        string formatted = input.Replace("===PAGE_BREAK===", "");
+
+        // Verwijder alle ### headers (en eventuele whitespace erna)
+        formatted = Regex.Replace(formatted, @"^###.*\n?", "", RegexOptions.Multiline);
+
+        // Verwijder alle #### subheaders (en eventuele whitespace erna)
+        formatted = Regex.Replace(formatted, @"^####.*\n?", "", RegexOptions.Multiline);
+
+        // Zet **tekst** om naar <b>tekst</b>
+        formatted = Regex.Replace(formatted, @"\*\*(.+?)\*\*", "<b>$1</b>");
+
+        // Eventueel: extra whitespace aan begin/einde verwijderen
+        formatted = formatted.Trim();
+
+        return formatted;
+    }
+
     void Start()
     {
         textDisplay.fontSize = fontSize;
@@ -139,17 +159,14 @@ public class PokeMenuTextController : MonoBehaviour
         if (currentSectionIndex >= 0 && currentSectionIndex < sections.Count)
         {
             var section = sections[currentSectionIndex];
-            textDisplay.text = $"<b>{section.header}</b>\n\n{section.content}";
+            string formattedContent = FormatSectionText(section.content);
+            textDisplay.text = $"<b>{section.header}</b>\n\n{formattedContent}";
             textDisplay.pageToDisplay = 1;
             textDisplay.ForceMeshUpdate();
 
-            // Unhighlight highlighted compnents
             printerPartIndicator.clearHighlights();
 
-            // Vind highlightable component indices in deze sectie
             List<int> highlightIndices = FindAllHighlightableComponentIndices(section.content);
-
-            // Highlight found components
             Highlight(highlightIndices);
         }
     }
