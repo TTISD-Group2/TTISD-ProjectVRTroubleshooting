@@ -1,0 +1,122 @@
+https://wiki.bambulab.com/en/a1/maintenance/mainboard-replacement-guide
+
+# Guide to Replacing the Mainboard on the A1 Printer
+
+This guide provides detailed instructions for replacing the Mainboard on the A1 printer when it is faulty. Follow these steps carefully to ensure a successful replacement.
+
+### When to Use This Guide
+
+- **Printer is not turning on**
+- **The Mainboard is damaged**
+- **Recommended by Bambu Lab Customer Support**
+
+### Tools and Materials Needed
+
+- **Bambu Lab Main Controller Board for A1**
+- **H2.0 Allen key**
+- **H1.5 Allen key**
+- **PH2 Philips screwdriver**
+
+**Estimated completion time:** 20 minutes
+
+### Safety Warning
+
+**IMPORTANT!** Always power off the printer and disconnect it from the power source before performing any maintenance. This prevents short circuits and ensures safety.
+
+===PAGE_BREAK===
+
+### Steps to Remove the Old Mainboard
+
+#### Step 1: Place the printer on its front
+1. Flip the screen to the side.
+2. Gently place the printer on its front using a box of filament to support the top side.
+
+#### Step 2: Disconnect the wires and remove the wire bracket
+1. Disconnect the cables for the camera, X-axis motor, and Z-axis motor.
+2. Loosen 1 screw.
+3. Push the cable bracket upwards, disconnect the USB data cable, and remove the bracket.
+
+#### Step 3: Remove the printer's bottom cover
+1. Remove the 10 screws marked in red to detach the bottom cover.
+
+#### Step 4: Remove the MicroSD Card
+1. Eject the Micro SD card from the printer.
+
+#### Step 5: Disconnect the four cables from the board
+1. Carefully disconnect the four indicated cables.
+
+#### Step 6: Remove the mainboard screws
+1. Remove all 9 screws securing the mainboard.
+
+#### Step 7: Remove the heatsink bracket
+1. Push the bracket upwards until it releases from the bottom plastic tab.
+2. Pull the bracket towards you to remove it.
+
+#### Step 8: Remove the board
+1. Gently pull the board from the right side towards you.
+2. Apply slight pressure and gently push on the plastic clips to release the board.
+
+#### Step 9: Disconnect the board wires
+1. Partially unscrew the screws holding the wires.
+2. Carefully disconnect the wires from the power supply.
+
+===PAGE_BREAK===
+
+### Steps to Install the New Mainboard
+
+#### Step 1: Re-connect the Mainboard wires to the power supply
+1. **Red wire** - Positive
+2. **Black wire** - Negative
+3. **Longer black wire** - Neutral
+
+#### Step 2: Install the flat ribbon cable
+1. Install the flexible ribbon cable before placing the A1 board.
+2. Align the connector properly.
+
+#### Step 3: Attach the new board to the printer
+1. Align the A1 mainboard to the frame and gently press to attach it.
+2. Ensure that all plastic clips are securely holding the board.
+
+#### Step 4: Install the board heatsink
+1. Slide the metallic bracket behind the plastic tab.
+2. Align the screw holes with the board and install screws 1, 2, and 3.
+
+#### Step 5: Re-install the screws to the board
+1. Secure the board using the remaining 6 screws.
+
+#### Step 6: Re-attach the board wires
+1. Re-attach the wires as previously noted.
+
+#### Step 7: Install the printer's bottom cover
+1. Manage the motor wire in the top left side.
+2. Clip the cover in place and install the 10 screws without over-tightening.
+
+#### Step 8: Install the wire bracket and connect the wires
+1. Align and push down the wire bracket.
+2. Tighten the securing screw without overtightening.
+3. Re-connect the Camera, Motor X, and Motor Z cables.
+
+===PAGE_BREAK===
+
+### Post-Installation Steps
+
+#### Ask Customer Support for the SN Activation
+- Provide a picture of the SN displayed on the printer screen to Customer Support for activation.
+
+===PAGE_BREAK===
+
+#### Verify the Functionality
+- Turn on the printer and bind it to your account to test functionality.
+
+#### Calibration Step After the Operation
+- Perform a full calibration of the printer.
+
+### Potential Problems and Solutions
+
+- **The printer doesn't power on:** Check the Motherboard power wires as per Step 1.
+- **One of the axes is not working:** Check the motor wires as per Step 8.
+- **The printer cannot be connected to your Bambu Lab Account:** Provide the new Serial Number to Customer Support for activation.
+
+### End Notes
+
+For further assistance, submit a technical ticket through our support page. Your feedback is appreciated to improve this guide. Thank you for your support and attention!

@@ -1,0 +1,103 @@
+https://wiki.bambulab.com/en/a1-mini/maintenance/hotend-heating-assembly-replacement
+
+# Step-by-Step Guide to Replace the Hotend Heating Assembly on the A1 Mini
+
+## When to Use?
+
+This guide is intended for use if there is a problem with the Hotend Heating Assembly of your A1 mini. Common issues that may indicate the need for replacement include:
+
+- The Hotend Heating Assembly is wrapped in plastic due to a print failure.
+- The heater or thermistor is not working anymore.
+- The hotend metal latch is not working anymore.
+- Recommended by Bambu Lab Technical Support.
+
+## Tools and Materials Needed
+
+- **Bambu Lab Hotend Heating Assembly for A1**
+- **H1.5 & 2.0 Allen key**
+- **Flat tweezers**
+- **25 minutes of your time**
+
+## Safety Warning
+
+**IMPORTANT!** It's crucial to **power off the printer** before conducting any maintenance work, including work on the printer's electronics and tool head wires. Performing tasks with the printer on can result in a short circuit, leading to electronic damage and safety hazards. Always **turn off the printer and disconnect it from the power source before conducting any maintenance**. For any concerns or questions about following this guide, **open a new ticket in our Support Page**.
+
+===PAGE_BREAK===
+
+### Remove the Old Hotend Heating Assembly
+
+#### Step 1: Remove the toolhead front cover
+1. Grab the base of the front cover and gently pull towards you.
+2. The clips holding the cover in place will be released, allowing you to remove the front cover.
+
+#### Step 2: Remove the hotend
+1. Remove the silicone sock for hotend by gently pulling it towards you.
+2. Open the buckle, then remove the hotend.
+3. All the steps are labeled on the extruder sticker.
+
+#### Step 3: Remove the extruder screws
+1. Remove the screws as indicated on the extruder.
+2. Gently pull the extruder forward a little.
+   - **Note**: Do not pull out the extruder with force, as it may easily break the motor wire.
+
+#### Step 4: Remove the toolhead rear housing
+1. Carefully open the toolhead rear housing by pulling on the bottom section.
+
+#### Step 5: Disconnect the cables
+1. Remove the hotend heating assembly cable and part cooling fan cable attached to the TH Board.
+
+#### Step 6: Remove the right cable cover
+1. Gently push out the right cable cover to remove it.
+
+#### Step 7: Remove the cables
+1. Carefully remove the cables from the cable channel.
+
+#### Step 8: Remove the hotend heating assembly
+1. Remove the hotend heating assembly by removing the 3 screws from the hotend heating assembly.
+
+===PAGE_BREAK===
+
+### Install the New Hotend Heating Assembly
+
+#### Step 1: Install the Hotend Heating Assembly
+1. Install the new hotend heating assembly, aligning the clips and making sure the top of the heating assembly is against the white alignment line on the toolhead.
+2. Install the 3 screws.
+   - **Note**: The specification of the screws fixing the hotend heating assembly is **M3*10**.
+
+#### Step 2: Install the right cable cover
+1. Push the cable into the clip, using tweezers to help.
+2. Pass the cables through the right cable channel, and push the cable cover back.
+   - **Note**: Be extremely careful when routing cables.
+
+#### Step 3: Install the extruder
+1. Put the extruder back in place and install the 4 screws.
+
+#### Step 4: Install the hotend
+1. Follow the guidance available on the extruder sticker to re-attach the hotend to the toolhead.
+2. Lock it in place using the clip and install the silicone sock.
+
+#### Step 5: Install the toolhead front cover
+1. Simply attach the toolhead front cover on the top of the toolhead by aligning the clips, then gently push on the bottom side. You will hear the clips when the installation is complete.
+
+#### Step 6: Re-connect the cables
+1. Re-connect the **hotend heating assembly cable** and **part cooling fan cable**.
+
+#### Step 7: Install the toolhead rear housing
+1. Simply align the two brackets on the rear housing towards the top, then push it until you hear a few clicks.
+
+### Verify the functionality of the A1 hotend heating assembly
+
+To ensure everything runs smoothly, set the hot end temperature to 100°C. If successful, the screen will show the temperature.
+
+### Calibration step after the operation
+
+We recommend conducting a full calibration of the printer after this operation. Additionally, it's strongly advised to **wash the PEI textured plate** before use, as it may have been contaminated during this process.
+
+### Potential Problems and Solutions
+
+- **The hotend temperature is 0℃**: Check the Hotend Heating Assembly connector and confirm it is correctly inserted. If the issue persists, the thermistor wires might have been damaged (white wires).
+- **The hotend cannot be heated**: Check the Hotend Heating Assembly connector and confirm it is correctly inserted. If the issue persists, the heater wires might have been damaged (Translucent wires).
+
+### End Notes
+
+We hope the detailed guide provided has been helpful and informative. To ensure a safe and effective execution, if you have any concerns or questions about the process described in this article, we recommend reaching out to the technical support team before initiating the operation. **Click here to open a new ticket in our Support Page**.

@@ -1,0 +1,119 @@
+https://wiki.bambulab.com/en/a1-mini/maintenance/extruder-replacement-guide
+
+# Step-by-Step Guide to Replace the Extruder Unit on the A1 Mini
+
+### When to Use This Guide
+This guide is intended for use if the Extruder Unit on the A1 mini has issues that cannot be easily repaired. Use this guide if you experience any of the following issues:
+- Problems with the filament cutter lever being damaged or stripped screws.
+- Stripped screws in other parts of the extruder.
+- Faulty eddy sensor affecting bed leveling.
+- Extruder motor skipping steps.
+- Recommendation from Bambu Lab Technical Support.
+
+### Tools and Materials Needed
+- **Bambu Lab Extruder Unit** for A1 series.
+- **H2.0 hex wrench**
+- **H1.5 hex wrench**
+- Approximately **25 minutes** of your time.
+
+### Safety Warning
+**IMPORTANT!**
+Always **power off the printer and disconnect it from the power source** before starting any maintenance work. This is crucial to avoid short circuits and potential damage to the printer’s electronics. For further assistance, **open a new ticket on our Support Page**.
+
+===PAGE_BREAK===
+
+### Remove the Old Extruder Unit
+
+#### Step 1: Remove the Back Printhead Cover
+1. Carefully pry open the back cover by pulling on the bottom section.
+
+#### Step 2: Remove the USB C Cable
+1. Unscrew the four screws holding the USB C cable on the tool head.
+2. Gently pull the USB C cable upwards to disconnect it.
+
+#### Step 3: Remove the Toolhead Board Screws
+1. Unscrew the three black screws holding the Toolhead Board in place.
+
+#### Step 4: Disconnect the Cables
+1. Disconnect the four cables from the Toolhead Board by pulling them out by the connector. Use a flat tool to gently pry them out.
+2. Remove the Eddy sensor wires, which are secured by two screws.
+
+#### Step 5: Remove the Toolhead Board
+1. Carefully pull the Toolhead Board from the plastic housing.
+2. Disconnect the filament sensor ribbon cable by pulling it upwards slowly and straight.
+
+#### Step 6: Remove the Print Head Front Cover
+1. Gently pull the base of the front cover towards you to release the clips and remove the cover.
+
+#### Step 7: Remove the Printer Hotend
+1. Remove the nozzle silicone sock by pulling it towards you.
+2. Remove the hotend from the heater block.
+
+#### Step 8: Remove the Extruder
+1. Unscrew the four screws holding the extruder.
+2. Gently pull the extruder slightly towards you, being careful not to damage the sensor wire on the left side.
+
+#### Step 9: Remove the Left Cable Channel
+1. Push the cable channel towards the back of the print head to release it.
+2. Pull the extruder completely out of the printer.
+
+#### Step 10: Remove the 4-in-1 Buffer and Sensor
+1. Unscrew the two screws holding the 4-in-1 buffer to the extruder.
+2. Gently lift the buffer and place it on top of the print head.
+
+===PAGE_BREAK===
+
+### Install the New Extruder Unit
+
+#### Step 1: Install the 4-in-1 Buffer and Sensor to the Extruder
+1. Temporarily attach the extruder to the print head.
+2. Gently push the filament buffer back into its position.
+
+#### Step 2: Route the Fan and Eddy Sensor Wires
+1. Carefully arrange the fan and sensor wires through the wire channel.
+2. Slide the cable channel cover back onto the small clips from the hotend.
+
+#### Step 3: Re-attach the Extruder to the Print Head
+1. With the cable channel installed, secure the extruder using the four screws.
+
+#### Step 4: Attach the Toolhead Board to the Housing
+1. Open the clip on the TH board for the ribbon cable.
+2. Insert the cable into the connector and close the clip.
+3. Route the Extruder Motor cable next to the ribbon cable.
+4. Push the Toolhead Board back into its position.
+
+#### Step 5: Install the TH Board Screws
+1. Use the three black screws to attach the Toolhead Board back to the print head.
+   - **Important:** Do not overtighten the screws.
+
+#### Step 6: Re-connect All the Cables
+1. Reconnect the cables for the Hotend Heating Assembly, Extruder Motor, Hotend Cooling Fan, Part Cooling Fan, and Eddy Sensor wire.
+
+#### Step 7: Re-connect the USB-C Cable
+1. Reinstall the USB C cable using the four screws, ensuring the correct orientation.
+
+#### Step 8: Install the Print Head Back Cover
+1. Align the brackets on the back cover and push until it clicks into place.
+
+#### Step 9: Install the Hotend and Silicone Sock
+1. Follow the guidance on the extruder sticker to re-attach the hotend.
+2. Lock it in place using the clip and install the silicone sock.
+
+#### Step 10: Install the Print Head Front Cover
+1. Align the clips on the top of the print head and push on the bottom side until it clicks.
+
+### Verify the Functionality
+1. Turn on the printer and start a filament loading procedure to ensure everything is functioning correctly.
+
+### Calibration Step After the Operation
+1. Conduct a full calibration of the printer.
+2. Wash the PEI textured plate before use to remove any contaminants.
+
+### Potential Problems and Solutions
+- **Hotend Temperature is 0:** Check the Hotend Heating Assembly connector and ensure it is correctly inserted.
+- **Hotend Cannot Be Heated:** Confirm the heater wires are undamaged and correctly connected.
+- **Printer is Not Homing Correctly:** Ensure the Eddy Sensor wires are correctly installed.
+- **Filament Sensor is Not Working:** Check and, if necessary, replace the Ribbon Cable.
+
+### End Notes
+For any concerns or questions about this process, **reach out to the technical support team** before starting the operation. Click [here](URL) to open a new ticket on our Support Page.

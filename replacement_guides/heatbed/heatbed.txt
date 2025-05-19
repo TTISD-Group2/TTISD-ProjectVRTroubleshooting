@@ -1,0 +1,96 @@
+https://wiki.bambulab.com/en/a1/maintenance/heatbed
+
+# Step-by-Step Guide to Replace the Heatbed in the A1 Printer
+
+### Tools and Materials Needed
+- **Bambu Lab Heatbed for A1**
+- **H2.0 hex wrench**
+- **Estimated time required:** 30-45 minutes
+
+### Safety Warning
+**IMPORTANT!** Always **power off** the printer and disconnect it from the power source before performing any maintenance to prevent any short circuits or damage to the printer's electronics. This is crucial to avoid risks of burns, electric shock, or fire.
+
+### Video Guide
+It is highly recommended to watch the installation video before proceeding with this guide to better understand the process required to replace the heatbed on the A1 printer.
+
+===PAGE_BREAK===
+
+### Steps to Remove the Old Heatbed Unit
+
+#### Step 1: Prepare the Printer
+1. Gently pull the heatbed towards the back side of the printer.
+2. Carefully push on the sides of the X-axis towards the top section of the printer until the X-axis reaches the top.
+
+#### Step 2: Remove the Heatbed from the Printer
+1. Remove the four silicone covers from the heatbed to expose the screws.
+2. Unscrew the four screws holding the heatbed to the Y-axis.
+3. Carefully lift the heatbed and place it on the side of the printer.
+
+#### Step 3: Place the Printer on its Side
+1. Place a filament box on the side of the machine and angle the printer so that the left Z-axis pillar rests on the box.
+2. Ensure to do this operation carefully to avoid pulling on the Heatbed cable.
+
+#### Step 4: Disconnect the Wires and Remove the Cable Box
+1. Disconnect the following cables:
+   - **Z-Motor Cable**
+   - **X-Motor Cable**
+   - **Camera Cable**
+2. Remove the screw holding the cable box and push the cable box backwards to disconnect the USB cable.
+
+#### Step 5: Remove the Bottom Covers
+1. Remove the six screws holding the Back Bottom Cover and gently pry it out.
+2. Remove the ten screws holding the Front Bottom Cover and gently pry the plastic cover off.
+
+#### Step 6: Disconnect the Heatbed Cables
+1. Press on the connectors of the heatbed power cables and gently pull to disconnect.
+2. Remove the 4-pin signal cable by grabbing it from the sides and pulling.
+3. Pull the wires gently to release them from the silicone glue.
+4. Unscrew the terminal of the yellow ground wire to release it.
+
+#### Step 7: Completely Remove the Heatbed from the Printer
+1. With all cable connectors loose, lift the back side of the cable upwards and pull from the back to completely remove the heatbed.
+
+===PAGE_BREAK===
+
+### Steps to Install the New Heatbed Unit
+
+#### Step 1: Place the Printer Upwards
+1. Place the printer in an upright position, ensuring no wires are damaged in the process.
+
+#### Step 2: Install the New Heatbed Unit and Screws
+1. Carefully align the heatbed metallic frame to the metallic stands on the Y-axis.
+2. Align the screw holes of the heatbed with the stands and install the four screws.
+3. Install the four silicone covers previously removed.
+
+#### Step 3: Place the Printer on its Side
+1. Place the filament box on the side of the machine and angle the printer as previously described.
+
+#### Step 4: Route the Wires Inside the Printer
+1. Arrange the heatbed cable to avoid any twists or bends and push the wires through the back side of the machine.
+2. Route the wires toward the AC board of the printer and re-connect them as described:
+   - **Black wires** to ports labeled 1 and 2.
+   - **Signal cable** to the port labeled 3.
+3. Attach the Yellow ground cable terminal ensuring a secure connection.
+
+#### Step 5: Install the Front Bottom Cover
+1. Re-install the Front Bottom Cover and secure it with the ten screws, being careful not to over-tighten.
+
+#### Step 6: Arrange the Heatbed Wire then Install the Front Bottom Cover
+1. Carefully arrange the heatbed cable to align with the middle of the printer.
+2. Secure the bottom cover with six screws, ensuring not to over-tighten.
+
+#### Step 7: Re-connect the Printer Wires and Cable Box
+1. Align the cable box and push the USB-C port toward the front of the printer.
+2. Re-connect the Z-motor, X-Motor, and Camera cables and secure the cable box with the screw.
+
+#### Step 8: Install the Silicone Backstop
+1. Remove the protective label from the Silicone Backstop and install it, applying pressure for 3 seconds to ensure good adhesion.
+
+### Verify the Functionality
+Operate the screen to set the heatbed temperature to 40°C. If the temperature rises and remains stable, the installation is successful.
+
+### Calibration
+Perform manual heatbed tramming to ensure a flat surface. Download the **A1 Bed Tramming Gcode** to your SD card and follow the video guide for detailed instructions.
+
+### End Notes
+If you have any concerns or questions regarding the process, please reach out to our customer service team for assistance before starting the operation.

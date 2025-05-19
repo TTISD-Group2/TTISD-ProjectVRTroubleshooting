@@ -1,74 +1,68 @@
 https://wiki.bambulab.com/en/a1/maintenance/spool-holder
 
-### A1 Spool Holder Installation Tutorial
+# A1 Spool Holder Installation Tutorial
 
-This tutorial provides detailed instructions for installing the A1 Spool Holder and replacing the PTFE Tube Connector on your printer. Before starting, ensure you have all necessary parts and tools available.
+This guide provides detailed instructions for removing and installing the A1 Spool Holder, including the replacement of the PTFE Tube Connector.
 
-===PAGE_BREAK===
+**Note:** The updated version of the spool holder is pre-assembled and can be directly installed on the printer.
+
+### Parts List
+- **Spool Holder**
+- **PTFE Tube Connector**
+
+### Module List
+- None
+
+### Screws List
+- None (The round head screw is included in the PTFE Tube Connector)
+
+### Tools
+- **H2.0 Allen Key**
 
 ### Safety Warning
 
-**IMPORTANT:**
-- Always **power off the printer** and **disconnect it from the power source** before starting any maintenance work. This is crucial to avoid short circuits and potential damage to the printer’s electronics.
-- Conducting maintenance with the printer powered on can expose you to safety hazards and cause electronic damage.
+**IMPORTANT!** Always **power off** the printer and **disconnect it from the power source** before performing any maintenance. This prevents short circuits and damage to the electronics, ensuring safety.
 
-If you encounter any issues or have concerns during this process, please **open a new ticket on our Support Page** for assistance.
+If you have any concerns or questions about this guide, please **open a new ticket** on our Support Page for assistance.
 
 ===PAGE_BREAK===
 
-### Parts and Tools Required
+## Remove the Spool Holder
 
-#### Parts List:
-1. **Spool Holder**
-2. **PTFE Tube Connector**
+### Step 1: Remove the Spool Holder
+1. Remove the filament spool first.
+2. Move the toolhead aside and lower the X-axis to create sufficient space.
+3. Open the clip on the back of the holder.
+4. Remove the Spool Holder.
 
-#### Tools:
-- H2.0 Allen Key
+### Step 2: Remove the Spool Shaft
+1. Rotate the Spool Shaft counterclockwise to loosen and remove it.
 
-**Note:** The round head screw required for the PTFE Tube Connector installation is included with the connector itself.
-
-===PAGE_BREAK===
-
-### Step-by-Step Guide to Remove the Spool Holder
-
-#### Step 1: Remove the Spool Holder
-1. Ensure the filament spool is removed first.
-2. Move the toolhead aside and lower the X-axis to create enough space.
-3. Open the clip located on the back of the holder.
-4. Carefully remove the Spool Holder from its position.
-
-#### Step 2: Remove the Spool Shaft
-1. Rotate the Spool Shaft counterclockwise to loosen it.
-2. Remove the Spool Shaft from its position.
-
-#### Step 3: Remove the PTFE Tube Connector
-1. Use the H2.0 Allen Key to loosen the round head screw.
-2. Detach the PTFE Tube Connector completely once the screw is loosened.
+### Step 3: Remove the PTFE Tube Connector
+1. Use the **H2.0 Allen Key** to loosen the round head screw.
+2. Detach the PTFE Tube Connector completely.
 
 ===PAGE_BREAK===
 
-### Step-by-Step Guide to Install the Spool Holder
+## Install the Spool Holder
 
-#### Step 1: Install the PTFE Tube Connector
-1. Align the slots on the holder with the PTFE Tube Connector.
-2. Install the connector onto the holder.
-3. Tighten the round head screws to secure the connector in place.
+### Step 1: Install the PTFE Tube Connector
+1. Align the slots on the holder.
+2. Install the PTFE Tube Connector onto the holder.
+3. Tighten the round head screws using the **H2.0 Allen Key**.
 
-#### Step 2: Install the Spool Shaft
-1. Position the Spool Shaft and rotate it clockwise to tighten and secure it in place.
+### Step 2: Install the Spool Shaft
+1. Rotate the Spool Shaft clockwise to tighten it.
 
-#### Step 3: Install the Spool Holder
+### Step 3: Install the Spool Holder
 1. Open the clip on the holder.
-2. With the clip facing backward, mount the Spool Holder onto the beam.
-3. Push upwards to fasten the holder securely in place.
+2. Facing backward, mount the Spool Holder onto the beam.
+3. Fasten it upwards into place.
 
 ===PAGE_BREAK===
 
-### Verify the Functionality
+## Verify the Functionality
+1. Check the clip to confirm that it is securely fastened and not loose.
 
-- Check the clip on the Spool Holder to ensure it is secure and not loose.
-- Test the installation by placing a spool on the holder and observing if it holds securely without any slippage.
-
-### End Notes
-
-We hope this detailed guide has been helpful. For a safe and effective execution, if you have any concerns or questions about the process, please submit a **technical ticket** with a picture or video of the issue, along with any additional information that might help resolve your concerns.
+## End Notes
+We hope this guide has been helpful. For safe and effective execution, if you encounter any issues, please submit a **technical ticket** with a picture or video of the problem, along with any relevant details.

@@ -1,0 +1,106 @@
+https://wiki.bambulab.com/en/a1/maintenance/z-axis
+
+# A1 Printer Frame Installation Tutorial (Excluding X-axis)
+
+This guide provides instructions for the disassembly and assembly of the A1 Printer Frame, excluding the removal and reinstallation of the Printer Frame from the printer.
+
+### Parts List
+- **A1 Printer Frame**
+- **Z-axis Top Cover**
+- **Z Belt**
+- **Z Motor**
+- **Z-Axis Tensioner**
+
+### Screws List
+- **Screw A**: ST3-4.5, Locations: Around the reinforcing sheet metal (8 PCS)
+- **Screw B**: ST3-8, Locations: Bottom of the reinforcing sheet metal (3 PCS)
+- **Screw C**: M3-18, Locations: Z-axis column (8 PCS)
+- **Screw D**: ST3-4.5, Locations: The Metal Plate (4 PCS)
+- **Screw E**: M3-5, Locations: Z Motor (4 PCS)
+- **Screw F**: BT3-10, Locations: Tensioner adjustment screws (2 PCS)
+- **Screw G**: ST3-10, Locations: Z-Axis Tensioner (3 PCS)
+
+### Tool List
+- **H2.0 Hex Key**
+- **Flat Tweezers**
+- **Cable Ties**
+- **Cut Pliers**
+
+### Safety Warning
+**IMPORTANT!** Power off the printer and disconnect it from the power source before performing any maintenance to prevent short circuits or damage to the printer's electronics.
+
+===PAGE_BREAK===
+
+## A1 Printer Frame Disassembly
+
+### Step 1: Bind the Z-axis Sliders
+1. Raise the Z-axis sliders to the top.
+2. Secure them with cable ties to ensure that the slider is not loose.
+
+### Step 2: Remove the Z-axis Top Covers
+1. Use flat tweezers to release the Z-axis cover horizontally outward.
+2. Release the two corners upwards and remove the Z-axis Top Cover.
+
+### Step 3: Remove the Reinforcing Sheet Metal
+1. Unscrew the 8 black screws around the sheet metal.
+2. Unscrew the 3 silver screws at the bottom.
+3. Remove the reinforcing sheet metal.
+
+### Step 4: Remove the Metal Base Plate
+1. Unscrew the 8 long screws that lock the Z-axis column with the **H2.0 Hex Key**.
+2. Unscrew the 4 short screws at the middle part of the metal base plate.
+
+### Step 5: Remove the Z Motor and Z Belt
+1. Remove the tapes.
+2. Unscrew the 4 screws with the **H2.0 Hex Key**.
+3. Remove the Z Motor and the Z Belt.
+
+### Step 6: Remove the Z-Axis Tensioner
+1. Unscrew the 2 tensioner adjustment screws with the **H2.0 Hex Key**.
+2. Remove the 2 anti-rotation washers.
+3. Re-lock the 2 screws (Do not tighten them).
+4. Unscrew the 3 screws with the **H2.0 Hex Key** and remove the Z Tensioner.
+
+===PAGE_BREAK===
+
+## A1 Printer Frame Assembly
+
+### Step 1: Install the Z-Axis Tensioner
+1. Align the installation square hole.
+2. Install the Z Tensioner on the bottom beam.
+3. Lock in the 3 screws.
+
+### Step 2: Install the Z Belt and the Z Motor
+1. Arrange the Z Belt according to the motion path.
+2. Pass the Z Motor through the Z Belt and install it in place.
+3. Lock in the 4 screws.
+4. Arrange the motor cable and secure it with tapes.
+
+### Step 3: Tensioning the Z Belt
+1. Unscrew the 2 tensioner adjustment screws.
+2. Place back the 2 anti-rotation washers.
+3. Re-lock the 2 screws (Do not tighten them).
+4. Cut the ties and unlock the Z sliders.
+5. Pull the belt to confirm the smooth movement.
+6. Tighten the 2 tensioner adjustment screws.
+
+### Step 4: Install the Metal Base Plate
+1. Install the metal base plate.
+2. Lock 4 long screws on both sides to lock the Z axis.
+3. Lock 4 short screws in the middle part of the base plate, ensuring correct positioning.
+
+### Step 5: Install the Reinforcing Sheet Metal
+1. Install the reinforcing sheet metal.
+2. Lock 3 silver screws at the bottom.
+3. Lock 8 screws around the reinforcing sheet metal.
+
+### Step 6: Install the Z-axis Top Covers
+1. Align the installation groove and install the Z-axis Top Cover to the upper end of the Z-axis along the edge of the installation groove.
+2. Push the Top cover inward to install it in place.
+3. Follow the same steps to install the other cover.
+
+### Verify the Functionality
+Check if the movement of the Z sliders is smooth.
+
+### End Notes
+We hope this guide was helpful. If you have any concerns or questions, please reach out to our customer service team before starting the operation. [Click here to open a new ticket in our Support Page](#).

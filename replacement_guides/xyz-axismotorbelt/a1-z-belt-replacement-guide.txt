@@ -1,0 +1,105 @@
+https://wiki.bambulab.com/en/a1/maintenance/a1-z-belt-replacement-guide
+
+# Z-belt Replacement Guide for Bambu Lab A1
+
+## Introduction
+This guide provides detailed steps for replacing the Z-belt on a Bambu Lab A1 3D printer. The Z-belt is crucial for the vertical movement of the toolhead along the Z-axis.
+
+### Applicable Printer Model
+- **Bambu Lab A1**
+
+### When to Replace the Z-belt
+Replace the Z-belt if:
+- It is broken.
+- It shows signs of wear and tear, affecting printer functionality.
+
+### Safety Warning
+**Important:** Always **power off** the printer and **disconnect it from the power source** before starting any maintenance. This prevents risks of short circuits and damage to electronic components.
+
+### Tools and Materials Needed
+- **Z-belt for Bambu Lab A1**
+- **H2.0 hex wrench**
+- **H1.5 hex wrench**
+
+===PAGE_BREAK===
+
+## Removal Steps
+
+### Remove the Y-axis Cover
+#### Step 1: Turn off the Printer
+1. Ensure the printer is completely powered off.
+
+#### Step 2: Position the Printer
+1. Place the printer on a stable surface.
+2. Move the X-axis to the top position.
+3. Slide the heatbed towards the screen end.
+
+#### Step 3: Remove the Y-axis Cover
+1. Remove the Y-axis cover by detaching any securing components.
+
+### Remove the Z-axis Cover
+#### Step 1: Loosen Screws
+1. Use the **H2.0 hex wrench** to remove four screws highlighted in green.
+
+#### Step 2: Loosen Tension Screws
+1. Use the **H2.0 hex wrench** to loosen two tension screws by one full rotation without removing them completely.
+
+#### Step 3: Reposition Printer
+1. Slide the heatbed towards the opposite end of the screen.
+2. Carefully lay the printer on its back on a protected surface to prevent damage.
+
+#### Step 4: Remove Z-axis Cover
+1. Use the **H2.0 hex wrench** to remove 15 screws.
+2. Remove the Z-axis cover.
+
+### Remove the Z Belt
+1. Press and hold the tensioner to the left.
+2. Pull the belt towards you to detach it from the assembly.
+
+===PAGE_BREAK===
+
+## Installation Steps
+
+### Install the Z Belt
+#### Step 1: Align the X-axis
+1. Ensure the X-axis is parallel to the top of the frame. Adjust manually if necessary.
+
+#### Step 2: Attach Belt to Pulleys
+1. Install the belt onto the timing pulley and tensioner in the lower-right corner.
+
+#### Step 3: Secure the Belt
+1. Press and hold the tensioner to the left.
+2. Install the belt onto the timing pulley on the left.
+
+#### Step 4: Check Belt Movement
+1. Drag the belt to ensure it moves smoothly. Check for correct installation and lead screw issues if it does not.
+
+### Install the Z-axis Cover
+#### Step 1: Place the Cover
+1. Align and place the Z-axis cover back onto the printer.
+
+#### Step 2: Secure the Cover
+1. Use the **H2.0 hex wrench** to secure the cover with 15 screws.
+
+#### Step 3: Reassemble Remaining Parts
+1. Place the printer upright.
+2. Tighten the four previously loosened screws.
+3. Replace the Y-axis cover.
+
+### Tension the Z Belt
+#### Step 1: Power On and Home
+1. Turn on the printer and perform a homing process via the control screen.
+
+#### Step 2: Adjust X-axis
+1. Use the control screen to slightly move the X-axis up and down to ensure it is free of obstructions.
+
+#### Step 3: Final Tightening
+1. Tighten the two tension screws to secure the belt's tension.
+
+### Calibration Step
+1. On the **Calibration** screen, select **Vibration Compensation** and start the process to ensure the printer operates correctly.
+
+===PAGE_BREAK===
+
+## End Notes
+We hope this guide has been helpful for safely and effectively replacing the Z-belt on your Bambu Lab A1 printer. For any further questions or concerns, please submit a **technical ticket** on our Support Page, including pictures or videos of the issue for better assistance.

@@ -1,0 +1,106 @@
+https://wiki.bambulab.com/en/a1/maintenance/replacement_of_power_switch
+
+# Power Switch Replacement Guide for Bambu Lab A1 Printer
+
+This guide provides detailed instructions for replacing the A1 power switch on the Bambu Lab A1 printer. Follow these steps carefully to ensure a safe and successful replacement.
+
+## Applicable Printer Model
+
+- **Bambu Lab A1**
+
+## When to Use This Guide
+
+- The printer won't turn on.
+- Poor contact of power cable.
+- Recommended by Bambu Lab customer support.
+
+## Tools and Materials Needed
+
+- **New power switch**
+- **H2.0 hex wrench** (90-degree bent recommended)
+- **PH2 Philips screwdriver**
+- Approximately **20 minutes**
+
+### Safety Warning
+
+**It's crucial to power off the printer and disconnect it from the power source before conducting any maintenance work.** This prevents short circuits or damage to the printer's electronics, ensuring safe and effective maintenance. For any concerns or questions about following this guide, **open a new ticket in our Support Page**.
+
+===PAGE_BREAK===
+
+# Step-by-Step Guide to Replace the Power Switch
+
+### Step 1: Prepare the Printer
+
+1. Flip the screen to the side.
+2. Gently place the printer on its front for easy access to the bottom section.
+3. Use a box of filament to keep the top side raised, avoiding pressure on the extruder and the screen.
+
+### Step 2: Disconnect the Cable and Remove the Cable Bracket
+
+1. Loosen the yellow-marked screws (do not completely remove).
+2. Disconnect the 1st, 2nd, and 3rd cables (camera, Z-axis motor, and X-axis motor respectively).
+3. Push up the cable bracket to disconnect the USB-C cable.
+   - **Note:** If the cable bracket is difficult to remove, completely remove the yellow-marked screws and try again.
+
+### Step 3: Remove the Printer's Bottom Cover
+
+1. Remove the 16 screws at the bottom of the printer.
+2. Carefully remove the bottom cover to access the internal components.
+
+### Step 4: Disconnect the Power Switch Cable
+
+1. Disconnect the **ground cable** of the power switch first.
+2. Remove the four cable connectors sequentially.
+   - **Note:** Use an internal hex wrench to press against the unlock latch if the connectors are difficult to remove.
+
+### Step 5: Remove the Old Power Switch
+
+1. Release the two top retaining clips of the power switch.
+   - Keep pressing the clips with your fingers to prevent them from re-engaging.
+2. Push forward from the rear side of the switch to release the snap fastener at the bottom right corner.
+3. Continue pushing and turn the switch to release the final snap fastener and remove the power switch.
+   - Use the shorter end of the hex wrench to press upwards against the lower latch to release it.
+
+===PAGE_BREAK===
+
+# Step-by-Step Guide to Install the New Power Switch
+
+### Step 1: Install the New Power Switch
+
+1. Align the new power switch with the slot and push it in until the snap lock engages.
+   - **Note:** The switch button should be close to the outer side of the printer.
+
+### Step 2: Connect the Power Supply Cable
+
+1. Route the power switch cable through the bottom trough.
+2. Connect the cables to the AC board and the power module in the following order:
+   - **Ground cable of AC board** (yellow)
+   - **Live** (brown)
+   - **Neutral** (blue)
+   - **Ground cable of power supply** (yellow)
+3. Install rubber sleeves on the connections to prevent short circuits.
+
+### Step 3: Reinstall the Printer's Bottom Cover
+
+1. Carefully position the cable bracket for the motor cable to avoid pinching.
+2. Reinstall the bottom cover and secure it with the 16 self-tapping screws.
+   - **Note:** Avoid over-tightening the screws.
+
+### Step 4: Install the Cable Bracket and Connect the Cables
+
+1. Align the cable bracket and push it downwards, ensuring the USB cable is fully pushed against the printer frame.
+2. Tighten the bracket screw without overtightening.
+3. Reconnect the Camera, Motor X, and Motor Z cables.
+
+===PAGE_BREAK===
+
+#### Verify the Functionality
+
+1. Connect the printer to the power supply.
+2. Turn on the power switch.
+3. Check if the indicator lights and the screen light up normally.
+4. Conduct a printing test to ensure everything is functioning correctly.
+
+## End Notes
+
+We hope this guide helps you safely and effectively replace the power switch on your Bambu Lab A1 printer. If you have any concerns or questions, please **open a new ticket in our Support Page**. Our customer service team is always ready to assist you.

@@ -1,0 +1,129 @@
+https://wiki.bambulab.com/en/a1/maintenance/replace-x-belt
+
+# Step-by-Step Guide to Replace the X-Belt on Model A1 Printer
+
+## Applicable Printer Model
+- **Model A1**
+
+## X-Belt Description
+The X-belt on the A1 model is crucial for the movement of the toolhead along the X-axis. It connects the toolhead to the X motor.
+
+## When to Replace the X-Belt
+Replace the X-belt if:
+- It is worn.
+- It is broken.
+
+## Safety Warning
+**IMPORTANT:** Always **power off** the printer and **disconnect it from the power source** before starting any maintenance to avoid electrical short circuits and potential damage. This is crucial when you are working on parts that involve the printer's electronics and toolhead wires.
+
+## Tools and Materials Needed
+- New X-belt (For purchase, contact after-sales support)
+- **H2.0 Allen key**
+- Tweezer
+- Estimated time: **20 minutes**
+
+===PAGE_BREAK===
+
+## Remove X-Belt
+
+### Remove the Rear Cover of the Toolhead
+#### Step 1: Remove the Purge Wiper
+1. Loosen the screw located underneath the purge wiper.
+2. Slide the purge wiper out of the holder as indicated.
+
+#### Step 2: Remove the X-Axis Cover
+1. Use the **H2.0 Allen key** to remove a screw from the X-axis cover.
+2. **Note:** The cover screw is shorter than the purge wiper screw. Please keep them distinguished to avoid reassembly errors.
+
+### Remove the Rear Cover of the Toolhead and Left Cable Slot
+#### Step 1: Remove the Rear Cover
+1. Carefully pull the bottom of the rear cover by hand as indicated.
+
+#### Step 2: Remove the Left Cable Cover
+1. Gently push the cable cover to the back of the toolhead.
+2. Remove the cable cover on the left side as shown.
+
+### Remove the Front Cover of X-Axis Motor and X-Axis Motor Cover
+#### Step 1: Remove the Front Cover
+1. Apply force from the right side of the motor cover to remove its front cover.
+
+#### Step 2: Remove the X-Axis Motor Cover
+1. Loosen the four screws and remove the cable clamp.
+2. Slide the rear cover of the motor cover backward, then slide the motor cover forward carefully to avoid damaging the motor wire.
+
+### Remove the X-Belt
+#### Step 1: Loosen the Belt Clamp
+1. Loosen two screws and pull the clamp out of the toolhead.
+2. After loosening the belt, hold the belt clamp and remove the belt from the clamp.
+
+#### Step 2: Remove the Toolhead Screws
+1. Loosen the screws behind the toolhead, and remove the screw and iron piece.
+2. Loosen two screws and remove the left clamp.
+
+#### Step 3: Remove the X-Belt
+1. Hold the left belt clamp and pull out the X-belt.
+
+===PAGE_BREAK===
+
+## Install the X-Belt
+
+### Thread the X-Belt onto the X-Axis
+#### Step 1: Prepare the Belt Clamps
+1. Separate the right clamp from the X-belt in advance.
+2. Reinstall the right clamp after threading the X-belt through the X-axis.
+
+#### Step 2: Thread the Belt
+1. Check the direction of the belt, ensuring the teeth face upward.
+2. Thread the belt through the X-axis from the lower side of the idler.
+3. Use tweezers to pass the X-belt around the motor drive wheel and out through the small hole between the X-axis and the motor cover.
+
+#### Step 3: Install the Left Clamp
+1. Insert the left clamp into the toolhead and tighten the screws.
+2. Re-install the iron piece to the back of the toolhead and tighten the screw.
+
+#### Step 4: Install the Right Clamp
+1. Thread the belt through the right clamp, align with the belt tensioner, and press together into the clamp.
+2. Install the right clamp into the toolhead and tighten the screws.
+
+## Reinstall the X-Axis Motor Cover and Motor Cover
+#### Step 1: Realign the X-Axis Motor Cover
+1. Slide the X-axis motor cover back to the motor from front to back and align it with the rear cover of the motor cover.
+
+#### Step 2: Tighten the Motor Cover Screws
+1. Tighten the screws on the X-axis motor cover.
+
+#### Step 3: Reinstall the Cable Clamp
+1. Pay attention to the direction and reinstall the cable clamp.
+
+#### Step 4: Snap Back the Front Cover
+1. Snap back the front cover of the X-axis motor cover.
+
+## Reinstall the Cover of Left Cable Slot and Rear Cover of Toolhead
+#### Step 1: Replace the Left Cable Slot Cover
+1. Push back the cover of the left cable slot as shown.
+
+#### Step 2: Fix the Rear Cover
+1. Use buckles to fix the rear cover by aligning two buckles on the rear cover and pushing in until you hear several clicks.
+
+## Reinstall the Purge Wiper and X-Axis Cover
+#### Step 1: Reinstall the X-Axis Cover
+1. Insert the X-axis cover into the X-axis and tighten the screw.
+2. **Note:** Ensure the correct screw is used; the shorter one is for the cover.
+
+#### Step 2: Reinstall the Purge Wiper
+1. Align the slot of the purge wiper with the bracket, slide it in until flush, and then reinsert and tighten the screw.
+
+## Tension the X-Belt
+#### Step 1: Position the X-Axis
+1. Move the X-axis to a central position to avoid contact with the hotbed.
+
+#### Step 2: Adjust Tension
+1. Use the **H2.0 hex wrench** to loosen the tension screw slightly.
+2. Manually move the toolhead back and forth along the X-axis three times.
+3. Retighten the tension screw.
+
+#### Step 3: Calibration
+1. Start the printer and select **Vibration Compensation** in the calibration menu to complete the process.
+
+## End Notes
+For any concerns or additional support, submit a **technical ticket** with relevant pictures or videos of the issue.

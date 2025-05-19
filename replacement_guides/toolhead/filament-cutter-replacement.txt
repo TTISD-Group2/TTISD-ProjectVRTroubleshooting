@@ -1,0 +1,69 @@
+https://wiki.bambulab.com/en/a1-mini/maintenance/filament-cutter-replacement
+
+# Step-by-Step Guide to Replace the Filament Cutter Blade on the A1 Mini and A1 3D Printer
+
+This guide provides detailed instructions on how to replace the filament cutter blade on the A1 Mini and A1 3D printers. Follow these steps to ensure proper replacement and optimal performance of your printer.
+
+### When to Use This Guide
+
+Use this guide under the following circumstances:
+
+- The filament cutter blade is dull or has problems cutting the filament.
+- After approximately 5,000 to 7,000 filament cuts or every 10-15 spools of filament used.
+- If experiencing issues with AMS filament retractions or layer shifts during filament cutting.
+
+### Tools and Materials Needed
+
+- **Bambu Lab Filament Cutter for A1 Series**
+- **H2.0 Allen Key**
+- Approximately **5 minutes** of your time.
+
+### Safety Warning
+
+**IMPORTANT:** Always power off the printer and disconnect it from the power source before performing any maintenance. This prevents short circuits and other electronic damage during the maintenance process.
+
+===PAGE_BREAK===
+
+### Steps to Remove the Old Filament Cutter Blade
+
+#### Step 1: Remove the Toolhead Front Cover
+1. Gently pull the base of the front cover towards you.
+2. Release the clips holding the cover in place and remove the front cover.
+
+#### Step 2: Release the Filament Cutter Lever
+1. Hold the filament cutter lever pressed to facilitate the removal.
+2. Unscrew and remove the single screw holding the lever in place.
+3. Gently release the cutter lever after the screw is removed.
+
+#### Step 3: Remove the Filament Cutter Blade
+1. Gently push the blade in the indicated direction.
+2. Remove the blade upwards.
+
+**Important:** The blade has sharp edges. Handle with care to avoid injury.
+
+#### Optional: Clean the Extruder Gear
+1. Use a can of compressed air to blow out any debris from the extruder and around the gears.
+2. Cleaning at this stage ensures smooth operation after the new blade is installed.
+
+===PAGE_BREAK===
+
+### Steps to Install the New Filament Cutter Blade
+
+#### Step 1: Install the New Filament Cutter Blade
+1. Align the new blade with the filament cutter.
+2. Gently push the blade into position until it clicks into place.
+
+#### Step 2: Lock the Filament Cutter Lever in Place
+1. Align the blade with the extruder hole.
+2. Hold the filament cutter lever and reinstall the screw without overtightening to avoid damaging the threads.
+
+#### Step 3: Install the Toolhead Front Cover
+1. Align the top clips of the front cover with the toolhead.
+2. Gently press the bottom side until the clips snap into place, indicating the cover is securely installed.
+
+#### Step 4: Verify the Functionality
+1. Press the filament cutter lever multiple times to ensure smooth operation and that the lever returns to its initial position.
+
+### End Notes
+
+We hope this guide has been helpful. For safety and effectiveness, if you have any concerns or questions about the process, please submit a technical ticket with relevant pictures or videos of the issue.

@@ -16,29 +16,45 @@ def sanitize_filename(name):
     return "".join(c if c.isalnum() or c in "-_" else "_" for c in name)
 
 def process_with_gpt(text, model="gpt-4-turbo", max_tokens=4000):
+    PAGE_DELIMITER = "===PAGE_BREAK==="
+
+    system_prompt = f"""
+    You are a helpful assistant that provides detailed step-by-step guides. Format all content into a clean, professional, and consistent Markdown-based tutorial that follows these exact formatting rules:
+    1. Use `#` for section titles (e.g. # Step-by-Step Guide to Remove the Part).
+    2. Use `###` for main section headlines (e.g. ### Step-by-Step Guide to Remove the Spool Holder).
+    3. Use `####` for each step (e.g. #### Step 1: Unscrew the panel).
+    4. Use `1.`, `2.`, etc. for step-by-step instructions under each `####` heading.
+    5. Use `**bold**` for emphasis, warnings, tool names, or critical notes.
+    6. You MUST Split every section with a line containing only: {PAGE_DELIMITER}
+    7. Use natural and structured formatting. Don't be verbose or conversational—be concise and technical.
+    8. Do not add sections that aren't present in the original input.
+    9. Do NOT use tables under any circumstance.
+    10. Replace all tables with clear Markdown lists.
+    - Convert parts, modules, and screws tables into bullet lists like:
+        - **Part Name**
+        - **Screw A** Location (X PCS)
+
+
+    Output a complete and well-structured Markdown document following these rules.
+    """.strip()
+
+    user_prompt = f"""
+    Please convert the following content into a structured Markdown-based guide using the formatting rules defined by the assistant:
+    {text}
+    """.strip()
+
     response = client.chat.completions.create(
         model=model,
         messages=[
-            {
-                "role": "system",
-                "content": (
-                    f"You are a helpful assistant that provides detailed step-by-step guides. "
-                    f"Split your response into logical pages using the delimiter '{PAGE_DELIMITER}'. "
-                    f"Each page should contain a complete section or concept."
-                )
-            },
-            {
-                "role": "user",
-                "content": (
-                    f"Please convert the following text into a detailed step-by-step guide, "
-                    f"splitting it into logical pages or sections. Each page should be a complete unit of information:\n\n{text}"
-                )
-            }
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": user_prompt}
         ],
         max_tokens=max_tokens,
-        temperature=0.7
+        temperature=0.5
     )
+
     return response.choices[0].message.content
+
 
 def process_links(links):
     current_folder = None

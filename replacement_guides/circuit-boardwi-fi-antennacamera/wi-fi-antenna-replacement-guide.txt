@@ -1,0 +1,83 @@
+https://wiki.bambulab.com/en/a1/maintenance/wi-fi-antenna-replacement-guide
+
+# Guide to Replacing the Wi-Fi Antenna on the A1 Printer
+
+### When to Use This Guide
+Use this guide if the Wi-Fi Antenna of the A1 is faulty and needs replacement. Common issues include:
+- Low Wi-Fi network signal
+- Damaged antenna wire
+- Recommendation by Bambu Lab Customer Support
+
+### Tools and Materials Needed
+- **Bambu Lab Wi-Fi Antenna for A1**
+- **H2.0 hex wrench**
+- **Tweezers**
+- **10 minutes of your time**
+
+### Safety Warning
+**IMPORTANT!** Always power off the printer and disconnect it from the power source before performing any maintenance to prevent short circuits and other safety hazards. This is crucial when dealing with the electronics of the printer, such as during the disassembly of parts that expose wires and electrical components.
+
+For assistance during the process, visit our Support Page to open a new ticket.
+
+===PAGE_BREAK===
+
+## Steps to Remove the Old Wi-Fi Antenna
+
+### Step 1: Place the Printer on Its Front
+1. Flip the screen to the side.
+2. Gently lay the printer on its front, using a box of filament to prop up the back to avoid pressure on the extruder and screen.
+
+### Step 2: Disconnect the Wires and Remove the Wire Bracket
+1. Disconnect the cables for the camera, X-axis motor, and Z-axis motor.
+2. Loosen 1 screw.
+3. Push the cable bracket upwards, disconnect the USB data cable, and remove the cable bracket.
+
+### Step 3: Remove the Printer's Bottom Cover
+1. Remove the 10 screws marked in red to detach the bottom cover.
+
+### Step 4: Disconnect the Wi-Fi Antenna Connector
+1. Gently pull the Wi-Fi Antenna cable towards you.
+2. Use a flat tool to carefully lift it upwards from the board to disconnect without damaging the Main board.
+
+### Step 5: Remove the Old Wi-Fi Antenna PCB
+1. Using a sharp tool, gently pull on the Wi-Fi Antenna PCB to remove it from the printer frame.
+
+===PAGE_BREAK===
+
+## Steps to Install the New Wi-Fi Antenna
+
+### Step 1: Install the New Wi-Fi Antenna in the Printer Frame
+1. Remove all protective film from the Wi-Fi antenna PCB.
+2. Hold the PCB by its sides without touching the adhesive.
+3. Place it in its designated position, ensuring proper alignment.
+4. Apply gentle pressure to secure the PCB to the printer frame.
+
+### Step 2: Re-connect the Wi-Fi Antenna Connector
+1. Carefully align and connect the round Wi-Fi antenna connector to the MC board.
+2. Ensure the connector is properly aligned to avoid damaging the small pin in the middle.
+
+### Step 3: Install the Printer's Bottom Cover
+1. Ensure the motor wire in the top left side is properly managed.
+2. Place the cover back on the printer, ensuring it clips in place.
+3. Reinstall the 10 screws, being careful not to over-tighten.
+
+### Step 4: Install the Wire Bracket and Connect the Wires
+1. Align the wire bracket and push it downwards, ensuring the USB cable is fully seated against the printer frame.
+2. Tighten the screw to secure the bracket without over-tightening.
+3. Re-connect the Camera, X-axis motor, and Z-axis motor cables.
+
+===PAGE_BREAK===
+
+## Verify Functionality
+Turn on the printer and attempt to connect to your local Wi-Fi network to ensure the new antenna is functioning correctly.
+
+## Potential Problems and Solutions
+- **No Wi-Fi Signal**: Check the Wi-Fi antenna connector is correctly inserted.
+- **Low Wi-Fi Signal**: Move the printer closer to the router to improve signal strength.
+- **Damaged Wi-Fi Antenna Connector**: Inspect both the Mainboard and Wi-Fi connectors for damage. Contact Customer Support for replacement parts if necessary.
+- **Camera Not Working**: Ensure the camera wire is fully connected.
+- **X-axis/Z-axis Not Working**: Check that the X and Z motor wires are fully connected.
+- **Error Message on Screen**: Verify the USB cable is fully inserted.
+
+## End Notes
+We hope this guide assists you effectively in replacing the Wi-Fi antenna on your A1 printer. For further support or queries, please reach out to our customer service team through our Support Page.
