@@ -1,0 +1,102 @@
+https://wiki.bambulab.com/en/a1-mini/maintenance/hotend-cooling-fan
+
+# Step-by-Step Guide to Replace the Hotend Fan on the A1 Mini
+
+### When to Use This Guide
+
+This guide is intended for use if there is a problem with the Hotend Fan on the A1 Mini. Common issues that may indicate the need for replacement include:
+
+- Hotend Fan is noisy.
+- Hotend Fan has failed and does not turn anymore.
+- Recommended by Bambu Lab Technical Support.
+
+### Tools and Materials Needed
+
+- **Bambu Lab Hotend Fan for A1**
+- **H2.0 hex wrench**
+- **H1.5 hex wrench**
+- **25 minutes of your time**
+
+### Safety Warning
+
+**IMPORTANT!**
+
+It's crucial to **power off the printer and disconnect it from the power source** before conducting any maintenance work. This prevents short circuits or damage to the printer's electronics, ensuring safe and effective maintenance. For any concerns or questions about following this guide, **open a new ticket in our Support Page**.
+
+===PAGE_BREAK===
+
+### Remove the Old Hotend Fan
+
+#### Step 1: Remove the toolhead rear housing
+1. Carefully pry open the toolhead rear housing by pulling on the bottom section.
+
+#### Step 2: Disconnect the cable
+1. Remove the hotend fan cable attached to the TH Board.
+2. Carefully pull it out by the connector, using a flat tool to gently pry them out to avoid any potential damage.
+
+#### Step 3: Remove the toolhead front cover
+1. Grab the base of the front cover and gently pull towards you.
+2. The clips holding the cover in place will be released, allowing you to remove the front cover.
+
+#### Step 4: Remove the hotend
+1. Remove the silicone sock for hotend by gently pulling it towards you.
+2. Remove the hotend. Follow the labels on the extruder sticker for guidance.
+
+#### Step 5: Remove the extruder screws
+1. Remove the screws as indicated on the extruder.
+2. Gently pull the extruder forward a little, carefully disconnecting the filament sensor ribbon cable.
+
+#### Step 6: Remove the left cable cover
+1. Push the left cable cover backwards and remove it.
+2. Remove the hotend fan cable from the cable channel.
+
+#### Step 7: Remove the hotend fan
+1. Remove the 2 screws securing the fan.
+2. Pull out the fan from the toolhead.
+
+===PAGE_BREAK===
+
+### Install the New Hotend Fan
+
+#### Step 1: Install the new hotend fan
+1. Install the new hotend fan onto the toolhead.
+2. Tighten the 2 screws that secure the fan.
+
+#### Step 2: Install the left cable cover
+1. Carefully pass the hotend fan cable through the left cable channel.
+2. Push the cable back in the direction shown.
+
+#### Step 3: Install the extruder
+1. Secure the extruder to the toolhead using the 4 screws.
+
+#### Step 4: Re-connect the cable
+1. Re-connect the **Hotend Fan** cable as indicated.
+
+#### Step 5: Install the toolhead rear housing
+1. Align the two brackets on the rear housing towards the top.
+2. Push it until you hear a few clicks.
+
+#### Step 6: Install the hotend and silicone sock for hotend
+1. Follow the guidance available on the extruder sticker to re-attach the hotend to the toolhead.
+2. Lock it in place using the clip and install the silicone sock.
+
+#### Step 7: Install the toolhead front cover
+1. Attach the toolhead front cover on the top of the toolhead by aligning the clips.
+2. Gently push on the bottom side. You will hear the clips when the installation is complete.
+
+===PAGE_BREAK===
+
+### Verify the Function
+
+To ensure everything is working properly:
+1. Turn on the printer and set the hotend temperature to 100°C.
+2. After a few seconds, the hotend fan should start to rotate, indicating that the installation is correct.
+
+### Calibration Step After the Operation
+
+- Conduct a full calibration of the printer after this operation.
+- It's strongly advised to **wash the PEI textured plate before use**, as it may have been contaminated during the process.
+
+### End Notes
+
+We hope this detailed guide has been helpful and informative. For safe and effective execution, if you have any concerns or questions about the process described, we recommend reaching out to the technical support team before initiating the operation. **Click here to open a new ticket in our Support Page**.

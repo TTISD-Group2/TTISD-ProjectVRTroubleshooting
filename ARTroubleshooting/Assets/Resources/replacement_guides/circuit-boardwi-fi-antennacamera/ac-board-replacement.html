@@ -1,0 +1,301 @@
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta charset="UTF-8"><meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1, maximum-scale=5"><meta name="theme-color" content="#1976d2"><meta name="msapplication-TileColor" content="#1976d2"><meta name="msapplication-TileImage" content="/_assets/favicons/mstile-150x150.png"><title>AC Board Replacement Guide - A1 | Bambu Lab Wiki</title><meta name="description" content="This guide shows how to replace the AC Board on the A1"><meta property="og:title" content="AC Board Replacement Guide - A1"><meta property="og:type" content="website"><meta property="og:description" content="This guide shows how to replace the AC Board on the A1"><meta property="og:image"><meta property="og:url" content="https://wiki.bambulab.com/en/a1/maintenance/ac-board-replacement"><meta property="og:site_name" content="Bambu Lab Wiki"><link rel="apple-touch-icon" sizes="180x180" href="/_assets/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="192x192" href="/_assets/favicons/android-chrome-192x192.png"><link rel="icon" type="image/png" sizes="32x32" href="/_assets/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/_assets/favicons/favicon-16x16.png"><link rel="mask-icon" href="/_assets/favicons/safari-pinned-tab.svg" color="#1976d2"><link rel="manifest" href="/_assets/manifest.json"><script>var siteConfig = {"title":"Bambu Lab Wiki","theme":"default","darkMode":false,"tocPosition":"left","lang":"en","rtl":false,"company":"Bambu Lab","contentLicense":"alr","footerOverride":"","logoUrl":"/admin/home/logo-large.png"}
+var siteLangs = [{"code":"en","name":"English"},{"code":"zh","name":"中文 (Zhōngwén)"}]
+</script><link type="text/css" rel="stylesheet" href="/_assets/css/app.766a556e9dcc61b7fcd5.css"><script type="text/javascript" src="/_assets/js/runtime.js?1716156900"></script><script type="text/javascript" src="/_assets/js/app.js?1716156900"></script><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-225490854-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-225490854-3');
+</script>
+<style type="text/css">.caption{word-break:break-word}.row.page-header-section.no-gutters.align-content-center{height:auto!important;min-height:90px}blockquote:before{content:""!important}blockquote{border-top:6px solid #1976d2!important;border-left:0!important;padding:1rem!important}blockquote p{padding:0!important;line-height:26px!important}blockquote p li{font-style:normal!important}i{font-style:normal!important}a.v-list-item--link[href='https://wiki.bambulab.com/en/makerworld'] .v-list-item__avatar i::before{content:url('https://wiki.bambulab.com/makerworld/makerworld.svg')!important}a.v-list-item--link[href='https://wiki.bambulab.com/zh/makerworld'] .v-list-item__avatar i::before{content:url('https://wiki.bambulab.com/makerworld/makerworld.svg')!important}.video-responsive{max-width:720px}.video-responsive-inner{position:relative;padding-bottom:56.25%}.video-responsive-inner iframe,.video-responsive-inner video{position:absolute;width:100%;height:100%;left:0;top:0}div.contents img{cursor:pointer}</style><link  href="https://cdn1.bambulab.com/wiki/viewer/viewer.min.css" rel="stylesheet">
+<script src="https://cdn1.bambulab.com/wiki/viewer/viewer.min.js"></script>
+<script type="text/javascript" defer> 
+
+function GetQueryString(sGet, name) {
+	var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)"); 
+	var r = sGet.match(reg);
+	if(r != null) {
+		return unescape(r[2]);
+	} else {
+		return null;
+	}
+}
+
+function getUrlQuery(name) {
+    let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    let r = window.location.search.substr(1).match(reg);
+    if (r != null) {
+        return decodeURIComponent(r[2]);
+    };
+
+    return null;
+}
+
+
+function parseUrl(url) {
+	if(url.startsWith('//')) {
+		url = location.protocol + url;
+	}
+	return new window.URL(url);
+}
+
+function removeUrlParam(param, url = window.location.href) {
+	let obj = parseUrl(url);
+	obj.searchParams.delete(param);
+	return obj.href;
+}
+
+function SetMaskIconColor() {
+	document.querySelector('link[rel="mask-icon"]').setAttribute('color', '#00AE42');
+}
+
+function HandleVideoHtml() {
+    const rxYoutube = /^.*(?:(?:youtu\.be\/|v\/|vi\/|u\/\w\/|embed\/)|(?:(?:watch)?\?v(?:i)?=|\&v(?:i)?=))([^#\&\?]*).*/
+    const rxVimeo = /^.*(vimeo\.com\/)((channels\/[A-z]+\/)|(groups\/[A-z]+\/videos\/))?([0-9]+)/
+	document.querySelectorAll('.contents oembed, .contents a').forEach(elm => {
+		const url = elm.hasAttribute('url') ? elm.getAttribute('url') : elm.getAttribute('href')
+		let newElmHtml = null
+		let nWen = url.indexOf('?');
+		let GetParam = '';
+		let BiliMatch = false;
+		let BiliVID = '';
+		if(nWen >= 0) {
+			GetParam = url.substr(nWen + 1);
+			//alert(GetParam);
+			let sSrc = GetQueryString(GetParam, 'src');
+			let sV = GetQueryString(GetParam, 'v');
+			if(sSrc != null && sV != null && sSrc == 'bilibili') {
+				BiliMatch = true;
+				BiliVID = sV;
+			}
+		}
+		const ytMatch = url.match(rxYoutube)
+		const vmMatch = !ytMatch && url.match(rxVimeo)
+		if(BiliMatch) {
+			newElmHtml = '<iframe src="https://player.bilibili.com/player.html?p=1&autoplay=0&bvid=' + BiliVID + '" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="100%"> </iframe>';
+		} else if(ytMatch) {
+			newElmHtml = `<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/${ytMatch[1]}" frameborder="0" allowfullscreen></iframe>`
+		} else if(vmMatch) {
+			newElmHtml = `<iframe id="vmplayer" type="text/html" width="640" height="360" src="https://player.vimeo.com/video/${vmMatch[5]}" frameborder="0" allowfullscreen></iframe>`
+		} else if(url.endsWith('.mp4')) {
+			newElmHtml = `<video controls autostart="0" name="media" width="640" height="360"><source src="${url}" type="video/mp4"></video>`
+		} else {
+			return
+		}
+        
+		const container = document.createElement('div')
+		container.classList.add('video-responsive')
+
+        const inner = document.createElement('div')
+        inner.classList.add('video-responsive-inner')
+
+		inner. insertAdjacentHTML('beforeend', newElmHtml)
+        container.append(inner)
+
+		elm.replaceWith(container)
+	})
+}
+
+function HandleSearchPage() {
+	const search = getUrlQuery('search')
+	if(search) {
+		const isAPP = window.innerWidth < 960
+		console.log("isAPP: " + isAPP)
+		const headerInner = document.querySelector("header.nav-header.v-sheet.theme--dark.v-toolbar.v-toolbar--flat.v-app-bar.v-app-bar--clipped.v-app-bar--fixed.black")
+		const input = headerInner.__vue__.$parent
+		console.log(input)
+		if(input) {
+			if(isAPP) {
+				input.searchIsShown = true
+			}
+			input.search = search
+			const target = document.querySelector('.v-application--wrap')
+			const observe = new MutationObserver(function(mutations, observe) {
+				mutations.forEach((mutation) => {
+					const nodes = Array.from(mutation.addedNodes)
+					if(nodes.length > 0) {
+						nodes.forEach((node) => {
+							if(node.nodeType === 1) {
+								if(node.classList.contains('search-results')) {
+									const btn = document.querySelector('.search-results div.text-xs-center .mx-2.v-btn')
+									if(btn) {
+										console.log(btn)
+										btn.onclick = function() {
+											const url = removeUrlParam('search')
+											window.location.href = url
+										}
+									}
+								}
+							}
+						})
+					}
+				})
+			});
+			observe.observe(target, {
+				childList: true
+			});
+		}
+	}
+}
+
+function HandleViewerJS()
+{
+  const imageContent = document.querySelector('div.contents')
+  if (imageContent) {
+    const gallery = new Viewer(imageContent,{title:false})
+    imageContent.querySelectorAll('img').forEach((item, index) => {
+      item.addEventListener('click', () => {
+        gallery.view(index)
+      })
+    })
+  }
+}
+
+window.boot.register('vue', () => {
+
+	// window.onload = () => {
+	//    SetMaskIconColor();
+	// 	  HandleVideoHtml();
+	//	  HandleSearchPage();
+	//}
+
+    window.addEventListener('load', () => {
+	    SetMaskIconColor();
+	 	HandleVideoHtml();
+		HandleSearchPage();
+        HandleViewerJS();
+    })
+}) 
+
+</script></head><body><div id="root"><page locale="en" path="a1/maintenance/ac-board-replacement" title="AC Board Replacement Guide - A1" description="This guide shows how to replace the AC Board on the A1" :tags="[{&quot;tag&quot;:&quot;a1&quot;,&quot;title&quot;:&quot;a1&quot;}]" created-at="2024-04-09T07:22:22.545Z" updated-at="2025-03-12T04:01:33.986Z" author-name="Aether" :author-id="165" editor="markdown" :is-published="true" toc="W3sidGl0bGUiOiJXaGVuIHRvIHVzZT8iLCJhbmNob3IiOiIjd2hlbi10by11c2UiLCJjaGlsZHJlbiI6W119LHsidGl0bGUiOiJUb29scyBhbmQgbWF0ZXJpYWxzIG5lZWRlZCIsImFuY2hvciI6IiN0b29scy1hbmQtbWF0ZXJpYWxzLW5lZWRlZCIsImNoaWxkcmVuIjpbeyJ0aXRsZSI6IlNhZmV0eSBXYXJuaW5nIiwiYW5jaG9yIjoiI3NhZmV0eS13YXJuaW5nIiwiY2hpbGRyZW4iOltdfV19LHsidGl0bGUiOiJTdGVwcyB0byByZW1vdmUgdGhlIG9sZCBBQyBCb2FyZCIsImFuY2hvciI6IiNzdGVwcy10by1yZW1vdmUtdGhlLW9sZC1hYy1ib2FyZCIsImNoaWxkcmVuIjpbeyJ0aXRsZSI6IjEuIFBsYWNlIHRoZSBwcmludGVyIG9uIGl0cyBmcm9udCIsImFuY2hvciI6IiNoLTEtcGxhY2UtdGhlLXByaW50ZXItb24taXRzLWZyb250IiwiY2hpbGRyZW4iOltdfSx7InRpdGxlIjoiMi4gUmVtb3ZlIHRoZSBwcmludGVyJ3MgYm90dG9tIGNvdmVyIiwiYW5jaG9yIjoiI2gtMi1yZW1vdmUtdGhlLXByaW50ZXJzLWJvdHRvbS1jb3ZlciIsImNoaWxkcmVuIjpbXX0seyJ0aXRsZSI6IjMuIERpc2Nvbm5lY3QgdGhlIHdpcmVzIGFuZCByZW1vdmUgdGhlIHdpcmUgYnJhY2tldCIsImFuY2hvciI6IiNoLTMtZGlzY29ubmVjdC10aGUtd2lyZXMtYW5kLXJlbW92ZS10aGUtd2lyZS1icmFja2V0IiwiY2hpbGRyZW4iOltdfSx7InRpdGxlIjoiNC4gUmVtb3ZlIHRoZSBoZWF0YmVkIHBvd2VyIHdpcmVzIiwiYW5jaG9yIjoiI2gtNC1yZW1vdmUtdGhlLWhlYXRiZWQtcG93ZXItd2lyZXMiLCJjaGlsZHJlbiI6W119LHsidGl0bGUiOiI1LiBSZW1vdmUgdGhlIEhldGJlZCBTaWduYWwgQ2FibGUgY29ubmVjdG9yIiwiYW5jaG9yIjoiI2gtNS1yZW1vdmUtdGhlLWhldGJlZC1zaWduYWwtY2FibGUtY29ubmVjdG9yIiwiY2hpbGRyZW4iOltdfSx7InRpdGxlIjoiNi4gRGlzY29ubmVjdCB0aGUgcmliYm9uIGNhYmxlIiwiYW5jaG9yIjoiI2gtNi1kaXNjb25uZWN0LXRoZS1yaWJib24tY2FibGUiLCJjaGlsZHJlbiI6W119LHsidGl0bGUiOiI3LiBSZW1vdmUgdGhlIHJlbWFpbmluZyB3aXJlIGNvbm5lY3RvcnMgZnJvbSB0aGUgQUMgYm9hcmQiLCJhbmNob3IiOiIjaC03LXJlbW92ZS10aGUtcmVtYWluaW5nLXdpcmUtY29ubmVjdG9ycy1mcm9tLXRoZS1hYy1ib2FyZCIsImNoaWxkcmVuIjpbXX1dfSx7InRpdGxlIjoiU3RlcHMgdG8gSW5zdGFsbCB0aGUgbmV3IEFDIEJvYXJkIiwiYW5jaG9yIjoiI3N0ZXBzLXRvLWluc3RhbGwtdGhlLW5ldy1hYy1ib2FyZCIsImNoaWxkcmVuIjpbeyJ0aXRsZSI6IjEuIFRyYW5zZmVyIHRoZSBpbnN1bGF0aW5nIG1hdGVyaWFsIHRvIHRoZSBuZXcgQUMgYm9hcmQiLCJhbmNob3IiOiIjaC0xLXRyYW5zZmVyLXRoZS1pbnN1bGF0aW5nLW1hdGVyaWFsLXRvLXRoZS1uZXctYWMtYm9hcmQiLCJjaGlsZHJlbiI6W119LHsidGl0bGUiOiIyLiBTY3JldyBpbiB0aGUgbmV3IEFDIGJvYXJkIiwiYW5jaG9yIjoiI2gtMi1zY3Jldy1pbi10aGUtbmV3LWFjLWJvYXJkIiwiY2hpbGRyZW4iOltdfSx7InRpdGxlIjoiMy4gUmUtY29ubmVjdCB0aGUgcmliYm9uIGNhYmxlIiwiYW5jaG9yIjoiI2gtMy1yZS1jb25uZWN0LXRoZS1yaWJib24tY2FibGUiLCJjaGlsZHJlbiI6W119LHsidGl0bGUiOiI0LiBSZS1jb25uZWN0IHRoZSBIZWF0YmVkIHNpZ25hbCBjYWJsZSIsImFuY2hvciI6IiNoLTQtcmUtY29ubmVjdC10aGUtaGVhdGJlZC1zaWduYWwtY2FibGUiLCJjaGlsZHJlbiI6W119LHsidGl0bGUiOiI1LiBSZS1jb25uZWN0IHRoZSBoZWF0YmVkIHBvd2VyIGNhYmxlcyIsImFuY2hvciI6IiNoLTUtcmUtY29ubmVjdC10aGUtaGVhdGJlZC1wb3dlci1jYWJsZXMiLCJjaGlsZHJlbiI6W119LHsidGl0bGUiOiI2LiBSZS1jb25uZWN0IHRoZSByZW1haW5pbmcgd2lyZXMiLCJhbmNob3IiOiIjaC02LXJlLWNvbm5lY3QtdGhlLXJlbWFpbmluZy13aXJlcyIsImNoaWxkcmVuIjpbXX0seyJ0aXRsZSI6IjcuIEluc3RhbGwgdGhlIHRoZSBwcmludGVyJ3MgYm90dG9tIGNvdmVyIiwiYW5jaG9yIjoiI2gtNy1pbnN0YWxsLXRoZS10aGUtcHJpbnRlcnMtYm90dG9tLWNvdmVyIiwiY2hpbGRyZW4iOltdfSx7InRpdGxlIjoiOC4gSW5zdGFsbCB0aGUgd2lyZSBicmFja2V0IGFuZCBjb25uZWN0IHRoZSB3aXJlcyIsImFuY2hvciI6IiNoLTgtaW5zdGFsbC10aGUtd2lyZS1icmFja2V0LWFuZC1jb25uZWN0LXRoZS13aXJlcyIsImNoaWxkcmVuIjpbXX1dfSx7InRpdGxlIjoiVmVyaWZ5IHRoZSBmdW5jdGlvbmFsaXR5IiwiYW5jaG9yIjoiI3ZlcmlmeS10aGUtZnVuY3Rpb25hbGl0eSIsImNoaWxkcmVuIjpbXX0seyJ0aXRsZSI6IkNhbGlicmF0aW9uIHN0ZXAgYWZ0ZXIgdGhlIG9wZXJhdGlvbiIsImFuY2hvciI6IiNjYWxpYnJhdGlvbi1zdGVwLWFmdGVyLXRoZS1vcGVyYXRpb24iLCJjaGlsZHJlbiI6W119LHsidGl0bGUiOiJQb3RlbnRpYWwgcHJvYmxlbXMgYW5kIHNvbHV0aW9ucyIsImFuY2hvciI6IiNwb3RlbnRpYWwtcHJvYmxlbXMtYW5kLXNvbHV0aW9ucyIsImNoaWxkcmVuIjpbeyJ0aXRsZSI6IlRoZSBDYW1lcmEgaXMgbm90IHdvcmtpbmciLCJhbmNob3IiOiIjdGhlLWNhbWVyYS1pcy1ub3Qtd29ya2luZyIsImNoaWxkcmVuIjpbXX0seyJ0aXRsZSI6IlRoZSBYLWF4aXMgLyBaLWF4aXMgaXMgbm90IHdvcmtpbmciLCJhbmNob3IiOiIjdGhlLXgtYXhpcy16LWF4aXMtaXMtbm90LXdvcmtpbmciLCJjaGlsZHJlbiI6W119LHsidGl0bGUiOiJUaGUgc2NyZWVuIGRpc3BsYXlzIGFuIGVycm9yIG1lc3NhZ2UiLCJhbmNob3IiOiIjdGhlLXNjcmVlbi1kaXNwbGF5cy1hbi1lcnJvci1tZXNzYWdlIiwiY2hpbGRyZW4iOltdfSx7InRpdGxlIjoiVGhlIGhlYXRiZWQgaXMgbm90IGhlYXRpbmciLCJhbmNob3IiOiIjdGhlLWhlYXRiZWQtaXMtbm90LWhlYXRpbmciLCJjaGlsZHJlbiI6W119XX0seyJ0aXRsZSI6IkVuZCBOb3RlcyIsImFuY2hvciI6IiNlbmQtbm90ZXMiLCJjaGlsZHJlbiI6W119XQ==" :page-id="1521" sidebar="W3siaSI6InNkaS0xIiwiayI6ImxpbmsiLCJsIjoiSG9tZSIsImMiOiJtZGktaG9tZSIsInkiOiJob21lIiwidCI6Ii8ifSx7ImkiOiJzZGktMiIsImsiOiJsaW5rIiwibCI6Ildpa2kgVXBkYXRlcyIsImMiOiJtZGktbmV3LWJveCIsInkiOiJleHRlcm5hbCIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL25ldy1hbmQtdXBkYXRlcyJ9LHsiaSI6InNkaS0zIiwiayI6ImxpbmsiLCJsIjoiSDJEIiwiYyI6Im1kaS1hbHBoYS1oLWJveCIsInkiOiJleHRlcm5hbCIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL2gyZCJ9LHsiaSI6InNkaS00IiwiayI6ImxpbmsiLCJsIjoiQU1TIDIgUHJvIiwiYyI6Im1kaS1tb3ZpZS1yb2xsIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vYW1zLTItcHJvIn0seyJpIjoic2RpLTUiLCJrIjoibGluayIsImwiOiJBTVMgSFQiLCJjIjoibWRpLW1vdmllLXJvbGwiLCJ5IjoiZXh0ZXJuYWwiLCJ0IjoiaHR0cHM6Ly93aWtpLmJhbWJ1bGFiLmNvbS9lbi9hbXMtaHQifSx7ImkiOiJzZGktNiIsImsiOiJsaW5rIiwibCI6IlgxIFNlcmllcyIsImMiOiJtZGktYWxwaGEteC1ib3gtb3V0bGluZSIsInkiOiJleHRlcm5hbCIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL3gxIn0seyJpIjoic2RpLTciLCJrIjoibGluayIsImwiOiJQMSBTZXJpZXMiLCJjIjoibWRpLWFscGhhLXAtYm94LW91dGxpbmUiLCJ5IjoiZXh0ZXJuYWwiLCJ0IjoiaHR0cHM6Ly93aWtpLmJhbWJ1bGFiLmNvbS9lbi9wMSJ9LHsiaSI6InNkaS04IiwiayI6ImxpbmsiLCJsIjoiQTEiLCJjIjoibWRpLWFscGhhLWEtYm94LW91dGxpbmUiLCJ5IjoiZXh0ZXJuYWwiLCJ0IjoiaHR0cHM6Ly93aWtpLmJhbWJ1bGFiLmNvbS9lbi9hMSJ9LHsiaSI6InNkaS05IiwiayI6ImxpbmsiLCJsIjoiQTEgbWluaSIsImMiOiJtZGktYWxwaGEtYS1ib3gtb3V0bGluZSIsInkiOiJleHRlcm5hbCIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL2ExLW1pbmkifSx7ImkiOiJzZGktMTAiLCJrIjoibGluayIsImwiOiJBTVMiLCJjIjoibWRpLWFscGhhLWEtY2lyY2xlIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vYW1zIn0seyJpIjoic2RpLTExIiwiayI6ImxpbmsiLCJsIjoiQU1TIGxpdGUiLCJjIjoibWRpLWFscGhhLWwtY2lyY2xlIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vYW1zLWxpdGUifSx7ImkiOiJzZGktMTIiLCJrIjoibGluayIsImwiOiJITVMiLCJjIjoibWRpLXRleHQtYm94LXNlYXJjaC1vdXRsaW5lIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vaG1zL2hvbWUifSx7ImkiOiJzZGktMTMiLCJrIjoibGluayIsImwiOiJTb2Z0d2FyZSIsImMiOiJtZGktdGVsZXZpc2lvbi1ndWlkZSIsInkiOiJleHRlcm5hbCIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL3NvZnR3YXJlIn0seyJpIjoic2RpLTE0IiwiayI6ImxpbmsiLCJsIjoiRmlsYW1lbnRzICYgQWNjZXNzb3JpZXMiLCJjIjoibWRpLXByaW50ZXItM2Qtbm96emxlIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vZmlsYW1lbnQtYWNjIn0seyJpIjoic2RpLTE1IiwiayI6ImxpbmsiLCJsIjoiTWFrZXJXb3JsZCIsImMiOiJtZGktY3ViZS1zY2FuIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vbWFrZXJ3b3JsZCJ9LHsiaSI6InNkaS0xNiIsImsiOiJoZWFkZXIiLCJsIjoiR2VuZXJhbCIsImMiOm51bGwsInkiOm51bGwsInQiOm51bGx9LHsiaSI6InNkaS0xNyIsImsiOiJsaW5rIiwibCI6Iktub3dsZWRnZSBTaGFyaW5nIiwiYyI6Im1kaS1mb3J1bSIsInkiOiJwYWdlIiwidCI6Ii9lbi9rbm93bGVkZ2Utc2hhcmluZyJ9LHsiaSI6InNkaS0xOCIsImsiOiJsaW5rIiwibCI6Ikdsb3NzYXJ5IiwiYyI6Im1kaS10YWJsZS1vZi1jb250ZW50cyIsInkiOiJwYWdlIiwidCI6Ii9lbi9nbG9zc2FyeSJ9LHsiaSI6InNkaS0xOSIsImsiOiJsaW5rIiwibCI6IkZBUSIsImMiOiJtZGktZnJlcXVlbnRseS1hc2tlZC1xdWVzdGlvbnMiLCJ5IjoicGFnZSIsInQiOiIvZW4vZmFxIn0seyJpIjoic2RpLTIwIiwiayI6ImxpbmsiLCJsIjoiQWJvdXQgVXMiLCJjIjoibWRpLWluZm9ybWF0aW9uLW91dGxpbmUiLCJ5IjoicGFnZSIsInQiOiIvZW4vYWJvdXQtdXMifSx7ImkiOiJzZGktMjEiLCJrIjoiZGl2aWRlciIsImwiOm51bGwsImMiOm51bGwsInkiOm51bGwsInQiOm51bGx9LHsiaSI6InNkaS0yMiIsImsiOiJsaW5rIiwibCI6IkNvbW11bml0eSBDb250cmlidXRpb25zIiwiYyI6Im1kaS13aWtpcGVkaWEiLCJ5IjoiZXh0ZXJuYWxibGFuayIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL2NvbnRyaWJ1dGlvbi1ndWlkZSJ9XQ==" nav-mode="STATIC" effective-permissions="eyJjb21tZW50cyI6eyJyZWFkIjpmYWxzZSwid3JpdGUiOmZhbHNlLCJtYW5hZ2UiOmZhbHNlfSwiaGlzdG9yeSI6eyJyZWFkIjpmYWxzZX0sInNvdXJjZSI6eyJyZWFkIjpmYWxzZX0sInBhZ2VzIjp7InJlYWQiOnRydWUsIndyaXRlIjpmYWxzZSwibWFuYWdlIjpmYWxzZSwiZGVsZXRlIjpmYWxzZSwic2NyaXB0IjpmYWxzZSwic3R5bGUiOmZhbHNlfSwic3lzdGVtIjp7Im1hbmFnZSI6ZmFsc2V9fQ==" edit-shortcuts="eyJlZGl0RmFiIjp0cnVlLCJlZGl0TWVudUJhciI6dHJ1ZSwiZWRpdE1lbnVCdG4iOnRydWUsImVkaXRNZW51RXh0ZXJuYWxCdG4iOmZhbHNlLCJlZGl0TWVudUV4dGVybmFsTmFtZSI6IkdpdEh1YiIsImVkaXRNZW51RXh0ZXJuYWxJY29uIjoibWRpLWdpdGh1YiIsImVkaXRNZW51RXh0ZXJuYWxVcmwiOiJodHRwczovL2dpdGh1Yi5jb20vb3JnL3JlcG8vYmxvYi9tYWluL3tmaWxlbmFtZX0ifQ==" filename="en/a1/maintenance/ac-board-replacement.md"><template slot="contents"><div><p>In this guide we will show the process of replacing the AC Board on the A1</p>
+<p><img src="/a1/manual/replace-ac-board/a1_ac_board.jpg" alt=""></p>
+<h2 id="when-to-use" class="toc-header"><a class="toc-anchor" href="#when-to-use">¶</a> When to use?</h2>
+<p>This guide should be used if the AC Board of the A1 is faulty, and needs to be replaced.&nbsp;<br>
+Common issues that are caused by the A1 AC Board are:</p>
+<ul>
+<li>Heatbed is not heating</li>
+<li>Recommended by Bambu Lab customer support</li>
+</ul>
+<h2 id="tools-and-materials-needed" class="toc-header"><a class="toc-anchor" href="#tools-and-materials-needed">¶</a> Tools and materials needed</h2>
+<p>Bambu Lab AC Board for A1</p>
+<ul>
+<li>H2.0 hex wrench</li>
+<li>20-30 minutes</li>
+</ul>
+<h3 id="safety-warning" class="toc-header"><a class="toc-anchor" href="#safety-warning">¶</a> Safety Warning</h3>
+<blockquote>
+<p><strong>IMPORTANT!</strong></p>
+<p>It's crucial to power off the printer before performing any maintenance work on the printer and its electronics, including tool head wires, because leaving the printer on while conducting such tasks can cause a short circuit, which can lead to additional electronic damage and safety hazards.</p>
+<p>When you perform maintenane or troubleshooting on the printer, you may be required to disassemble some parts, including the hotend. This process can expose wires and electrical components that could potentially short circuit if they come into contact with each other or with other metal or electronic components while the printer is still on. This can damage the electronics of the printer and cause further damage.</p>
+<p>Therefore, it's essential to switch off the printer and disconnect it from the power source before doing any maintenance work. This will prevent any short circuits or damage to the printer's electronics. By doing so, you can avoid potential damage to the printer's electronic components and ensure that the maintenance work is performed safely and effectively.</p>
+<p>If you have any concerns or questions about following this guide, <a href="https://bambulab.com/en/my/support/tickets" class="is-external-link">open a new ticket in our Support Page</a> and we will do our best to respond promptly and provide you with the assistance you need.</p>
+</blockquote>
+<h2 id="steps-to-remove-the-old-ac-board" class="toc-header"><a class="toc-anchor" href="#steps-to-remove-the-old-ac-board">¶</a> Steps to remove the old AC Board</h2>
+<h3 id="h-1-place-the-printer-on-its-front" class="toc-header"><a class="toc-anchor" href="#h-1-place-the-printer-on-its-front">¶</a> 1. Place the printer on its front</h3>
+<p>For easy access to the bottom section of the A1, you need to place the printer on the front.&nbsp;<br>
+Start by flipping the screen on its side, then gently place the printer on its front, as shown in the image below.&nbsp;<br>
+<strong>Use a box of filament to keep the top side raised to avoid putting pressure on the extruder and the screen.</strong></p>
+<p><img src="/a1/maintenance/power-supply/place_the_a1_printer_on_its_front.jpeg" alt=""></p>
+<h3 id="h-2-remove-the-printers-bottom-cover" class="toc-header"><a class="toc-anchor" href="#h-2-remove-the-printers-bottom-cover">¶</a> 2. Remove the printer's bottom cover</h3>
+<p>Remove the 10 screws marked in red to prepare the bottom housing removal.&nbsp;<br>
+Please note that the screw marked in yellow needs to be loosened, but it will not be possible to remove it. It remains attached to the cable bracket.</p>
+<p><img src="/a1/maintenance/power-supply/remove_the_bottom_housing_cover_screws.jpeg" alt=""></p>
+<h3 id="h-3-disconnect-the-wires-and-remove-the-wire-bracket" class="toc-header"><a class="toc-anchor" href="#h-3-disconnect-the-wires-and-remove-the-wire-bracket">¶</a> 3. Disconnect the wires and remove the wire bracket</h3>
+<p>In the next step, the Camera, Motor X and Motor Z cables need to be disconnected.&nbsp;<br>
+Then, you will be able to simply push the plastic wire bracket upwards, to disconnect the USB cable.</p>
+<p><img src="/a1/maintenance/power-supply/disconnect_the_a1_wires_and_remove_the_wire_bracket.jpeg" alt=""></p>
+<blockquote>
+<p><strong>Important</strong><br>
+If you cannot easily remove the wire bracket, make sure the screw holding it in place (labeled with Nr. 11 in the previous step) is loosened</p>
+</blockquote>
+<p>After removing the wires, gently pry out the plastic bottom cover.</p>
+<h3 id="h-4-remove-the-heatbed-power-wires" class="toc-header"><a class="toc-anchor" href="#h-4-remove-the-heatbed-power-wires">¶</a> 4. Remove the heatbed power wires</h3>
+<p>In the next step, remove the two Heatbed power wires. Gently press on the sides of the connectors to release the security clip so you can disconnect the wires.</p>
+<p><img src="/a1/manual/replace-ac-board/remove_ac_wires.jpeg" alt=""></p>
+<h3 id="h-5-remove-the-hetbed-signal-cable-connector" class="toc-header"><a class="toc-anchor" href="#h-5-remove-the-hetbed-signal-cable-connector">¶</a> 5. Remove the Hetbed Signal Cable connector</h3>
+<p>Carefully remove the Heatbed signal cable connector. A tool can be used to remove it, or you can simply grab the plastic connector and gently pull it out.&nbsp;<br>
+Avoid pulling from the wires as it can lead to damaging the wires or the connector.</p>
+<p><img src="/a1/manual/replace-ac-board/remove_the_signal_cable_connector.jpeg" alt=""></p>
+<h3 id="h-6-disconnect-the-ribbon-cable" class="toc-header"><a class="toc-anchor" href="#h-6-disconnect-the-ribbon-cable">¶</a> 6. Disconnect the ribbon cable</h3>
+<p>To disconnect the ribbon cable, simply raise the black plastic latch then gently pull the ribbon cable towards you.</p>
+<p><img src="/a1/maintenance/ac-board-replacement/ac%E6%8E%92%E7%BA%BF.jpg" alt="ac排线.jpg"></p>
+<h3 id="h-7-remove-the-remaining-wire-connectors-from-the-ac-board" class="toc-header"><a class="toc-anchor" href="#h-7-remove-the-remaining-wire-connectors-from-the-ac-board">¶</a> 7. Remove the remaining wire connectors from the AC board</h3>
+<p>Continue the removal process by removing the remaining wires on the AC board. These wires are disconnected the same way as the heatbed cables.</p>
+<p>Start by removing the wires labeled 1,2,3 then complete the removal disconnecting the wires labeled 4 and 5.</p>
+<p><img src="/a1/maintenance/ac-board-replacement/%E7%A7%BB%E9%99%A4ac%E7%BA%BF%E7%BC%86.png" alt="移除ac线缆.png"></p>
+<p>8. Remove the AC board</p>
+<p>With the wires removed, you can proceed to remove the single screw from the middle of the AC board.</p>
+<p>After the screw is removed, you can gently pull out the AC board by releasing the top plastic clips holding it in place.</p>
+<p><img src="/a1/manual/replace-ac-board/scr-20240409-juax-2.jpeg" alt=""></p>
+<p>This completes the removal of the AC board.</p>
+<h2 id="steps-to-install-the-new-ac-board" class="toc-header"><a class="toc-anchor" href="#steps-to-install-the-new-ac-board">¶</a> Steps to Install the new AC Board</h2>
+<h3 id="h-1-transfer-the-insulating-material-to-the-new-ac-board" class="toc-header"><a class="toc-anchor" href="#h-1-transfer-the-insulating-material-to-the-new-ac-board">¶</a> 1. Transfer the insulating material to the new AC board</h3>
+<p>The old AC board has a black plastic insulating material applied to the board. Simply remove it from the old board, and transfer it to the new one as shown in the image below.</p>
+<p><img src="/a1/manual/replace-ac-board/ac_board_plastic_insulation.jpg.jpeg" alt=""></p>
+<h3 id="h-2-screw-in-the-new-ac-board" class="toc-header"><a class="toc-anchor" href="#h-2-screw-in-the-new-ac-board">¶</a> 2. Screw in the new AC board</h3>
+<p>Carefully align the new AC board to the frame of the printer, then install the screw holding the board in place.</p>
+<p><img src="/a1/manual/replace-ac-board/install_the_new_ac_board.jpg.jpeg" alt=""></p>
+<h3 id="h-3-re-connect-the-ribbon-cable" class="toc-header"><a class="toc-anchor" href="#h-3-re-connect-the-ribbon-cable">¶</a> 3. Re-connect the ribbon cable</h3>
+<p>Start by opening the black plastic clip of the ribbon cable, then gently insert the ribbon cable in it while aligning it to the white plastic tabs.&nbsp;<br>
+Once aligned, simply raise the black plastic clip to lock the ribbon cable in place.&nbsp;<br>
+Ensure that the blue strip on the ribbon cable is parallel to the black plastic connector, as shown in the image below.</p>
+<p><img src="/a1/manual/replace-ac-board/insert_the_new_ribbon_cable.jpeg" alt=""></p>
+<h3 id="h-4-re-connect-the-heatbed-signal-cable" class="toc-header"><a class="toc-anchor" href="#h-4-re-connect-the-heatbed-signal-cable">¶</a> 4. Re-connect the Heatbed signal cable</h3>
+<p>Carefully align the white plastic connector as shown in the image below, and re-connect it to the AC board.</p>
+<p><img src="/a1/manual/replace-ac-board/re-connect_the_heatbed_signal_cable.jpeg" alt=""></p>
+<h3 id="h-5-re-connect-the-heatbed-power-cables" class="toc-header"><a class="toc-anchor" href="#h-5-re-connect-the-heatbed-power-cables">¶</a> 5. Re-connect the heatbed power cables</h3>
+<p>In the next step, carefully re-connect the heatbed power cables, as shown in the image.</p>
+<p>The Red wire is labeled as 1, while the Black wire is labeled as 2.</p>
+<p><img src="/a1/manual/replace-ac-board/re-connect_the_heatbed_power_cables.jpeg" alt=""></p>
+<h3 id="h-6-re-connect-the-remaining-wires" class="toc-header"><a class="toc-anchor" href="#h-6-re-connect-the-remaining-wires">¶</a> 6. Re-connect the remaining wires</h3>
+<p>Complete the AC board installation by connecting the remaining wires according to the image below.</p>
+<ol>
+<li>Ground Wire (Yellow)</li>
+<li>Live Wire (Brown)</li>
+<li>Neutral Wire (Blue)</li>
+<li>Live Wire (Red)</li>
+<li>Neutral Wire (Black)</li>
+</ol>
+<p><img src="/a1/maintenance/ac-board-replacement/ac%E6%8E%A5%E7%BA%BF.png" alt="ac接线.png"></p>
+<blockquote>
+<p>IMPORTANT</p>
+<p>Confirm that all the wires have the silicone transparent protection fully covering the connector to ensure a successful installation<br>
+The image above shows the right installation</p>
+</blockquote>
+<h3 id="h-7-install-the-the-printers-bottom-cover" class="toc-header"><a class="toc-anchor" href="#h-7-install-the-the-printers-bottom-cover">¶</a> 7. Install the the printer's bottom cover</h3>
+<p>You can now proceed with installing the bottom cover back to the printer.&nbsp;<br>
+<strong>Pay close attention to the motor wire in the top left side marked with the red arrow in the image below.</strong> Avoid pressing the cover in place before the wire is correctly managed<br>
+The cover will clip in place, then you can proceed with installing the 10 screws while ensuring you do not over-tighten them.</p>
+<p><img src="/a1/maintenance/power-supply/install_the_back_cover_on_a1.jpeg" alt=""></p>
+<h3 id="h-8-install-the-wire-bracket-and-connect-the-wires" class="toc-header"><a class="toc-anchor" href="#h-8-install-the-wire-bracket-and-connect-the-wires">¶</a> 8. Install the wire bracket and connect the wires</h3>
+<p>In the final step, carefully align the wire bracket then push it downwards while making sure the USB cable is fully pushed against the printer frame.&nbsp;<br>
+Then, tighten the screw shown in the image to lock it in place. Avoid overtightening the screw as this is screwed into the plastic frame.</p>
+<p><img src="/a1/maintenance/power-supply/install_the_cable_bracket.jpeg" alt=""></p>
+<p>Next, re-connect the Camera, Motor X and Motor Z cables to finish the installation.</p>
+<p><img src="/a1/maintenance/power-supply/a1_wires.jpeg" alt=""></p>
+<p>This completes the installation process</p>
+<h2 id="verify-the-functionality" class="toc-header"><a class="toc-anchor" href="#verify-the-functionality">¶</a> Verify the functionality</h2>
+<p>To ensure everything works as expected, turn on the printer and try to heat the bed to 50C<br>
+If the heatbed temperature is raising, this confirms the installation was correct.</p>
+<h2 id="calibration-step-after-the-operation" class="toc-header"><a class="toc-anchor" href="#calibration-step-after-the-operation">¶</a> Calibration step after the operation</h2>
+<p>No calibration step is required.</p>
+<h2 id="potential-problems-and-solutions" class="toc-header"><a class="toc-anchor" href="#potential-problems-and-solutions">¶</a> Potential problems and solutions</h2>
+<p>If you encounter problems during the installation of a new AC Board, please check the potential problems and solutions listed below:</p>
+<h3 id="the-camera-is-not-working" class="toc-header"><a class="toc-anchor" href="#the-camera-is-not-working">¶</a> The Camera is not working</h3>
+<p>Confirm the camera wire is fully installed as shown in <em>Step 8. Install the wire bracket and connect the wires</em></p>
+<h3 id="the-x-axis-z-axis-is-not-working" class="toc-header"><a class="toc-anchor" href="#the-x-axis-z-axis-is-not-working">¶</a> The X-axis / Z-axis is not working</h3>
+<p>Confirm the X motor and Z motor wires are fully installed as shown in <em>Step 8. Install the wire bracket and connect the wires</em></p>
+<h3 id="the-screen-displays-an-error-message" class="toc-header"><a class="toc-anchor" href="#the-screen-displays-an-error-message">¶</a> The screen displays an error message</h3>
+<p>The USB cable might not be fully inserted. Loosen the screw holding the wire bracket in place, then re-connect the USB cable as shown in <em>Step 8. Install the wire bracket and connect the wires</em></p>
+<h3 id="the-heatbed-is-not-heating" class="toc-header"><a class="toc-anchor" href="#the-heatbed-is-not-heating">¶</a> The heatbed is not heating</h3>
+<p>The heatbed might be faulty. Report this issue to Customer Suppoort and wait for their reply to offer a solution.</p>
+<h2 id="end-notes" class="toc-header"><a class="toc-anchor" href="#end-notes">¶</a> End Notes</h2>
+<blockquote>
+<p>We hope that the detailed guide we shared with you was helpful and informative.</p>
+<p>We want to ensure that you can perform it safely and effectively. If you have any concerns or questions regarding the process described in this article, we encourage you to reach out to our friendly customer service team before starting the operation. Our team is always ready to help you and answer any questions you may have.</p>
+<p><a href="https://bambulab.com/en/my/support/tickets" class="is-external-link">Click here to open a new ticket in our Support Page</a>.</p>
+<p>We will do our best to respond promptly and provide you with the assistance you need.</p>
+</blockquote>
+</div></template><template slot="comments"><div><comments></comments></div></template></page></div><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9422c8fdeb9283cf',t:'MTc0NzY0OTIyMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body></html>

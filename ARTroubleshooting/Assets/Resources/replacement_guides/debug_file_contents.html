@@ -1,0 +1,333 @@
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta charset="UTF-8"><meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1, maximum-scale=5"><meta name="theme-color" content="#1976d2"><meta name="msapplication-TileColor" content="#1976d2"><meta name="msapplication-TileImage" content="/_assets/favicons/mstile-150x150.png"><title>A1 | Bambu Lab Wiki</title><meta name="description" content="The main Wiki page of the A1, containing all the links for various guides and information related to it."><meta property="og:title" content="A1"><meta property="og:type" content="website"><meta property="og:description" content="The main Wiki page of the A1, containing all the links for various guides and information related to it."><meta property="og:image"><meta property="og:url" content="https://wiki.bambulab.com/en/a1"><meta property="og:site_name" content="Bambu Lab Wiki"><link rel="apple-touch-icon" sizes="180x180" href="/_assets/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="192x192" href="/_assets/favicons/android-chrome-192x192.png"><link rel="icon" type="image/png" sizes="32x32" href="/_assets/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/_assets/favicons/favicon-16x16.png"><link rel="mask-icon" href="/_assets/favicons/safari-pinned-tab.svg" color="#1976d2"><link rel="manifest" href="/_assets/manifest.json"><script>var siteConfig = {"title":"Bambu Lab Wiki","theme":"default","darkMode":false,"tocPosition":"left","lang":"en","rtl":false,"company":"Bambu Lab","contentLicense":"alr","footerOverride":"","logoUrl":"/admin/home/logo-large.png"}
+var siteLangs = [{"code":"en","name":"English"},{"code":"zh","name":"中文 (Zhōngwén)"}]
+</script><link type="text/css" rel="stylesheet" href="/_assets/css/app.766a556e9dcc61b7fcd5.css"><script type="text/javascript" src="/_assets/js/runtime.js?1716156900"></script><script type="text/javascript" src="/_assets/js/app.js?1716156900"></script><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-225490854-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-225490854-3');
+</script>
+<style type="text/css">.caption{word-break:break-word}.row.page-header-section.no-gutters.align-content-center{height:auto!important;min-height:90px}blockquote:before{content:""!important}blockquote{border-top:6px solid #1976d2!important;border-left:0!important;padding:1rem!important}blockquote p{padding:0!important;line-height:26px!important}blockquote p li{font-style:normal!important}i{font-style:normal!important}a.v-list-item--link[href='https://wiki.bambulab.com/en/makerworld'] .v-list-item__avatar i::before{content:url('https://wiki.bambulab.com/makerworld/makerworld.svg')!important}a.v-list-item--link[href='https://wiki.bambulab.com/zh/makerworld'] .v-list-item__avatar i::before{content:url('https://wiki.bambulab.com/makerworld/makerworld.svg')!important}.video-responsive{max-width:720px}.video-responsive-inner{position:relative;padding-bottom:56.25%}.video-responsive-inner iframe,.video-responsive-inner video{position:absolute;width:100%;height:100%;left:0;top:0}div.contents img{cursor:pointer}</style><link  href="https://cdn1.bambulab.com/wiki/viewer/viewer.min.css" rel="stylesheet">
+<script src="https://cdn1.bambulab.com/wiki/viewer/viewer.min.js"></script>
+<script type="text/javascript" defer> 
+
+function GetQueryString(sGet, name) {
+	var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)"); 
+	var r = sGet.match(reg);
+	if(r != null) {
+		return unescape(r[2]);
+	} else {
+		return null;
+	}
+}
+
+function getUrlQuery(name) {
+    let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    let r = window.location.search.substr(1).match(reg);
+    if (r != null) {
+        return decodeURIComponent(r[2]);
+    };
+
+    return null;
+}
+
+
+function parseUrl(url) {
+	if(url.startsWith('//')) {
+		url = location.protocol + url;
+	}
+	return new window.URL(url);
+}
+
+function removeUrlParam(param, url = window.location.href) {
+	let obj = parseUrl(url);
+	obj.searchParams.delete(param);
+	return obj.href;
+}
+
+function SetMaskIconColor() {
+	document.querySelector('link[rel="mask-icon"]').setAttribute('color', '#00AE42');
+}
+
+function HandleVideoHtml() {
+    const rxYoutube = /^.*(?:(?:youtu\.be\/|v\/|vi\/|u\/\w\/|embed\/)|(?:(?:watch)?\?v(?:i)?=|\&v(?:i)?=))([^#\&\?]*).*/
+    const rxVimeo = /^.*(vimeo\.com\/)((channels\/[A-z]+\/)|(groups\/[A-z]+\/videos\/))?([0-9]+)/
+	document.querySelectorAll('.contents oembed, .contents a').forEach(elm => {
+		const url = elm.hasAttribute('url') ? elm.getAttribute('url') : elm.getAttribute('href')
+		let newElmHtml = null
+		let nWen = url.indexOf('?');
+		let GetParam = '';
+		let BiliMatch = false;
+		let BiliVID = '';
+		if(nWen >= 0) {
+			GetParam = url.substr(nWen + 1);
+			//alert(GetParam);
+			let sSrc = GetQueryString(GetParam, 'src');
+			let sV = GetQueryString(GetParam, 'v');
+			if(sSrc != null && sV != null && sSrc == 'bilibili') {
+				BiliMatch = true;
+				BiliVID = sV;
+			}
+		}
+		const ytMatch = url.match(rxYoutube)
+		const vmMatch = !ytMatch && url.match(rxVimeo)
+		if(BiliMatch) {
+			newElmHtml = '<iframe src="https://player.bilibili.com/player.html?p=1&autoplay=0&bvid=' + BiliVID + '" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="100%"> </iframe>';
+		} else if(ytMatch) {
+			newElmHtml = `<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/${ytMatch[1]}" frameborder="0" allowfullscreen></iframe>`
+		} else if(vmMatch) {
+			newElmHtml = `<iframe id="vmplayer" type="text/html" width="640" height="360" src="https://player.vimeo.com/video/${vmMatch[5]}" frameborder="0" allowfullscreen></iframe>`
+		} else if(url.endsWith('.mp4')) {
+			newElmHtml = `<video controls autostart="0" name="media" width="640" height="360"><source src="${url}" type="video/mp4"></video>`
+		} else {
+			return
+		}
+        
+		const container = document.createElement('div')
+		container.classList.add('video-responsive')
+
+        const inner = document.createElement('div')
+        inner.classList.add('video-responsive-inner')
+
+		inner. insertAdjacentHTML('beforeend', newElmHtml)
+        container.append(inner)
+
+		elm.replaceWith(container)
+	})
+}
+
+function HandleSearchPage() {
+	const search = getUrlQuery('search')
+	if(search) {
+		const isAPP = window.innerWidth < 960
+		console.log("isAPP: " + isAPP)
+		const headerInner = document.querySelector("header.nav-header.v-sheet.theme--dark.v-toolbar.v-toolbar--flat.v-app-bar.v-app-bar--clipped.v-app-bar--fixed.black")
+		const input = headerInner.__vue__.$parent
+		console.log(input)
+		if(input) {
+			if(isAPP) {
+				input.searchIsShown = true
+			}
+			input.search = search
+			const target = document.querySelector('.v-application--wrap')
+			const observe = new MutationObserver(function(mutations, observe) {
+				mutations.forEach((mutation) => {
+					const nodes = Array.from(mutation.addedNodes)
+					if(nodes.length > 0) {
+						nodes.forEach((node) => {
+							if(node.nodeType === 1) {
+								if(node.classList.contains('search-results')) {
+									const btn = document.querySelector('.search-results div.text-xs-center .mx-2.v-btn')
+									if(btn) {
+										console.log(btn)
+										btn.onclick = function() {
+											const url = removeUrlParam('search')
+											window.location.href = url
+										}
+									}
+								}
+							}
+						})
+					}
+				})
+			});
+			observe.observe(target, {
+				childList: true
+			});
+		}
+	}
+}
+
+function HandleViewerJS()
+{
+  const imageContent = document.querySelector('div.contents')
+  if (imageContent) {
+    const gallery = new Viewer(imageContent,{title:false})
+    imageContent.querySelectorAll('img').forEach((item, index) => {
+      item.addEventListener('click', () => {
+        gallery.view(index)
+      })
+    })
+  }
+}
+
+window.boot.register('vue', () => {
+
+	// window.onload = () => {
+	//    SetMaskIconColor();
+	// 	  HandleVideoHtml();
+	//	  HandleSearchPage();
+	//}
+
+    window.addEventListener('load', () => {
+	    SetMaskIconColor();
+	 	HandleVideoHtml();
+		HandleSearchPage();
+        HandleViewerJS();
+    })
+}) 
+
+</script></head><body><div id="root"><page locale="en" path="a1" title="A1" description="The main Wiki page of the A1, containing all the links for various guides and information related to it." :tags="[{&quot;tag&quot;:&quot;a1&quot;,&quot;title&quot;:&quot;a1&quot;}]" created-at="2023-12-15T01:24:41.199Z" updated-at="2025-03-21T11:51:50.135Z" author-name="Sylvia" :author-id="144" editor="ckeditor" :is-published="true" toc="W3sidGl0bGUiOiJRdWljayBTdGFydCIsImFuY2hvciI6IiNxdWljay1zdGFydCIsImNoaWxkcmVuIjpbeyJ0aXRsZSI6IkludHJvZHVjdGlvbiB0byB0aGUgQTEiLCJhbmNob3IiOiIjaW50cm9kdWN0aW9uLXRvLXRoZS1hMSIsImNoaWxkcmVuIjpbXX0seyJ0aXRsZSI6IlVuYm94aW5nL1BhY2tpbmciLCJhbmNob3IiOiIjdW5ib3hpbmdwYWNraW5nIiwiY2hpbGRyZW4iOltdfSx7InRpdGxlIjoiUHJpbnRlciBTZXR1cCIsImFuY2hvciI6IiNwcmludGVyLXNldHVwIiwiY2hpbGRyZW4iOltdfV19LHsidGl0bGUiOiJQcmludGVyIEZlYXR1cmVzIiwiYW5jaG9yIjoiI3ByaW50ZXItZmVhdHVyZXMiLCJjaGlsZHJlbiI6W3sidGl0bGUiOiJTb2Z0d2FyZSBGZWF0dXJlcyIsImFuY2hvciI6IiNzb2Z0d2FyZS1mZWF0dXJlcyIsImNoaWxkcmVuIjpbXX1dfSx7InRpdGxlIjoiVHJvdWJsZXNob290aW5nICYgU29sdXRpb25zIiwiYW5jaG9yIjoiI3Ryb3VibGVzaG9vdGluZy1zb2x1dGlvbnMiLCJjaGlsZHJlbiI6W3sidGl0bGUiOiJSZW1vdGUgRGlhZ25vc2lzIiwiYW5jaG9yIjoiI3JlbW90ZS1kaWFnbm9zaXMiLCJjaGlsZHJlbiI6W119XX0seyJ0aXRsZSI6Ik1haW50ZW5hbmNlIEd1aWRlcyIsImFuY2hvciI6IiNtYWludGVuYW5jZS1ndWlkZXMiLCJjaGlsZHJlbiI6W3sidGl0bGUiOiJSZWd1bGFyIE1haW50ZW5hbmNlIFBhcnRzIiwiYW5jaG9yIjoiI3JlZ3VsYXItbWFpbnRlbmFuY2UtcGFydHMiLCJjaGlsZHJlbiI6W119XX0seyJ0aXRsZSI6IlBhcnQgUmVwbGFjZW1lbnQgR3VpZGVzIiwiYW5jaG9yIjoiI3BhcnQtcmVwbGFjZW1lbnQtZ3VpZGVzIiwiY2hpbGRyZW4iOlt7InRpdGxlIjoiUHJpbnRlciBib2R5IiwiYW5jaG9yIjoiI3ByaW50ZXItYm9keSIsImNoaWxkcmVuIjpbXX0seyJ0aXRsZSI6IlRvb2xoZWFkIiwiYW5jaG9yIjoiI3Rvb2xoZWFkIiwiY2hpbGRyZW4iOltdfSx7InRpdGxlIjoiSGVhdGJlZCIsImFuY2hvciI6IiNoZWF0YmVkIiwiY2hpbGRyZW4iOltdfSx7InRpdGxlIjoiRGlzcGxheSIsImFuY2hvciI6IiNkaXNwbGF5IiwiY2hpbGRyZW4iOltdfSx7InRpdGxlIjoiWC9ZL1otYXhpcy9Nb3Rvci9CZWx0IiwiYW5jaG9yIjoiI3h5ei1heGlzbW90b3JiZWx0IiwiY2hpbGRyZW4iOltdfSx7InRpdGxlIjoiQ2lyY3VpdCBCb2FyZC9XaS1GaSBBbnRlbm5hL0NhbWVyYSIsImFuY2hvciI6IiNjaXJjdWl0LWJvYXJkd2ktZmktYW50ZW5uYWNhbWVyYSIsImNoaWxkcmVuIjpbXX0seyJ0aXRsZSI6Ik90aGVycyIsImFuY2hvciI6IiNvdGhlcnMiLCJjaGlsZHJlbiI6W119XX1d" :page-id="1325" sidebar="W3siaSI6InNkaS0xIiwiayI6ImxpbmsiLCJsIjoiSG9tZSIsImMiOiJtZGktaG9tZSIsInkiOiJob21lIiwidCI6Ii8ifSx7ImkiOiJzZGktMiIsImsiOiJsaW5rIiwibCI6Ildpa2kgVXBkYXRlcyIsImMiOiJtZGktbmV3LWJveCIsInkiOiJleHRlcm5hbCIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL25ldy1hbmQtdXBkYXRlcyJ9LHsiaSI6InNkaS0zIiwiayI6ImxpbmsiLCJsIjoiSDJEIiwiYyI6Im1kaS1hbHBoYS1oLWJveCIsInkiOiJleHRlcm5hbCIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL2gyZCJ9LHsiaSI6InNkaS00IiwiayI6ImxpbmsiLCJsIjoiQU1TIDIgUHJvIiwiYyI6Im1kaS1tb3ZpZS1yb2xsIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vYW1zLTItcHJvIn0seyJpIjoic2RpLTUiLCJrIjoibGluayIsImwiOiJBTVMgSFQiLCJjIjoibWRpLW1vdmllLXJvbGwiLCJ5IjoiZXh0ZXJuYWwiLCJ0IjoiaHR0cHM6Ly93aWtpLmJhbWJ1bGFiLmNvbS9lbi9hbXMtaHQifSx7ImkiOiJzZGktNiIsImsiOiJsaW5rIiwibCI6IlgxIFNlcmllcyIsImMiOiJtZGktYWxwaGEteC1ib3gtb3V0bGluZSIsInkiOiJleHRlcm5hbCIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL3gxIn0seyJpIjoic2RpLTciLCJrIjoibGluayIsImwiOiJQMSBTZXJpZXMiLCJjIjoibWRpLWFscGhhLXAtYm94LW91dGxpbmUiLCJ5IjoiZXh0ZXJuYWwiLCJ0IjoiaHR0cHM6Ly93aWtpLmJhbWJ1bGFiLmNvbS9lbi9wMSJ9LHsiaSI6InNkaS04IiwiayI6ImxpbmsiLCJsIjoiQTEiLCJjIjoibWRpLWFscGhhLWEtYm94LW91dGxpbmUiLCJ5IjoiZXh0ZXJuYWwiLCJ0IjoiaHR0cHM6Ly93aWtpLmJhbWJ1bGFiLmNvbS9lbi9hMSJ9LHsiaSI6InNkaS05IiwiayI6ImxpbmsiLCJsIjoiQTEgbWluaSIsImMiOiJtZGktYWxwaGEtYS1ib3gtb3V0bGluZSIsInkiOiJleHRlcm5hbCIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL2ExLW1pbmkifSx7ImkiOiJzZGktMTAiLCJrIjoibGluayIsImwiOiJBTVMiLCJjIjoibWRpLWFscGhhLWEtY2lyY2xlIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vYW1zIn0seyJpIjoic2RpLTExIiwiayI6ImxpbmsiLCJsIjoiQU1TIGxpdGUiLCJjIjoibWRpLWFscGhhLWwtY2lyY2xlIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vYW1zLWxpdGUifSx7ImkiOiJzZGktMTIiLCJrIjoibGluayIsImwiOiJITVMiLCJjIjoibWRpLXRleHQtYm94LXNlYXJjaC1vdXRsaW5lIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vaG1zL2hvbWUifSx7ImkiOiJzZGktMTMiLCJrIjoibGluayIsImwiOiJTb2Z0d2FyZSIsImMiOiJtZGktdGVsZXZpc2lvbi1ndWlkZSIsInkiOiJleHRlcm5hbCIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL3NvZnR3YXJlIn0seyJpIjoic2RpLTE0IiwiayI6ImxpbmsiLCJsIjoiRmlsYW1lbnRzICYgQWNjZXNzb3JpZXMiLCJjIjoibWRpLXByaW50ZXItM2Qtbm96emxlIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vZmlsYW1lbnQtYWNjIn0seyJpIjoic2RpLTE1IiwiayI6ImxpbmsiLCJsIjoiTWFrZXJXb3JsZCIsImMiOiJtZGktY3ViZS1zY2FuIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vbWFrZXJ3b3JsZCJ9LHsiaSI6InNkaS0xNiIsImsiOiJoZWFkZXIiLCJsIjoiR2VuZXJhbCIsImMiOm51bGwsInkiOm51bGwsInQiOm51bGx9LHsiaSI6InNkaS0xNyIsImsiOiJsaW5rIiwibCI6Iktub3dsZWRnZSBTaGFyaW5nIiwiYyI6Im1kaS1mb3J1bSIsInkiOiJwYWdlIiwidCI6Ii9lbi9rbm93bGVkZ2Utc2hhcmluZyJ9LHsiaSI6InNkaS0xOCIsImsiOiJsaW5rIiwibCI6Ikdsb3NzYXJ5IiwiYyI6Im1kaS10YWJsZS1vZi1jb250ZW50cyIsInkiOiJwYWdlIiwidCI6Ii9lbi9nbG9zc2FyeSJ9LHsiaSI6InNkaS0xOSIsImsiOiJsaW5rIiwibCI6IkZBUSIsImMiOiJtZGktZnJlcXVlbnRseS1hc2tlZC1xdWVzdGlvbnMiLCJ5IjoicGFnZSIsInQiOiIvZW4vZmFxIn0seyJpIjoic2RpLTIwIiwiayI6ImxpbmsiLCJsIjoiQWJvdXQgVXMiLCJjIjoibWRpLWluZm9ybWF0aW9uLW91dGxpbmUiLCJ5IjoicGFnZSIsInQiOiIvZW4vYWJvdXQtdXMifSx7ImkiOiJzZGktMjEiLCJrIjoiZGl2aWRlciIsImwiOm51bGwsImMiOm51bGwsInkiOm51bGwsInQiOm51bGx9LHsiaSI6InNkaS0yMiIsImsiOiJsaW5rIiwibCI6IkNvbW11bml0eSBDb250cmlidXRpb25zIiwiYyI6Im1kaS13aWtpcGVkaWEiLCJ5IjoiZXh0ZXJuYWxibGFuayIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL2NvbnRyaWJ1dGlvbi1ndWlkZSJ9XQ==" nav-mode="STATIC" effective-permissions="eyJjb21tZW50cyI6eyJyZWFkIjpmYWxzZSwid3JpdGUiOmZhbHNlLCJtYW5hZ2UiOmZhbHNlfSwiaGlzdG9yeSI6eyJyZWFkIjpmYWxzZX0sInNvdXJjZSI6eyJyZWFkIjpmYWxzZX0sInBhZ2VzIjp7InJlYWQiOnRydWUsIndyaXRlIjpmYWxzZSwibWFuYWdlIjpmYWxzZSwiZGVsZXRlIjpmYWxzZSwic2NyaXB0IjpmYWxzZSwic3R5bGUiOmZhbHNlfSwic3lzdGVtIjp7Im1hbmFnZSI6ZmFsc2V9fQ==" edit-shortcuts="eyJlZGl0RmFiIjp0cnVlLCJlZGl0TWVudUJhciI6dHJ1ZSwiZWRpdE1lbnVCdG4iOnRydWUsImVkaXRNZW51RXh0ZXJuYWxCdG4iOmZhbHNlLCJlZGl0TWVudUV4dGVybmFsTmFtZSI6IkdpdEh1YiIsImVkaXRNZW51RXh0ZXJuYWxJY29uIjoibWRpLWdpdGh1YiIsImVkaXRNZW51RXh0ZXJuYWxVcmwiOiJodHRwczovL2dpdGh1Yi5jb20vb3JnL3JlcG8vYmxvYi9tYWluL3tmaWxlbmFtZX0ifQ==" filename="en/a1.html"><template slot="contents"><div><figure class="image image_resized" style="width:55.81%;"><img src="/a1/a1_(7).png"></figure>
+<h2 id="quick-start" class="toc-header"><a class="toc-anchor" href="#quick-start">¶</a> Quick Start</h2>
+<p>The Quick Start section includes links that quickly show how to set up the A1 3D printer and other general information related to it.&nbsp;<br>For detailed information about the printer components, we recommend visiting the <a href="/en/a1/manual/glossary" class="is-internal-link is-valid-page">A1 Glossary page</a> to learn more about it.</p>
+<blockquote>
+  <p>Find all A1 articles <a href="/t/a1?lang=en&amp;sort=title" class="is-system-link">by clicking this link</a>. The page results will display all Wiki articles tagged for the A1.</p>
+</blockquote>
+<h3 id="introduction-to-the-a1" class="toc-header"><a class="toc-anchor" href="#introduction-to-the-a1">¶</a> Introduction to the A1&nbsp;</h3>
+<ul>
+  <li><a href="/en/a1/manual/intro-a1" class="is-internal-link is-valid-page">Introduction to A1 printer</a></li>
+  <li><a href="/en/a1/manual/glossary" class="is-internal-link is-valid-page">A1 Glossary</a></li>
+  <li><a href="/en/a1/manual" class="is-internal-link is-valid-page">A1 Manual</a></li>
+  <li><a href="/en/a1/manual/faq" class="is-internal-link is-valid-page">A1 FAQ</a></li>
+  <li><a href="https://bambulab.com/en/support/documentation" class="is-external-link">Quick Start Guide Download</a></li>
+  <li><a href="/en/a1/manual/acc-in-the-box" class="is-internal-link is-valid-page">Supplemental Instructions for Packaging List</a></li>
+</ul>
+<p>&nbsp;</p>
+<h3 id="unboxingpacking" class="toc-header"><a class="toc-anchor" href="#unboxingpacking">¶</a> Unboxing/Packing</h3>
+<p><strong>Unboxing:</strong></p>
+<ul>
+  <li><a href="/en/a1/manual/unboxing-a1-combo" class="is-internal-link is-valid-page">A1 combo Unboxing Guide&nbsp;</a></li>
+</ul>
+<p><strong>Packing:</strong></p>
+<ul>
+  <li><a href="/en/a1/manual/pack-a1" class="is-internal-link is-valid-page">A1 Packing Guide&nbsp;</a></li>
+  <li><a href="/en/a1/manual/pack-a1-combo" class="is-internal-link is-valid-page">A1 combo Packing Guide</a></li>
+</ul>
+<p>&nbsp;</p>
+<h3 id="printer-setup" class="toc-header"><a class="toc-anchor" href="#printer-setup">¶</a> Printer Setup</h3>
+<ul>
+  <li><a href="/en/a1/manual/ams-lite-top-mount-tutorial" class="is-internal-link is-valid-page">AMS lite Top Mount guide</a></li>
+  <li><a href="/en/a1/manual/first-print-with-external-spool" class="is-internal-link is-valid-page">A1 First Print with an External Spool</a></li>
+  <li><a href="/en/a1/manual/first-print-with-ams-lite" class="is-internal-link is-valid-page">A1 First Print with AMS Lite&nbsp;</a></li>
+  <li><a href="/en/A1/screen-operation" class="is-internal-link is-valid-page">A1 Series Printers Screen Operation Guide</a></li>
+  <li><a href="/en/a1/manual/how-to-print-from-sd-card" class="is-internal-link is-valid-page">How to print from SD card using Bambu Lab A1 Series 3D printer</a></li>
+  <li><a href="/en/p1/manual/p1-sd-card-network-configuration-guide" class="is-internal-link is-valid-page">Micro SD Card Network Configuration Guide</a></li>
+  <li><a href="/en/a1/manual/a1-firmware-update-from-SD-card" class="is-internal-link is-valid-page">Firmware Upgrade via microSD Card - A1</a></li>
+</ul>
+<p>&nbsp;</p>
+<h2 id="printer-features" class="toc-header"><a class="toc-anchor" href="#printer-features">¶</a> Printer Features</h2>
+<p>In the Printer Features section, you can find detailed guides related to various features available on the A1.</p>
+<ul>
+  <li><a href="/en/a1/manual/a1-firmware-release-history" class="is-internal-link is-valid-page">Firmware Release History</a></li>
+  <li><a href="/en/general/printer-calibration" class="is-internal-link is-valid-page">Printer Calibration Guide</a></li>
+</ul>
+<p>&nbsp;</p>
+<h3 id="software-features" class="toc-header"><a class="toc-anchor" href="#software-features">¶</a> Software Features</h3>
+<ul>
+  <li><a href="/en/ams-lite/manual/filament-tangle-monitoring-intro" class="is-internal-link is-valid-page">Filament tangle monitoring</a></li>
+  <li><a href="/en/a1-mini/manual/nozzle-warp-detection" class="is-internal-link is-valid-page">Nozzle clumping detection</a></li>
+  <li><a href="/en/a1-mini/manual/build-plate-detection" class="is-internal-link is-valid-page">Build plate detection</a></li>
+  <li><a href="/en/ams-lite/manual/air-printing-detectiong" class="is-internal-link is-valid-page">Air printing detection</a></li>
+</ul>
+<p>&nbsp;</p>
+<h2 id="troubleshooting-solutions" class="toc-header"><a class="toc-anchor" href="#troubleshooting-solutions">¶</a> Troubleshooting &amp; Solutions</h2>
+<p>In the Troubleshooting &amp; Solutions section, you can find guides related to the A1 where potential issues are listed with solutions on how to solve them.</p>
+<ul>
+  <li><a href="/en/a1/troubleshooting/circuit-fault" class="is-internal-link is-valid-page">Printer Circuit Failure Troubleshooting -A1</a></li>
+  <li><a href="/x1/troubleshooting/enable-the-video-recording-function" class="is-internal-link is-valid-page">Enable the video recording function and export videos</a></li>
+  <li><a href="/en/a1/troubleshooting/heatbed-not-heat-up" class="is-internal-link is-valid-page">Troubleshooting guide for A1 heatbed not heating up</a></li>
+  <li><a href="/en/a1-mini/troubleshooting/excess-purge-abnormality" class="is-internal-link is-valid-page">Excess Purge Abnormality and Solution</a></li>
+  <li><a href="/en/a1-mini/troubleshooting/screen-not-working-as-expected" class="is-internal-link is-valid-page">Display Abnormalities Troubleshooting</a></li>
+  <li><a href="/en/a1-mini/troubleshooting/how-to-check-which-part-is-clogged" class="is-internal-link is-valid-page">A1 series printer extrusion abnormal troubleshooting</a></li>
+  <li><a href="/en/a1-mini/troubleshooting/nozzle-clog" class="is-internal-link is-valid-page">Nozzle Clogs</a></li>
+  <li><a href="/en/a1-mini/troubleshooting/extruder-clog" class="is-internal-link is-valid-page">Extruder Clogs</a></li>
+  <li><a href="/en/a1/troubleshooting/homing-leveling-failure" class="is-internal-link is-valid-page">Homing and leveling failure troubleshooting guide for A1 series</a></li>
+  <li><a href="/en/a1/troubleshooting/ams-lite-filament-hub-cannot-hold-tube" class="is-internal-link is-valid-page">Fix the AMS Lite filament Hub/4-in-1 PTFE Adapter not holding the PTFE Tube</a></li>
+  <li><a href="/en/a1-mini/troubleshooting/print-issues-troubleshooting" class="is-internal-link is-valid-page">A1 Series First Layer Print Issues - First Layer Too Low, Hotend Moving</a></li>
+  <li><a href="/en/x1/troubleshooting/filament-sensor-test" class="is-internal-link is-valid-page">Filament Sensor Inspection Guide</a></li>
+  <li><a href="/en/a1/maintenance/steel-bearing-balls-fall" class="is-internal-link is-valid-page">Repair Guide for Accidental Fall of Steel Bearing Balls on the X-axis Linear Guideway</a></li>
+  <li><a href="/en/a1/troubleshooting/circuit-fault" class="is-internal-link is-valid-page">Printer Circuit Failure Troubleshooting - A1</a></li>
+</ul>
+<p>&nbsp;</p>
+<h3 id="remote-diagnosis" class="toc-header"><a class="toc-anchor" href="#remote-diagnosis">¶</a> Remote Diagnosis</h3>
+<ul>
+  <li><a href="/en/create-support-ticket" class="is-internal-link is-valid-page">How to create a Support Ticket?</a></li>
+  <li><a href="/en/X1/troubleshooting/how-to-upload-log" class="is-internal-link is-valid-page">How to upload the log files to an existing ticket</a></li>
+</ul>
+<h2 id="maintenance-guides" class="toc-header"><a class="toc-anchor" href="#maintenance-guides">¶</a> Maintenance Guides</h2>
+<p>In the Maintenance Guides section, you can find detailed guides related to the recommended procedures that should be followed with the A1 to ensure smooth operation and a long lifetime of the product.&nbsp;</p>
+<ul>
+  <li><a href="/en/a1/maintenance/basic-maintenance" class="is-internal-link is-valid-page">Periodic Maintenance Recommendations</a></li>
+  <li><a href="/en/a1/maintenance/lubricate-y-axis" class="is-internal-link is-valid-page">Y-axis guide rail lubrication guide</a></li>
+  <li><a href="/en/a1-mini/maintenance/lubricate-y-axis-with-wd-40-multi-use-product" class="is-internal-link is-valid-page">Y-axis guide rail (with "WD-40 Multi-Use Product")</a></li>
+  <li><a href="/en/a1/maintenance/belt_tension" class="is-internal-link is-valid-page">Belt Tensioning guide</a></li>
+  <li><a href="/en/a1-mini/maintenance/clean-hotend-assembly" class="is-internal-link is-valid-page">Hotend assembly cleaning guide</a></li>
+  <li><a href="/en/a1-mini/maintenance/hotend_blob" class="is-internal-link is-valid-page">Hotend Blob Cleaning guide</a></li>
+  <li><a href="/en/a1/maintenance/manual-bed-tramming" class="is-internal-link is-valid-page">Bed Tramming / Bed Leveling</a></li>
+  <li><a href="/en/a1/maintenance/filament_hub_cleaning" class="is-internal-link is-valid-page">AMS lite Filament Hub Disassembly and Cleaning</a></li>
+</ul>
+<p>&nbsp;</p>
+<h3 id="regular-maintenance-parts" class="toc-header"><a class="toc-anchor" href="#regular-maintenance-parts">¶</a> Regular Maintenance Parts</h3>
+<p>This section contains items that will require a replacement during the lifetime of the printer.</p>
+<ul>
+  <li><a href="/en/a1-mini/maintenance/ptfe-tube" class="is-internal-link is-valid-page">PTFE Tube Removal</a></li>
+  <li><a href="/en/a1/maintenance/nozzle-wiper-replacement" class="is-internal-link is-valid-page">Nozzle Wiper Replacement Guide</a></li>
+  <li><a href="/en/a1-mini/purge-wiper-replacement" class="is-internal-link is-valid-page">Purge Wiper Replacement Guide</a></li>
+  <li><a href="/en/a1-mini/maintenance/part-cooling-fan" class="is-internal-link is-valid-page">Part Cooling Fan Replacement Guide</a></li>
+  <li><a href="/en/a1/maintenance/supportive-footpad" class="is-internal-link is-valid-page">Supportive Footpad Replacement Guide</a></li>
+</ul>
+<p>&nbsp;</p>
+<h2 id="part-replacement-guides" class="toc-header"><a class="toc-anchor" href="#part-replacement-guides">¶</a> Part Replacement Guides</h2>
+<p>In the Part Replacement Guides section, you can find step-by-step guides that show the process of removing and installing various hardware parts of the A1.&nbsp;</p>
+<h3 id="printer-body" class="toc-header"><a class="toc-anchor" href="#printer-body">¶</a> Printer body</h3>
+<ul>
+  <li><a href="/en/a1/maintenance/printer" class="is-internal-link is-valid-page">Printer Installation</a></li>
+  <li><a href="/en/a1/maintenance/bottom-base" class="is-internal-link is-valid-page">Bottom base installation</a></li>
+  <li><a href="/en/a1/maintenance/spool-holder" class="is-internal-link is-valid-page">A1 Spool Holder installation</a></li>
+</ul>
+<p>&nbsp;</p>
+<h3 id="toolhead" class="toc-header"><a class="toc-anchor" href="#toolhead">¶</a> Toolhead</h3>
+<ul>
+  <li><a href="/en/a1-mini/maintenance/toolhead" class="is-internal-link is-valid-page">Toolhead Installation</a></li>
+  <li><a href="/en/a1-mini/maintenance/hotend-heating-assembly-replacement" class="is-internal-link is-valid-page">Hotend Heating Assembly Replacement Guide</a></li>
+  <li><a href="/en/a1-mini/maintenance/filament-cutter-replacement" class="is-internal-link is-valid-page">Filament Cutter Blade Replacement Guide</a></li>
+  <li><a href="/en/a1/maintenance/th-board-replacement-guide" class="is-internal-link is-valid-page">Toolhead Board Replacement Guide</a></li>
+  <li><a href="/en/a1-mini/maintenance/hotend-cooling-fan" class="is-internal-link is-valid-page">Hotend Cooling Fan Replacement Guide</a></li>
+  <li><a href="/en/a1-mini/maintenance/extruder-replacement-guide" class="is-internal-link is-valid-page">Extruder Replacement Guide</a></li>
+  <li><a href="/en/a1/maintenance/filament-sensor-replacement" class="is-internal-link is-valid-page">Filament Sensor Replacement Guide</a></li>
+  <li><a href="/en/a1-mini/maintenance/a1-extruder" class="is-internal-link is-valid-page">Replace the Extruder Module-A1 Series</a></li>
+  <li><a href="/en/a1/maintenance/A1_Extruder_motor_replacement" class="is-internal-link is-valid-page">A1 Series Extruder Motor Replacement Guide</a></li>
+  <li><a href="/en/a1/maintenance/guide-for-Replacing-y-axis-components" class="is-internal-link is-valid-page">A1 Guide for Replacing Y-axis Linear Guide Assembly</a></li>
+</ul>
+<p>&nbsp;</p>
+<h3 id="heatbed" class="toc-header"><a class="toc-anchor" href="#heatbed">¶</a> Heatbed</h3>
+<ul>
+  <li><a href="/en/a1/maintenance/heatbed" class="is-internal-link is-valid-page">Heatbed Replacement Guide</a></li>
+</ul>
+<p>&nbsp;</p>
+<h3 id="display" class="toc-header"><a class="toc-anchor" href="#display">¶</a> Display</h3>
+<ul>
+  <li><a href="/en/a1/maintenance/touchscreen-replacement-guide" class="is-internal-link is-valid-page">Touchscreen Replacement Guide</a></li>
+</ul>
+<p>&nbsp;</p>
+<h3 id="xyz-axismotorbelt" class="toc-header"><a class="toc-anchor" href="#xyz-axismotorbelt">¶</a> X/Y/Z-axis/Motor/Belt</h3>
+<ul>
+  <li><a href="/en/a1/maintenance/x-axis" class="is-internal-link is-valid-page">X-axis installation</a></li>
+  <li><a href="/en/a1/maintenance/y-axis" class="is-internal-link is-valid-page">Y-axis Installation</a></li>
+  <li><a href="/en/a1/maintenance/guide-for-Replacing-y-axis-components" class="is-internal-link is-valid-page">Y-axis Linear Guide Assembly</a></li>
+  <li><a href="/en/a1/maintenance/z-axis" class="is-internal-link is-valid-page">A1 Printer Frame Installation</a></li>
+  <li><a href="/en/a1/maintenance/a1-z-axis-leadscrew-kit-replacement-guides" class="is-internal-link is-valid-page">Replace the A1 Z-axis lead screw kit</a></li>
+  <li><a href="/en/a1/maintenance/a1-z-belt-replacement-guide" class="is-internal-link is-valid-page">Z-belt replacement guide</a></li>
+  <li><a href="/en/a1/maintenance/a1-y-belt-replacement-guide" class="is-internal-link is-valid-page">Y-belt Replacement Guide for A1</a></li>
+  <li><a href="/en/a1/maintenance/replace-x-belt" class="is-internal-link is-valid-page">X- belt Replacement Guide for A1</a></li>
+  <li><a href="/en/a1/maintenance/z-motor-replacement-guide" class="is-internal-link is-valid-page">Z-axis Motor Replacement Guide for A1</a></li>
+</ul>
+<p>&nbsp;</p>
+<h3 id="circuit-boardwi-fi-antennacamera" class="toc-header"><a class="toc-anchor" href="#circuit-boardwi-fi-antennacamera">¶</a> Circuit Board/Wi-Fi Antenna/Camera</h3>
+<ul>
+  <li><a href="/en/a1/maintenance/th-board-replacement-guide" class="is-internal-link is-valid-page">Toolhead Board Replacement Guide</a></li>
+  <li><a href="/en/a1/maintenance/wi-fi-antenna-replacement-guide" class="is-internal-link is-valid-page">Wi-Fi Antenna Replacement Guide</a></li>
+  <li><a href="/en/a1/maintenance/mainboard-replacement-guide" class="is-internal-link is-valid-page">Mainboard Replacement Guide</a></li>
+  <li><a href="/en/a1/maintenance/ac-board-replacement" class="is-internal-link is-valid-page">AC Board Replacement Guide</a></li>
+  <li><a href="/en/a1/maintenance/camera-replacement-guide" class="is-internal-link is-valid-page">A1 Live View Camera Replacement Guide</a></li>
+  <li><a href="/en/a1/maintenance/usb-c-cable-replacement-guide" class="is-internal-link is-valid-page">A1 USB-C cable replacement guide</a></li>
+  <li><a href="/en/a1/maintenance/replacement_of_power_switch" class="is-internal-link is-valid-page">A1 Power Switch Replacement Guide</a></li>
+</ul>
+<p>&nbsp;</p>
+<h3 id="others" class="toc-header"><a class="toc-anchor" href="#others">¶</a> Others</h3>
+<ul>
+  <li><a href="/en/a1/maintenance/power-supply-replacement-guide" class="is-internal-link is-valid-page">Power Supply Replacement Guide</a></li>
+</ul>
+</div></template><template slot="comments"><div><comments></comments></div></template></page></div><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9422a979eb3fb75f',t:'MTc0NzY0NzkzMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body></html>

@@ -1,0 +1,129 @@
+https://wiki.bambulab.com/en/a1/maintenance/printer
+
+# A1 Installation Tutorial
+
+This guide provides instructions on how to disassemble and reassemble the A1 printer. For detailed instructions on specific components, refer to the corresponding guide pages.
+
+===PAGE_BREAK===
+
+## Parts List
+
+- **Y-axis Top Cover**
+- **Printer Frame**
+
+===PAGE_BREAK===
+
+## Module List
+
+- **X-axis Assembly**
+- **Bottom Base Assembly**
+- **Printer Frame**
+
+===PAGE_BREAK===
+
+## Screws List
+
+- **Screw A** - Cable box (1 PCS)
+- **Screw B** - Bottom base (12 PCS)
+- **Screw C** - X-axis (6 PCS)
+
+===PAGE_BREAK===
+
+## Tool List
+
+- **H2.0 Allen Key**
+
+===PAGE_BREAK===
+
+## Safety Warning
+
+**IMPORTANT!** Ensure the printer is powered off before performing any maintenance to prevent short circuits and other electronic damage. Always disconnect the printer from the power source during maintenance tasks.
+
+If you have concerns or questions, please [open a new ticket](https://supportpage.example.com) on our Support Page.
+
+===PAGE_BREAK===
+
+# A1 Disassembly
+
+### Step 1- Remove the Y-axis Top Cover
+
+#### Step 1:
+1. Stand the printer upright.
+2. Raise the X-axis to the top position.
+3. Push the heatbed forward.
+4. Remove the Y-axis Top Cover.
+
+### Step 2- Disconnect the cables
+
+#### Step 2:
+1. Tilt the printer to expose the cable box on the bottom.
+2. Disconnect the camera cable, X motor cable, and Z motor cable in sequence.
+3. Loosen a silver screw and slide the cable box to disconnect the USB cable.
+4. Open the Z-motor cable cover and remove the Z-motor cable.
+
+### Step 3- Remove the Bottom Base Assembly
+
+#### Step 3:
+1. Move the heatbed forward.
+2. Use an **H2.0 Allen Key** to remove 10 screws.
+3. Move the heatbed backward.
+4. Use an **H2.0 Allen Key** to remove 2 more screws.
+5. Lift one side of the bottom base assembly first, then remove the entire assembly.
+
+### Step 4- Remove the X-axis Assembly
+
+#### Step 4:
+1. Remove the 6 screws located at the back of the X-axis.
+2. Detach the X-axis assembly from the printer frame.
+
+===PAGE_BREAK===
+
+# A1 Assembly
+
+### Step 1- Install the X-axis Assembly
+
+#### Step 1:
+1. Align the X-axis with the locating pins on the two Z-axis sliders.
+2. Install it onto the Z-axis sliders.
+3. Secure the X-axis assembly by tightening 3 screws on each side.
+
+### Step 2- Install the Bottom Base Assembly
+
+#### Step 2:
+1. Keep the Printer Frame upright.
+2. Carefully install the bottom base assembly onto it, ensuring to avoid the Z-motor cable.
+3. Move the heatbed forward to its furthest position and securely fasten 10 screws.
+4. Move the heatbed backward to its furthest position and tighten 2 screws.
+
+### Step 3- Connect the cables
+
+#### Step 3:
+1. Place the printer in a backward position.
+2. Connect the Z-motor cable to the cable management box.
+3. Install the cable management box onto the bottom base, slide it along the slot direction, connect the USB cable, and tighten one silver screw.
+4. Follow the text prompts and color labels to connect the X motor cable, Z motor cable, and camera cable.
+5. Organize the cables properly to ensure they are not being pressed or tangled.
+
+### Step 4- Install the Y-axis Top Cover
+
+#### Step 4:
+1. Place the printer upright and move the heatbed forward to its furthest position.
+2. Take the Y-axis Top Cover and pass it over through the bottom of the heatbed.
+3. Push the cover forward until it reaches the end, ensuring that the cover aligns with the clips.
+4. Secure the cover onto the clips.
+
+**Special note:** If the heatbed is not moved all the way to the end, the Y-axis Top Cover may get stuck in the wrong position. In such a case, you can manually lift the Y-axis cover slightly to assist in its installation.
+
+===PAGE_BREAK===
+
+## Verify the Functionality
+
+Ensure that the printing is smooth and free from any shaking. Double-check the installation of the bottom cable box and the arrangement of the cables.
+
+## Calibration
+
+It is recommended to perform a full calibration process before initiating any printing tasks.
+
+## End Notes
+
+We hope this guide was helpful. For any concerns or questions, please [contact our customer service team](https://supportpage.example.com). We are here to assist you.

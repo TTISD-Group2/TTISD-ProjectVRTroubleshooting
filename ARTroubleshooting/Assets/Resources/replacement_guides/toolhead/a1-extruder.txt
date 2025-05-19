@@ -1,0 +1,109 @@
+https://wiki.bambulab.com/en/a1-mini/maintenance/a1-extruder
+
+# Extruder Module Disassembly and Assembly Guide
+
+## Introduction
+This guide provides detailed instructions for disassembling and assembling the A1 series extruder module. It covers the necessary steps for component replacement and general maintenance.
+
+### Parts List
+- **Filament Hub**
+- **Filament Sensor for A1 Series**
+- **Extruder Unit for A1 Series**
+- **Replacement Filament Cutter**
+- **Filament Cutter Lever**
+- **Extruder Gear Assembly**
+- **A1 Series Extruder Motor**
+
+### Screw List
+- **Screw A** BT2*8 (2 PCS) - Filament Tension Block
+- **Screw B** BT2.6*5 (2 PCS) - Feeding Bracket
+- **Screw C** BT2*5 (2 PCS) - Filament Sensor
+- **Screw D** BT2.6*14 (1 PCS) - Filament Cutter Lever
+- **Screw E** BT2.3*7 (4 PCS) - Extruder Front Cover
+- **Screw F** M3*11 (1 PCS) - Extruder Driven Wheel
+- **Screw G** M2.5*5 (4 PCS) - Extruder Motor
+
+### Tool List
+- **H1.5/H2.0 Hex Key Tool**
+- **Flat Head Tweezers**
+
+### Safety Warning
+**IMPORTANT!**
+Always **power off** the printer and **disconnect it from the power source** before beginning any disassembly or assembly operations to avoid the risk of short circuits and ensure safety.
+
+===PAGE_BREAK===
+
+## Disassembly
+
+### Step 1: Remove the Filament Press Block
+1. Use an **H1.5 Hex Key Wrench** to unscrew **2 Screw A**.
+2. Remove the pressure block and the rotating wheel.
+
+### Step 2: Remove the Filament Hub Assembly
+1. Use a wrench to gently pry off the Filament Hub Cap.
+2. Remove the Filament Hub Assembly along with the spring.
+
+### Step 3: Remove the Filament Sensor
+1. Use an **H2.0 Hex Key Wrench** to unscrew **2 Screw B** and remove the Feeding Bracket.
+2. Use an **H1.5 Hex Key Wrench** to unscrew **2 Screw C** and remove the Filament Sensor.
+
+### Step 4: Remove the Replacement Filament Cutter
+1. Use an **H2.0 Hex Key Wrench** to unscrew **1 Screw D**, release the Filament Cutter Lever, and remove the filament cutter.
+
+### Step 5: Remove the Extruder Gear Assembly
+1. Use an **H2.0 Hex Key Wrench** to unscrew **4 Screw E** and loosen **1 Screw F**.
+2. Remove the Extruder Front Cover.
+3. Use tweezers to remove the extrusion spring and the metal cap.
+4. Take out the Extruder Gear Assembly.
+
+### Step 6: Remove the Filament Cutter Lever
+1. Use tweezers to remove the E-type retaining clip while holding it firmly.
+2. Remove the washer, lever, and spring.
+
+### Step 7: Remove the Extruder Motor
+1. Use an **H2.0 Hex Key Wrench** to unscrew **4 Screw G**.
+2. Remove the Extruder Motor.
+
+===PAGE_BREAK===
+
+## Assembly
+
+### Step 1: Install the Extruder Motor
+1. Align the Extruder Motor with the Extruder Rear Cover, ensuring correct cable orientation.
+2. Use an **H2.0 Hex Key Wrench** to tighten **4 Screw G** and secure the motor.
+
+### Step 2: Install the Filament Cutter Lever
+1. Install the spring and handle onto the pivot.
+2. Place the washer and install the E-type retaining clip using tweezers to secure it.
+
+### Step 3: Install the Extruder Gear Assembly
+1. Install the extruder drive gear and idler gear onto their respective shafts.
+2. Assemble the spring and end cap correctly and place them in the driven wheel bracket using tweezers.
+3. Close the extruder front cover.
+4. Use an **H2.0 Hex Key Wrench** to tighten **4 Screw E** and then tighten **Screw F**.
+
+### Step 4: Install the Replacement Filament Cutter
+1. Install the Replacement Filament Cutter onto the lever.
+2. Lift the lever and slide the cutter into place along the blade groove.
+3. Secure the lever by tightening **1 Screw D**.
+
+### Step 5: Install the Filament Sensor
+1. Install the Filament Sensor onto the Filament Feeding Bracket and tighten **2 Screw C**.
+2. Attach the ribbon cable.
+3. Install the Filament Hub base onto the extruder and secure it with **2 Screw C**.
+
+### Step 6: Install the Filament Hub Assembly
+1. Insert the spring into the Filament Hub base.
+2. Thread the cover onto the filament hub, ensuring correct installation orientation.
+3. Apply slight pressure to connect the Filament Hub with the base and check for any looseness.
+
+### Step 7: Install the Filament Press Block
+1. Install the Filament Press Block and tighten **2 Screw A**.
+2. Install the rotating wheel.
+
+## Verification
+- Ensure the Filament Cutter Lever operates smoothly.
+- Press the Filament Hub Assembly to confirm its smooth operation.
+
+## End Notes
+For any concerns or questions about the process, submit a **Technical Ticket** on our Support Page. Include pictures or videos of the issue for better assistance.

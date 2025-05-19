@@ -1,0 +1,171 @@
+https://wiki.bambulab.com/en/a1/maintenance/x-axis
+
+# A1 X-axis Installation Tutorial (Excluding Toolhead)
+
+This tutorial provides guidelines for the disassembly and assembly of the A1 X-axis. The toolhead is not included in this guide. For toolhead-related operations, refer to the "Replace the Toolhead-A1 Series" guide.
+
+### Parts List
+
+- **Purge Wiper**
+- **X-Axis Motor Cover**
+- **X Belt**
+- **X Motor**
+- **X Pulley**
+- **Live View Camera**
+- **Bambu USB-C Cable**
+- **X-axis Linear Rail**
+
+### Tool List
+
+- **H1.5/2.0 Hex Key**
+- **Flat Tweezers**
+
+### Preliminary Operation
+
+Refer to the "A1 Installation Tutorial" for instructions on how to remove the X-axis if necessary.
+
+### Safety Warning
+
+**IMPORTANT!** Always **power off the printer** and disconnect it from the power source before performing any maintenance to avoid short circuits and potential damage to electronics.
+
+If you have any concerns or questions about following this guide, please **open a new ticket** on our Support Page for assistance.
+
+===PAGE_BREAK===
+
+## Remove X-axis Assembly
+
+### Step 1: Disconnect the Cables
+
+1. Tilt the printer to access the cable box underneath.
+2. Sequentially disconnect the camera cable, X motor cable, and Z motor cable.
+3. Loosen a silver screw and slide the cable box to disconnect the USB cable.
+4. Open the Z-motor cable cover and remove the Z-motor cable.
+
+### Step 2: Remove the X-axis Assembly
+
+1. Remove the 6 screws located at the back of the X-axis.
+2. Detach the X-axis assembly from the printer frame.
+
+===PAGE_BREAK===
+
+## Disassemble X-axis Assembly
+
+### Step 1: Remove the Purge Wiper
+
+1. Remove 1 screw using an **H2.0 Allen key**.
+2. Slide out the Purge Wiper.
+
+### Step 2: Remove the X Belt
+
+1. Secure the X-axis slider with tape to prevent it from falling.
+2. Remove 1 screw with an **H2.0 hex key** and remove the X-axis cover.
+   - **Note:** The cover screw is shorter than the purge wiper screw. Distinguish between the two to avoid errors during reassembly.
+3. Remove the pressing block on the right side of the X Belt.
+4. Hold the tensioning block and pull out the X belt from the left side.
+
+### Step 3: Remove the X-axis Pulley and the Weight Block
+
+1. Remove the idler shaft with an **H2.0 hex key**.
+2. Take out the X-axis Pulley and the 2 washers.
+3. Remove 2 screws and the weight block.
+
+### Step 4: Remove the Cable Management Box
+
+1. Remove 1 silver screw with an **H2.0 hex key**, and 1 black screw with an **H1.5 hex key**.
+2. Open the covers and remove all the cables from the management box.
+
+### Step 5: Remove the Live View Camera
+
+1. Remove the front cover of the X Motor Cover.
+2. Unlock the Live View Camera and disconnect the camera cable.
+3. Remove the Live View Camera.
+4. Use a hex key to pry out the cable clip, and remove the nylon mesh tube and the camera cable.
+
+### Step 6: Remove the X-axis Linear Rail
+
+1. Remove 1 screw on the front of the joint and 3 screws on the back to separate the X-axis Linear Rail from the X-axis Motor Cover.
+
+### Step 7: Remove the Bambu USB-C Cable
+
+1. Remove the magnetic ring on the Bambu USB-C Cable.
+2. Pull out the rubber plug and remove the cable.
+
+### Step 8: Remove the X-axis Motor
+
+1. Remove the rear cover of the X Motor Box forcefully in the indicated direction.
+2. Remove the rear cover of the X-axis Motor Cover, remove 3 screws, and take out the X Motor and its holder.
+
+===PAGE_BREAK===
+
+## Assemble X-axis Assembly
+
+### Step 1: Install the X Motor
+
+1. Check the direction of the X Motor cable.
+2. Install the motor on the holder and secure with 4 screws.
+3. Pass the motor cable through, install the X Motor on the X Motor Cover, and lock in 3 screws.
+
+### Step 2: Install the Bambu USB-C Cable
+
+1. Pass through the Bambu USB-C Cable and mount the rubber plug in place.
+
+### Step 3: Install the Live View Camera
+
+1. Pass through the camera cable and connect it to the Live View Camera.
+2. Install the camera on the X Motor Cover.
+
+### Step 4: Install the Cable Management Box
+
+1. Install the nylon mesh tube and mount the cable clip to fix the mesh tube to the Motor Cover.
+2. Install the magnetic ring about 12 cm away from the USB port and wrap tape around the nylon mesh tube; the ring should be inside the mesh tube.
+3. Install the cables to the cable management box, and insert 1 silver screw and lock 1 black screw.
+4. Install the rear cover of the X Motor Cover.
+   - **Note:** Pay attention to the protrusion at the USB port. Install correctly as shown in the guide.
+
+### Step 5: Install the X Belt
+
+1. Check the direction of the X Belt and pass it through the X-axis Linear Rail.
+2. Pass the X Belt around the motor drive wheel, and install the fixing block on the right side of the X Belt.
+
+### Step 6: Join the X-axis Linear Rail and the X Motor Cover
+
+1. Join the X-axis Linear Rail and the X Motor Cover.
+2. Lock 1 screw on the front and 3 screws on the back of the joint position, and close the front cover of the X Motor Cover.
+
+### Step 7: Install the Weight Block and the X Pulley
+
+1. Install the X-axis weight block and lock in 2 screws.
+2. Install the X Pulley, put one washer on the upper and the other one on the lower surface of the Pulley, and lock the idler shaft.
+
+### Step 8: Install the Purge Wiper
+
+1. Install the X-axis cover and lock 1 screw.
+2. Install the Purge Wiper and lock 1 screw.
+   - **Note:** The cover screw is shorter than the purge wiper screw. If used incorrectly, the purge wiper screw will hit the X-axis idler pulley, causing abnormal X-axis resistance and continuous step loss when homing.
+
+===PAGE_BREAK===
+
+## Install X-axis Assembly
+
+### Step 1: Install the X-axis Assembly
+
+1. Align the X-axis with the locating pins on the two Z-axis sliders.
+2. Install it onto the Z-axis sliders.
+3. Secure the X-axis assembly by tightening 3 screws on each side.
+
+### Step 2: Connect the Cables
+
+1. Place the printer in a backward position and connect the Z-motor cable to the cable management box.
+2. Install the cable management box onto the bottom base, slide it along the slot direction, connect the USB cable, and tighten one silver screw.
+3. Follow the text prompts and color labels to connect the X motor cable, Z motor cable, and camera cable. Organize the cables properly to ensure they are not being pressed or tangled.
+
+## Verify the Functionality
+
+1. Confirm that the X-axis slider moves smoothly.
+2. Check that the direction of the belt and the fixing block are correct.
+
+## End Notes
+
+We hope this detailed guide has been helpful and informative. If you have any concerns or questions regarding the process, please reach out to our customer service team before starting the operation. Our team is always ready to assist you.
+
+[Click here to open a new ticket on our Support Page](#).

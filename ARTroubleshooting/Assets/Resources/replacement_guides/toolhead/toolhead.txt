@@ -1,0 +1,133 @@
+https://wiki.bambulab.com/en/a1-mini/maintenance/toolhead
+
+# Toolhead Disassembly and Assembly Guide for A1 Series
+
+This guide provides detailed instructions for disassembling and assembling the A1 Series Toolhead, including steps for handling replaceable parts.
+
+===PAGE_BREAK===
+
+### Parts List
+- **A1 series Print Head Front Cover**
+- **Silicone Sock for Hotend**
+- **Hotend Assembly**
+- **A1 series Toolhead Rear Cover**
+- **A1 mini TH Board**  
+  - Note: If A1 replaces the extruder mainboard of A1mini, the firmware upgrade may fail. In such cases, [submit a technical ticket](#) for resolution.
+- **Hotend Heating Assembly**
+- **Part cooling fan (on Toolhead)**
+- **Cooling Fan for Hotend**
+- **A1 series Toolhead Block**
+
+### Module List
+- **Extruder Module**
+
+### Screw List
+- **Screw A**: B00255 - USB Cable (4 PCS)
+- **Screw B**: M2*2.5 - Coil (2 PCS)
+- **Screw C**: BT2*5 - TH Board and Part Cooling Fan (2 PCS + 1 PCS)
+- **Screw D**: BT3*12 - Extruder (upper) (2 PCS)
+- **Screw E**: BT2.3*7 - Extruder (lower) (2 PCS)
+- **Screw F**: BT2*4 - Cooling Fan for Hotend (2 PCS)
+- **Screw G**: BT2*5 - Part cooling fan (3 PCS/2 PCS)
+- **Screw H**: M3*10 - Hotend Heating Assembly (3 PCS)
+- **Screw I**: M3*14 - Anti-rotation Disk (1 PCS)
+- **Screw J**: B00274 - Belt Tensioning End Cap (4 PCS)
+- **Screw K**: B0061 - Print Head Bracket (4 PCS)
+
+### Tool List
+- **H1.5 Allen Key**
+- **H2.0 Allen Key**
+
+### Safety Warning
+**IMPORTANT!** Always **power off** the printer and **disconnect it from the power source** before starting any maintenance work to avoid short circuits and electronic damage.
+
+===PAGE_BREAK===
+
+## Disassembly Guide
+
+### Step 1 - Remove the Hotend Assembly
+#### Step 1.1: Prepare the Toolhead
+1. If filament is loaded, use a filament cutter to cut it off.
+2. Press the Toolhead Cover from both sides to unlock and remove it. Avoid pressing on the Cooling Fan for Hotend.
+3. Gently pull the protrusion on the side of the Silicone Sock for Hotend and remove it.
+
+#### Step 1.2: Remove the Hotend
+1. Release the hotend latch.
+2. Hold the heat sink and carefully remove the hotend.
+
+### Step 2 - Remove the Tube
+1. Press down on the PTFE Tube Connector with one hand.
+2. With the other hand, pull out the tube.
+
+### Step 3 - Disconnect the USB Connection
+1. Use an **H1.5 Allen Key** to remove the 4 **Screw A** securing the USB cable to the toolhead.
+
+### Step 4 - Remove the Toolhead Rear Cover and Cable Covers
+1. Remove the Toolhead Rear Cover using the notch underneath the toolhead.
+2. Gently push and remove both sides of the cable covers, taking care not to damage the wires inside.
+
+### Step 5 - Remove the TH Board
+1. Disconnect the connectors for the Hotend Heating Assembly, Extruder Motor, Part Cooling Fan, and Cooling Fan for Hotend.
+2. Use an **H1.5 Allen Key** to remove the 2 **Screw B** and loosen the eddy current coils.
+3. Remove the 3 **Screw C** with an **H1.5 Allen Key**, remove the TH Board, and disconnect the Filament Sensor FPC Cable.
+
+### Step 6 - Remove the Extruder Module
+1. Use an **H2.0 Allen Key** to remove 2 **Screw D** and 2 **Screw E** from the Extruder Module.
+
+### Step 7 - Remove the Fans
+1. Remove the Cooling Fan for Hotend by unscrewing the 2 **Screw F** with an **H1.5 Allen Key**.
+2. Remove the Part Cooling Fan by unscrewing the 2 **Screw G** and 1 **Screw C** using an **H1.5 Allen Key**.
+
+### Step 8 - Remove the Hotend Heating Assembly
+1. Use an **H2.0 Allen Key** to unscrew the 3 **Screw H** and remove the Hotend Heating Assembly.
+
+### Step 9 - Remove the Toolhead Block
+1. Unscrew the belt tensioning screws **Screw I** and the anti-rotation plate using an **H2.0 Allen Key**. Loosen a total of 4 belt block fixing screws **Screw J** on the left and right sides to loosen the belt.
+2. Remove the Toolhead Block by unscrewing the 4 **Screw K** with an **H2.0 Allen Key**.
+
+===PAGE_BREAK===
+
+## Assembly Guide
+
+### Step 1 - Install the Toolhead Block
+1. Mount the Toolhead Block onto the X-axis slider and secure it in place by tightening the 4 **Screw K**.
+2. Attach the X belt to both sides of the bracket, securing the right side first with 2 **Screw J**, and then the left side with 2 **Screw J**.
+3. Slide the Toolhead Block back and forth to ensure smooth movement. Install the anti-rotation plate and secure it with **Screw I**.
+
+### Step 2 - Install the Hotend Heating Assembly
+1. Install the Hotend Heating Assembly onto the Toolhead Block and tighten the 3 **Screw H** to secure it.
+
+### Step 3 - Install the Fans
+1. Install the Part Cooling Fan by securing 1 **Screw G** on each side of the fan and 1 **Screw C** in the rear.
+2. Install the Cooling Fan for Hotend and secure it with 2 **Screw F**.
+
+### Step 4 - Install the Extruder Module
+1. Organize the cables on both sides to avoid damage.
+2. Install the Extruder Module onto the Toolhead Block, being careful not to press on the connecting wires, and secure it with 2 **Screw D** at the top and 2 **Screw E** at the bottom.
+
+### Step 5 - Install the TH Board
+1. Connect and snap the Filament Sensor FPC Cable to the corresponding connectors on the TH Board.
+2. Mount the TH Board onto the Toolhead, being careful not to press on other cables, and then tighten the 3 **Screw C** to secure the TH Board.
+3. Lock the 2 **Screw B** to secure the coil connection wires. Connect the Hotend Heating Assembly, Extruder Motor, Cooling Fan for Hotend, and Part Cooling Fan cables in sequence to the corresponding connectors on the TH Board.
+
+### Step 6 - Install the Cable Covers and Toolhead Rear Cover
+1. After ensuring that the cables are properly placed in the cable channel, check to confirm that the installation direction of cable cover is correct, and then securely install the cable covers on both sides.
+2. Check the position of the Toolhead Rear Cover notch and press the cover into place after confirming that the installation direction is correct.
+
+### Step 7 - Connect the USB Cable
+1. Connect the USB cable to the through-hole above the Toolhead following the direction of the cable slot, and tighten the 4 **Screw A** to secure it in place.
+
+### Step 8 - Install the Hotend Assembly
+1. Open the quick-release device, hold the nozzle heat sink, align the mounting position, install the nozzle in place, and snap the quick-release device closed.
+2. Put on the Silicone Sock for Hotend and install the Toolhead Front Cover.
+
+===PAGE_BREAK===
+
+### To Verify Completion/Success
+1. Start up the printer and confirm that it can be started normally.
+2. Operate on the screen, run a device calibration, and confirm that the hot end temperature, fan, extruder, etc. are working properly.
+
+===PAGE_BREAK===
+
+### End Notes
+We hope this detailed guide has been helpful and informative. If this guide does not solve your problem, please [submit a technical ticket](#). For suggestions or feedback, please leave a message in the comment area. Thank you for your support and attention!

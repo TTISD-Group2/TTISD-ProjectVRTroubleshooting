@@ -1,0 +1,95 @@
+https://wiki.bambulab.com/en/a1/maintenance/power-supply-replacement-guide
+
+# Step-by-Step Guide to Replace the Power Supply on the A1 Printer
+
+### When to Use This Guide
+Use this guide if the Power Supply of the A1 printer is faulty. Common issues indicating a faulty Power Supply include:
+- Printer is not turning on
+- Recommended by Bambu Lab Customer Support
+
+### Tools and Materials Needed
+- **Bambu Lab Power Supply for A1**
+- **H2.0 hex wrench**
+- **PH2 Philips screwdriver**
+- **20 minutes of your time**
+
+### Safety Warning
+**IMPORTANT!**
+It's crucial to **power off** the printer and **disconnect it from the power source** before performing any maintenance work. This prevents short circuits, electronic damage, and safety hazards. Ensure all electronics and wires are not live during maintenance to avoid any potential damage.
+
+For any concerns or questions, please visit our [Support Page](#) to open a new ticket.
+
+===PAGE_BREAK===
+
+### Steps to Remove the Old Power Supply
+
+#### Step 1: Place the printer on its front
+1. Flip the screen to the side.
+2. Gently lay the printer on its front, using a box of filament to keep the top side raised and prevent pressure on the extruder and screen.
+
+#### Step 2: Remove the printer's bottom cover
+1. Remove **10 screws** marked in red for bottom housing removal.
+2. Loosen (but do not remove) the screw marked in yellow, which remains attached to the cable bracket.
+
+#### Step 3: Disconnect the wires and remove the wire bracket
+1. Disconnect the **Camera**, **Motor X**, and **Motor Z cables**.
+2. Push the plastic wire bracket upwards to disconnect the USB cable.
+   
+   **Important**: If the wire bracket does not remove easily, ensure the screw holding it (Nr. 11) is loosened.
+3. Gently pry out the plastic bottom cover.
+
+#### Step 4: Remove the power supply screws
+1. Remove the two screws holding the power supply in place, along with plastic brackets.
+
+#### Step 5: Loosen the power terminal screws
+1. Loosen the power terminal screws without removing them completely to facilitate reinstallation.
+
+#### Step 6: Remove the Power Supply
+1. Push the plastic clips towards the bottom while pulling the power supply towards you to release it.
+   
+   **Important**: Do not push the clips too hard as they can break. Push about 2-3mm to release the power supply.
+
+===PAGE_BREAK===
+
+### Steps to Install the New Power Supply
+
+#### Step 1: Re-connect the power terminal wires
+1. Carefully reconnect the power terminal wires while holding the power supply:
+   - **+V MC Board Wire**
+   - **-V MC Board Wire**
+   - **Ground Wires**
+   - **AC Neutral Wire**
+   - **AC Live Wire**
+2. Tighten the screws ensuring no movement and all wires are securely fixed.
+
+   **IMPORTANT**: Check all connections for security and proper placement.
+
+#### Step 2: Install the power supply
+1. Angle the top side of the power supply into the frame first.
+2. Align the screw hole on the top, then gently push the bottom of the power supply to engage the bottom clips.
+
+#### Step 3: Install the Power Supply Screws
+1. Install the two screws into the plastic standoffs.
+   
+   **Important**: Avoid over-tightening to prevent damage to the plastic threads.
+
+#### Step 4: Install the printer's bottom cover
+1. Manage the motor wire in the top left side correctly before pressing the cover in place.
+2. Clip the cover in place and install the 10 screws without over-tightening.
+
+#### Step 5: Install the wire bracket and connect the wires
+1. Align and push down the wire bracket, ensuring the USB cable is fully against the printer frame.
+2. Tighten the securing screw without overtightening.
+3. Re-connect the **Camera**, **Motor X**, and **Motor Z cables**.
+
+### Verify the Functionality
+Turn on the printer to ensure it powers up correctly, confirming a successful installation.
+
+### Potential Problems and Solutions
+- **Printer doesn't power on**: Check power supply wires as per **Step 1**.
+- **Camera is not working**: Ensure the camera wire is fully installed as per **Step 5**.
+- **X-axis / Z-axis not working**: Check X motor and Z motor wires as per **Step 5**.
+- **Error message on screen**: Re-insert the USB cable as per **Step 5**.
+
+### End Notes
+We hope this guide assists you effectively. For any further assistance, please contact our customer service team through our [Support Page](#).

@@ -1,0 +1,84 @@
+https://wiki.bambulab.com/en/a1/maintenance/usb-c-cable-replacement-guide
+
+# USB-C Cable Replacement Guide for Bambu Lab A1
+
+## Applicable Model
+- **Bambu Lab A1**
+
+## When to Replace the USB-C Cable
+- The USB-C cable is broken.
+- The printer cannot detect the toolhead.
+- Recommended by Bambu Lab Support.
+
+## Safety Warning
+**IMPORTANT!** It's crucial to **power off the printer** before conducting any maintenance work, including work on the printer's electronics and tool head wires. Performing tasks with the printer on can result in a short circuit, leading to electronic damage and safety hazards. Always turn off the printer and disconnect it from the power source before conducting any maintenance to prevent short circuits or damage to the printer's electronics.
+
+## Tools and Materials Needed
+- A new USB-C cable
+- **H2.0 hex wrench**
+- **H1.5 hex wrench**
+- 20 minutes
+
+===PAGE_BREAK===
+
+# Step-by-Step Guide to Replace the USB-C Cable
+
+### Remove the Old USB-C Cable
+
+#### Step 1: Remove the USB-C Cable from the Toolhead
+1. Remove the four screws fixing the USB-C cable to the toolhead using an **H1.5 hex wrench**.
+2. Pull the cable upwards to detach it from the toolhead.
+
+#### Step 2: Remove the Front Cover of the X Motor Box and the Wire Attachment
+1. Pry on the lower-right corner of the front cover to remove it.
+2. Press both sides of the wire attachment with your hands and remove it.
+
+#### Step 3: Remove the USB-C Cable Fixture
+1. Use a flat screwdriver to pry on a side of the fixer on top of the X motor box to remove the fixture.
+
+#### Step 4: Remove the Cable Box
+1. Flip the screen on its side, then gently place the printer on its front, using a box of filament to keep the top side raised.
+2. Disconnect the cables of the camera, X-axis motor, and Z-axis motor.
+3. Loosen 1 screw and push the cable bracket upwards.
+4. Disconnect the USB data cable and remove the cable bracket.
+
+#### Step 5: Take out the USB-C Cable from the Cable Box
+1. Loosen the screw and open the cover.
+2. Open the USB-C bracket and remove the USB-C cable.
+
+#### Step 6: Take out the USB-C Cable from the Metal Sleeve
+1. Tear away the tape on the metal sleeve and stick it on the printer or table for later use.
+2. Firstly, remove the end of the USB-C cable with the ferrite core attachment from the two buckles.
+3. Remember the location of the ferrite core attachment on the USB-C cable.
+4. Take out the USB-C cable from the metal sleeve.
+
+===PAGE_BREAK===
+
+### Install the New USB-C Cable
+
+#### Step 1: Install the USB-C Cable to the X Motor Box
+1. Remove the ferrite core attachment from the old cable.
+2. Guide the new cable through the small hole above the X motor box.
+3. Mark the location of the ferrite core attachment for easy reinstallation.
+
+#### Step 2: Put the USB-C Cable in the Metal Sleeve
+1. Push the new USB-C cable through the metal sleeve until it reaches the other end.
+2. Reinstall the ferrite core attachment back to the cable in the original location.
+
+#### Step 3: Install the USB-C Cable to the Cable Box
+1. Place the USB-C cable in the cable box and close the buckle.
+2. Position the cables of X motor, Z motor, and camera into their respective slots, close the buckle and tighten the screw.
+3. Carefully align the wire bracket, then push it downwards while ensuring the USB cable is fully seated against the printer frame. Tighten the screw to lock it in place, being careful not to overtighten as it screws into the plastic frame.
+4. Reconnect the Camera, X-axis motor, and Z-axis motor cables.
+
+#### Step 4: Install the USB-C Cable Fixture and Wire Attachment
+1. Install the fixture back to the X motor box.
+2. Install the wire attachment.
+3. Replace the front cover until you hear a click, indicating successful installation.
+
+#### Step 5: Fix the USB-C Cable to the Toolhead
+1. Insert the new USB-C cable into the toolhead.
+2. Use the four screws to secure the cable, ensuring not to overtighten to avoid damaging the threads and that the USB-C cable is aligned with the slot on the toolhead.
+
+## End Notes
+We hope this detailed guide has been helpful and informative. For any concerns or questions about the process, please submit a **technical ticket** including a picture or video of the issue, along with any additional information related to your inquiry.

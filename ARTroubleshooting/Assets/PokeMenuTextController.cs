@@ -11,10 +11,10 @@ public class PokeMenuTextController : MonoBehaviour
 {
     public TMP_Text textDisplay;
     public TMP_Text titleDisplay;
-    public string fileName = "textdata";
+    public string fileName = "";
     public float fontSize = 12f;
 
-    private List<(string header, string content)> sections = new List<(string, string)>();
+    public List<(string header, string content)> sections = new List<(string, string)>();
     private int currentSectionIndex = 0;
 
     public PrinterPartIndicator printerPartIndicator;
@@ -110,16 +110,23 @@ public class PokeMenuTextController : MonoBehaviour
 
     void Start()
     {
+        
+    }
+
+    public void ShowMenu()
+    {
         textDisplay.fontSize = fontSize;
+        sections.Clear();
         LoadSections();
 
         if (sections.Count > 0)
         {
+            currentSectionIndex = 0;
             DisplayCurrentSection();
         }
     }
 
-    void LoadSections()
+    public void LoadSections()
     {
         TextAsset textFile = Resources.Load<TextAsset>(fileName);
         if (textFile == null)
@@ -154,7 +161,7 @@ public class PokeMenuTextController : MonoBehaviour
         }
     }
 
-    void DisplayCurrentSection()
+    public void DisplayCurrentSection()
     {
         if (currentSectionIndex >= 0 && currentSectionIndex < sections.Count)
         {

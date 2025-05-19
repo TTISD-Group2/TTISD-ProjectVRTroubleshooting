@@ -1,0 +1,89 @@
+https://wiki.bambulab.com/en/a1/maintenance/touchscreen-replacement-guide
+
+# Step-by-Step Guide to Replace the Screen on the A1
+
+### When to Use This Guide
+This guide should be used if the screen of the A1 is faulty and needs replacement. Common issues include:
+- Screen not detecting interaction
+- Screen not turning on
+- Recommended by Bambu Lab Customer Support
+
+### Tools and Materials Needed
+- **Bambu Lab Screen for A1**
+- **H2.0 Allen Key**
+- **H1.5 Allen Key**
+- **Flat End Screwdriver or Prying Tool**
+- **Sharp Pliers**
+- **Estimated Time: 20-30 minutes**
+
+### Safety Warning
+**IMPORTANT:** Always power off the printer and disconnect it from the power source before starting maintenance work to prevent short circuits and other electronic damage.
+
+For any concerns or questions, please [open a new ticket on our Support Page](#).
+
+===PAGE_BREAK===
+
+### Steps to Remove the Old Screen
+
+#### Step 1: Place the Printer on Its Front
+1. Flip the printer on its side.
+2. Gently place the printer on its front using a box of filament to support the top side and avoid pressure on the extruder and screen.
+
+#### Step 2: Disconnect the Wires and Remove the Wire Bracket
+1. Disconnect the cables of the camera, X-axis motor, and Z-axis motor.
+2. Loosen **1 screw**.
+3. Push the cable bracket upwards, disconnect the USB data cable, and remove the bracket.
+
+#### Step 3: Remove the Printer's Bottom Cover
+1. Remove **10 screws** (marked in red) to remove the bottom cover.
+
+#### Step 4: Disconnect the Screen Ribbon Cable
+1. Carefully raise the black plastic clip on the mainboard to release the ribbon cable.
+2. Remove the ribbon cable from the board.
+
+#### Step 5: Remove the Screen Clip
+1. Remove **2 screws** holding the screen metallic clip.
+2. Use sharp pliers to pull the metallic clip towards you with slight resistance.
+
+#### Step 6: Remove the Screen from the Printer
+1. With the clip removed, carefully remove the screen. Note the alignment of the plastic tabs in its holder for correct removal.
+
+===PAGE_BREAK===
+
+### Install the New Screen
+
+#### Step 1: Attach the Screen to the Printer
+1. Slide the screen halfway through the holder, ensuring the plastic tabs are aligned as shown in the guide.
+
+#### Step 2: Install the Metallic Bracket
+1. Align the metallic bracket as depicted.
+2. Install **2 screws** to hold the bracket in place.
+3. Use a flat end screwdriver to help slide the screen into the bracket until it clicks into place.
+
+#### Step 3: Attach the Screen Ribbon Cable
+1. Gently insert the ribbon cable into the motherboard connector.
+2. Lock the black plastic clip to secure the cable, ensuring the white line on the ribbon cable is aligned.
+
+#### Step 4: Install the Printer's Bottom Cover
+1. Manage the motor wire on the top left side as indicated.
+2. Clip the cover in place and install **10 screws**, making sure not to over-tighten.
+
+#### Step 5: Install the Wire Bracket and Connect the Wires
+1. Align and push the wire bracket downwards, ensuring the USB cable is fully against the frame.
+2. Tighten the screw to lock the bracket in place.
+3. Reconnect the camera, X-axis motor, and Z-axis motor cables.
+
+### Verify the Functionality
+Turn on the printer and interact with the screen to ensure proper functionality.
+
+### Calibration Step After the Operation
+No calibration step is required after this operation.
+
+### Potential Problems and Solutions
+- **Camera Not Working:** Check the camera wire installation as described in Step 5.
+- **X-axis / Z-axis Not Working:** Ensure the X and Z motor wires are correctly installed as in Step 5.
+- **Screen Displays an Error Message:** Check the USB cable connection as in Step 5.
+- **Screen Not Turning On/Touch Not Detected:** Confirm the ribbon cable installation as in Step 3.
+
+### End Notes
+We hope this guide assists you effectively. For further assistance, feel free to contact our customer service team through our Support Page.

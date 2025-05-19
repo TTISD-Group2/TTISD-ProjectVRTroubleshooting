@@ -1,0 +1,81 @@
+https://wiki.bambulab.com/en/a1/maintenance/th-board-replacement-guide
+
+# Step-by-Step Guide to Replace the TH Board on the A1
+
+### When to Use This Guide
+This guide is intended for use if there is a problem with the TH Board on the A1. Common issues that may indicate the need for replacement include:
+- Problems with bed leveling where the nozzle doesn't accurately perform the homing procedure.
+- The extruder motor is not turning as expected, potentially due to a faulty stepper driver.
+- Damage to the USB C connector, Filament Sensor ribbon cable connector, Heater connector, or if the tool head is not detected with an error message displayed on the printer screen.
+- Recommendation by Bambu Lab Technical Support.
+
+### Tools and Materials Needed
+- **Bambu Lab Toolhead Board for A1**
+- **H2.0 hex wrench**
+- **H1.5 hex wrench**
+- **15 minutes of your time**
+
+### Safety Warning
+**IMPORTANT!** It's crucial to **power off the printer** and **disconnect it from the power source** before conducting any maintenance work on the printer's electronics and tool head wires to prevent short circuits or damage to the printer's electronics.
+
+===PAGE_BREAK===
+
+### Remove the Old TH Board
+
+#### Step 1: Remove the back printhead cover
+1. Carefully pry open the back cover by pulling on the bottom section.
+
+#### Step 2: Remove the USB-C cable from the toolhead
+1. Remove the four screws holding the USB-C cable secure on the toolhead of the A1.
+2. Pull the USB-C cable upwards to remove it.
+
+#### Step 3: Remove the TH Board screws
+1. Remove the three black screws holding the TH Board in place.
+
+#### Step 4: Disconnect the cables
+1. Remove the four cables attached to the TH Board by pulling them out by the connector using a flat tool to avoid damage.
+2. Remove the Eddy sensor wires, held in place by two screws.
+
+#### Step 5: Remove the TH Board
+1. Open the clip that fixes the cable in place.
+2. Disconnect and carefully pull out the filament sensor ribbon cable straight upwards to avoid damage.
+
+===PAGE_BREAK===
+
+### Install the New TH Board
+
+#### Step 1: Attach the TH Board to the housing
+1. Reconnect the filament sensor ribbon cable on top of the board and close the clip that fixes the cable in place.
+2. Route the Extruder Motor cable next to the ribbon cable.
+3. Gently push the TH Board back into its position.
+
+#### Step 2: Install the TH Board screws
+1. Use the three black screws to re-attach the TH Board back to the toolhead.
+   - **Important!** Do not overtighten the screws to avoid any potential damage.
+
+#### Step 3: Re-connect all the cables
+1. Reconnect the following cables:
+   - **Hotend Heating Assembly**
+   - **Extruder Motor**
+   - **Hotend Cooling Fan**
+   - **Part Cooling Fan**
+   - **Hotend Sensor**
+
+#### Step 4: Re-connect the USB-C cable
+1. Reinstall the USB cable using the four screws removed earlier, making sure of the correct orientation.
+   - **Important!** Do not over-tighten these screws to avoid damaging the threads. Ensure the line in the cable connector is aligned to the back of the printer and toolhead.
+
+#### Step 5: Install the toolhead back cover
+1. Align the two brackets on the back cover towards the top and push until it clicks into place.
+
+### Calibration Step After the Operation
+It's recommended to conduct a full calibration of the printer and wash the PEI textured plate before use to ensure optimal performance.
+
+### Potential Problems and Solutions
+- **Hotend temperature is 0**: Check the Hotend Heating Assembly connector and ensure it is correctly inserted. If issues persist, check for damage to the thermistor wires (White wires).
+- **Hotend cannot be heated**: Confirm the Hotend Heating Assembly connector is correctly inserted. If issues persist, check for damage to the heater wires (Translucent wires).
+- **Printer is not homing correctly**: Check the Eddy Sensor wires and confirm they are correctly installed.
+- **Filament sensor is not working**: Check the Ribbon Cable and replace if damaged.
+
+### End Notes
+For any concerns or questions about the process described in this guide, reach out to the technical support team before initiating the operation. [Click here to open a new ticket in our Support Page](#).

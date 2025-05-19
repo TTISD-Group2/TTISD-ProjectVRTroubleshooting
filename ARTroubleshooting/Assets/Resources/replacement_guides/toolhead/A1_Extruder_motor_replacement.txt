@@ -1,0 +1,146 @@
+https://wiki.bambulab.com/en/a1/maintenance/A1_Extruder_motor_replacement
+
+# Extruder Motor Replacement Guide
+
+This guide provides a detailed process for replacing the A1 extruder motor on compatible Bambu Lab printer models, specifically A1 and A1 mini.
+
+## When to Replace the Extruder Motor
+Replace the extruder motor in the following scenarios:
+- Motor stall and step loss.
+- Significant fluctuations in extrusion.
+- Recommended by Bambu Lab Technical Support.
+
+## Safety Warning
+**Important**: Ensure to **power off** the printer and **disconnect it from the power source** before starting any maintenance. This is crucial to prevent short circuits and damage to the printer’s electronics.
+
+## Tools and Materials Needed
+- **H2.0 hex wrench**
+- **H1.5 hex wrench**
+- **25 minutes**
+
+===PAGE_BREAK===
+
+# Remove the Old Extruder Motor
+
+### Step 1: Remove the Toolhead Rear Cover
+1. Engage the latch at the bottom of the rear cover.
+2. Gently pull it backward to open the cover.
+
+### Step 2: Unplug the USB-C Cable
+1. Use an **H1.5 Allen key** to remove the four screws securing the USB-C data cable.
+2. Lift the USB-C data cable up to remove it.
+
+### Step 3: Remove the TH Board Screws
+1. Remove the three black screws holding the TH board in place.
+
+### Step 4: Disconnect the Cables
+1. Remove the four cables attached to the TH Board by pulling them out by the connector.
+2. Use a flat tool to gently pry them out to avoid damage.
+3. Remove the eddy current coils, held in place by two screws.
+
+### Step 5: Remove the TH Board
+1. Carefully disconnect the filament sensor FPC while pulling the TH Board out slowly and straight upwards.
+
+### Step 6: Remove the Toolhead Front Cover
+1. Grab the base of the front cover and gently pull towards you to release the clips.
+
+### Step 7: Release the Filament Cutter Lever
+1. Hold the filament cutter pressed and remove the single screw holding it in place.
+2. Gently release the cutter after removing the screw.
+
+### Step 8: Remove the Extruder Pressure Block
+1. Remove the rotating wheel.
+2. Use an **H1.5 Allen key** to unscrew the two screws and remove the pressure block.
+
+### Step 9: Remove the Nozzle Assembly
+1. Remove the silicone sock for the hotend.
+2. Release the clip and detach the nozzle assembly.
+
+### Step 10: Remove the Filament Hub Assembly
+1. Use an **H2.0 Allen key** to unscrew two screws.
+2. Take out the filament hub, being careful not to damage the black FPC cable.
+
+### Step 11: Remove the Extruder Front Cover
+1. Remove the four securing screws on the front cover.
+2. Loosen the side screw slightly (do not remove completely).
+
+### Step 12: Remove the Extruder Gear
+1. After removing the front cover, completely remove the side screw.
+2. Take out the washer and spring, and then remove the extruder gear.
+
+### Step 13: Remove the Extruder Motor
+1. Remove the four fixing screws of the front motor.
+2. At this point, the motor can be removed from the back.
+
+===PAGE_BREAK===
+
+# Install the New Extruder Motor
+
+### Step 1: Fix the Extruder Motor
+1. Insert the motor from the back of the toolhead.
+2. Use 4 M2.5*5 screws from the front to fix the motor.
+   - **Note**: Ensure the motor cable exits is facing upward.
+
+### Step 2: Install the Extruder Gear
+1. Install the yellow gear into the bearing.
+2. Install the driven wheel bracket while holding the washer and spring.
+3. Screw in the side screw but do not fully tighten it yet.
+   - **Note**: Ensure that the springs and gaskets are correctly installed.
+
+### Step 3: Install the Front Cover of the Extruder
+1. Install 4 fixing screws (BT2.3*7) on the front cover.
+2. Lock the side screws.
+
+### Step 4: Install the Filament Hub Assembly
+1. Make sure that the black FPC cable is not folded and smoothly placed in the vacant position.
+2. Tighten the 2 screws (BT2.6*5) to secure the filament hub in place.
+
+### Step 5: Install the Nozzle Assembly and the Silicone Sock for Hotend
+1. Install the nozzle assembly onto the hotend heating assembly.
+2. Lock it with the snap-fit and install the silicone sock for hotend.
+   - **Note**: Check the installation correctness.
+
+### Step 6: Lock the Filament Cutter Lever in Place
+1. Align the blade with the extruder hole.
+2. Push on the filament cutter lever and hold it in place while re-installing the screw.
+   - **Note**: Do not overtighten the screw.
+
+### Step 7: Install the Toolhead Front Cover
+1. Attach the front cover by aligning the clips and gently pushing on the bottom side.
+
+### Step 8: Attach the TH Board to the Housing
+1. Open the clip on the TH board for the ribbon cable.
+2. Gently push the cable in the connector, and close the clip.
+3. Route the Extruder Motor cable next to the ribbon cable.
+4. Use the three black screws to re-attach the TH Board back to the print head.
+5. Re-connect all the cables including:
+   - Hotend Heating Assembly
+   - Extruder Motor
+   - Hotend Cooling Fan
+   - Part Cooling Fan
+   - Eddy current coil
+
+### Step 9: Re-connect the USB-C Cable
+1. Re-install the USB-C cable using the four screws previously removed.
+   - **Note**: Ensure correct USB-C cable orientation.
+
+### Step 10: Install the Toolhead Rear Cover
+1. Align the two brackets on the rear cover towards the top.
+2. Push until you hear a few clicks.
+
+===PAGE_BREAK===
+
+# Verify the Functionality
+Turn on the printer and start a filament loading procedure to check if the plastic is being extruded from the nozzle assembly correctly.
+
+# Calibration Step After the Operation
+Conduct a comprehensive calibration to ensure smooth operation of the printer. It is also advised to wash the PEI textured plate before use.
+
+# Potential Problems and Solutions
+- **The hotend temperature is 0**: Check and reconnect the Hotend Heating Assembly connector.
+- **The hotend cannot be heated**: Check the heater wires and connections.
+- **Printer is not homing correctly**: Check the Eddy Sensor wires and confirm correct installation.
+- **Filament sensor is not working**: Check the Ribbon Cable and replace if damaged.
+
+# End Notes
+If you encounter any issues or have feedback, please submit a technical ticket or leave a comment. Thank you for following this guide!

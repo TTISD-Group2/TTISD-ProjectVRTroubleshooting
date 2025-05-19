@@ -1,0 +1,127 @@
+https://wiki.bambulab.com/en/a1/maintenance/filament-sensor-replacement
+
+# Step-by-Step Guide to Replace the Filament Sensor on the A1 3D Printer
+
+## When to Use This Guide
+
+This guide is intended for use if there is a problem with the Filament Sensor on the A1 3D printer. Common issues that indicate the need for replacement include:
+
+- Filament is not detected by the printer during loading/unloading or printing.
+- The printer frequently stops during printing, reporting problems with the filament.
+- Recommended by Bambu Lab Technical Support.
+
+**Note:** The filament sensor base must be replaced at the same time as the filament sensor. Please refer to the A1 series Filament Sensor Base Replacement Guide.
+
+===PAGE_BREAK===
+
+## Tools and Materials Needed
+
+- **Bambu Lab Filament Sensor A1**
+- **H2.0 Allen Key**
+- **H1.5 Allen Key**
+- 15 minutes of your time
+
+## Safety Warning
+
+**IMPORTANT!** It's crucial to **power off the printer** before conducting any maintenance work, including work on the printer's electronics and tool head wires. Performing tasks with the printer on can result in a short circuit, leading to electronic damage and safety hazards.
+
+Turn off the printer and disconnect it from the power source before conducting any maintenance. This prevents short circuits or damage to the printer's electronics, ensuring safe and effective maintenance.
+
+For any concerns or questions about following this guide, open a new ticket on our Support Page.
+
+===PAGE_BREAK===
+
+## Remove the Old Filament Sensor
+
+### Step 1: Remove the Back Printhead Cover
+1. Start by removing the back cover of the print head.
+2. Carefully pry open the back cover by pulling on the bottom section.
+
+### Step 2: Remove the USB C Cable from the Print Head
+1. Remove the four screws holding the USB C cable secure on the tool head of the A1.
+2. After removing the screws, pull the USB C cable upwards to remove it.
+
+### Step 3: Remove the Toolhead Board Screws
+1. Remove the three black screws holding the Toolhead Board in place.
+
+### Step 4: Disconnect the Cables
+1. Remove the four cables attached to the Toolhead Board by pulling them out by the connector.
+2. Use a flat tool to gently pry them out to avoid any potential damage.
+3. Also, remove the Eddy sensor wires, which are held in place by two screws.
+
+### Step 5: Remove the Toolhead Board and Disconnect the Filament Sensor
+1. Remove the Toolhead Board from the plastic housing.
+2. Be careful when pulling it out, as you will need to carefully disconnect the filament sensor ribbon cable by pulling it slowly and straight upwards.
+
+### Step 6: Remove the 4-in-1 Buffer and Sensor
+1. Remove the 2 screws holding the 4-in-1 buffer attached to the extruder.
+2. Gently raise it upwards and place it on the top of the print head.
+
+### Step 7: Detach the Filament Sensor from the Buffer
+1. Remove the filament sensor from the filament buffer by removing the two screws.
+2. Completely pull out the filament sensor and its ribbon cable.
+
+### Optional Step
+- Check if the magnet located inside the filament buffer is in good condition.
+
+===PAGE_BREAK===
+
+## Install the New Filament Sensor
+
+### Step 1: Attach the Filament Sensor to the Buffer
+1. Attach the new filament sensor to the buffer using the two screws.
+2. Remove the blue protection from the ribbon cable, then push the flex cable against the filament sensor to route it in place.
+
+### Step 2: Install the Buffer to the Extruder
+1. Put the filament buffer back in place, ensuring to route the ribbon cable towards the back of the print head.
+2. Tighten the two screws on top.
+
+### Step 3: Attach the Toolhead Board to the Housing
+1. Open the clip on the TH board for the ribbon cable.
+2. Gently push the cable in the connector, and close the clip.
+3. **Note:** Pay close attention to the ribbon cable orientation when plugging it in.
+
+### Step 4: Install the TH Board Screws
+1. Use the three black screws to re-attach the Toolhead Board back to the print head.
+2. **Important:** Do not overtighten the screws to avoid any potential damage.
+
+### Step 5: Re-connect All the Cables
+- **Hotend Heating Assembly**
+- **Extruder Motor**
+- **Hotend Cooling Fan**
+- **Part Cooling Fan**
+- **Eddy Sensor Wires**
+
+### Step 6: Re-connect the USB-C Cable
+1. Re-install the USB cable using the four screws removed earlier.
+2. **Important:** Do not over-tighten these screws.
+
+### Step 7: Install the Print Head Back Cover
+1. Install the back cover of the A1 print head by aligning the two brackets towards the top, then push it until it clicks into place.
+
+===PAGE_BREAK===
+
+## Verify the Functionality
+
+- Insert filament into any inlet of the toolhead. A green dot will appear on the icon in the lower right corner of the screen; remove the filament, and the green dot disappears, indicating that the filament sensor is working properly.
+
+## Calibration Step After the Operation
+
+- Conduct a full calibration of the printer after this operation.
+- It's strongly advised to wash the PEI textured plate before use, as it may have been contaminated during this process.
+
+## Potential Problems and Solutions
+
+- **Filament Sensor is Not Working:**
+  - Check the Ribbon Cable and confirm it is correctly installed.
+  - Confirm the magnet inside the buffer is moving as expected and is free from any debris.
+- **The Hotend Temperature is 0:**
+  - Check the Hotend Heating Assembly connector and confirm it is correctly inserted.
+- **The Hotend Cannot be Heated:**
+  - Check the Hotend Heating Assembly connector.
+- **Printer is Not Homing Correctly:**
+  - Check the Eddy Sensor wires and confirm they are correctly installed.
+
+## End Notes
+
+We hope this detailed guide has been helpful and informative. If this guide does not solve your problem, please submit a technical ticket. For suggestions or feedback on this Wiki, please leave a message in the comment area. Thank you for your support and attention!
