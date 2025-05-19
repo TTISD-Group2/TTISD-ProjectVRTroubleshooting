@@ -1,231 +1,95 @@
 https://wiki.bambulab.com/en/a1/maintenance/power-supply-replacement-guide
 
-In this guide we will show the process of replacing the Power Supply on the A1
-
-
-¶
-When to use?
-
-This guide should be used if the Power Supply of the A1 is faulty, and needs to be replaced.
-Common issues that are caused by the A1 Power Supply are:
-
-
-Printer is not turning on
-
-Recommended by Bambu Lab Customer Support
-
-
-¶
-Tools and materials needed
-
-Bambu Lab Power Supply for A1
-
-
-H2.0 hex wrench
-
-PH2 Philips screwdriver
-
-20 minutes of your time
-
-
-¶
-Safety Warning
-
-
-IMPORTANT!
-
-It's crucial to power off the printer before performing any maintenance work on the printer and its electronics, including tool head wires, because leaving the printer on while conducting such tasks can cause a short circuit, which can lead to additional electronic damage and safety hazards.
-
-When you perform maintenane or troubleshooting on the printer, you may be required to disassemble some parts, including the hotend. This process can expose wires and electrical components that could potentially short circuit if they come into contact with each other or with other metal or electronic components while the printer is still on. This can damage the electronics of the printer and cause further damage.
-
-Therefore, it's essential to switch off the printer and disconnect it from the power source before doing any maintenance work. This will prevent any short circuits or damage to the printer's electronics. By doing so, you can avoid potential damage to the printer's electronic components and ensure that the maintenance work is performed safely and effectively.
-
-If you have any concerns or questions about following this guide,
-open a new ticket in our Support Page
-and we will do our best to respond promptly and provide you with the assistance you need.
-
-
-¶
-Steps to remove the old Power Supply
-
-¶
-1. Place the printer on its front
-
-For easy access to the bottom section of the A1, you need to place the printer on the front.
-Start by flipping the screen on its side, then gently place the printer on its front, as shown in the image below.
-
-Use a box of filament to keep the top side raised to avoid putting pressure on the extruder and the screen.
-
-
-¶
-2. Remove the printer's bottom cover
-
-Remove the 10 screws marked in red to prepare the bottom housing removal.
-Please note that the screw marked in yellow needs to be loosened, but it will not be possible to remove it. It remains attached to the cable bracket.
-
-
-¶
-3. Disconnect the wires and remove the wire bracket
-
-In the next step, the Camera, Motor X and Motor Z cables need to be disconnected.
-Then, you will be able to simply push the plastic wire bracket upwards, to disconnect the USB cable.
-
-
-
-Important
-If you cannot easily remove the wire bracket, make sure the screw holding it in place (labeled with Nr. 11 in the previous step) is loosened
-
-
-After removing the wires, gently pry out the plastic bottom cover.
-
-¶
-4. Remove the power supply screws
-
-The A1 power supply is held in place by two screws, and plastic brackets.
-First, remove the power supply screws shown in the image below.
-
-
-¶
-5. Loosen the power terminal screws
-
-Loosen the power terminal screws listed in the image below.
-Simply make them loose and
-avoid removing them completely
-, as it will be easier to re-install everything back in place in the next steps.
-
-
-¶
-6. Remove the Power Supply
-
-With the power terminal screws loose, we can proceed in removing the power supply from the printer.
-Gently push the plastic clips towards the bottom while also pulling the power supply towards you. This will release the power supply allowing for it to be removed from the printer frame.
-
-
-Some power supply can be removed by removing only two screws
-
-
-
-
-Important
-Do not push the clips too hard as they can break. They need to be pushed about 2-3mm so the power supply is removed.
-Start with the first one then push the second one to release the power supply.
-
-
-The power supply is now removed
-
-
-¶
-Steps to install the new Power Supply
-
-¶
-1. Re-connect the power terminal wires
-
-While holding the power supply, carefully re-connect the power terminal wires as shown below and
-tighten the screws.
-The wire information is as follows:
-
-1. +V MC Board Wire
-2.  -V MC Board Wire
-3.  Ground Wires
-4.  AC Neutral Wire
-5.  AC Live Wire
-
-
-
-IMPORTANT
-After installing all the wires as shown in the image,
-ensure there is no movement and all the wires are fixed in place
-
-
-¶
-2. Install the power supply
-
-Gently insert the power supply by angling the top side first. When the screw hole on the top is aligned, gently push on the bottom of the power supply to engage the bottom clips.
-
-
-
-
-
-
-
-¶
-3. Install the Power Supply Screws
-
-Next, install the two power supply screws.
-These screws will be threaded inside plastic standoffs.
-Avoid over-tightening them as you can damage the plastic threads.
-
-
-¶
-4. Install the the printer's bottom cover
-
-You can now proceed with installing the bottom cover back to the printer.
-
-Pay close attention to the motor wire in the top left side marked with the red arrow in the image below.
-Avoid pressing the cover in place before the wire is correctly managed
-The cover will clip in place, then you can proceed with installing the 10 screws while ensuring you do not over-tighten them.
-
-
-¶
-5. Install the wire bracket and connect the wires
-
-In the final step, carefully align the wire bracket then push it downwards while making sure the USB cable is fully pushed against the printer frame.
-Then, tighten the screw shown in the image to lock it in place. Avoid overtightening the screw as this is screwed into the plastic frame.
-
-
-Next, re-connect the Camera, Motor X and Motor Z cables to finish the installation.
-
-
-¶
-Verify the functionality
-
-To ensure everything works as expected, turn on the printer.
-If the printer turns on, this confirms the installation was correct.
-
-¶
-Calibration step after the operation
-
-No calibration step is required.
-
-¶
-Potential problems and solutions
-
-If you encounter problems during the installation of a new Power Supply, please check the potential problems and solutions listed below:
-
-¶
-The printer doesn't power on
-
-Confirm the power supply wires are installed correctly, as shown in
-Step 1. Re-connect the power terminal wires
-
-¶
-The Camera is not working
-
-Confirm the camera wire is fully installed as shown in
-Step 5. Install the wire bracket and connect the wires
-
-¶
-The X-axis / Z-axis is not working
-
-Confirm the X motor and Z motor wires are fully installed as shown in
-Step 5. Install the wire bracket and connect the wires
-
-¶
-The screen displays an error message
-
-The USB cable might not be fully inserted. Loosen the screw holding the wire bracket in place, then re-connect the USB cable as shown in
-Step 5. Install the wire bracket and connect the wires
-
-¶
-End Notes
-
-
-We hope that the detailed guide we shared with you was helpful and informative.
-
-We want to ensure that you can perform it safely and effectively. If you have any concerns or questions regarding the process described in this article, we encourage you to reach out to our friendly customer service team before starting the operation. Our team is always ready to help you and answer any questions you may have.
-
-Click here to open a new ticket in our Support Page
-.
-
-We will do our best to respond promptly and provide you with the assistance you need.
-
+# Step-by-Step Guide to Replace the Power Supply on the A1 Printer
+
+### When to Use This Guide
+Use this guide if the Power Supply of the A1 printer is faulty. Common issues indicating a faulty Power Supply include:
+- Printer is not turning on
+- Recommended by Bambu Lab Customer Support
+
+### Tools and Materials Needed
+- **Bambu Lab Power Supply for A1**
+- **H2.0 hex wrench**
+- **PH2 Philips screwdriver**
+- **20 minutes of your time**
+
+### Safety Warning
+**IMPORTANT!**
+It's crucial to **power off** the printer and **disconnect it from the power source** before performing any maintenance work. This prevents short circuits, electronic damage, and safety hazards. Ensure all electronics and wires are not live during maintenance to avoid any potential damage.
+
+For any concerns or questions, please visit our [Support Page](#) to open a new ticket.
+
+===PAGE_BREAK===
+
+### Steps to Remove the Old Power Supply
+
+#### Step 1: Place the printer on its front
+1. Flip the screen to the side.
+2. Gently lay the printer on its front, using a box of filament to keep the top side raised and prevent pressure on the extruder and screen.
+
+#### Step 2: Remove the printer's bottom cover
+1. Remove **10 screws** marked in red for bottom housing removal.
+2. Loosen (but do not remove) the screw marked in yellow, which remains attached to the cable bracket.
+
+#### Step 3: Disconnect the wires and remove the wire bracket
+1. Disconnect the **Camera**, **Motor X**, and **Motor Z cables**.
+2. Push the plastic wire bracket upwards to disconnect the USB cable.
+   
+   **Important**: If the wire bracket does not remove easily, ensure the screw holding it (Nr. 11) is loosened.
+3. Gently pry out the plastic bottom cover.
+
+#### Step 4: Remove the power supply screws
+1. Remove the two screws holding the power supply in place, along with plastic brackets.
+
+#### Step 5: Loosen the power terminal screws
+1. Loosen the power terminal screws without removing them completely to facilitate reinstallation.
+
+#### Step 6: Remove the Power Supply
+1. Push the plastic clips towards the bottom while pulling the power supply towards you to release it.
+   
+   **Important**: Do not push the clips too hard as they can break. Push about 2-3mm to release the power supply.
+
+===PAGE_BREAK===
+
+### Steps to Install the New Power Supply
+
+#### Step 1: Re-connect the power terminal wires
+1. Carefully reconnect the power terminal wires while holding the power supply:
+   - **+V MC Board Wire**
+   - **-V MC Board Wire**
+   - **Ground Wires**
+   - **AC Neutral Wire**
+   - **AC Live Wire**
+2. Tighten the screws ensuring no movement and all wires are securely fixed.
+
+   **IMPORTANT**: Check all connections for security and proper placement.
+
+#### Step 2: Install the power supply
+1. Angle the top side of the power supply into the frame first.
+2. Align the screw hole on the top, then gently push the bottom of the power supply to engage the bottom clips.
+
+#### Step 3: Install the Power Supply Screws
+1. Install the two screws into the plastic standoffs.
+   
+   **Important**: Avoid over-tightening to prevent damage to the plastic threads.
+
+#### Step 4: Install the printer's bottom cover
+1. Manage the motor wire in the top left side correctly before pressing the cover in place.
+2. Clip the cover in place and install the 10 screws without over-tightening.
+
+#### Step 5: Install the wire bracket and connect the wires
+1. Align and push down the wire bracket, ensuring the USB cable is fully against the printer frame.
+2. Tighten the securing screw without overtightening.
+3. Re-connect the **Camera**, **Motor X**, and **Motor Z cables**.
+
+### Verify the Functionality
+Turn on the printer to ensure it powers up correctly, confirming a successful installation.
+
+### Potential Problems and Solutions
+- **Printer doesn't power on**: Check power supply wires as per **Step 1**.
+- **Camera is not working**: Ensure the camera wire is fully installed as per **Step 5**.
+- **X-axis / Z-axis not working**: Check X motor and Z motor wires as per **Step 5**.
+- **Error message on screen**: Re-insert the USB cable as per **Step 5**.
+
+### End Notes
+We hope this guide assists you effectively. For any further assistance, please contact our customer service team through our [Support Page](#).

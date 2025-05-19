@@ -1,0 +1,307 @@
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta charset="UTF-8"><meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1, maximum-scale=5"><meta name="theme-color" content="#1976d2"><meta name="msapplication-TileColor" content="#1976d2"><meta name="msapplication-TileImage" content="/_assets/favicons/mstile-150x150.png"><title>A1 Spool Holder Installation Tutorial | Bambu Lab Wiki</title><meta name="description" content="This page provides instructions for removing and installing the  A1 Spool Holder, including the replacement of the PTFE Tube Connector."><meta property="og:title" content="A1 Spool Holder Installation Tutorial"><meta property="og:type" content="website"><meta property="og:description" content="This page provides instructions for removing and installing the  A1 Spool Holder, including the replacement of the PTFE Tube Connector."><meta property="og:image"><meta property="og:url" content="https://wiki.bambulab.com/en/a1/maintenance/spool-holder"><meta property="og:site_name" content="Bambu Lab Wiki"><link rel="apple-touch-icon" sizes="180x180" href="/_assets/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="192x192" href="/_assets/favicons/android-chrome-192x192.png"><link rel="icon" type="image/png" sizes="32x32" href="/_assets/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/_assets/favicons/favicon-16x16.png"><link rel="mask-icon" href="/_assets/favicons/safari-pinned-tab.svg" color="#1976d2"><link rel="manifest" href="/_assets/manifest.json"><script>var siteConfig = {"title":"Bambu Lab Wiki","theme":"default","darkMode":false,"tocPosition":"left","lang":"en","rtl":false,"company":"Bambu Lab","contentLicense":"alr","footerOverride":"","logoUrl":"/admin/home/logo-large.png"}
+var siteLangs = [{"code":"en","name":"English"},{"code":"zh","name":"中文 (Zhōngwén)"}]
+</script><link type="text/css" rel="stylesheet" href="/_assets/css/app.766a556e9dcc61b7fcd5.css"><script type="text/javascript" src="/_assets/js/runtime.js?1716156900"></script><script type="text/javascript" src="/_assets/js/app.js?1716156900"></script><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-225490854-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-225490854-3');
+</script>
+<style type="text/css">.caption{word-break:break-word}.row.page-header-section.no-gutters.align-content-center{height:auto!important;min-height:90px}blockquote:before{content:""!important}blockquote{border-top:6px solid #1976d2!important;border-left:0!important;padding:1rem!important}blockquote p{padding:0!important;line-height:26px!important}blockquote p li{font-style:normal!important}i{font-style:normal!important}a.v-list-item--link[href='https://wiki.bambulab.com/en/makerworld'] .v-list-item__avatar i::before{content:url('https://wiki.bambulab.com/makerworld/makerworld.svg')!important}a.v-list-item--link[href='https://wiki.bambulab.com/zh/makerworld'] .v-list-item__avatar i::before{content:url('https://wiki.bambulab.com/makerworld/makerworld.svg')!important}.video-responsive{max-width:720px}.video-responsive-inner{position:relative;padding-bottom:56.25%}.video-responsive-inner iframe,.video-responsive-inner video{position:absolute;width:100%;height:100%;left:0;top:0}div.contents img{cursor:pointer}</style><link  href="https://cdn1.bambulab.com/wiki/viewer/viewer.min.css" rel="stylesheet">
+<script src="https://cdn1.bambulab.com/wiki/viewer/viewer.min.js"></script>
+<script type="text/javascript" defer> 
+
+function GetQueryString(sGet, name) {
+	var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)"); 
+	var r = sGet.match(reg);
+	if(r != null) {
+		return unescape(r[2]);
+	} else {
+		return null;
+	}
+}
+
+function getUrlQuery(name) {
+    let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    let r = window.location.search.substr(1).match(reg);
+    if (r != null) {
+        return decodeURIComponent(r[2]);
+    };
+
+    return null;
+}
+
+
+function parseUrl(url) {
+	if(url.startsWith('//')) {
+		url = location.protocol + url;
+	}
+	return new window.URL(url);
+}
+
+function removeUrlParam(param, url = window.location.href) {
+	let obj = parseUrl(url);
+	obj.searchParams.delete(param);
+	return obj.href;
+}
+
+function SetMaskIconColor() {
+	document.querySelector('link[rel="mask-icon"]').setAttribute('color', '#00AE42');
+}
+
+function HandleVideoHtml() {
+    const rxYoutube = /^.*(?:(?:youtu\.be\/|v\/|vi\/|u\/\w\/|embed\/)|(?:(?:watch)?\?v(?:i)?=|\&v(?:i)?=))([^#\&\?]*).*/
+    const rxVimeo = /^.*(vimeo\.com\/)((channels\/[A-z]+\/)|(groups\/[A-z]+\/videos\/))?([0-9]+)/
+	document.querySelectorAll('.contents oembed, .contents a').forEach(elm => {
+		const url = elm.hasAttribute('url') ? elm.getAttribute('url') : elm.getAttribute('href')
+		let newElmHtml = null
+		let nWen = url.indexOf('?');
+		let GetParam = '';
+		let BiliMatch = false;
+		let BiliVID = '';
+		if(nWen >= 0) {
+			GetParam = url.substr(nWen + 1);
+			//alert(GetParam);
+			let sSrc = GetQueryString(GetParam, 'src');
+			let sV = GetQueryString(GetParam, 'v');
+			if(sSrc != null && sV != null && sSrc == 'bilibili') {
+				BiliMatch = true;
+				BiliVID = sV;
+			}
+		}
+		const ytMatch = url.match(rxYoutube)
+		const vmMatch = !ytMatch && url.match(rxVimeo)
+		if(BiliMatch) {
+			newElmHtml = '<iframe src="https://player.bilibili.com/player.html?p=1&autoplay=0&bvid=' + BiliVID + '" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="100%"> </iframe>';
+		} else if(ytMatch) {
+			newElmHtml = `<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/${ytMatch[1]}" frameborder="0" allowfullscreen></iframe>`
+		} else if(vmMatch) {
+			newElmHtml = `<iframe id="vmplayer" type="text/html" width="640" height="360" src="https://player.vimeo.com/video/${vmMatch[5]}" frameborder="0" allowfullscreen></iframe>`
+		} else if(url.endsWith('.mp4')) {
+			newElmHtml = `<video controls autostart="0" name="media" width="640" height="360"><source src="${url}" type="video/mp4"></video>`
+		} else {
+			return
+		}
+        
+		const container = document.createElement('div')
+		container.classList.add('video-responsive')
+
+        const inner = document.createElement('div')
+        inner.classList.add('video-responsive-inner')
+
+		inner. insertAdjacentHTML('beforeend', newElmHtml)
+        container.append(inner)
+
+		elm.replaceWith(container)
+	})
+}
+
+function HandleSearchPage() {
+	const search = getUrlQuery('search')
+	if(search) {
+		const isAPP = window.innerWidth < 960
+		console.log("isAPP: " + isAPP)
+		const headerInner = document.querySelector("header.nav-header.v-sheet.theme--dark.v-toolbar.v-toolbar--flat.v-app-bar.v-app-bar--clipped.v-app-bar--fixed.black")
+		const input = headerInner.__vue__.$parent
+		console.log(input)
+		if(input) {
+			if(isAPP) {
+				input.searchIsShown = true
+			}
+			input.search = search
+			const target = document.querySelector('.v-application--wrap')
+			const observe = new MutationObserver(function(mutations, observe) {
+				mutations.forEach((mutation) => {
+					const nodes = Array.from(mutation.addedNodes)
+					if(nodes.length > 0) {
+						nodes.forEach((node) => {
+							if(node.nodeType === 1) {
+								if(node.classList.contains('search-results')) {
+									const btn = document.querySelector('.search-results div.text-xs-center .mx-2.v-btn')
+									if(btn) {
+										console.log(btn)
+										btn.onclick = function() {
+											const url = removeUrlParam('search')
+											window.location.href = url
+										}
+									}
+								}
+							}
+						})
+					}
+				})
+			});
+			observe.observe(target, {
+				childList: true
+			});
+		}
+	}
+}
+
+function HandleViewerJS()
+{
+  const imageContent = document.querySelector('div.contents')
+  if (imageContent) {
+    const gallery = new Viewer(imageContent,{title:false})
+    imageContent.querySelectorAll('img').forEach((item, index) => {
+      item.addEventListener('click', () => {
+        gallery.view(index)
+      })
+    })
+  }
+}
+
+window.boot.register('vue', () => {
+
+	// window.onload = () => {
+	//    SetMaskIconColor();
+	// 	  HandleVideoHtml();
+	//	  HandleSearchPage();
+	//}
+
+    window.addEventListener('load', () => {
+	    SetMaskIconColor();
+	 	HandleVideoHtml();
+		HandleSearchPage();
+        HandleViewerJS();
+    })
+}) 
+
+</script></head><body><div id="root"><page locale="en" path="a1/maintenance/spool-holder" title="A1 Spool Holder Installation Tutorial" description="This page provides instructions for removing and installing the  A1 Spool Holder, including the replacement of the PTFE Tube Connector." :tags="[{&quot;tag&quot;:&quot;a1&quot;,&quot;title&quot;:&quot;a1&quot;}]" created-at="2023-12-09T16:11:12.700Z" updated-at="2025-01-23T08:33:43.170Z" author-name="Sylvia" :author-id="144" editor="ckeditor" :is-published="true" toc="W3sidGl0bGUiOiJBMSBTcG9vbCBIb2xkZXIgSW5zdGFsbGF0aW9uIFR1dG9yaWFsIiwiYW5jaG9yIjoiI2ExLXNwb29sLWhvbGRlci1pbnN0YWxsYXRpb24tdHV0b3JpYWwiLCJjaGlsZHJlbiI6W3sidGl0bGUiOiJQYXJ0cyBMaXN0IiwiYW5jaG9yIjoiI3BhcnRzLWxpc3QiLCJjaGlsZHJlbiI6W119LHsidGl0bGUiOiJNb2R1bGUgTGlzdCIsImFuY2hvciI6IiNtb2R1bGUtbGlzdCIsImNoaWxkcmVuIjpbXX0seyJ0aXRsZSI6IlNjcmV3cyBMaXN0IiwiYW5jaG9yIjoiI3NjcmV3cy1saXN0IiwiY2hpbGRyZW4iOltdfSx7InRpdGxlIjoiVG9vbHMiLCJhbmNob3IiOiIjdG9vbHMiLCJjaGlsZHJlbiI6W119XX0seyJ0aXRsZSI6IlNhZmV0eSBXYXJuaW5nIiwiYW5jaG9yIjoiI3NhZmV0eS13YXJuaW5nIiwiY2hpbGRyZW4iOltdfSx7InRpdGxlIjoiVmlkZW8gR3VpZGUiLCJhbmNob3IiOiIjdmlkZW8tZ3VpZGUiLCJjaGlsZHJlbiI6W119LHsidGl0bGUiOiJSZW1vdmUgdGhlIFNwb29sIEhvbGRlciIsImFuY2hvciI6IiNyZW1vdmUtdGhlLXNwb29sLWhvbGRlciIsImNoaWxkcmVuIjpbeyJ0aXRsZSI6IlN0ZXAgMSAtwqBSZW1vdmUgdGhlIFNwb29sIEhvbGRlciIsImFuY2hvciI6IiNzdGVwLTEtcmVtb3ZlLXRoZS1zcG9vbC1ob2xkZXIiLCJjaGlsZHJlbiI6W119LHsidGl0bGUiOiJTdGVwIDIgLcKgUmVtb3ZlIHRoZSBTcG9vbCBTaGFmdCIsImFuY2hvciI6IiNzdGVwLTItcmVtb3ZlLXRoZS1zcG9vbC1zaGFmdCIsImNoaWxkcmVuIjpbXX0seyJ0aXRsZSI6IlN0ZXAgMyAtIFJlbW92ZSB0aGUgUFRGRSBUdWJlIENvbm5lY3RvciIsImFuY2hvciI6IiNzdGVwLTMtcmVtb3ZlLXRoZS1wdGZlLXR1YmUtY29ubmVjdG9yIiwiY2hpbGRyZW4iOltdfV19LHsidGl0bGUiOiJJbnN0YWxsIHRoZSBTcG9vbCBIb2xkZXIiLCJhbmNob3IiOiIjaW5zdGFsbC10aGUtc3Bvb2wtaG9sZGVyIiwiY2hpbGRyZW4iOlt7InRpdGxlIjoiU3RlcCAxIC0gSW5zdGFsbCB0aGUgUFRGRSBUdWJlIENvbm5lY3RvciIsImFuY2hvciI6IiNzdGVwLTEtaW5zdGFsbC10aGUtcHRmZS10dWJlLWNvbm5lY3RvciIsImNoaWxkcmVuIjpbXX0seyJ0aXRsZSI6IlN0ZXAgMiAtIEluc3RhbGwgdGhlIFNwb29sIFNoYWZ0IiwiYW5jaG9yIjoiI3N0ZXAtMi1pbnN0YWxsLXRoZS1zcG9vbC1zaGFmdCIsImNoaWxkcmVuIjpbXX0seyJ0aXRsZSI6IlN0ZXAgMyAtwqBJbnN0YWxsIHRoZSBTcG9vbCBIb2xkZXIiLCJhbmNob3IiOiIjc3RlcC0zLWluc3RhbGwtdGhlLXNwb29sLWhvbGRlciIsImNoaWxkcmVuIjpbXX1dfSx7InRpdGxlIjoiVmVyaWZ5IHRoZSBGdW5jdGlvbmFsaXR5IiwiYW5jaG9yIjoiI3ZlcmlmeS10aGUtZnVuY3Rpb25hbGl0eSIsImNoaWxkcmVuIjpbXX0seyJ0aXRsZSI6IkVuZCBOb3RlcyIsImFuY2hvciI6IiNlbmQtbm90ZXMiLCJjaGlsZHJlbiI6W119XQ==" :page-id="1279" sidebar="W3siaSI6InNkaS0xIiwiayI6ImxpbmsiLCJsIjoiSG9tZSIsImMiOiJtZGktaG9tZSIsInkiOiJob21lIiwidCI6Ii8ifSx7ImkiOiJzZGktMiIsImsiOiJsaW5rIiwibCI6Ildpa2kgVXBkYXRlcyIsImMiOiJtZGktbmV3LWJveCIsInkiOiJleHRlcm5hbCIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL25ldy1hbmQtdXBkYXRlcyJ9LHsiaSI6InNkaS0zIiwiayI6ImxpbmsiLCJsIjoiSDJEIiwiYyI6Im1kaS1hbHBoYS1oLWJveCIsInkiOiJleHRlcm5hbCIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL2gyZCJ9LHsiaSI6InNkaS00IiwiayI6ImxpbmsiLCJsIjoiQU1TIDIgUHJvIiwiYyI6Im1kaS1tb3ZpZS1yb2xsIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vYW1zLTItcHJvIn0seyJpIjoic2RpLTUiLCJrIjoibGluayIsImwiOiJBTVMgSFQiLCJjIjoibWRpLW1vdmllLXJvbGwiLCJ5IjoiZXh0ZXJuYWwiLCJ0IjoiaHR0cHM6Ly93aWtpLmJhbWJ1bGFiLmNvbS9lbi9hbXMtaHQifSx7ImkiOiJzZGktNiIsImsiOiJsaW5rIiwibCI6IlgxIFNlcmllcyIsImMiOiJtZGktYWxwaGEteC1ib3gtb3V0bGluZSIsInkiOiJleHRlcm5hbCIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL3gxIn0seyJpIjoic2RpLTciLCJrIjoibGluayIsImwiOiJQMSBTZXJpZXMiLCJjIjoibWRpLWFscGhhLXAtYm94LW91dGxpbmUiLCJ5IjoiZXh0ZXJuYWwiLCJ0IjoiaHR0cHM6Ly93aWtpLmJhbWJ1bGFiLmNvbS9lbi9wMSJ9LHsiaSI6InNkaS04IiwiayI6ImxpbmsiLCJsIjoiQTEiLCJjIjoibWRpLWFscGhhLWEtYm94LW91dGxpbmUiLCJ5IjoiZXh0ZXJuYWwiLCJ0IjoiaHR0cHM6Ly93aWtpLmJhbWJ1bGFiLmNvbS9lbi9hMSJ9LHsiaSI6InNkaS05IiwiayI6ImxpbmsiLCJsIjoiQTEgbWluaSIsImMiOiJtZGktYWxwaGEtYS1ib3gtb3V0bGluZSIsInkiOiJleHRlcm5hbCIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL2ExLW1pbmkifSx7ImkiOiJzZGktMTAiLCJrIjoibGluayIsImwiOiJBTVMiLCJjIjoibWRpLWFscGhhLWEtY2lyY2xlIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vYW1zIn0seyJpIjoic2RpLTExIiwiayI6ImxpbmsiLCJsIjoiQU1TIGxpdGUiLCJjIjoibWRpLWFscGhhLWwtY2lyY2xlIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vYW1zLWxpdGUifSx7ImkiOiJzZGktMTIiLCJrIjoibGluayIsImwiOiJITVMiLCJjIjoibWRpLXRleHQtYm94LXNlYXJjaC1vdXRsaW5lIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vaG1zL2hvbWUifSx7ImkiOiJzZGktMTMiLCJrIjoibGluayIsImwiOiJTb2Z0d2FyZSIsImMiOiJtZGktdGVsZXZpc2lvbi1ndWlkZSIsInkiOiJleHRlcm5hbCIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL3NvZnR3YXJlIn0seyJpIjoic2RpLTE0IiwiayI6ImxpbmsiLCJsIjoiRmlsYW1lbnRzICYgQWNjZXNzb3JpZXMiLCJjIjoibWRpLXByaW50ZXItM2Qtbm96emxlIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vZmlsYW1lbnQtYWNjIn0seyJpIjoic2RpLTE1IiwiayI6ImxpbmsiLCJsIjoiTWFrZXJXb3JsZCIsImMiOiJtZGktY3ViZS1zY2FuIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vbWFrZXJ3b3JsZCJ9LHsiaSI6InNkaS0xNiIsImsiOiJoZWFkZXIiLCJsIjoiR2VuZXJhbCIsImMiOm51bGwsInkiOm51bGwsInQiOm51bGx9LHsiaSI6InNkaS0xNyIsImsiOiJsaW5rIiwibCI6Iktub3dsZWRnZSBTaGFyaW5nIiwiYyI6Im1kaS1mb3J1bSIsInkiOiJwYWdlIiwidCI6Ii9lbi9rbm93bGVkZ2Utc2hhcmluZyJ9LHsiaSI6InNkaS0xOCIsImsiOiJsaW5rIiwibCI6Ikdsb3NzYXJ5IiwiYyI6Im1kaS10YWJsZS1vZi1jb250ZW50cyIsInkiOiJwYWdlIiwidCI6Ii9lbi9nbG9zc2FyeSJ9LHsiaSI6InNkaS0xOSIsImsiOiJsaW5rIiwibCI6IkZBUSIsImMiOiJtZGktZnJlcXVlbnRseS1hc2tlZC1xdWVzdGlvbnMiLCJ5IjoicGFnZSIsInQiOiIvZW4vZmFxIn0seyJpIjoic2RpLTIwIiwiayI6ImxpbmsiLCJsIjoiQWJvdXQgVXMiLCJjIjoibWRpLWluZm9ybWF0aW9uLW91dGxpbmUiLCJ5IjoicGFnZSIsInQiOiIvZW4vYWJvdXQtdXMifSx7ImkiOiJzZGktMjEiLCJrIjoiZGl2aWRlciIsImwiOm51bGwsImMiOm51bGwsInkiOm51bGwsInQiOm51bGx9LHsiaSI6InNkaS0yMiIsImsiOiJsaW5rIiwibCI6IkNvbW11bml0eSBDb250cmlidXRpb25zIiwiYyI6Im1kaS13aWtpcGVkaWEiLCJ5IjoiZXh0ZXJuYWxibGFuayIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL2NvbnRyaWJ1dGlvbi1ndWlkZSJ9XQ==" nav-mode="STATIC" effective-permissions="eyJjb21tZW50cyI6eyJyZWFkIjpmYWxzZSwid3JpdGUiOmZhbHNlLCJtYW5hZ2UiOmZhbHNlfSwiaGlzdG9yeSI6eyJyZWFkIjpmYWxzZX0sInNvdXJjZSI6eyJyZWFkIjpmYWxzZX0sInBhZ2VzIjp7InJlYWQiOnRydWUsIndyaXRlIjpmYWxzZSwibWFuYWdlIjpmYWxzZSwiZGVsZXRlIjpmYWxzZSwic2NyaXB0IjpmYWxzZSwic3R5bGUiOmZhbHNlfSwic3lzdGVtIjp7Im1hbmFnZSI6ZmFsc2V9fQ==" edit-shortcuts="eyJlZGl0RmFiIjp0cnVlLCJlZGl0TWVudUJhciI6dHJ1ZSwiZWRpdE1lbnVCdG4iOnRydWUsImVkaXRNZW51RXh0ZXJuYWxCdG4iOmZhbHNlLCJlZGl0TWVudUV4dGVybmFsTmFtZSI6IkdpdEh1YiIsImVkaXRNZW51RXh0ZXJuYWxJY29uIjoibWRpLWdpdGh1YiIsImVkaXRNZW51RXh0ZXJuYWxVcmwiOiJodHRwczovL2dpdGh1Yi5jb20vb3JnL3JlcG8vYmxvYi9tYWluL3tmaWxlbmFtZX0ifQ==" filename="en/a1/maintenance/spool-holder.html"><template slot="contents"><div><h2 id="a1-spool-holder-installation-tutorial" class="toc-header"><a class="toc-anchor" href="#a1-spool-holder-installation-tutorial">¶</a> A1 Spool Holder Installation Tutorial</h2>
+<p>This page provides instructions for removing and installing the &nbsp;A1 Spool Holder, including the replacement of the PTFE Tube Connector.</p>
+<figure class="image image_resized" style="width:39.83%;"><img src="/a1/maintenance/spoolholder/spoolholder.jpg"></figure>
+<blockquote>
+  <p>Note: The following figure shows the new version of the spool holder. The new version does not need to be assembled and can be directly installed on the printer.&nbsp;</p>
+  <p>Please refer to the <strong>Install the Spool Holder - Step 3 -&nbsp;Install the Spool Holder </strong>in this article.</p>
+  <figure class="image image_resized" style="width:40.06%;"><img src="/a1/maintenance/spoolholder/20250123-160810.jpg"></figure>
+</blockquote>
+<h3 id="parts-list" class="toc-header"><a class="toc-anchor" href="#parts-list">¶</a> Parts List</h3>
+<p>The following are the spare parts involved in this guide.</p>
+<figure class="table">
+  <table>
+    <tbody>
+      <tr>
+        <td>No.</td>
+        <td>Descriptions</td>
+        <td>Pictures</td>
+        <td>NO.</td>
+        <td>Descriptions</td>
+        <td>Pictures</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Spool Holder</td>
+        <td>
+          <figure class="image image_resized" style="width:84.69%;"><img src="/a1/maintenance/spoolholder/spoolholder.jpg"></figure>
+        </td>
+        <td>2</td>
+        <td>PTFE Tube Connector</td>
+        <td>
+          <figure class="image image_resized" style="width:100%;"><img src="/a1/maintenance/spoolholder/connector.jpg"></figure>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<h3 id="module-list" class="toc-header"><a class="toc-anchor" href="#module-list">¶</a> Module List</h3>
+<p>None</p>
+<h3 id="screws-list" class="toc-header"><a class="toc-anchor" href="#screws-list">¶</a> Screws List</h3>
+<p>None （The round head screw is included in the PTFE Tube Connector）</p>
+<h3 id="tools" class="toc-header"><a class="toc-anchor" href="#tools">¶</a> Tools</h3>
+<p>H2.0 Allen Key</p>
+<h2 id="safety-warning" class="toc-header"><a class="toc-anchor" href="#safety-warning">¶</a> Safety Warning</h2>
+<blockquote>
+  <p><strong>IMPORTANT!</strong></p>
+  <p>It's crucial to <strong>power off the printer before performing any maintenance work</strong> on the printer and its electronics, including tool head wires, because leaving the printer on while conducting such tasks can cause a short circuit, which can lead to additional electronic damage and safety hazards.</p>
+  <p>When you perform maintenane or troubleshooting on the printer, you may be required to disassemble some parts, including the hotend. This process can expose wires and electrical components that could potentially short circuit if they come into contact with each other or with other metal or electronic components while the printer is still on. <strong>This can damage the electronics of the printer and cause further damage.</strong></p>
+  <p>Therefore, it's essential to <strong>switch off the printer and disconnect it from the power source before doing any maintenance work</strong>. This will prevent any short circuits or damage to the printer's electronics. By doing so, you can avoid potential damage to the printer's electronic components and ensure that the maintenance work is performed safely and effectively.</p>
+  <p>If you have any concerns or questions about following this guide, <a href="https://bambulab.com/en/my/support/tickets" class="is-external-link">open a new ticket in our Support Page</a> and we will do our best to respond promptly and provide you with the assistance you need.</p>
+</blockquote>
+<h2 id="video-guide" class="toc-header"><a class="toc-anchor" href="#video-guide">¶</a> Video Guide</h2>
+<figure class="media">
+  <oembed url="https://youtu.be/XPrtIZK_CG4"></oembed>
+</figure>
+<h2 id="remove-the-spool-holder" class="toc-header"><a class="toc-anchor" href="#remove-the-spool-holder">¶</a> Remove the Spool Holder</h2>
+<h3 id="step-1-remove-the-spool-holder" class="toc-header"><a class="toc-anchor" href="#step-1-remove-the-spool-holder">¶</a> Step 1 -&nbsp;Remove the Spool Holder</h3>
+<p>Note: Remove the filament spool first.</p>
+<p>Move away the toolhead and lower the X-axis to make sufficient space, open the clip on the back of the holder, and remove the Spool Holder.</p>
+<figure class="table">
+  <table>
+    <tbody>
+      <tr>
+        <td>
+          <figure class="image"><img src="/a1/maintenance/spoolholder/space.jpg"></figure>
+        </td>
+        <td>
+          <figure class="image"><img src="/a1/maintenance/spoolholder/open.jpg"></figure>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<h3 id="step-2-remove-the-spool-shaft" class="toc-header"><a class="toc-anchor" href="#step-2-remove-the-spool-shaft">¶</a> Step 2 -&nbsp;Remove the Spool Shaft</h3>
+<p>As shown in the figure, rotating counterclockwise can loosen and remove the Spool Shaft.</p>
+<figure class="image image_resized" style="width:38.28%;"><img src="/a1/maintenance/spoolholder/remove.jpg"></figure>
+<h3 id="step-3-remove-the-ptfe-tube-connector" class="toc-header"><a class="toc-anchor" href="#step-3-remove-the-ptfe-tube-connector">¶</a> Step 3 - Remove the PTFE Tube Connector</h3>
+<p>Loosen the round head screw with an H2.0 Allen key until the entire PTFE Tube Connector is completely detached.</p>
+<figure class="table">
+  <table>
+    <tbody>
+      <tr>
+        <td>
+          <figure class="image image_resized" style="width:80.25%;"><img src="/a1/maintenance/spoolholder/screw.jpg"></figure>
+        </td>
+        <td>
+          <figure class="image"><img src="/a1/maintenance/spoolholder/remove_2.jpg"></figure>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<h2 id="install-the-spool-holder" class="toc-header"><a class="toc-anchor" href="#install-the-spool-holder">¶</a> Install the Spool Holder</h2>
+<h3 id="step-1-install-the-ptfe-tube-connector" class="toc-header"><a class="toc-anchor" href="#step-1-install-the-ptfe-tube-connector">¶</a> Step 1 - Install the PTFE Tube Connector</h3>
+<p>Align the slots on the holder, install the PTFE Tube Connector onto the holder, and tighten the round head screws.</p>
+<figure class="table">
+  <table>
+    <tbody>
+      <tr>
+        <td>
+          <figure class="image"><img src="/a1/maintenance/spoolholder/install_the_connector.jpg"></figure>
+        </td>
+        <td>
+          <figure class="image image_resized" style="width:77.19%;"><img src="/a1/maintenance/spoolholder/screw.jpg"></figure>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<h3 id="step-2-install-the-spool-shaft" class="toc-header"><a class="toc-anchor" href="#step-2-install-the-spool-shaft">¶</a> Step 2 - Install the Spool Shaft</h3>
+<p>As shown in the figure, rotating clockwise to tighten the Spool Shaft.</p>
+<figure class="image image_resized" style="width:40.09%;"><img src="/a1/maintenance/spoolholder/lock.jpg"></figure>
+<h3 id="step-3-install-the-spool-holder" class="toc-header"><a class="toc-anchor" href="#step-3-install-the-spool-holder">¶</a> Step 3 -&nbsp;Install the Spool Holder</h3>
+<p>Open the clip and facing backward, mount the Spool Holder onto the beam, and then fasten it upwards into place.</p>
+<figure class="table">
+  <table>
+    <tbody>
+      <tr>
+        <td>
+          <figure class="image"><img src="/a1/maintenance/spoolholder/mount.jpg"></figure>
+        </td>
+        <td>
+          <figure class="image image_resized" style="width:89.59%;"><img src="/a1/maintenance/spoolholder/lock_the_clip.jpg"></figure>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<h2 id="verify-the-functionality" class="toc-header"><a class="toc-anchor" href="#verify-the-functionality">¶</a> Verify the Functionality</h2>
+<p>Check the clip and confirm that it is not loose.</p>
+<h2 id="end-notes" class="toc-header"><a class="toc-anchor" href="#end-notes">¶</a> End Notes</h2>
+<blockquote>
+  <p>We hope the detailed guide provided has been helpful and informative.</p>
+  <p>To ensure a safe and effective execution, if you have any concerns or questions about the process described in this article, we recommend submitting a <a href="https://bambulab.com/en/my/support/tickets" class="is-external-link">technical ticket</a> regarding your issue.&nbsp;</p>
+  <p>Please include a picture or video illustrating the problem, as well as any additional information related to your inquiry.</p>
+</blockquote>
+</div></template><template slot="comments"><div><comments></comments></div></template></page></div><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9422ac97988ab9c0',t:'MTc0NzY0ODA2MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body></html>

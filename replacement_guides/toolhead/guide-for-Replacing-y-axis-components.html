@@ -1,0 +1,391 @@
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta charset="UTF-8"><meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1, maximum-scale=5"><meta name="theme-color" content="#1976d2"><meta name="msapplication-TileColor" content="#1976d2"><meta name="msapplication-TileImage" content="/_assets/favicons/mstile-150x150.png"><title>A1 Guide for Replacing Y-axis Linear Guide Assembly | Bambu Lab Wiki</title><meta name="description" content="This article details the specific steps for replacing the Y-axis components."><meta property="og:title" content="A1 Guide for Replacing Y-axis Linear Guide Assembly"><meta property="og:type" content="website"><meta property="og:description" content="This article details the specific steps for replacing the Y-axis components."><meta property="og:image"><meta property="og:url" content="https://wiki.bambulab.com/en/a1/maintenance/guide-for-Replacing-y-axis-components"><meta property="og:site_name" content="Bambu Lab Wiki"><link rel="apple-touch-icon" sizes="180x180" href="/_assets/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="192x192" href="/_assets/favicons/android-chrome-192x192.png"><link rel="icon" type="image/png" sizes="32x32" href="/_assets/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/_assets/favicons/favicon-16x16.png"><link rel="mask-icon" href="/_assets/favicons/safari-pinned-tab.svg" color="#1976d2"><link rel="manifest" href="/_assets/manifest.json"><script>var siteConfig = {"title":"Bambu Lab Wiki","theme":"default","darkMode":false,"tocPosition":"left","lang":"en","rtl":false,"company":"Bambu Lab","contentLicense":"alr","footerOverride":"","logoUrl":"/admin/home/logo-large.png"}
+var siteLangs = [{"code":"en","name":"English"},{"code":"zh","name":"中文 (Zhōngwén)"}]
+</script><link type="text/css" rel="stylesheet" href="/_assets/css/app.766a556e9dcc61b7fcd5.css"><script type="text/javascript" src="/_assets/js/runtime.js?1716156900"></script><script type="text/javascript" src="/_assets/js/app.js?1716156900"></script><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-225490854-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-225490854-3');
+</script>
+<style type="text/css">.caption{word-break:break-word}.row.page-header-section.no-gutters.align-content-center{height:auto!important;min-height:90px}blockquote:before{content:""!important}blockquote{border-top:6px solid #1976d2!important;border-left:0!important;padding:1rem!important}blockquote p{padding:0!important;line-height:26px!important}blockquote p li{font-style:normal!important}i{font-style:normal!important}a.v-list-item--link[href='https://wiki.bambulab.com/en/makerworld'] .v-list-item__avatar i::before{content:url('https://wiki.bambulab.com/makerworld/makerworld.svg')!important}a.v-list-item--link[href='https://wiki.bambulab.com/zh/makerworld'] .v-list-item__avatar i::before{content:url('https://wiki.bambulab.com/makerworld/makerworld.svg')!important}.video-responsive{max-width:720px}.video-responsive-inner{position:relative;padding-bottom:56.25%}.video-responsive-inner iframe,.video-responsive-inner video{position:absolute;width:100%;height:100%;left:0;top:0}div.contents img{cursor:pointer}</style><link  href="https://cdn1.bambulab.com/wiki/viewer/viewer.min.css" rel="stylesheet">
+<script src="https://cdn1.bambulab.com/wiki/viewer/viewer.min.js"></script>
+<script type="text/javascript" defer> 
+
+function GetQueryString(sGet, name) {
+	var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)"); 
+	var r = sGet.match(reg);
+	if(r != null) {
+		return unescape(r[2]);
+	} else {
+		return null;
+	}
+}
+
+function getUrlQuery(name) {
+    let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    let r = window.location.search.substr(1).match(reg);
+    if (r != null) {
+        return decodeURIComponent(r[2]);
+    };
+
+    return null;
+}
+
+
+function parseUrl(url) {
+	if(url.startsWith('//')) {
+		url = location.protocol + url;
+	}
+	return new window.URL(url);
+}
+
+function removeUrlParam(param, url = window.location.href) {
+	let obj = parseUrl(url);
+	obj.searchParams.delete(param);
+	return obj.href;
+}
+
+function SetMaskIconColor() {
+	document.querySelector('link[rel="mask-icon"]').setAttribute('color', '#00AE42');
+}
+
+function HandleVideoHtml() {
+    const rxYoutube = /^.*(?:(?:youtu\.be\/|v\/|vi\/|u\/\w\/|embed\/)|(?:(?:watch)?\?v(?:i)?=|\&v(?:i)?=))([^#\&\?]*).*/
+    const rxVimeo = /^.*(vimeo\.com\/)((channels\/[A-z]+\/)|(groups\/[A-z]+\/videos\/))?([0-9]+)/
+	document.querySelectorAll('.contents oembed, .contents a').forEach(elm => {
+		const url = elm.hasAttribute('url') ? elm.getAttribute('url') : elm.getAttribute('href')
+		let newElmHtml = null
+		let nWen = url.indexOf('?');
+		let GetParam = '';
+		let BiliMatch = false;
+		let BiliVID = '';
+		if(nWen >= 0) {
+			GetParam = url.substr(nWen + 1);
+			//alert(GetParam);
+			let sSrc = GetQueryString(GetParam, 'src');
+			let sV = GetQueryString(GetParam, 'v');
+			if(sSrc != null && sV != null && sSrc == 'bilibili') {
+				BiliMatch = true;
+				BiliVID = sV;
+			}
+		}
+		const ytMatch = url.match(rxYoutube)
+		const vmMatch = !ytMatch && url.match(rxVimeo)
+		if(BiliMatch) {
+			newElmHtml = '<iframe src="https://player.bilibili.com/player.html?p=1&autoplay=0&bvid=' + BiliVID + '" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="100%"> </iframe>';
+		} else if(ytMatch) {
+			newElmHtml = `<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/${ytMatch[1]}" frameborder="0" allowfullscreen></iframe>`
+		} else if(vmMatch) {
+			newElmHtml = `<iframe id="vmplayer" type="text/html" width="640" height="360" src="https://player.vimeo.com/video/${vmMatch[5]}" frameborder="0" allowfullscreen></iframe>`
+		} else if(url.endsWith('.mp4')) {
+			newElmHtml = `<video controls autostart="0" name="media" width="640" height="360"><source src="${url}" type="video/mp4"></video>`
+		} else {
+			return
+		}
+        
+		const container = document.createElement('div')
+		container.classList.add('video-responsive')
+
+        const inner = document.createElement('div')
+        inner.classList.add('video-responsive-inner')
+
+		inner. insertAdjacentHTML('beforeend', newElmHtml)
+        container.append(inner)
+
+		elm.replaceWith(container)
+	})
+}
+
+function HandleSearchPage() {
+	const search = getUrlQuery('search')
+	if(search) {
+		const isAPP = window.innerWidth < 960
+		console.log("isAPP: " + isAPP)
+		const headerInner = document.querySelector("header.nav-header.v-sheet.theme--dark.v-toolbar.v-toolbar--flat.v-app-bar.v-app-bar--clipped.v-app-bar--fixed.black")
+		const input = headerInner.__vue__.$parent
+		console.log(input)
+		if(input) {
+			if(isAPP) {
+				input.searchIsShown = true
+			}
+			input.search = search
+			const target = document.querySelector('.v-application--wrap')
+			const observe = new MutationObserver(function(mutations, observe) {
+				mutations.forEach((mutation) => {
+					const nodes = Array.from(mutation.addedNodes)
+					if(nodes.length > 0) {
+						nodes.forEach((node) => {
+							if(node.nodeType === 1) {
+								if(node.classList.contains('search-results')) {
+									const btn = document.querySelector('.search-results div.text-xs-center .mx-2.v-btn')
+									if(btn) {
+										console.log(btn)
+										btn.onclick = function() {
+											const url = removeUrlParam('search')
+											window.location.href = url
+										}
+									}
+								}
+							}
+						})
+					}
+				})
+			});
+			observe.observe(target, {
+				childList: true
+			});
+		}
+	}
+}
+
+function HandleViewerJS()
+{
+  const imageContent = document.querySelector('div.contents')
+  if (imageContent) {
+    const gallery = new Viewer(imageContent,{title:false})
+    imageContent.querySelectorAll('img').forEach((item, index) => {
+      item.addEventListener('click', () => {
+        gallery.view(index)
+      })
+    })
+  }
+}
+
+window.boot.register('vue', () => {
+
+	// window.onload = () => {
+	//    SetMaskIconColor();
+	// 	  HandleVideoHtml();
+	//	  HandleSearchPage();
+	//}
+
+    window.addEventListener('load', () => {
+	    SetMaskIconColor();
+	 	HandleVideoHtml();
+		HandleSearchPage();
+        HandleViewerJS();
+    })
+}) 
+
+</script></head><body><div id="root"><page locale="en" path="a1/maintenance/guide-for-Replacing-y-axis-components" title="A1 Guide for Replacing Y-axis Linear Guide Assembly" description="This article details the specific steps for replacing the Y-axis components." :tags="[{&quot;tag&quot;:&quot;a1&quot;,&quot;title&quot;:&quot;a1&quot;}]" created-at="2025-03-13T06:54:12.758Z" updated-at="2025-03-19T12:19:00.072Z" author-name="Aether" :author-id="165" editor="markdown" :is-published="true" toc="W3sidGl0bGUiOiJZLWF4aXMgTGluZWFyIEd1aWRlIEFzc2VtYmx5IiwiYW5jaG9yIjoiI3ktYXhpcy1saW5lYXItZ3VpZGUtYXNzZW1ibHkiLCJjaGlsZHJlbiI6W3sidGl0bGUiOiJBcHBsaWNhYmxlIG1vZGVscyBvZiBwcmludGVycyIsImFuY2hvciI6IiNhcHBsaWNhYmxlLW1vZGVscy1vZi1wcmludGVycyIsImNoaWxkcmVuIjpbXX0seyJ0aXRsZSI6IldoZW4gdG8gdXNlPyIsImFuY2hvciI6IiN3aGVuLXRvLXVzZSIsImNoaWxkcmVuIjpbXX0seyJ0aXRsZSI6IlRvb2xzIGFuZCBtYXRlcmlhbHMgbmVlZGVkIiwiYW5jaG9yIjoiI3Rvb2xzLWFuZC1tYXRlcmlhbHMtbmVlZGVkIiwiY2hpbGRyZW4iOlt7InRpdGxlIjoiTGlzdCBvZiBzY3Jld3MiLCJhbmNob3IiOiIjbGlzdC1vZi1zY3Jld3MiLCJjaGlsZHJlbiI6W119XX0seyJ0aXRsZSI6IlNhZmV0eSBXYXJuaW5nIiwiYW5jaG9yIjoiI3NhZmV0eS13YXJuaW5nIiwiY2hpbGRyZW4iOltdfSx7InRpdGxlIjoiUmVtb3ZlIHRoZSBvbGQgWS1heGlzIExpbmVhciBHdWlkZSBBc3NlbWJseSIsImFuY2hvciI6IiNyZW1vdmUtdGhlLW9sZC15LWF4aXMtbGluZWFyLWd1aWRlLWFzc2VtYmx5IiwiY2hpbGRyZW4iOlt7InRpdGxlIjoiMS5QbGFjZSB0aGUgcHJpbnRlciBvbiBpdHMgZnJvbnQiLCJhbmNob3IiOiIjaC0xcGxhY2UtdGhlLXByaW50ZXItb24taXRzLWZyb250IiwiY2hpbGRyZW4iOltdfSx7InRpdGxlIjoiMi5EaXNjb25uZWN0IHRoZSBjYWJsZSBhbmQgcmVtb3ZlIHRoZSBjYWJsZSBicmFja2V0IiwiYW5jaG9yIjoiI2gtMmRpc2Nvbm5lY3QtdGhlLWNhYmxlLWFuZC1yZW1vdmUtdGhlLWNhYmxlLWJyYWNrZXQiLCJjaGlsZHJlbiI6W119LHsidGl0bGUiOiIzLlJlbW92ZSB0aGUgcHJpbnRlcidzIGJvdHRvbSBjb3ZlciIsImFuY2hvciI6IiNoLTNyZW1vdmUtdGhlLXByaW50ZXJzLWJvdHRvbS1jb3ZlciIsImNoaWxkcmVuIjpbXX0seyJ0aXRsZSI6IjQuUmVtb3ZlIHRoZSBib3R0b20gc2NyZXdzIGFuZCB0aGUgWSBtb3RvciBjYWJsZSIsImFuY2hvciI6IiNoLTRyZW1vdmUtdGhlLWJvdHRvbS1zY3Jld3MtYW5kLXRoZS15LW1vdG9yLWNhYmxlIiwiY2hpbGRyZW4iOltdfSx7InRpdGxlIjoiNS5SZW1vdmUgdGhlIGhlYXRiZWQgYW5kIHRoZSBZLWF4aXMgY292ZXIgcGxhdGUiLCJhbmNob3IiOiIjaC01cmVtb3ZlLXRoZS1oZWF0YmVkLWFuZC10aGUteS1heGlzLWNvdmVyLXBsYXRlIiwiY2hpbGRyZW4iOltdfSx7InRpdGxlIjoiNi5SZW1vdmUgdGhlIFktYXhpcyBMaW5lYXIgR3VpZGUgQXNzZW1ibHkiLCJhbmNob3IiOiIjaC02cmVtb3ZlLXRoZS15LWF4aXMtbGluZWFyLWd1aWRlLWFzc2VtYmx5IiwiY2hpbGRyZW4iOltdfV19LHsidGl0bGUiOiJJbnN0YWxsIHRoZSBuZXcgWS1heGlzIExpbmVhciBHdWlkZSBBc3NlbWJseSIsImFuY2hvciI6IiNpbnN0YWxsLXRoZS1uZXcteS1heGlzLWxpbmVhci1ndWlkZS1hc3NlbWJseSIsImNoaWxkcmVuIjpbeyJ0aXRsZSI6IjEuSW5zdGFsbCB0aGUgbmV3IFktYXhpcyBMaW5lYXIgR3VpZGUgQXNzZW1ibHkiLCJhbmNob3IiOiIjaC0xaW5zdGFsbC10aGUtbmV3LXktYXhpcy1saW5lYXItZ3VpZGUtYXNzZW1ibHkiLCJjaGlsZHJlbiI6W119LHsidGl0bGUiOiIyLkNvbm5lY3QgdGhlIFkgbW90b3IgY2FibGUgYW5kIHRoZSBib3R0b20gc2NyZXdzIiwiYW5jaG9yIjoiI2gtMmNvbm5lY3QtdGhlLXktbW90b3ItY2FibGUtYW5kLXRoZS1ib3R0b20tc2NyZXdzIiwiY2hpbGRyZW4iOltdfSx7InRpdGxlIjoiMy5JbnN0YWxsIHRoZSBwcmludGVyIGJvdHRvbSBjb3ZlciIsImFuY2hvciI6IiNoLTNpbnN0YWxsLXRoZS1wcmludGVyLWJvdHRvbS1jb3ZlciIsImNoaWxkcmVuIjpbXX0seyJ0aXRsZSI6IjQuSW5zdGFsbCB0aGUgd2lyZSBicmFja2V0IGFuZCBjb25uZWN0IHRoZSB3aXJlcyIsImFuY2hvciI6IiNoLTRpbnN0YWxsLXRoZS13aXJlLWJyYWNrZXQtYW5kLWNvbm5lY3QtdGhlLXdpcmVzIiwiY2hpbGRyZW4iOltdfSx7InRpdGxlIjoiNS5JbnN0YWxsIHRoZSBoZWF0YmVkIGNvbXBvbmVudCBhbmQgdGhlIFktYXhpcyBjb3ZlciBwbGF0ZSIsImFuY2hvciI6IiNoLTVpbnN0YWxsLXRoZS1oZWF0YmVkLWNvbXBvbmVudC1hbmQtdGhlLXktYXhpcy1jb3Zlci1wbGF0ZSIsImNoaWxkcmVuIjpbXX1dfSx7InRpdGxlIjoiUHJpbnRlciBjYWxpYnJhdGlvbiIsImFuY2hvciI6IiNwcmludGVyLWNhbGlicmF0aW9uIiwiY2hpbGRyZW4iOltdfSx7InRpdGxlIjoiRW5kIE5vdGVzIiwiYW5jaG9yIjoiI2VuZC1ub3RlcyIsImNoaWxkcmVuIjpbXX1dfV0=" :page-id="2193" sidebar="W3siaSI6InNkaS0xIiwiayI6ImxpbmsiLCJsIjoiSG9tZSIsImMiOiJtZGktaG9tZSIsInkiOiJob21lIiwidCI6Ii8ifSx7ImkiOiJzZGktMiIsImsiOiJsaW5rIiwibCI6Ildpa2kgVXBkYXRlcyIsImMiOiJtZGktbmV3LWJveCIsInkiOiJleHRlcm5hbCIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL25ldy1hbmQtdXBkYXRlcyJ9LHsiaSI6InNkaS0zIiwiayI6ImxpbmsiLCJsIjoiSDJEIiwiYyI6Im1kaS1hbHBoYS1oLWJveCIsInkiOiJleHRlcm5hbCIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL2gyZCJ9LHsiaSI6InNkaS00IiwiayI6ImxpbmsiLCJsIjoiQU1TIDIgUHJvIiwiYyI6Im1kaS1tb3ZpZS1yb2xsIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vYW1zLTItcHJvIn0seyJpIjoic2RpLTUiLCJrIjoibGluayIsImwiOiJBTVMgSFQiLCJjIjoibWRpLW1vdmllLXJvbGwiLCJ5IjoiZXh0ZXJuYWwiLCJ0IjoiaHR0cHM6Ly93aWtpLmJhbWJ1bGFiLmNvbS9lbi9hbXMtaHQifSx7ImkiOiJzZGktNiIsImsiOiJsaW5rIiwibCI6IlgxIFNlcmllcyIsImMiOiJtZGktYWxwaGEteC1ib3gtb3V0bGluZSIsInkiOiJleHRlcm5hbCIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL3gxIn0seyJpIjoic2RpLTciLCJrIjoibGluayIsImwiOiJQMSBTZXJpZXMiLCJjIjoibWRpLWFscGhhLXAtYm94LW91dGxpbmUiLCJ5IjoiZXh0ZXJuYWwiLCJ0IjoiaHR0cHM6Ly93aWtpLmJhbWJ1bGFiLmNvbS9lbi9wMSJ9LHsiaSI6InNkaS04IiwiayI6ImxpbmsiLCJsIjoiQTEiLCJjIjoibWRpLWFscGhhLWEtYm94LW91dGxpbmUiLCJ5IjoiZXh0ZXJuYWwiLCJ0IjoiaHR0cHM6Ly93aWtpLmJhbWJ1bGFiLmNvbS9lbi9hMSJ9LHsiaSI6InNkaS05IiwiayI6ImxpbmsiLCJsIjoiQTEgbWluaSIsImMiOiJtZGktYWxwaGEtYS1ib3gtb3V0bGluZSIsInkiOiJleHRlcm5hbCIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL2ExLW1pbmkifSx7ImkiOiJzZGktMTAiLCJrIjoibGluayIsImwiOiJBTVMiLCJjIjoibWRpLWFscGhhLWEtY2lyY2xlIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vYW1zIn0seyJpIjoic2RpLTExIiwiayI6ImxpbmsiLCJsIjoiQU1TIGxpdGUiLCJjIjoibWRpLWFscGhhLWwtY2lyY2xlIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vYW1zLWxpdGUifSx7ImkiOiJzZGktMTIiLCJrIjoibGluayIsImwiOiJITVMiLCJjIjoibWRpLXRleHQtYm94LXNlYXJjaC1vdXRsaW5lIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vaG1zL2hvbWUifSx7ImkiOiJzZGktMTMiLCJrIjoibGluayIsImwiOiJTb2Z0d2FyZSIsImMiOiJtZGktdGVsZXZpc2lvbi1ndWlkZSIsInkiOiJleHRlcm5hbCIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL3NvZnR3YXJlIn0seyJpIjoic2RpLTE0IiwiayI6ImxpbmsiLCJsIjoiRmlsYW1lbnRzICYgQWNjZXNzb3JpZXMiLCJjIjoibWRpLXByaW50ZXItM2Qtbm96emxlIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vZmlsYW1lbnQtYWNjIn0seyJpIjoic2RpLTE1IiwiayI6ImxpbmsiLCJsIjoiTWFrZXJXb3JsZCIsImMiOiJtZGktY3ViZS1zY2FuIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vbWFrZXJ3b3JsZCJ9LHsiaSI6InNkaS0xNiIsImsiOiJoZWFkZXIiLCJsIjoiR2VuZXJhbCIsImMiOm51bGwsInkiOm51bGwsInQiOm51bGx9LHsiaSI6InNkaS0xNyIsImsiOiJsaW5rIiwibCI6Iktub3dsZWRnZSBTaGFyaW5nIiwiYyI6Im1kaS1mb3J1bSIsInkiOiJwYWdlIiwidCI6Ii9lbi9rbm93bGVkZ2Utc2hhcmluZyJ9LHsiaSI6InNkaS0xOCIsImsiOiJsaW5rIiwibCI6Ikdsb3NzYXJ5IiwiYyI6Im1kaS10YWJsZS1vZi1jb250ZW50cyIsInkiOiJwYWdlIiwidCI6Ii9lbi9nbG9zc2FyeSJ9LHsiaSI6InNkaS0xOSIsImsiOiJsaW5rIiwibCI6IkZBUSIsImMiOiJtZGktZnJlcXVlbnRseS1hc2tlZC1xdWVzdGlvbnMiLCJ5IjoicGFnZSIsInQiOiIvZW4vZmFxIn0seyJpIjoic2RpLTIwIiwiayI6ImxpbmsiLCJsIjoiQWJvdXQgVXMiLCJjIjoibWRpLWluZm9ybWF0aW9uLW91dGxpbmUiLCJ5IjoicGFnZSIsInQiOiIvZW4vYWJvdXQtdXMifSx7ImkiOiJzZGktMjEiLCJrIjoiZGl2aWRlciIsImwiOm51bGwsImMiOm51bGwsInkiOm51bGwsInQiOm51bGx9LHsiaSI6InNkaS0yMiIsImsiOiJsaW5rIiwibCI6IkNvbW11bml0eSBDb250cmlidXRpb25zIiwiYyI6Im1kaS13aWtpcGVkaWEiLCJ5IjoiZXh0ZXJuYWxibGFuayIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL2NvbnRyaWJ1dGlvbi1ndWlkZSJ9XQ==" nav-mode="STATIC" effective-permissions="eyJjb21tZW50cyI6eyJyZWFkIjpmYWxzZSwid3JpdGUiOmZhbHNlLCJtYW5hZ2UiOmZhbHNlfSwiaGlzdG9yeSI6eyJyZWFkIjpmYWxzZX0sInNvdXJjZSI6eyJyZWFkIjpmYWxzZX0sInBhZ2VzIjp7InJlYWQiOnRydWUsIndyaXRlIjpmYWxzZSwibWFuYWdlIjpmYWxzZSwiZGVsZXRlIjpmYWxzZSwic2NyaXB0IjpmYWxzZSwic3R5bGUiOmZhbHNlfSwic3lzdGVtIjp7Im1hbmFnZSI6ZmFsc2V9fQ==" edit-shortcuts="eyJlZGl0RmFiIjp0cnVlLCJlZGl0TWVudUJhciI6dHJ1ZSwiZWRpdE1lbnVCdG4iOnRydWUsImVkaXRNZW51RXh0ZXJuYWxCdG4iOmZhbHNlLCJlZGl0TWVudUV4dGVybmFsTmFtZSI6IkdpdEh1YiIsImVkaXRNZW51RXh0ZXJuYWxJY29uIjoibWRpLWdpdGh1YiIsImVkaXRNZW51RXh0ZXJuYWxVcmwiOiJodHRwczovL2dpdGh1Yi5jb20vb3JnL3JlcG8vYmxvYi9tYWluL3tmaWxlbmFtZX0ifQ==" filename="en/a1/maintenance/guide-for-Replacing-y-axis-components.md"><template slot="contents"><div><h1 id="y-axis-linear-guide-assembly" class="toc-header"><a class="toc-anchor" href="#y-axis-linear-guide-assembly">¶</a> Y-axis Linear Guide Assembly</h1>
+<p>Hereinafter, we will present the detailed steps for replacing the Y-axis component of A1.<br>
+<img src="/a1/maintenance/y-axis/y_assembly.jpg" alt=""></p>
+<h2 id="applicable-models-of-printers" class="toc-header"><a class="toc-anchor" href="#applicable-models-of-printers">¶</a> Applicable models of printers</h2>
+<p>Bambu Lab A1</p>
+<h2 id="when-to-use" class="toc-header"><a class="toc-anchor" href="#when-to-use">¶</a> When to use?</h2>
+<ul>
+<li>Abnormal noise and sluggishness on the Y-axis</li>
+<li>Recommended by Bambu Lab customer support</li>
+</ul>
+<h2 id="tools-and-materials-needed" class="toc-header"><a class="toc-anchor" href="#tools-and-materials-needed">¶</a> Tools and materials needed</h2>
+<ul>
+<li>New Y-axis Linear Guide Assembly</li>
+<li>H2.0 hex wrench</li>
+<li>25 minutes</li>
+</ul>
+<h3 id="list-of-screws" class="toc-header"><a class="toc-anchor" href="#list-of-screws">¶</a> List of screws</h3>
+<div class="table-container"><table>
+  <tbody><tr>
+    <td>
+      <figure>
+        <img src="/a1/maintenance/new-heatbed/ksnip_20240325-203859.png" height="300" width="300">
+        <figcaption>Cable bracket BT3-27 </figcaption>
+      </figure>
+    </td>
+    <td>
+      <figure>
+        <img src="/a1/maintenance/heatbed/bottom_screw.jpg" height="300" width="300">
+        <figcaption>Bottom cover screws BT3-8（16PCS）</figcaption>
+      </figure>
+    </td>
+  </tr>
+</tbody></table></div>
+<div class="table-container"><table>
+  <tbody><tr>
+    <td>
+      <figure>
+        <img src="/a1/maintenance/heatbed/ground_cable_screw.jpg" height="300" width="300">
+        <figcaption>Ground cable M3-6（2PCS） </figcaption>
+      </figure>
+    </td>
+    <td>
+      <figure>
+        <img src="/a1/maintenance/heatbed/heatbed_screw.jpg" height="300" width="300">
+        <figcaption>Heatbed M3-6（2PCS） </figcaption>
+      </figure>
+    </td>
+  </tr>
+</tbody></table></div>
+<div class="table-container"><table>
+  <tbody><tr>
+    <td>
+      <figure>
+        <img src="/a1/maintenance/y-axis-component/中间固定.jpg" height="300" width="300">
+        <figcaption> Y-axis middle screws  M3-23（8PCS） </figcaption>
+      </figure>
+    </td>
+    <td>
+      <figure>
+        <img src="/a1/maintenance/y-axis-component/两端固定螺丝.jpg" height="300" width="300">
+        <figcaption> Y-axis both ends screws BT3-23 （4PCS）</figcaption>
+      </figure>
+    </td>
+  </tr>
+</tbody></table></div>
+<h2 id="safety-warning" class="toc-header"><a class="toc-anchor" href="#safety-warning">¶</a> Safety Warning</h2>
+<blockquote class="is-danger">
+<p>It's crucial to <strong>power off the printer before conducting any maintenance work</strong>, including work on the printer's electronics and tool head wires. Performing tasks with the printer on can result in a short circuit, leading to electronic damage and safety hazards.<br>
+During maintenance or troubleshooting, you may need to disassemble parts, including the hotend. This exposes wires and electrical components that could short circuit if they contact each other, other metal, or electronic components while the printer is still on. <strong>This can result in damage to the printer's electronics and additional issues.</strong><br>
+Therefore, it's crucial to <strong>turn off the printer and disconnect it from the power source before conducting any maintenance</strong>. This prevents short circuits or damage to the printer's electronics, ensuring safe and effective maintenance. For any concerns or questions about following this guide, <a href="https://bambulab.com/en/my/support/tickets" target="_blank" class="is-external-link">open a new ticket in our Support Page</a> and we will do our best to respond promptly and provide the assistance you need.</p>
+</blockquote>
+<h2 id="remove-the-old-y-axis-linear-guide-assembly" class="toc-header"><a class="toc-anchor" href="#remove-the-old-y-axis-linear-guide-assembly">¶</a> Remove the old Y-axis Linear Guide Assembly</h2>
+<h3 id="h-1place-the-printer-on-its-front" class="toc-header"><a class="toc-anchor" href="#h-1place-the-printer-on-its-front">¶</a> 1.Place the printer on its front</h3>
+<p>For easy access to the bottom section of the A1, you need to place the printer on the front.&nbsp;<br>
+Start by flipping the screen on its side, then gently place the printer on its front, as shown in the image below.&nbsp;<br>
+<strong>Use a box of filament to keep the top side raised to avoid putting pressure on the extruder and the screen.</strong><br>
+<img src="/a1/maintenance/ac-board-replacement/place_the_a1_printer_on_its_front.jpeg" alt="place_the_a1_printer_on_its_front.jpeg" width="700"></p>
+<h3 id="h-2disconnect-the-cable-and-remove-the-cable-bracket" class="toc-header"><a class="toc-anchor" href="#h-2disconnect-the-cable-and-remove-the-cable-bracket">¶</a> 2.Disconnect the cable and remove the cable bracket</h3>
+<p>Loosen the yellow-marked screws without completely removing them. After removing the 1st, 2nd and 3rd cables, which are the camera, Z-axis motor and X-axis motor respectively, push up the cable bracket to disconnect the USB-C cable.</p>
+<p><img src="/a1/maintenance/ac-board-replacement/disconnect_the_a1_wires_and_remove_the_wire_bracket_-_22.jpeg" alt="disconnect_the_a1_wires_and_remove_the_wire_bracket_-_22.jpeg" width="700"></p>
+<blockquote>
+<p><strong>Note</strong>:If it is not easy to remove the cable bracket, you can completely remove the yellow-marked screws and try again.This screw is of model BT3-27.</p>
+</blockquote>
+<h3 id="h-3remove-the-printers-bottom-cover" class="toc-header"><a class="toc-anchor" href="#h-3remove-the-printers-bottom-cover">¶</a> 3.Remove the printer's bottom cover</h3>
+<p>Remove the 16 screws (BT3-8) at the bottom, and then remove the printer bottom cover one by one.<br>
+<img src="/a1/maintenance/replacement-power-switch/%E5%BA%95%E9%83%A8%E8%9E%BA%E4%B8%9D.png" alt="底部螺丝.png" width="700"></p>
+<h3 id="h-4remove-the-bottom-screws-and-the-y-motor-cable" class="toc-header"><a class="toc-anchor" href="#h-4remove-the-bottom-screws-and-the-y-motor-cable">¶</a> 4.Remove the bottom screws and the Y motor cable</h3>
+<p>Remove the two <strong>fixing screws</strong> on the ground cable.This screw is of model M3-6.<br>
+<img src="/a1/maintenance/y-axis-component/%E5%9C%B0%E7%BA%BF%E8%9E%BA%E4%B8%9D.jpg" alt="地线螺丝.jpg" width="700"></p>
+<p>Next, remove the <strong>fixing screws for the heat sink</strong> and the <strong>connector for the Y motor cable</strong>.<br>
+<img src="/a1/maintenance/y-axis-component/y%E7%BA%BF%E7%BC%86%E8%9E%BA%E4%B8%9D.png" alt="y线缆螺丝.png" width="700"><br>
+After removing the Y motor connector, the cables need to be removed from the routing trough to facilitate the removal of the entire Y-axis component in the next step.<br>
+<img src="/a1/maintenance/y-axis-component/y%E7%BA%BF%E7%BC%86.png" alt="y线缆.png" width="700"></p>
+<h3 id="h-5remove-the-heatbed-and-the-y-axis-cover-plate" class="toc-header"><a class="toc-anchor" href="#h-5remove-the-heatbed-and-the-y-axis-cover-plate">¶</a> 5.Remove the heatbed and the Y-axis cover plate</h3>
+<p>Place the A1 printer on a flat surface and slowly raise the X-axis to the top.</p>
+<p><img src="https://wiki.bambulab.com/a1/maintenance/new-heatbed/x_axis_move_up.png" alt="" width="700"><br>
+Move the heatbed to the bottom and remove the cover on the Y-axis.</p>
+<div class="table-container"><table>
+<tbody><tr>
+  <td><img src="/a1/maintenance/printer/move_heatbed.jpg" height="480" width="450"></td>
+  <td><img src="/a1/maintenance/printer/remove_y_cover.jpg" height="480" width="450"></td>
+</tr>
+</tbody></table></div>
+<p>Before removing the heatbed, it is necessary to use the H2.0 hex wrench to remove the 4 soft silicone sleeves;<br>
+Then loosen the 4 screws that fix the heatbed, remove the heatbed from the base and place it on the desktop.<br>
+This screw is of model M3-6.</p>
+<div class="table-container"><table>
+<tbody><tr>
+  <td><img src="/a1/maintenance/new-heatbed/4_screws.png" height="480" width="450"></td>
+  <td><img src="/a1/maintenance/new-heatbed/remove_heatbed.png" height="480" width="450"></td>
+</tr>
+</tbody></table></div>
+<blockquote class="is-info">
+<p>Note: The latest version of the heatbed has removed the soft rubber stopper.<br>
+<img src="/a1/maintenance/heatbed/new-heatbed.png" alt="" width="200"></p>
+</blockquote>
+<h3 id="h-6remove-the-y-axis-linear-guide-assembly" class="toc-header"><a class="toc-anchor" href="#h-6remove-the-y-axis-linear-guide-assembly">¶</a> 6.Remove the Y-axis Linear Guide Assembly</h3>
+<p>First, the Y-axis slide block needs to be moved to the front end to remove the 8 red-marked screws and 2 green-marked screws shown in Figure 8.</p>
+<p>After the screws are removed, move the pulley to the tail end and then remove the 2 green-marked screws at the front end.</p>
+<blockquote class="is-info">
+<p>The red-marked screws are M3-23 and the green-marked ones are BT3-23.</p>
+</blockquote>
+<div class="table-container"><table>
+<tbody><tr>
+  <td><img src="/a1/maintenance/y-axis-component/y螺丝.png" height="500" width="450"></td>
+  <td><img src="/a1/maintenance/y-axis-component/前部1.jpg" height="480" width="400"></td>
+</tr>
+</tbody></table></div>
+<p>Then remove the fixing screws of the tail motor.</p>
+<p><img src="/a1/maintenance/botttom/y_rail_position.jpg" alt="" width="700"></p>
+<p><strong>At this point, the Y-axis linear guide assembly can be completely removed.</strong></p>
+<p><img src="/a1/maintenance/botttom/remove_the_y_axis.jpg" alt="" width="700"></p>
+<blockquote class="is-info">
+<p>Note: In some versions, the Y-axis linear guide assembly and the base may be adhered together with glue. Before removing them, it is necessary to clean off the remaining glue.<br>
+<img src="/a1/maintenance/y-axis-component/%E8%83%B6.jpg" alt="胶.jpg" width="250"></p>
+</blockquote>
+<h2 id="install-the-new-y-axis-linear-guide-assembly" class="toc-header"><a class="toc-anchor" href="#install-the-new-y-axis-linear-guide-assembly">¶</a> Install the new Y-axis Linear Guide Assembly</h2>
+<h3 id="h-1install-the-new-y-axis-linear-guide-assembly" class="toc-header"><a class="toc-anchor" href="#h-1install-the-new-y-axis-linear-guide-assembly">¶</a> 1.Install the new Y-axis Linear Guide Assembly</h3>
+<p>Pass the Y motor cable through from the bottom. First, insert a section of the tensioner into the base, then install the Y motor end;<br>
+After the installation is completed, first lock the black screw at the Y motor position. This screw can be used to confirm whether the installation is in place.</p>
+<div class="table-container"><table>
+<tbody><tr>
+  <td><img src="/a1/maintenance/botttom/install_y_rail_2.jpg" height="500" width="450"></td>
+  <td><img src="/a1/maintenance/botttom/y_rail_position.jpg" height="480" width="400"></td>
+</tr>
+</tbody></table></div>
+<p>First, install four green-marked screws at both ends, and then install eight red-marked screws at the middle position.</p>
+<blockquote class="is-info">
+<p>The red-marked screws are M3-23 and the green-marked ones are BT3-23.</p>
+</blockquote>
+<div class="table-container"><table>
+<tbody><tr>
+  <td><img src="/a1/maintenance/y-axis-component/y螺丝.png" height="500" width="450"></td>
+  <td><img src="/a1/maintenance/y-axis-component/前部1.jpg" height="480" width="400"></td>
+</tr>
+</tbody></table></div>
+<h3 id="h-2connect-the-y-motor-cable-and-the-bottom-screws" class="toc-header"><a class="toc-anchor" href="#h-2connect-the-y-motor-cable-and-the-bottom-screws">¶</a> 2.Connect the Y motor cable and the bottom screws</h3>
+<p>Pass the Y motor cable through the bottom wiring trough.</p>
+<div class="table-container"><table>
+<tbody><tr>
+  <td><img src="/a1/maintenance/botttom/pass_through_the_motor_cable1_.jpg" height="480" width="450"></td>
+  <td><img src="/a1/maintenance/botttom/arrange_cables_new.jpg" height="480" width="480"></td>
+</tr>
+</tbody></table></div>
+<p>Install two ground cable fixing screws（M3-6）;<br>
+Connect the Y motor connector and tighten the fixing screws of the heat sink.</p>
+<div class="table-container"><table>
+<tbody><tr>
+  <td><img src="/a1/maintenance/y-axis-component/地线螺丝.jpg" height="450" width="480"></td>
+  <td><img src="/a1/maintenance/y-axis-component/y线缆螺丝.png" height="450" width="500"></td>
+</tr>
+</tbody></table></div>
+<h3 id="h-3install-the-printer-bottom-cover" class="toc-header"><a class="toc-anchor" href="#h-3install-the-printer-bottom-cover">¶</a> 3.Install the printer bottom cover</h3>
+<p>Now the printer bottom cover can be installed; it should be noted that <strong>the position of the cable bracket for the motor cable</strong>. Before inserting the cable connector, avoid the bottom cover pressing on the motor cable;<br>
+After the bottom cover is installed, lock in the corresponding 16 screws (BT3-8) . Here, the screws are self-tapping screws. Avoid over-tightening.</p>
+<p><img src="/a1/maintenance/replacement-power-switch/%E5%BA%95%E9%83%A8%E8%9E%BA%E4%B8%9D.png" alt="底部螺丝.png" width="700"></p>
+<h3 id="h-4install-the-wire-bracket-and-connect-the-wires" class="toc-header"><a class="toc-anchor" href="#h-4install-the-wire-bracket-and-connect-the-wires">¶</a> 4.Install the wire bracket and connect the wires</h3>
+<p>In the final step, carefully align the wire bracket then push it downwards while making sure the USB cable is fully pushed against the printer frame.&nbsp;<br>
+Then, tighten the screw shown in the image to lock it in place. Avoid overtightening the screw as this is screwed into the plastic frame.&nbsp;This screw is of model BT3-27.</p>
+<p><img src="/a1/maintenance/power-supply/install_the_cable_bracket.jpeg" alt="" width="700"></p>
+<p>Next, re-connect the Camera, Motor X and Motor Z cables to finish the installation.</p>
+<p><img src="/a1/maintenance/power-supply/a1_wires.jpeg" alt="" width="700"></p>
+<p>This completes the installation process</p>
+<h3 id="h-5install-the-heatbed-component-and-the-y-axis-cover-plate" class="toc-header"><a class="toc-anchor" href="#h-5install-the-heatbed-component-and-the-y-axis-cover-plate">¶</a> 5.Install the heatbed component and the Y-axis cover plate</h3>
+<p>Carefully align the heatbed metallic frame to the two metallic stands on the Y-axis, while ensuring the screw holes of the bed are aligned.</p>
+<p><img src="/a1/maintenance/new-heatbed/align_holes.png" alt="" width="700"></p>
+<p>Proceed with installing the four screws（M3-6） on the heatbed as shown in the image below. When done, you can also install the four silicone covers removed before.</p>
+<div class="table-container"><table>
+<tbody><tr>
+  <td><img src="/a1/maintenance/heatbed-replacement-guide/install_the_four_heatbed_screws.jpeg" height="450" width="520"></td>
+  <td><img src="/a1/maintenance/heatbed-replacement-guide/heatbed_screws.jpg" height="450" width="450"></td>
+</tr>
+</tbody></table></div>
+<blockquote class="is-info">
+<p>Note: The latest version of the heatbed has removed the soft rubber stopper and modified it to have only one screw hole.<br>
+The only differences between the old and new versions of the hot bed are the soft rubber stopper and the screw hole; the update of the heatbed is aimed at preventing incorrect installation during replacement.<br>
+<img src="/a1/maintenance/heatbed/new-heatbed.png" alt="" width="200"></p>
+</blockquote>
+<p>Move the hot bed forward to the end, pass the Y-axis cover from beneath the hot bed through, and push it forward to the end. Align the snap fasteners and install the Y-axis cover in place.</p>
+<div class="table-container"><table>
+<tbody><tr>
+  <td><img src="/a1/maintenance/printer/install_y_cover_2.jpg" height="450" width="480"></td>
+  <td><img src="/a1/maintenance/printer/install_y_cover_3.jpg" height="450" width="480"></td>
+</tr>
+</tbody></table></div>
+<h2 id="printer-calibration" class="toc-header"><a class="toc-anchor" href="#printer-calibration">¶</a> Printer calibration</h2>
+<p>To ensure that the Y-axis component replacement does not affect the normal operation of the printer, you need to recalibrate the device before the actual printing.</p>
+<div class="table-container"><table>
+<tbody><tr>
+  <td><img src="/screen-operation/calibration/11/20250309-200216.jpg" height="400" width="500"></td>
+  <td><img src="/screen-operation/calibration/11/20250309-200149.jpg" height="400" width="500"></td>
+</tr>
+</tbody></table></div>
+<h2 id="end-notes" class="toc-header"><a class="toc-anchor" href="#end-notes">¶</a> End Notes</h2>
+<blockquote>
+<p>We hope the detailed guide provided has been helpful and informative.</p>
+<p>If this guide does not solve your problem, <em>please submit a <a href="https://bambulab.com/en/my/support/tickets/create" target="_blank" class="is-external-link">technical ticket</a></em>, we will answer your questions and provide assistance.<br>
+If you have any suggestions or feedback on this Wiki, please leave a message in the comment area. Thank you for your support and attention!</p>
+</blockquote>
+</div></template><template slot="comments"><div><comments></comments></div></template></page></div><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9422b6340e38b72d',t:'MTc0NzY0ODQ1My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body></html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta charset="UTF-8"><meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1, maximum-scale=5"><meta name="theme-color" content="#1976d2"><meta name="msapplication-TileColor" content="#1976d2"><meta name="msapplication-TileImage" content="/_assets/favicons/mstile-150x150.png"><title>A1 Power Switch Replacement Guide | Bambu Lab Wiki</title><meta name="description" content="This guide mainly elaborates on the detailed steps for replacing the power switch of A1."><meta property="og:title" content="A1 Power Switch Replacement Guide"><meta property="og:type" content="website"><meta property="og:description" content="This guide mainly elaborates on the detailed steps for replacing the power switch of A1."><meta property="og:image"><meta property="og:url" content="https://wiki.bambulab.com/en/a1/maintenance/replacement_of_power_switch"><meta property="og:site_name" content="Bambu Lab Wiki"><link rel="apple-touch-icon" sizes="180x180" href="/_assets/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="192x192" href="/_assets/favicons/android-chrome-192x192.png"><link rel="icon" type="image/png" sizes="32x32" href="/_assets/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/_assets/favicons/favicon-16x16.png"><link rel="mask-icon" href="/_assets/favicons/safari-pinned-tab.svg" color="#1976d2"><link rel="manifest" href="/_assets/manifest.json"><script>var siteConfig = {"title":"Bambu Lab Wiki","theme":"default","darkMode":false,"tocPosition":"left","lang":"en","rtl":false,"company":"Bambu Lab","contentLicense":"alr","footerOverride":"","logoUrl":"/admin/home/logo-large.png"}
+var siteLangs = [{"code":"en","name":"English"},{"code":"zh","name":"中文 (Zhōngwén)"}]
+</script><link type="text/css" rel="stylesheet" href="/_assets/css/app.766a556e9dcc61b7fcd5.css"><script type="text/javascript" src="/_assets/js/runtime.js?1716156900"></script><script type="text/javascript" src="/_assets/js/app.js?1716156900"></script><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-225490854-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-225490854-3');
+</script>
+<style type="text/css">.caption{word-break:break-word}.row.page-header-section.no-gutters.align-content-center{height:auto!important;min-height:90px}blockquote:before{content:""!important}blockquote{border-top:6px solid #1976d2!important;border-left:0!important;padding:1rem!important}blockquote p{padding:0!important;line-height:26px!important}blockquote p li{font-style:normal!important}i{font-style:normal!important}a.v-list-item--link[href='https://wiki.bambulab.com/en/makerworld'] .v-list-item__avatar i::before{content:url('https://wiki.bambulab.com/makerworld/makerworld.svg')!important}a.v-list-item--link[href='https://wiki.bambulab.com/zh/makerworld'] .v-list-item__avatar i::before{content:url('https://wiki.bambulab.com/makerworld/makerworld.svg')!important}.video-responsive{max-width:720px}.video-responsive-inner{position:relative;padding-bottom:56.25%}.video-responsive-inner iframe,.video-responsive-inner video{position:absolute;width:100%;height:100%;left:0;top:0}div.contents img{cursor:pointer}</style><link  href="https://cdn1.bambulab.com/wiki/viewer/viewer.min.css" rel="stylesheet">
+<script src="https://cdn1.bambulab.com/wiki/viewer/viewer.min.js"></script>
+<script type="text/javascript" defer> 
+
+function GetQueryString(sGet, name) {
+	var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)"); 
+	var r = sGet.match(reg);
+	if(r != null) {
+		return unescape(r[2]);
+	} else {
+		return null;
+	}
+}
+
+function getUrlQuery(name) {
+    let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    let r = window.location.search.substr(1).match(reg);
+    if (r != null) {
+        return decodeURIComponent(r[2]);
+    };
+
+    return null;
+}
+
+
+function parseUrl(url) {
+	if(url.startsWith('//')) {
+		url = location.protocol + url;
+	}
+	return new window.URL(url);
+}
+
+function removeUrlParam(param, url = window.location.href) {
+	let obj = parseUrl(url);
+	obj.searchParams.delete(param);
+	return obj.href;
+}
+
+function SetMaskIconColor() {
+	document.querySelector('link[rel="mask-icon"]').setAttribute('color', '#00AE42');
+}
+
+function HandleVideoHtml() {
+    const rxYoutube = /^.*(?:(?:youtu\.be\/|v\/|vi\/|u\/\w\/|embed\/)|(?:(?:watch)?\?v(?:i)?=|\&v(?:i)?=))([^#\&\?]*).*/
+    const rxVimeo = /^.*(vimeo\.com\/)((channels\/[A-z]+\/)|(groups\/[A-z]+\/videos\/))?([0-9]+)/
+	document.querySelectorAll('.contents oembed, .contents a').forEach(elm => {
+		const url = elm.hasAttribute('url') ? elm.getAttribute('url') : elm.getAttribute('href')
+		let newElmHtml = null
+		let nWen = url.indexOf('?');
+		let GetParam = '';
+		let BiliMatch = false;
+		let BiliVID = '';
+		if(nWen >= 0) {
+			GetParam = url.substr(nWen + 1);
+			//alert(GetParam);
+			let sSrc = GetQueryString(GetParam, 'src');
+			let sV = GetQueryString(GetParam, 'v');
+			if(sSrc != null && sV != null && sSrc == 'bilibili') {
+				BiliMatch = true;
+				BiliVID = sV;
+			}
+		}
+		const ytMatch = url.match(rxYoutube)
+		const vmMatch = !ytMatch && url.match(rxVimeo)
+		if(BiliMatch) {
+			newElmHtml = '<iframe src="https://player.bilibili.com/player.html?p=1&autoplay=0&bvid=' + BiliVID + '" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="100%"> </iframe>';
+		} else if(ytMatch) {
+			newElmHtml = `<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/${ytMatch[1]}" frameborder="0" allowfullscreen></iframe>`
+		} else if(vmMatch) {
+			newElmHtml = `<iframe id="vmplayer" type="text/html" width="640" height="360" src="https://player.vimeo.com/video/${vmMatch[5]}" frameborder="0" allowfullscreen></iframe>`
+		} else if(url.endsWith('.mp4')) {
+			newElmHtml = `<video controls autostart="0" name="media" width="640" height="360"><source src="${url}" type="video/mp4"></video>`
+		} else {
+			return
+		}
+        
+		const container = document.createElement('div')
+		container.classList.add('video-responsive')
+
+        const inner = document.createElement('div')
+        inner.classList.add('video-responsive-inner')
+
+		inner. insertAdjacentHTML('beforeend', newElmHtml)
+        container.append(inner)
+
+		elm.replaceWith(container)
+	})
+}
+
+function HandleSearchPage() {
+	const search = getUrlQuery('search')
+	if(search) {
+		const isAPP = window.innerWidth < 960
+		console.log("isAPP: " + isAPP)
+		const headerInner = document.querySelector("header.nav-header.v-sheet.theme--dark.v-toolbar.v-toolbar--flat.v-app-bar.v-app-bar--clipped.v-app-bar--fixed.black")
+		const input = headerInner.__vue__.$parent
+		console.log(input)
+		if(input) {
+			if(isAPP) {
+				input.searchIsShown = true
+			}
+			input.search = search
+			const target = document.querySelector('.v-application--wrap')
+			const observe = new MutationObserver(function(mutations, observe) {
+				mutations.forEach((mutation) => {
+					const nodes = Array.from(mutation.addedNodes)
+					if(nodes.length > 0) {
+						nodes.forEach((node) => {
+							if(node.nodeType === 1) {
+								if(node.classList.contains('search-results')) {
+									const btn = document.querySelector('.search-results div.text-xs-center .mx-2.v-btn')
+									if(btn) {
+										console.log(btn)
+										btn.onclick = function() {
+											const url = removeUrlParam('search')
+											window.location.href = url
+										}
+									}
+								}
+							}
+						})
+					}
+				})
+			});
+			observe.observe(target, {
+				childList: true
+			});
+		}
+	}
+}
+
+function HandleViewerJS()
+{
+  const imageContent = document.querySelector('div.contents')
+  if (imageContent) {
+    const gallery = new Viewer(imageContent,{title:false})
+    imageContent.querySelectorAll('img').forEach((item, index) => {
+      item.addEventListener('click', () => {
+        gallery.view(index)
+      })
+    })
+  }
+}
+
+window.boot.register('vue', () => {
+
+	// window.onload = () => {
+	//    SetMaskIconColor();
+	// 	  HandleVideoHtml();
+	//	  HandleSearchPage();
+	//}
+
+    window.addEventListener('load', () => {
+	    SetMaskIconColor();
+	 	HandleVideoHtml();
+		HandleSearchPage();
+        HandleViewerJS();
+    })
+}) 
+
+</script></head><body><div id="root"><page locale="en" path="a1/maintenance/replacement_of_power_switch" title="A1 Power Switch Replacement Guide" description="This guide mainly elaborates on the detailed steps for replacing the power switch of A1." :tags="[{&quot;tag&quot;:&quot;a1&quot;,&quot;title&quot;:&quot;a1&quot;}]" created-at="2025-03-12T04:00:02.426Z" updated-at="2025-03-14T09:13:46.034Z" author-name="Aether" :author-id="165" editor="markdown" :is-published="true" toc="W3sidGl0bGUiOiJQb3dlciBzd2l0Y2giLCJhbmNob3IiOiIjcG93ZXItc3dpdGNoIiwiY2hpbGRyZW4iOltdfSx7InRpdGxlIjoiQXBwbGljYWJsZSBtb2RlbHMgb2YgcHJpbnRlcnMiLCJhbmNob3IiOiIjYXBwbGljYWJsZS1tb2RlbHMtb2YtcHJpbnRlcnMiLCJjaGlsZHJlbiI6W119LHsidGl0bGUiOiJXaGVuIHRvIHVzZT8iLCJhbmNob3IiOiIjd2hlbi10by11c2UiLCJjaGlsZHJlbiI6W119LHsidGl0bGUiOiJUb29scyBhbmQgbWF0ZXJpYWxzIG5lZWRlZCIsImFuY2hvciI6IiN0b29scy1hbmQtbWF0ZXJpYWxzLW5lZWRlZCIsImNoaWxkcmVuIjpbXX0seyJ0aXRsZSI6IlNhZmV0eSBXYXJuaW5nIiwiYW5jaG9yIjoiI3NhZmV0eS13YXJuaW5nIiwiY2hpbGRyZW4iOltdfSx7InRpdGxlIjoiUmVtb3ZlIHRoZSBvbGQgcG93ZXIgc3dpdGNoIiwiYW5jaG9yIjoiI3JlbW92ZS10aGUtb2xkLXBvd2VyLXN3aXRjaCIsImNoaWxkcmVuIjpbeyJ0aXRsZSI6IjEuUGxhY2UgdGhlIHByaW50ZXIgb24gaXRzIGZyb250IiwiYW5jaG9yIjoiI2gtMXBsYWNlLXRoZS1wcmludGVyLW9uLWl0cy1mcm9udCIsImNoaWxkcmVuIjpbXX0seyJ0aXRsZSI6IjIuRGlzY29ubmVjdCB0aGUgY2FibGUgYW5kIHJlbW92ZSB0aGUgY2FibGUgYnJhY2tldCIsImFuY2hvciI6IiNoLTJkaXNjb25uZWN0LXRoZS1jYWJsZS1hbmQtcmVtb3ZlLXRoZS1jYWJsZS1icmFja2V0IiwiY2hpbGRyZW4iOltdfSx7InRpdGxlIjoiMy5SZW1vdmUgdGhlIHByaW50ZXIncyBib3R0b20gY292ZXIiLCJhbmNob3IiOiIjaC0zcmVtb3ZlLXRoZS1wcmludGVycy1ib3R0b20tY292ZXIiLCJjaGlsZHJlbiI6W119LHsidGl0bGUiOiI0LlJlbW92ZSB0aGUgcG93ZXIgc3dpdGNoIGNhYmxlIiwiYW5jaG9yIjoiI2gtNHJlbW92ZS10aGUtcG93ZXItc3dpdGNoLWNhYmxlIiwiY2hpbGRyZW4iOltdfSx7InRpdGxlIjoiNS5SZW1vdmUgdGhlIHBvd2VyIHN3aXRjaCIsImFuY2hvciI6IiNoLTVyZW1vdmUtdGhlLXBvd2VyLXN3aXRjaCIsImNoaWxkcmVuIjpbXX1dfSx7InRpdGxlIjoiSW5zdGFsbCBhIG5ldyBwb3dlciBzd2l0Y2giLCJhbmNob3IiOiIjaW5zdGFsbC1hLW5ldy1wb3dlci1zd2l0Y2giLCJjaGlsZHJlbiI6W3sidGl0bGUiOiIxLkluc3RhbGwgdGhlIHBvd2VyIHN3aXRjaCIsImFuY2hvciI6IiNoLTFpbnN0YWxsLXRoZS1wb3dlci1zd2l0Y2giLCJjaGlsZHJlbiI6W119LHsidGl0bGUiOiIyLlBvd2VyIHN1cHBseSBjb25uZWN0aW9uIGNhYmxlIiwiYW5jaG9yIjoiI2gtMnBvd2VyLXN1cHBseS1jb25uZWN0aW9uLWNhYmxlIiwiY2hpbGRyZW4iOltdfSx7InRpdGxlIjoiMy5JbnN0YWxsIHRoZSBwcmludGVyJ3MgYm90dG9tIGNvdmVyIiwiYW5jaG9yIjoiI2gtM2luc3RhbGwtdGhlLXByaW50ZXJzLWJvdHRvbS1jb3ZlciIsImNoaWxkcmVuIjpbXX0seyJ0aXRsZSI6IjUuSW5zdGFsbCB0aGUgY2FibGUgYnJhY2tldCBhbmQgY29ubmVjdCB0aGUgY2FibGVzIiwiYW5jaG9yIjoiI2gtNWluc3RhbGwtdGhlLWNhYmxlLWJyYWNrZXQtYW5kLWNvbm5lY3QtdGhlLWNhYmxlcyIsImNoaWxkcmVuIjpbXX1dfSx7InRpdGxlIjoiVmVyaWZ5IHRoZSBmdW5jdGlvbmFsaXR5IiwiYW5jaG9yIjoiI3ZlcmlmeS10aGUtZnVuY3Rpb25hbGl0eSIsImNoaWxkcmVuIjpbXX0seyJ0aXRsZSI6IkVuZCBOb3RlcyIsImFuY2hvciI6IiNlbmQtbm90ZXMiLCJjaGlsZHJlbiI6W119XQ==" :page-id="2190" sidebar="W3siaSI6InNkaS0xIiwiayI6ImxpbmsiLCJsIjoiSG9tZSIsImMiOiJtZGktaG9tZSIsInkiOiJob21lIiwidCI6Ii8ifSx7ImkiOiJzZGktMiIsImsiOiJsaW5rIiwibCI6Ildpa2kgVXBkYXRlcyIsImMiOiJtZGktbmV3LWJveCIsInkiOiJleHRlcm5hbCIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL25ldy1hbmQtdXBkYXRlcyJ9LHsiaSI6InNkaS0zIiwiayI6ImxpbmsiLCJsIjoiSDJEIiwiYyI6Im1kaS1hbHBoYS1oLWJveCIsInkiOiJleHRlcm5hbCIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL2gyZCJ9LHsiaSI6InNkaS00IiwiayI6ImxpbmsiLCJsIjoiQU1TIDIgUHJvIiwiYyI6Im1kaS1tb3ZpZS1yb2xsIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vYW1zLTItcHJvIn0seyJpIjoic2RpLTUiLCJrIjoibGluayIsImwiOiJBTVMgSFQiLCJjIjoibWRpLW1vdmllLXJvbGwiLCJ5IjoiZXh0ZXJuYWwiLCJ0IjoiaHR0cHM6Ly93aWtpLmJhbWJ1bGFiLmNvbS9lbi9hbXMtaHQifSx7ImkiOiJzZGktNiIsImsiOiJsaW5rIiwibCI6IlgxIFNlcmllcyIsImMiOiJtZGktYWxwaGEteC1ib3gtb3V0bGluZSIsInkiOiJleHRlcm5hbCIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL3gxIn0seyJpIjoic2RpLTciLCJrIjoibGluayIsImwiOiJQMSBTZXJpZXMiLCJjIjoibWRpLWFscGhhLXAtYm94LW91dGxpbmUiLCJ5IjoiZXh0ZXJuYWwiLCJ0IjoiaHR0cHM6Ly93aWtpLmJhbWJ1bGFiLmNvbS9lbi9wMSJ9LHsiaSI6InNkaS04IiwiayI6ImxpbmsiLCJsIjoiQTEiLCJjIjoibWRpLWFscGhhLWEtYm94LW91dGxpbmUiLCJ5IjoiZXh0ZXJuYWwiLCJ0IjoiaHR0cHM6Ly93aWtpLmJhbWJ1bGFiLmNvbS9lbi9hMSJ9LHsiaSI6InNkaS05IiwiayI6ImxpbmsiLCJsIjoiQTEgbWluaSIsImMiOiJtZGktYWxwaGEtYS1ib3gtb3V0bGluZSIsInkiOiJleHRlcm5hbCIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL2ExLW1pbmkifSx7ImkiOiJzZGktMTAiLCJrIjoibGluayIsImwiOiJBTVMiLCJjIjoibWRpLWFscGhhLWEtY2lyY2xlIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vYW1zIn0seyJpIjoic2RpLTExIiwiayI6ImxpbmsiLCJsIjoiQU1TIGxpdGUiLCJjIjoibWRpLWFscGhhLWwtY2lyY2xlIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vYW1zLWxpdGUifSx7ImkiOiJzZGktMTIiLCJrIjoibGluayIsImwiOiJITVMiLCJjIjoibWRpLXRleHQtYm94LXNlYXJjaC1vdXRsaW5lIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vaG1zL2hvbWUifSx7ImkiOiJzZGktMTMiLCJrIjoibGluayIsImwiOiJTb2Z0d2FyZSIsImMiOiJtZGktdGVsZXZpc2lvbi1ndWlkZSIsInkiOiJleHRlcm5hbCIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL3NvZnR3YXJlIn0seyJpIjoic2RpLTE0IiwiayI6ImxpbmsiLCJsIjoiRmlsYW1lbnRzICYgQWNjZXNzb3JpZXMiLCJjIjoibWRpLXByaW50ZXItM2Qtbm96emxlIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vZmlsYW1lbnQtYWNjIn0seyJpIjoic2RpLTE1IiwiayI6ImxpbmsiLCJsIjoiTWFrZXJXb3JsZCIsImMiOiJtZGktY3ViZS1zY2FuIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vbWFrZXJ3b3JsZCJ9LHsiaSI6InNkaS0xNiIsImsiOiJoZWFkZXIiLCJsIjoiR2VuZXJhbCIsImMiOm51bGwsInkiOm51bGwsInQiOm51bGx9LHsiaSI6InNkaS0xNyIsImsiOiJsaW5rIiwibCI6Iktub3dsZWRnZSBTaGFyaW5nIiwiYyI6Im1kaS1mb3J1bSIsInkiOiJwYWdlIiwidCI6Ii9lbi9rbm93bGVkZ2Utc2hhcmluZyJ9LHsiaSI6InNkaS0xOCIsImsiOiJsaW5rIiwibCI6Ikdsb3NzYXJ5IiwiYyI6Im1kaS10YWJsZS1vZi1jb250ZW50cyIsInkiOiJwYWdlIiwidCI6Ii9lbi9nbG9zc2FyeSJ9LHsiaSI6InNkaS0xOSIsImsiOiJsaW5rIiwibCI6IkZBUSIsImMiOiJtZGktZnJlcXVlbnRseS1hc2tlZC1xdWVzdGlvbnMiLCJ5IjoicGFnZSIsInQiOiIvZW4vZmFxIn0seyJpIjoic2RpLTIwIiwiayI6ImxpbmsiLCJsIjoiQWJvdXQgVXMiLCJjIjoibWRpLWluZm9ybWF0aW9uLW91dGxpbmUiLCJ5IjoicGFnZSIsInQiOiIvZW4vYWJvdXQtdXMifSx7ImkiOiJzZGktMjEiLCJrIjoiZGl2aWRlciIsImwiOm51bGwsImMiOm51bGwsInkiOm51bGwsInQiOm51bGx9LHsiaSI6InNkaS0yMiIsImsiOiJsaW5rIiwibCI6IkNvbW11bml0eSBDb250cmlidXRpb25zIiwiYyI6Im1kaS13aWtpcGVkaWEiLCJ5IjoiZXh0ZXJuYWxibGFuayIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL2NvbnRyaWJ1dGlvbi1ndWlkZSJ9XQ==" nav-mode="STATIC" effective-permissions="eyJjb21tZW50cyI6eyJyZWFkIjpmYWxzZSwid3JpdGUiOmZhbHNlLCJtYW5hZ2UiOmZhbHNlfSwiaGlzdG9yeSI6eyJyZWFkIjpmYWxzZX0sInNvdXJjZSI6eyJyZWFkIjpmYWxzZX0sInBhZ2VzIjp7InJlYWQiOnRydWUsIndyaXRlIjpmYWxzZSwibWFuYWdlIjpmYWxzZSwiZGVsZXRlIjpmYWxzZSwic2NyaXB0IjpmYWxzZSwic3R5bGUiOmZhbHNlfSwic3lzdGVtIjp7Im1hbmFnZSI6ZmFsc2V9fQ==" edit-shortcuts="eyJlZGl0RmFiIjp0cnVlLCJlZGl0TWVudUJhciI6dHJ1ZSwiZWRpdE1lbnVCdG4iOnRydWUsImVkaXRNZW51RXh0ZXJuYWxCdG4iOmZhbHNlLCJlZGl0TWVudUV4dGVybmFsTmFtZSI6IkdpdEh1YiIsImVkaXRNZW51RXh0ZXJuYWxJY29uIjoibWRpLWdpdGh1YiIsImVkaXRNZW51RXh0ZXJuYWxVcmwiOiJodHRwczovL2dpdGh1Yi5jb20vb3JnL3JlcG8vYmxvYi9tYWluL3tmaWxlbmFtZX0ifQ==" filename="en/a1/maintenance/replacement_of_power_switch.md"><template slot="contents"><div><h2 id="power-switch" class="toc-header"><a class="toc-anchor" href="#power-switch">¶</a> Power switch</h2>
+<p>Hereinafter, we will present the detailed steps for replacing the A1 power switch.</p>
+<p><img src="/a1/maintenance/replacement-power-switch/a1%E5%BC%80%E5%85%B3(1).jpg" alt="a1开关(1).jpg" width="800"></p>
+<h2 id="applicable-models-of-printers" class="toc-header"><a class="toc-anchor" href="#applicable-models-of-printers">¶</a> Applicable models of printers</h2>
+<p>Bambu Lab A1</p>
+<h2 id="when-to-use" class="toc-header"><a class="toc-anchor" href="#when-to-use">¶</a> When to use?</h2>
+<ul>
+<li>The printer won't turn on.</li>
+<li>Poor contact of power cable.</li>
+<li>Recommended by Bambu Lab customer support</li>
+</ul>
+<h2 id="tools-and-materials-needed" class="toc-header"><a class="toc-anchor" href="#tools-and-materials-needed">¶</a> Tools and materials needed</h2>
+<ul>
+<li>New power switch</li>
+<li>H2.0 hex wrench</li>
+<li>PH2 Philips screwdriver</li>
+<li>20 minutes</li>
+</ul>
+<blockquote class="is-info">
+<p>Note: Before proceeding, you need to find a 90-degree bent H2.0 hex wrench or a similar tool for removing the power switch.<br>
+<img src="/a1/maintenance/replacement-power-switch/20250311-213023.jpg" alt="20250311-213023.jpg" width="600"></p>
+</blockquote>
+<h2 id="safety-warning" class="toc-header"><a class="toc-anchor" href="#safety-warning">¶</a> Safety Warning</h2>
+<blockquote class="is-danger">
+<p>It's crucial to <strong>power off the printer before conducting any maintenance work</strong>, including work on the printer's electronics and tool head wires. Performing tasks with the printer on can result in a short circuit, leading to electronic damage and safety hazards.<br>
+During maintenance or troubleshooting, you may need to disassemble parts, including the hotend. This exposes wires and electrical components that could short circuit if they contact each other, other metal, or electronic components while the printer is still on. <strong>This can result in damage to the printer's electronics and additional issues.</strong><br>
+Therefore, it's crucial to <strong>turn off the printer and disconnect it from the power source before conducting any maintenance</strong>. This prevents short circuits or damage to the printer's electronics, ensuring safe and effective maintenance. For any concerns or questions about following this guide, <a href="https://bambulab.com/en/my/support/tickets" target="_blank" class="is-external-link">open a new ticket in our Support Page</a> and we will do our best to respond promptly and provide the assistance you need.</p>
+</blockquote>
+<h2 id="remove-the-old-power-switch" class="toc-header"><a class="toc-anchor" href="#remove-the-old-power-switch">¶</a> Remove the old power switch</h2>
+<h3 id="h-1place-the-printer-on-its-front" class="toc-header"><a class="toc-anchor" href="#h-1place-the-printer-on-its-front">¶</a> 1.Place the printer on its front</h3>
+<p>For easy access to the bottom section of the A1, you need to place the printer on the front.&nbsp;<br>
+Start by flipping the screen on its side, then gently place the printer on its front, as shown in the image below.&nbsp;<br>
+<strong>Use a box of filament to keep the top side raised to avoid putting pressure on the extruder and the screen.</strong><br>
+<img src="/a1/maintenance/ac-board-replacement/place_the_a1_printer_on_its_front.jpeg" alt="place_the_a1_printer_on_its_front.jpeg" width="800"></p>
+<h3 id="h-2disconnect-the-cable-and-remove-the-cable-bracket" class="toc-header"><a class="toc-anchor" href="#h-2disconnect-the-cable-and-remove-the-cable-bracket">¶</a> 2.Disconnect the cable and remove the cable bracket</h3>
+<p>Loosen the yellow-marked screws without completely removing them. After removing the 1st, 2nd and 3rd cables, which are the camera, Z-axis motor and X-axis motor respectively, push up the cable bracket to disconnect the USB-C cable.</p>
+<p><img src="/a1/maintenance/ac-board-replacement/disconnect_the_a1_wires_and_remove_the_wire_bracket_-_22.jpeg" alt="disconnect_the_a1_wires_and_remove_the_wire_bracket_-_22.jpeg" width="800"></p>
+<blockquote>
+<p><strong>Note</strong>: If it is not easy to remove the cable bracket, you can completely remove the yellow-marked screws and try again.</p>
+</blockquote>
+<h3 id="h-3remove-the-printers-bottom-cover" class="toc-header"><a class="toc-anchor" href="#h-3remove-the-printers-bottom-cover">¶</a> 3.Remove the printer's bottom cover</h3>
+<p>Remove the 16 screws at the bottom, and then remove the printer bottom cover one by one.<br>
+<img src="/a1/maintenance/replacement-power-switch/%E5%BA%95%E5%A3%B32.png" alt="底壳2.png" width="800"></p>
+<p>After removing the bottom cover, the following four areas can be seen. The replacement steps for this time are in Area 2 and Area 3.</p>
+<p><img src="/a1/maintenance/replacement-power-switch/20250311-213017.jpg" alt="20250311-213017.jpg" width="800"></p>
+<h3 id="h-4remove-the-power-switch-cable" class="toc-header"><a class="toc-anchor" href="#h-4remove-the-power-switch-cable">¶</a> 4.Remove the power switch cable</h3>
+<p>First, the <strong>ground cable</strong> of the power switch needs to be disconnected.</p>
+<p><img src="/a1/maintenance/replacement-power-switch/%E5%9C%B0%E7%BA%BF.png" alt="地线.png" width="800"></p>
+<p>Remove the four cable connectors as shown in the following figure one by one.</p>
+<p><img src="/a1/maintenance/replacement-power-switch/%E7%94%B5%E6%BA%90%E7%BA%BF%E7%BC%86.png" alt="电源线缆.png" width="800"></p>
+<blockquote>
+<p>Note: If the 1st, 2nd and 3rd connectors are removed, it will be rather difficult. In such cases, you can use an internal hex wrench to press against the unlock latch before removing the cable connector.<br>
+<img src="/a1/maintenance/ac-board-replacement/connector.jpg" alt="20250311-213017.jpg" width="300"></p>
+</blockquote>
+<h3 id="h-5remove-the-power-switch" class="toc-header"><a class="toc-anchor" href="#h-5remove-the-power-switch">¶</a> 5.Remove the power switch</h3>
+<p>The removal of the power switch can be carried out in the following three steps:<br>
+<strong>1. Release the two top retaining clips.</strong></p>
+<blockquote class="is-info">
+<p>After releasing the snap fastener, you need to keep pressing it with your fingers to prevent it from slipping off again.</p>
+</blockquote>
+<p><img src="/a1/maintenance/replacement-power-switch/%E4%B8%8A%E5%8D%A1%E6%89%A3.webp" alt="上卡扣.webp" width="600"></p>
+<p><strong>2. While pushing forward from the rear side of the switch, release the snap fastener at the bottom right corner. At this point, three snap fasteners have been released.</strong></p>
+<p><img src="/a1/maintenance/replacement-power-switch/%E5%8F%B3%E4%B8%8B%E5%8D%A1%E6%89%A3.webp" alt="右下卡扣.webp" width="600"></p>
+<p><strong>3. While pushing forward from the rear side after turning the switch, release the snap fastener at the bottom right corner and remove the power switch.</strong></p>
+<blockquote class="is-info">
+<p>Use the shorter end of the hex wrench and press it upwards against the lower latch to release it.</p>
+</blockquote>
+<p><img src="/a1/maintenance/replacement-power-switch/%E5%B7%A6%E4%B8%8B%E5%8D%A1%E6%89%A3.webp" alt="左下卡扣.webp" width="600"></p>
+<p>At this point, the old power switch has been completely removed. Next, the new power switch can be installed.</p>
+<h2 id="install-a-new-power-switch" class="toc-header"><a class="toc-anchor" href="#install-a-new-power-switch">¶</a> Install a new power switch</h2>
+<h3 id="h-1install-the-power-switch" class="toc-header"><a class="toc-anchor" href="#h-1install-the-power-switch">¶</a> 1.Install the power switch</h3>
+<p>Align the power switch with the slot and push it in. The snap lock will automatically engage.</p>
+<blockquote class="is-info">
+<p>Note: The switch button is located close to the outer side of the printer.</p>
+</blockquote>
+<p><img src="/a1/maintenance/replacement-power-switch/%E5%AE%89%E8%A3%85%E5%BC%80%E5%85%B3.webp" alt="安装开关.webp" width="600"></p>
+<h3 id="h-2power-supply-connection-cable" class="toc-header"><a class="toc-anchor" href="#h-2power-supply-connection-cable">¶</a> 2.Power supply connection cable</h3>
+<ol>
+<li>Connect the ground cable<br>
+<img src="/a1/maintenance/replacement-power-switch/%E5%9C%B0%E7%BA%BF.png" alt="地线.png" width="800"></li>
+<li>The power switch cable needs to pass through the bottom trough.<br>
+<img src="/a1/maintenance/replacement-power-switch/%E7%BA%BF%E6%A7%BD.png" alt="线槽.png"></li>
+<li>Connect the cable to the AC board and the power module.</li>
+</ol>
+<p><span style="color:orange"><strong>#1 Ground cable of AC board（yellow）</strong></span><br>
+<span style="color:brown"><strong>#2 Live（brown）</strong></span><br>
+<span style="color:blue"><strong>#3 Neutral（blue）</strong></span><br>
+<span style="color:orange"><strong>#4 Ground cable of power supply（yellow）</strong></span></p>
+<p><img src="/a1/maintenance/replacement-power-switch/%E7%94%B5%E6%BA%90%E7%BA%BF%E7%BC%86.png" alt="电源线缆.png" width="800"></p>
+<p>After the cable installation is completed, please pay attention to installing the rubber sleeves to avoid short circuits.</p>
+<h3 id="h-3install-the-printers-bottom-cover" class="toc-header"><a class="toc-anchor" href="#h-3install-the-printers-bottom-cover">¶</a> 3.Install the printer's bottom cover</h3>
+<p>Now the printer bottom cover can be installed; it should be noted that <strong>the position of the cable bracket for the motor cable</strong>. Before inserting the cable connector, avoid the bottom cover pressing on the motor cable;<br>
+After the bottom cover is installed, lock in the corresponding 16 screws. Here, the screws are self-tapping screws. Avoid over-tightening.</p>
+<p><img src="/a1/maintenance/replacement-power-switch/%E5%BA%95%E5%A3%B32.png" alt="底壳2.png" width="800"></p>
+<h3 id="h-5install-the-cable-bracket-and-connect-the-cables" class="toc-header"><a class="toc-anchor" href="#h-5install-the-cable-bracket-and-connect-the-cables">¶</a> 5.Install the cable bracket and connect the cables</h3>
+<p>In the final step, carefully align the cable bracket then push it downwards while making sure the USB cable is fully pushed against the printer frame.<br>
+Then, tighten the screw shown in the image to lock it in place. Avoid overtightening the screw as this is screwed into the plastic frame.</p>
+<p><img src="/a1/maintenance/ac-board-replacement/install_the_cable_bracket.jpeg" alt="install_the_cable_bracket.jpeg" width="700"></p>
+<p>Next, re-connect the Camera, Motor X and Motor Z cables to finish the installation.<br>
+<img src="/a1/maintenance/ac-board-replacement/a1_wires.jpeg" alt="a1_wires.jpeg" width="700"></p>
+<h2 id="verify-the-functionality" class="toc-header"><a class="toc-anchor" href="#verify-the-functionality">¶</a> Verify the functionality</h2>
+<p>After the installation is completed, connect the printer to the power supply, turn on the power switch, and if the indicator lights and the screen light up normally, the installation is successful and the printing test can be carried out.</p>
+<div class="table-container"><table>
+<tbody><tr>
+  <td><img src="/a1/troubleshooting/circuit-fault/20250209-102005.jpg" height="400" width="450"></td>
+  <td><img src="/a1/maintenance/replacement-power-switch/en.jpg" height="400" width="450"></td>
+</tr>
+</tbody></table></div>
+<h2 id="end-notes" class="toc-header"><a class="toc-anchor" href="#end-notes">¶</a> End Notes</h2>
+<blockquote>
+<p>We hope that the detailed guide we shared with you was helpful and informative.</p>
+<p>We want to ensure that you can perform it safely and effectively. If you have any concerns or questions regarding the process described in this article, we encourage you to reach out to our friendly customer service team before starting the operation. Our team is always ready to help you and answer any questions you may have.</p>
+<p><a href="https://bambulab.com/en/my/support/tickets" class="is-external-link">Click here to open a new ticket in our Support Page</a>.</p>
+<p>We will do our best to respond promptly and provide you with the assistance you need.</p>
+</blockquote>
+</div></template><template slot="comments"><div><comments></comments></div></template></page></div><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9422caf86aceb70e',t:'MTc0NzY0OTMwNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body></html>

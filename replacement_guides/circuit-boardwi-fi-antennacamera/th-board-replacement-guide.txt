@@ -1,271 +1,81 @@
 https://wiki.bambulab.com/en/a1/maintenance/th-board-replacement-guide
 
-In this guide, we will show how to replace the TH Board on the A1.
+# Step-by-Step Guide to Replace the TH Board on the A1
 
+### When to Use This Guide
+This guide is intended for use if there is a problem with the TH Board on the A1. Common issues that may indicate the need for replacement include:
+- Problems with bed leveling where the nozzle doesn't accurately perform the homing procedure.
+- The extruder motor is not turning as expected, potentially due to a faulty stepper driver.
+- Damage to the USB C connector, Filament Sensor ribbon cable connector, Heater connector, or if the tool head is not detected with an error message displayed on the printer screen.
+- Recommendation by Bambu Lab Technical Support.
 
+### Tools and Materials Needed
+- **Bambu Lab Toolhead Board for A1**
+- **H2.0 hex wrench**
+- **H1.5 hex wrench**
+- **15 minutes of your time**
 
-Note: The new version of the TH board is missing two terminals (circled in red), leaving only the solder pads.
+### Safety Warning
+**IMPORTANT!** It's crucial to **power off the printer** and **disconnect it from the power source** before conducting any maintenance work on the printer's electronics and tool head wires to prevent short circuits or damage to the printer's electronics.
 
+===PAGE_BREAK===
 
+### Remove the Old TH Board
 
-¶
-When to use?
+#### Step 1: Remove the back printhead cover
+1. Carefully pry open the back cover by pulling on the bottom section.
 
-This guide is intended for use if there is a problem with the TH Board.
-Common issues that may indicate the need for replacement of the A1 TH Board include:
+#### Step 2: Remove the USB-C cable from the toolhead
+1. Remove the four screws holding the USB-C cable secure on the toolhead of the A1.
+2. Pull the USB-C cable upwards to remove it.
 
+#### Step 3: Remove the TH Board screws
+1. Remove the three black screws holding the TH Board in place.
 
-Problems with bed leveling, where the nozzle doesn't accurately perform the homing procedure
+#### Step 4: Disconnect the cables
+1. Remove the four cables attached to the TH Board by pulling them out by the connector using a flat tool to avoid damage.
+2. Remove the Eddy sensor wires, held in place by two screws.
 
-The extruder motor is not turning as expected, due to a potentially faulty stepper driver
+#### Step 5: Remove the TH Board
+1. Open the clip that fixes the cable in place.
+2. Disconnect and carefully pull out the filament sensor ribbon cable straight upwards to avoid damage.
 
-The USB C connector is damaged
+===PAGE_BREAK===
 
-The Filament Sensor ribbon cable connector is damaged
+### Install the New TH Board
 
-The Heater connector is damaged
+#### Step 1: Attach the TH Board to the housing
+1. Reconnect the filament sensor ribbon cable on top of the board and close the clip that fixes the cable in place.
+2. Route the Extruder Motor cable next to the ribbon cable.
+3. Gently push the TH Board back into its position.
 
-The tool head is not detected, and an error message is displayed on the printer screen
+#### Step 2: Install the TH Board screws
+1. Use the three black screws to re-attach the TH Board back to the toolhead.
+   - **Important!** Do not overtighten the screws to avoid any potential damage.
 
-Recommended by Bambu Lab Technical Support
+#### Step 3: Re-connect all the cables
+1. Reconnect the following cables:
+   - **Hotend Heating Assembly**
+   - **Extruder Motor**
+   - **Hotend Cooling Fan**
+   - **Part Cooling Fan**
+   - **Hotend Sensor**
 
+#### Step 4: Re-connect the USB-C cable
+1. Reinstall the USB cable using the four screws removed earlier, making sure of the correct orientation.
+   - **Important!** Do not over-tighten these screws to avoid damaging the threads. Ensure the line in the cable connector is aligned to the back of the printer and toolhead.
 
+#### Step 5: Install the toolhead back cover
+1. Align the two brackets on the back cover towards the top and push until it clicks into place.
 
+### Calibration Step After the Operation
+It's recommended to conduct a full calibration of the printer and wash the PEI textured plate before use to ensure optimal performance.
 
-¶
-Tools and materials needed
+### Potential Problems and Solutions
+- **Hotend temperature is 0**: Check the Hotend Heating Assembly connector and ensure it is correctly inserted. If issues persist, check for damage to the thermistor wires (White wires).
+- **Hotend cannot be heated**: Confirm the Hotend Heating Assembly connector is correctly inserted. If issues persist, check for damage to the heater wires (Translucent wires).
+- **Printer is not homing correctly**: Check the Eddy Sensor wires and confirm they are correctly installed.
+- **Filament sensor is not working**: Check the Ribbon Cable and replace if damaged.
 
-Bambu Lab Toolhead Board for A1
-
-
-H2.0 hex wrench
-
-H1.5 hex wrench
-
-15 minutes of your time
-
-
-
-
-¶
-Safety Warning
-
-
-IMPORTANT!
-
-It's crucial to
-power off the printer before conducting any maintenance work
-, including work on the printer's electronics and tool head wires. Performing tasks with the printer on can result in a short circuit, leading to electronic damage and safety hazards.
-
-
-
-During maintenance or troubleshooting, you may need to disassemble parts, including the hotend. This exposes wires and electrical components that could short circuit if they contact each other, other metal, or electronic components while the printer is still on.
-This can result in damage to the printer's electronics and additional issues.
-
-Therefore, it's crucial to
-turn off the printer and disconnect it from the power source before conducting any maintenance
-. This prevents short circuits or damage to the printer's electronics, ensuring safe and effective maintenance. For any concerns or questions about following this guide,
-open a new ticket in our Support Page
-and we will do our best to respond promptly and provide the assistance you need.
-
-
-¶
-Remove the Old TH Board
-
-¶
-1. Remove the back printhead cover
-
-The first step in replacing the faulty TH Board is to remove the back cover of the toolhead.
-Carefully pry open the back cover by pulling on the bottom section as shown below.
-
-
-¶
-2.  Remove the USB-C cable from the toolhead
-
-Next, remove the four screws holding the USB-C cable secure on the toolhead of the A1.
-After removing the screws, the USB-C cable can be pulled upwards to remove it.
-
-
-¶
-3. Remove the TH Board screws
-
-Remove the three black screws holding the TH Board in place.
-
-
-¶
-4. Disconnect the cables
-
-Next, remove the four cables attached to the TH Board.
-Carefully pull them out by the connector, and avoid pulling the wires from the connectors.
-We recommend using a flat tool to gently pry them out to avoid any potential damage.
-
-
-Don't forget to also remove the Eddy sensor wires which are held in place by two screws.
-
-
-¶
-5. Remove the TH Board
-
-You can now remove the TH Board from the plastic housing.
-
-First, open the clip that fixes the cable in place. Then you should be able to disconnect the cable.
-
-Be careful when pulling it out, as you will need to carefully disconnect the filament sensor ribbon cable.
-
-Pull it slowly and straight upwards. Avoid wiggling the ribbon cable as it can cause damage to it. If you have damaged it, you can
-order a replacement from this link
-
-
-
-¶
-Install the New TH Board
-
-¶
-1. Attach the TH Board to the housing
-
-The first step in installing the new TH Board is to attach it back on the toolhead housing.
-Start by re-connecting the filament sensor ribbon cable on top of the board. Gently push the ribbon cable in the connector. Then, close the clip that fixes the cable in place.
-
-
-Carefully route the Extruder Motor cable next to the ribbon cable as shown in the image below.
-After this step is done, you can gently push the TH Board back in its position.
-
-
-¶
-2. Install the TH Board screws
-
-Use the three black screws to re-attach the TH Board back to the toolhead.
-
-
-
-Important!
-Do not overtighten the screws to avoid any potential damage.
-
-
-¶
-3. Re-connect all the cables
-
-With the new TH Board back in its original position, you can re-connect all the wires as shown below.
-
-
-Hotend Heating Assembly
-
-Extruder
-Motor
-
-Hotend Cooling Fan
-
-Part Cooling Fan
-
-Hotend Sensor
-
-
-
-¶
-4. Re-connect the USB-C cable
-
-Re-install the USB cable using the four screws we removed in the first step, while being careful about the orientation.
-
-
-
-Important!
-
-Do not over-tighten these screws, as the threads can damage the plastic.
-Take note of the USB-C cable orientation and the small groove from the back that aligns it.
-The USB-C cable only fits in one position, with the correct orientation having the line in the cable connector aligned to the back of the printer and toolhead.
-
-
-
-¶
-5. Install the toolhead back cover
-
-Finally, install the back cover of the A1 toolhead.
-The back cover clips in place. Simply align the two brackets on the back cover towards the top, then push it until you hear a few clicks.
-
-
-¶
-Calibration step after the operation
-
-We recommend conducting a full calibration of the printer after this operation.
-
-Additionally, it's strongly advised to
-wash the PEI textured plate before use
-, as it may have been contaminated during this process.
-
-
-
-¶
-Potential problems and solutions
-
-If you encounter problems during the installation of a new Toolhead Board, please check the potential problems and solutions listed below:
-
-¶
-The hotend temperature is 0
-
-Check the Hotend Heating Assembly connector and confirm it is correctly inserted, as shown in
-Step 3. Re-connect all the cables
-It is important to carefully align the connector pins to the
-Toolhead Board
-.
-If the issue persists, the thermistor wires might have been damaged (White wires)
-
-¶
-The hotend cannot be heated
-
-Check the Hotend Heating Assembly connector and confirm it is correctly inserted, as shown in
-Step 3. Re-connect all the cables
-It is important to carefully align the connector pins to the
-Toolhead Board
-.
-If the issue persists, the heater wires might have been damaged (Translucent wires)
-
-¶
-Printer is not homing correctly
-
-Check the Eddy Sensor wires (5 and 6) and confirm they are correctly installed on the back of the
-Toolhead Board
-, as shown in
-Step 3. Re-connect all the cables
-
-¶
-Filament sensor is not working
-
-Check the Ribbon Cable and confirm it is correctly installed on the back of the
-Toolhead Board
-, as shown in
-Step 1. Attach the Toolhead Board to the housing
-If the ribbon cable is damaged, you will need to replace the
-Filament Sensor.
-
-¶
-A1 Mini TH Board Connectors
-
-
-
-Hotend Heating Assembly Connector
-
-Filament Sensor Ribbon Cable Connector
-
-USB-C Connector
-
-Extruder Motor Connector
-
-Hotend Cooling Fan Connector
-
-Eddy Sensor Connector
-
-Part Cooling Fan Connector
-
-
-
-
-¶
-End Notes
-
-
-We hope the detailed guide provided has been helpful and informative.
-
-To ensure a safe and effective execution, if you have any concerns or questions about the process described in this article, we recommend reaching out to technical support team before initiating the operation. We will do our best to respond promptly and provide the assistance you need.
-Click here to open a new ticket in our Support Page
-.
-
+### End Notes
+For any concerns or questions about the process described in this guide, reach out to the technical support team before initiating the operation. [Click here to open a new ticket in our Support Page](#).

@@ -1,327 +1,119 @@
 https://wiki.bambulab.com/en/a1/maintenance/guide-for-Replacing-y-axis-components
 
-¶
-Y-axis Linear Guide Assembly
+# Y-axis Linear Guide Assembly Replacement Guide
 
-Hereinafter, we will present the detailed steps for replacing the Y-axis component of A1.
+This guide provides detailed instructions for replacing the Y-axis component on the Bambu Lab A1 printer.
 
+## Applicable Model
 
-¶
-Applicable models of printers
+- **Bambu Lab A1**
 
-Bambu Lab A1
+## When to Use This Guide
+
+- **Abnormal noise and sluggishness on the Y-axis**
+- **Recommended by Bambu Lab customer support**
 
-¶
-When to use?
+## Tools and Materials Needed
 
+- **New Y-axis Linear Guide Assembly**
+- **H2.0 hex wrench**
+- **Estimated Time: 25 minutes**
 
-Abnormal noise and sluggishness on the Y-axis
+## List of Screws
 
-Recommended by Bambu Lab customer support
+- **Cable bracket BT3-27**
+- **Bottom cover screws BT3-8 (16 PCS)**
+- **Ground cable M3-6 (2 PCS)**
+- **Heatbed M3-6 (2 PCS)**
+- **Y-axis middle screws M3-23 (8 PCS)**
+- **Y-axis both ends screws BT3-23 (4 PCS)**
 
+## Safety Warning
 
-¶
-Tools and materials needed
+**It's crucial to power off the printer** before conducting any maintenance work, including work on the printer's electronics and tool head wires. Performing tasks with the printer on can result in a short circuit, leading to electronic damage and safety hazards. **Turn off the printer and disconnect it from the power source** before conducting any maintenance. For any concerns or questions about following this guide, **open a new ticket in our Support Page**.
 
+===PAGE_BREAK===
 
-New Y-axis Linear Guide Assembly
+# Remove the Old Y-axis Linear Guide Assembly
 
-H2.0 hex wrench
+### Step 1: Prepare the Printer
+#### Step 1: Place the Printer on Its Front
+1. Flip the screen to the side.
+2. Gently place the printer on its front, using a box of filament to keep the top side raised to avoid pressure on the extruder and screen.
 
-25 minutes
+### Step 2: Disconnect the Cable and Remove the Cable Bracket
+#### Step 1: Loosen and Remove Cables
+1. Loosen the yellow-marked screws (do not completely remove).
+2. Disconnect the 1st, 2nd, and 3rd cables (camera, Z-axis motor, X-axis motor).
+3. Push up the cable bracket to disconnect the USB-C cable.
+   
+   **Note:** If the cable bracket is difficult to remove, completely remove the yellow-marked screws (BT3-27) and try again.
 
+### Step 3: Remove the Printer's Bottom Cover
+#### Step 1: Remove Screws and Cover
+1. Remove the 16 screws (BT3-8) at the bottom.
+2. Lift off the printer bottom cover.
 
-¶
-List of screws
+### Step 4: Remove the Bottom Screws and the Y Motor Cable
+#### Step 1: Remove Ground and Heat Sink Screws
+1. Remove the two **fixing screws** on the ground cable (M3-6).
+2. Remove the **fixing screws for the heat sink** and disconnect the Y motor cable.
+3. Remove the cables from the routing trough.
 
+### Step 5: Remove the Heatbed and the Y-axis Cover Plate
+#### Step 1: Prepare for Removal
+1. Place the printer on a flat surface and raise the X-axis to the top.
+2. Move the heatbed to the bottom and remove the Y-axis cover.
 
+   **Note:** Use the H2.0 hex wrench to remove the 4 screws fixing the heatbed (M3-6) before lifting it off.
 
+### Step 6: Remove the Y-axis Linear Guide Assembly
+#### Step 1: Remove Screws and Assembly
+1. Move the Y-axis slide block to the front and remove the 8 red-marked screws (M3-23) and 2 green-marked screws (BT3-23).
+2. Move the pulley to the tail end and remove the remaining 2 green-marked screws (BT3-23).
+3. Remove the fixing screws of the tail motor.
+   
+   **Note:** If the assembly is glued, clean off the remaining glue before removal.
 
+===PAGE_BREAK===
 
+# Install the New Y-axis Linear Guide Assembly
 
-Cable bracket BT3-27
+### Step 1: Install the New Y-axis Linear Guide Assembly
+#### Step 1: Position and Secure the Assembly
+1. Pass the Y motor cable through from the bottom.
+2. Insert a section of the tensioner into the base and install the Y motor end.
+3. Lock the black screw at the Y motor position to confirm correct placement.
+4. Install four green-marked screws at both ends and eight red-marked screws at the middle position (M3-23 and BT3-23).
 
+### Step 2: Connect the Y Motor Cable and the Bottom Screws
+#### Step 1: Route and Connect Cable
+1. Pass the Y motor cable through the bottom wiring trough.
+2. Install two ground cable fixing screws (M3-6).
+3. Connect the Y motor connector and tighten the fixing screws of the heat sink.
 
+### Step 3: Install the Printer Bottom Cover
+#### Step 1: Secure the Bottom Cover
+1. Ensure the position of the cable bracket for the motor cable is correct.
+2. Insert the cable connector and install the bottom cover.
+3. Lock in the 16 screws (BT3-8), being careful not to over-tighten as they are self-tapping screws.
 
+### Step 4: Install the Wire Bracket and Connect the Wires
+#### Step 1: Align and Secure the Bracket
+1. Carefully align the wire bracket and push it downwards, ensuring the USB cable is fully pushed against the printer frame.
+2. Tighten the screw (BT3-27) to lock it in place.
+3. Re-connect the Camera, Motor X, and Motor Z cables.
 
+### Step 5: Install the Heatbed Component and the Y-axis Cover Plate
+#### Step 1: Align and Secure the Heatbed
+1. Align the heatbed metallic frame with the two metallic stands on the Y-axis.
+2. Install the four screws (M3-6) on the heatbed.
+3. Move the heatbed forward, pass the Y-axis cover from beneath through, and push it forward to snap it in place.
 
+# Printer Calibration
 
-Bottom cover screws BT3-8（16PCS）
+**Calibrate the device** before starting actual printing to ensure the Y-axis component replacement does not affect the normal operation of the printer.
 
+# End Notes
 
-
-
-
-
-
-
-
-
-Ground cable M3-6（2PCS）
-
-
-
-
-
-
-Heatbed M3-6（2PCS）
-
-
-
-
-
-
-
-
-
-
-Y-axis middle screws  M3-23（8PCS）
-
-
-
-
-
-
-Y-axis both ends screws BT3-23 （4PCS）
-
-
-
-
-
-¶
-Safety Warning
-
-
-It's crucial to
-power off the printer before conducting any maintenance work
-, including work on the printer's electronics and tool head wires. Performing tasks with the printer on can result in a short circuit, leading to electronic damage and safety hazards.
-During maintenance or troubleshooting, you may need to disassemble parts, including the hotend. This exposes wires and electrical components that could short circuit if they contact each other, other metal, or electronic components while the printer is still on.
-This can result in damage to the printer's electronics and additional issues.
-Therefore, it's crucial to
-turn off the printer and disconnect it from the power source before conducting any maintenance
-. This prevents short circuits or damage to the printer's electronics, ensuring safe and effective maintenance. For any concerns or questions about following this guide,
-open a new ticket in our Support Page
-and we will do our best to respond promptly and provide the assistance you need.
-
-
-¶
-Remove the old Y-axis Linear Guide Assembly
-
-¶
-1.Place the printer on its front
-
-For easy access to the bottom section of the A1, you need to place the printer on the front.
-Start by flipping the screen on its side, then gently place the printer on its front, as shown in the image below.
-
-Use a box of filament to keep the top side raised to avoid putting pressure on the extruder and the screen.
-
-
-¶
-2.Disconnect the cable and remove the cable bracket
-
-Loosen the yellow-marked screws without completely removing them. After removing the 1st, 2nd and 3rd cables, which are the camera, Z-axis motor and X-axis motor respectively, push up the cable bracket to disconnect the USB-C cable.
-
-
-
-Note
-:If it is not easy to remove the cable bracket, you can completely remove the yellow-marked screws and try again.This screw is of model BT3-27.
-
-
-¶
-3.Remove the printer's bottom cover
-
-Remove the 16 screws (BT3-8) at the bottom, and then remove the printer bottom cover one by one.
-
-
-¶
-4.Remove the bottom screws and the Y motor cable
-
-Remove the two
-fixing screws
-on the ground cable.This screw is of model M3-6.
-
-
-Next, remove the
-fixing screws for the heat sink
-and the
-connector for the Y motor cable
-.
-
-After removing the Y motor connector, the cables need to be removed from the routing trough to facilitate the removal of the entire Y-axis component in the next step.
-
-
-¶
-5.Remove the heatbed and the Y-axis cover plate
-
-Place the A1 printer on a flat surface and slowly raise the X-axis to the top.
-
-Move the heatbed to the bottom and remove the cover on the Y-axis.
-
-
-
-
-
-
-
-Before removing the heatbed, it is necessary to use the H2.0 hex wrench to remove the 4 soft silicone sleeves;
-Then loosen the 4 screws that fix the heatbed, remove the heatbed from the base and place it on the desktop.
-This screw is of model M3-6.
-
-
-
-
-
-
-
-
-Note: The latest version of the heatbed has removed the soft rubber stopper.
-
-
-
-¶
-6.Remove the Y-axis Linear Guide Assembly
-
-First, the Y-axis slide block needs to be moved to the front end to remove the 8 red-marked screws and 2 green-marked screws shown in Figure 8.
-
-After the screws are removed, move the pulley to the tail end and then remove the 2 green-marked screws at the front end.
-
-
-The red-marked screws are M3-23 and the green-marked ones are BT3-23.
-
-
-
-
-
-
-
-
-Then remove the fixing screws of the tail motor.
-
-
-At this point, the Y-axis linear guide assembly can be completely removed.
-
-
-
-Note: In some versions, the Y-axis linear guide assembly and the base may be adhered together with glue. Before removing them, it is necessary to clean off the remaining glue.
-
-
-
-¶
-Install the new Y-axis Linear Guide Assembly
-
-¶
-1.Install the new Y-axis Linear Guide Assembly
-
-Pass the Y motor cable through from the bottom. First, insert a section of the tensioner into the base, then install the Y motor end;
-After the installation is completed, first lock the black screw at the Y motor position. This screw can be used to confirm whether the installation is in place.
-
-
-
-
-
-
-
-First, install four green-marked screws at both ends, and then install eight red-marked screws at the middle position.
-
-
-The red-marked screws are M3-23 and the green-marked ones are BT3-23.
-
-
-
-
-
-
-
-
-¶
-2.Connect the Y motor cable and the bottom screws
-
-Pass the Y motor cable through the bottom wiring trough.
-
-
-
-
-
-
-
-Install two ground cable fixing screws（M3-6）;
-Connect the Y motor connector and tighten the fixing screws of the heat sink.
-
-
-
-
-
-
-
-¶
-3.Install the printer bottom cover
-
-Now the printer bottom cover can be installed; it should be noted that
-the position of the cable bracket for the motor cable
-. Before inserting the cable connector, avoid the bottom cover pressing on the motor cable;
-After the bottom cover is installed, lock in the corresponding 16 screws (BT3-8) . Here, the screws are self-tapping screws. Avoid over-tightening.
-
-
-¶
-4.Install the wire bracket and connect the wires
-
-In the final step, carefully align the wire bracket then push it downwards while making sure the USB cable is fully pushed against the printer frame.
-Then, tighten the screw shown in the image to lock it in place. Avoid overtightening the screw as this is screwed into the plastic frame. This screw is of model BT3-27.
-
-
-Next, re-connect the Camera, Motor X and Motor Z cables to finish the installation.
-
-
-This completes the installation process
-
-¶
-5.Install the heatbed component and the Y-axis cover plate
-
-Carefully align the heatbed metallic frame to the two metallic stands on the Y-axis, while ensuring the screw holes of the bed are aligned.
-
-
-Proceed with installing the four screws（M3-6） on the heatbed as shown in the image below. When done, you can also install the four silicone covers removed before.
-
-
-
-
-
-
-
-
-Note: The latest version of the heatbed has removed the soft rubber stopper and modified it to have only one screw hole.
-The only differences between the old and new versions of the hot bed are the soft rubber stopper and the screw hole; the update of the heatbed is aimed at preventing incorrect installation during replacement.
-
-
-
-Move the hot bed forward to the end, pass the Y-axis cover from beneath the hot bed through, and push it forward to the end. Align the snap fasteners and install the Y-axis cover in place.
-
-
-
-
-
-
-
-¶
-Printer calibration
-
-To ensure that the Y-axis component replacement does not affect the normal operation of the printer, you need to recalibrate the device before the actual printing.
-
-
-
-
-
-
-
-¶
-End Notes
-
-
-We hope the detailed guide provided has been helpful and informative.
-
-If this guide does not solve your problem,
-please submit a
-technical ticket
-, we will answer your questions and provide assistance.
-If you have any suggestions or feedback on this Wiki, please leave a message in the comment area. Thank you for your support and attention!
-
+We hope this guide has been helpful. If you encounter issues, **submit a technical ticket** for assistance. For suggestions or feedback, please leave a message in the comment area. Thank you for your support and attention!

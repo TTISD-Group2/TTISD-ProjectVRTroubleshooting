@@ -1,250 +1,114 @@
 https://wiki.bambulab.com/en/a1/maintenance/ac-board-replacement
 
-In this guide we will show the process of replacing the AC Board on the A1
+# Step-by-Step Guide to Replace the AC Board on the A1 Printer
 
+### When to Use This Guide
 
-¶
-When to use?
+- This guide is intended for situations where the AC Board of the A1 printer is faulty and needs replacement.
+- Common symptoms indicating a faulty AC Board include:
+  - The heatbed is not heating.
+  - Recommended action by Bambu Lab customer support.
 
-This guide should be used if the AC Board of the A1 is faulty, and needs to be replaced.
-Common issues that are caused by the A1 AC Board are:
+### Tools and Materials Needed
 
+- **Bambu Lab AC Board for A1**
+- **H2.0 hex wrench**
+- Approximately **20-30 minutes** of your time.
 
-Heatbed is not heating
+### Safety Warning
 
-Recommended by Bambu Lab customer support
+**IMPORTANT!**
+- Ensure the printer is powered off before starting any maintenance. Disconnect the printer from the power source to prevent short circuits and potential damage to the printer’s electronics.
+- If you have any concerns or questions about following this guide, please contact our support team for assistance.
 
+===PAGE_BREAK===
 
-¶
-Tools and materials needed
+### Steps to Remove the Old AC Board
 
-Bambu Lab AC Board for A1
+#### Step 1: Place the Printer on Its Front
+1. Flip the screen to the side.
+2. Gently place the printer on its front, using a box of filament to support the top side and avoid pressure on the extruder and screen.
 
+#### Step 2: Remove the Printer's Bottom Cover
+1. Remove the 10 screws indicated in red.
+2. Loosen the screw marked in yellow (attached to the cable bracket) without removing it.
 
-H2.0 hex wrench
+#### Step 3: Disconnect the Wires and Remove the Wire Bracket
+1. Disconnect the Camera, Motor X, and Motor Z cables.
+2. Push the plastic wire bracket upwards to disconnect the USB cable.
+   - **Note:** If the wire bracket is difficult to remove, ensure the screw labeled Nr. 11 is sufficiently loosened.
+3. Gently pry out the plastic bottom cover.
 
-20-30 minutes
+#### Step 4: Remove the Heatbed Power Wires
+1. Press on the sides of the connectors to release the security clip and disconnect the wires.
 
+#### Step 5: Remove the Heatbed Signal Cable Connector
+1. Use a tool or gently pull on the plastic connector to remove the Heatbed signal cable. Avoid pulling directly on the wires.
 
-¶
-Safety Warning
+#### Step 6: Disconnect the Ribbon Cable
+1. Lift the black plastic latch and gently pull the ribbon cable towards you.
 
+#### Step 7: Remove Remaining Wire Connectors from the AC Board
+1. Disconnect the wires labeled 1, 2, 3, then proceed with wires labeled 4 and 5.
 
-IMPORTANT!
+#### Step 8: Remove the AC Board
+1. Remove the single screw from the middle of the AC Board.
+2. Gently pull out the AC Board by releasing the top plastic clips.
 
-It's crucial to power off the printer before performing any maintenance work on the printer and its electronics, including tool head wires, because leaving the printer on while conducting such tasks can cause a short circuit, which can lead to additional electronic damage and safety hazards.
+===PAGE_BREAK===
 
-When you perform maintenane or troubleshooting on the printer, you may be required to disassemble some parts, including the hotend. This process can expose wires and electrical components that could potentially short circuit if they come into contact with each other or with other metal or electronic components while the printer is still on. This can damage the electronics of the printer and cause further damage.
+### Steps to Install the New AC Board
 
-Therefore, it's essential to switch off the printer and disconnect it from the power source before doing any maintenance work. This will prevent any short circuits or damage to the printer's electronics. By doing so, you can avoid potential damage to the printer's electronic components and ensure that the maintenance work is performed safely and effectively.
+#### Step 1: Transfer the Insulating Material to the New AC Board
+1. Remove the black plastic insulating material from the old board and apply it to the new one.
 
-If you have any concerns or questions about following this guide,
-open a new ticket in our Support Page
-and we will do our best to respond promptly and provide you with the assistance you need.
+#### Step 2: Screw in the New AC Board
+1. Align the new AC Board with the frame of the printer and install the screw to hold the board in place.
 
+#### Step 3: Re-connect the Ribbon Cable
+1. Open the black plastic clip of the ribbon cable.
+2. Insert the ribbon cable while aligning it to the white plastic tabs.
+3. Close the black plastic clip to secure the ribbon cable.
 
-¶
-Steps to remove the old AC Board
+#### Step 4: Re-connect the Heatbed Signal Cable
+1. Align and reconnect the white plastic connector to the AC board.
 
-¶
-1. Place the printer on its front
+#### Step 5: Re-connect the Heatbed Power Cables
+1. Reconnect the heatbed power cables, ensuring the Red wire is labeled as 1 and the Black wire as 2.
 
-For easy access to the bottom section of the A1, you need to place the printer on the front.
-Start by flipping the screen on its side, then gently place the printer on its front, as shown in the image below.
+#### Step 6: Re-connect the Remaining Wires
+- **Ground Wire (Yellow)**
+- **Live Wire (Brown)**
+- **Neutral Wire (Blue)**
+- **Live Wire (Red)**
+- **Neutral Wire (Black)**
 
-Use a box of filament to keep the top side raised to avoid putting pressure on the extruder and the screen.
+#### Step 7: Install the Printer's Bottom Cover
+1. Manage the motor wire in the top left side correctly.
+2. Clip the cover in place and reinstall the 10 screws without over-tightening.
 
+#### Step 8: Install the Wire Bracket and Connect the Wires
+1. Align the wire bracket and push it downwards.
+2. Tighten the screw to lock the bracket in place, ensuring not to over-tighten.
+3. Reconnect the Camera, Motor X, and Motor Z cables.
 
-¶
-2. Remove the printer's bottom cover
+===PAGE_BREAK===
 
-Remove the 10 screws marked in red to prepare the bottom housing removal.
-Please note that the screw marked in yellow needs to be loosened, but it will not be possible to remove it. It remains attached to the cable bracket.
+### Verify the Functionality
 
+- Turn on the printer and set the heatbed temperature to 50°C to confirm proper installation.
 
-¶
-3. Disconnect the wires and remove the wire bracket
+### Calibration Step After the Operation
 
-In the next step, the Camera, Motor X and Motor Z cables need to be disconnected.
-Then, you will be able to simply push the plastic wire bracket upwards, to disconnect the USB cable.
+- No calibration step is required.
 
+### Potential Problems and Solutions
 
+- **The Camera is not working:** Check the camera wire installation as per Step 8.
+- **The X-axis/Z-axis is not working:** Ensure the X motor and Z motor wires are fully installed as per Step 8.
+- **The screen displays an error message:** Check the USB cable installation as per Step 8.
+- **The heatbed is not heating:** Contact Customer Support for further assistance.
 
-Important
-If you cannot easily remove the wire bracket, make sure the screw holding it in place (labeled with Nr. 11 in the previous step) is loosened
+### End Notes
 
-
-After removing the wires, gently pry out the plastic bottom cover.
-
-¶
-4. Remove the heatbed power wires
-
-In the next step, remove the two Heatbed power wires. Gently press on the sides of the connectors to release the security clip so you can disconnect the wires.
-
-
-¶
-5. Remove the Hetbed Signal Cable connector
-
-Carefully remove the Heatbed signal cable connector. A tool can be used to remove it, or you can simply grab the plastic connector and gently pull it out.
-Avoid pulling from the wires as it can lead to damaging the wires or the connector.
-
-
-¶
-6. Disconnect the ribbon cable
-
-To disconnect the ribbon cable, simply raise the black plastic latch then gently pull the ribbon cable towards you.
-
-
-¶
-7. Remove the remaining wire connectors from the AC board
-
-Continue the removal process by removing the remaining wires on the AC board. These wires are disconnected the same way as the heatbed cables.
-
-Start by removing the wires labeled 1,2,3 then complete the removal disconnecting the wires labeled 4 and 5.
-
-
-8. Remove the AC board
-
-With the wires removed, you can proceed to remove the single screw from the middle of the AC board.
-
-After the screw is removed, you can gently pull out the AC board by releasing the top plastic clips holding it in place.
-
-
-This completes the removal of the AC board.
-
-¶
-Steps to Install the new AC Board
-
-¶
-1. Transfer the insulating material to the new AC board
-
-The old AC board has a black plastic insulating material applied to the board. Simply remove it from the old board, and transfer it to the new one as shown in the image below.
-
-
-¶
-2. Screw in the new AC board
-
-Carefully align the new AC board to the frame of the printer, then install the screw holding the board in place.
-
-
-¶
-3. Re-connect the ribbon cable
-
-Start by opening the black plastic clip of the ribbon cable, then gently insert the ribbon cable in it while aligning it to the white plastic tabs.
-Once aligned, simply raise the black plastic clip to lock the ribbon cable in place.
-Ensure that the blue strip on the ribbon cable is parallel to the black plastic connector, as shown in the image below.
-
-
-¶
-4. Re-connect the Heatbed signal cable
-
-Carefully align the white plastic connector as shown in the image below, and re-connect it to the AC board.
-
-
-¶
-5. Re-connect the heatbed power cables
-
-In the next step, carefully re-connect the heatbed power cables, as shown in the image.
-
-The Red wire is labeled as 1, while the Black wire is labeled as 2.
-
-
-¶
-6. Re-connect the remaining wires
-
-Complete the AC board installation by connecting the remaining wires according to the image below.
-
-
-Ground Wire (Yellow)
-
-Live Wire (Brown)
-
-Neutral Wire (Blue)
-
-Live Wire (Red)
-
-Neutral Wire (Black)
-
-
-
-
-IMPORTANT
-
-Confirm that all the wires have the silicone transparent protection fully covering the connector to ensure a successful installation
-The image above shows the right installation
-
-
-¶
-7. Install the the printer's bottom cover
-
-You can now proceed with installing the bottom cover back to the printer.
-
-Pay close attention to the motor wire in the top left side marked with the red arrow in the image below.
-Avoid pressing the cover in place before the wire is correctly managed
-The cover will clip in place, then you can proceed with installing the 10 screws while ensuring you do not over-tighten them.
-
-
-¶
-8. Install the wire bracket and connect the wires
-
-In the final step, carefully align the wire bracket then push it downwards while making sure the USB cable is fully pushed against the printer frame.
-Then, tighten the screw shown in the image to lock it in place. Avoid overtightening the screw as this is screwed into the plastic frame.
-
-
-Next, re-connect the Camera, Motor X and Motor Z cables to finish the installation.
-
-
-This completes the installation process
-
-¶
-Verify the functionality
-
-To ensure everything works as expected, turn on the printer and try to heat the bed to 50C
-If the heatbed temperature is raising, this confirms the installation was correct.
-
-¶
-Calibration step after the operation
-
-No calibration step is required.
-
-¶
-Potential problems and solutions
-
-If you encounter problems during the installation of a new AC Board, please check the potential problems and solutions listed below:
-
-¶
-The Camera is not working
-
-Confirm the camera wire is fully installed as shown in
-Step 8. Install the wire bracket and connect the wires
-
-¶
-The X-axis / Z-axis is not working
-
-Confirm the X motor and Z motor wires are fully installed as shown in
-Step 8. Install the wire bracket and connect the wires
-
-¶
-The screen displays an error message
-
-The USB cable might not be fully inserted. Loosen the screw holding the wire bracket in place, then re-connect the USB cable as shown in
-Step 8. Install the wire bracket and connect the wires
-
-¶
-The heatbed is not heating
-
-The heatbed might be faulty. Report this issue to Customer Suppoort and wait for their reply to offer a solution.
-
-¶
-End Notes
-
-
-We hope that the detailed guide we shared with you was helpful and informative.
-
-We want to ensure that you can perform it safely and effectively. If you have any concerns or questions regarding the process described in this article, we encourage you to reach out to our friendly customer service team before starting the operation. Our team is always ready to help you and answer any questions you may have.
-
-Click here to open a new ticket in our Support Page
-.
-
-We will do our best to respond promptly and provide you with the assistance you need.
-
+- If you have any questions or need further assistance, please contact our support team for help.
