@@ -19554,6 +19554,58 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4513220344661996461, guid: e56a6073001982047accb69544cdea86, type: 3}
+      propertyPath: TopFrameBeam.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513220344661996461, guid: e56a6073001982047accb69544cdea86, type: 3}
+      propertyPath: LeftFrameBeam.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513220344661996461, guid: e56a6073001982047accb69544cdea86, type: 3}
+      propertyPath: RightFrameBeam.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513220344661996461, guid: e56a6073001982047accb69544cdea86, type: 3}
+      propertyPath: 'TopFrameBeam.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1645174773}
+    - target: {fileID: 4513220344661996461, guid: e56a6073001982047accb69544cdea86, type: 3}
+      propertyPath: 'LeftFrameBeam.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1645174774}
+    - target: {fileID: 4513220344661996461, guid: e56a6073001982047accb69544cdea86, type: 3}
+      propertyPath: FillamentTopInput.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513220344661996461, guid: e56a6073001982047accb69544cdea86, type: 3}
+      propertyPath: 'RightFrameBeam.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1645174772}
+    - target: {fileID: 4513220344661996461, guid: e56a6073001982047accb69544cdea86, type: 3}
+      propertyPath: texturedBuildPlate.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513220344661996461, guid: e56a6073001982047accb69544cdea86, type: 3}
+      propertyPath: 'FillamentTopInput.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1645174770}
+    - target: {fileID: 4513220344661996461, guid: e56a6073001982047accb69544cdea86, type: 3}
+      propertyPath: 'FillamentTopInput.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1645174769}
+    - target: {fileID: 4513220344661996461, guid: e56a6073001982047accb69544cdea86, type: 3}
+      propertyPath: 'FillamentTopInput.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1645174768}
+    - target: {fileID: 4513220344661996461, guid: e56a6073001982047accb69544cdea86, type: 3}
+      propertyPath: 'FillamentTopInput.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1645174767}
+    - target: {fileID: 4513220344661996461, guid: e56a6073001982047accb69544cdea86, type: 3}
+      propertyPath: 'texturedBuildPlate.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1645174771}
     - target: {fileID: 6616720783515300701, guid: e56a6073001982047accb69544cdea86, type: 3}
       propertyPath: m_Name
       value: BambulabA1printer
@@ -19563,6 +19615,46 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e56a6073001982047accb69544cdea86, type: 3}
+--- !u!1 &1645174767 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3047598689041466446, guid: e56a6073001982047accb69544cdea86, type: 3}
+  m_PrefabInstance: {fileID: 1645174766}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1645174768 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5321745652098618306, guid: e56a6073001982047accb69544cdea86, type: 3}
+  m_PrefabInstance: {fileID: 1645174766}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1645174769 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2364710668514202667, guid: e56a6073001982047accb69544cdea86, type: 3}
+  m_PrefabInstance: {fileID: 1645174766}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1645174770 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6476204190402412854, guid: e56a6073001982047accb69544cdea86, type: 3}
+  m_PrefabInstance: {fileID: 1645174766}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1645174771 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3247470341034554126, guid: e56a6073001982047accb69544cdea86, type: 3}
+  m_PrefabInstance: {fileID: 1645174766}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1645174772 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2495860678538371748, guid: e56a6073001982047accb69544cdea86, type: 3}
+  m_PrefabInstance: {fileID: 1645174766}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1645174773 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5036775406595248385, guid: e56a6073001982047accb69544cdea86, type: 3}
+  m_PrefabInstance: {fileID: 1645174766}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1645174774 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3395097424742263082, guid: e56a6073001982047accb69544cdea86, type: 3}
+  m_PrefabInstance: {fileID: 1645174766}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1647441999
 GameObject:
   m_ObjectHideFlags: 0
@@ -24195,6 +24287,10 @@ PrefabInstance:
     - target: {fileID: 19778038399970763, guid: b6b6a0be40850a549ba4409b9a9323fe, type: 3}
       propertyPath: m_Name
       value: BambuA1Mockup
+      objectReference: {fileID: 0}
+    - target: {fileID: 19778038399970763, guid: b6b6a0be40850a549ba4409b9a9323fe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7347426891878732307, guid: b6b6a0be40850a549ba4409b9a9323fe, type: 3}
       propertyPath: m_LocalScale.x

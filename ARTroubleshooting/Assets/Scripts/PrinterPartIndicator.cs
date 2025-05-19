@@ -20,7 +20,12 @@ public class PrinterPartIndicator : MonoBehaviour
     public List<GameObject> PartCoolingFan;
     public List<GameObject> USBCcable;
 
+    public List<GameObject> texturedBuildPlate;
+    public List<GameObject> LeftFrameBeam;
+    public List<GameObject> RightFrameBeam;
+    public List<GameObject> TopFrameBeam;
 
+    public List<GameObject> FillamentTopInput;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -30,15 +35,17 @@ public class PrinterPartIndicator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
 
-    private void makeAllHighLight(List<GameObject> objects){
+    private void makeAllHighLight(List<GameObject> objects)
+    {
 
-        foreach (GameObject objecty in objects){
+        foreach (GameObject objecty in objects)
+        {
             //objecty.material = HighlightMaterial;
-             Renderer renderer = objecty.GetComponent<Renderer>();
+            Renderer renderer = objecty.GetComponent<Renderer>();
             if (renderer != null)
             {
                 renderer.material = HighlightMaterial;
@@ -47,10 +54,12 @@ public class PrinterPartIndicator : MonoBehaviour
 
     }
 
-    private void makeAllNotHighLight(List<GameObject> objects){
+    private void makeAllNotHighLight(List<GameObject> objects)
+    {
 
-        foreach (GameObject objecty in objects){
-             Renderer renderer = objecty.GetComponent<Renderer>();
+        foreach (GameObject objecty in objects)
+        {
+            Renderer renderer = objecty.GetComponent<Renderer>();
             if (renderer != null)
             {
                 renderer.material = NonHighLight;
@@ -59,113 +68,178 @@ public class PrinterPartIndicator : MonoBehaviour
 
     }
 
-    public void hightLightFrame(){
+    public void hightLightFrame()
+    {
         makeAllHighLight(PrinterFrame);
     }
 
-    public void unHightLightFrame(){
+    public void unHightLightFrame()
+    {
         makeAllNotHighLight(PrinterFrame);
     }
 
-    public void hightLightScreen(){
+    public void hightLightScreen()
+    {
         makeAllHighLight(Screen);
     }
 
-    public void unHightLightScreen(){
+    public void unHightLightScreen()
+    {
         makeAllNotHighLight(Screen);
     }
 
 
-    public void hightLightHeatBed(){
+    public void hightLightHeatBed()
+    {
         makeAllHighLight(HeatBed);
     }
 
-    public void unHightHeatBed(){
+    public void unHightHeatBed()
+    {
         makeAllNotHighLight(HeatBed);
     }
 
-    public void hightLightXaxis(){
+    public void hightLightXaxis()
+    {
         makeAllHighLight(Xaxis);
     }
 
-    public void unHightXaxis(){
+    public void unHightXaxis()
+    {
         makeAllNotHighLight(Xaxis);
     }
 
-    public void hightLightToolhead(){
+    public void hightLightToolhead()
+    {
         makeAllHighLight(Toolhead);
     }
 
-    public void unHightToolhead(){
+    public void unHightToolhead()
+    {
         makeAllNotHighLight(Toolhead);
     }
 
-    public void hightLightElectricalCord(){
+    public void hightLightElectricalCord()
+    {
         makeAllHighLight(ElectricalCord);
     }
 
-    public void unHightElectricalCord(){
+    public void unHightElectricalCord()
+    {
         makeAllNotHighLight(ElectricalCord);
     }
 
-    public void hightLightFillamentCutter(){
+    public void hightLightFillamentCutter()
+    {
         makeAllHighLight(FillamentCutter);
     }
 
-    public void unHightFillamentCutter(){
+    public void unHightFillamentCutter()
+    {
         makeAllNotHighLight(FillamentCutter);
     }
 
 
-    public void hightLightPurgeWiper(){
+    public void hightLightPurgeWiper()
+    {
         makeAllHighLight(PurgeWiper);
     }
 
-    public void unHightPurgeWiper(){
+    public void unHightPurgeWiper()
+    {
         makeAllNotHighLight(PurgeWiper);
     }
 
 
-    public void hightLightLiveVieuwCamera(){
+    public void hightLightLiveVieuwCamera()
+    {
         makeAllHighLight(LiveVieuwCamera);
     }
 
-    public void unHightLiveVieuwCamera(){
+    public void unHightLiveVieuwCamera()
+    {
         makeAllNotHighLight(LiveVieuwCamera);
     }
 
 
-    public void hightLightNozzle(){
+    public void hightLightNozzle()
+    {
         makeAllHighLight(Nozzle);
     }
 
-    public void unHightNozzle(){
+    public void unHightNozzle()
+    {
         makeAllNotHighLight(Nozzle);
     }
 
-    public void hightSiliconeSockforHotend(){
+    public void hightSiliconeSockforHotend()
+    {
         makeAllHighLight(SiliconeSockforHotend);
     }
 
-    public void unHightSiliconeSockforHotend(){
+    public void unHightSiliconeSockforHotend()
+    {
         makeAllNotHighLight(SiliconeSockforHotend);
     }
 
-    public void hightSiliconePartCoolingFan(){
+    public void hightSiliconePartCoolingFan()
+    {
         makeAllHighLight(PartCoolingFan);
     }
 
-    public void unHightPartCoolingFan(){
+    public void unHightPartCoolingFan()
+    {
         makeAllNotHighLight(PartCoolingFan);
     }
 
-    public void hightUSBCcable(){
+    public void hightUSBCcable()
+    {
         makeAllHighLight(USBCcable);
     }
 
-    public void unHightUSBCcable(){
+    public void unHightUSBCcable()
+    {
         makeAllNotHighLight(USBCcable);
     }
 
+    public void hightLightTexturedBuildPlate(){
+    makeAllHighLight(texturedBuildPlate);
+}
+
+public void unHightLightTexturedBuildPlate(){
+    makeAllNotHighLight(texturedBuildPlate);
+}
+
+public void hightLightLeftFrameBeam(){
+    makeAllHighLight(LeftFrameBeam);
+}
+
+public void unHightLightLeftFrameBeam(){
+    makeAllNotHighLight(LeftFrameBeam);
+}
+
+public void hightLightRightFrameBeam(){
+    makeAllHighLight(RightFrameBeam);
+}
+
+public void unHightLightRightFrameBeam(){
+    makeAllNotHighLight(RightFrameBeam);
+}
+
+public void hightLightTopFrameBeam(){
+    makeAllHighLight(TopFrameBeam);
+}
+
+public void unHightLightTopFrameBeam(){
+    makeAllNotHighLight(TopFrameBeam);
+}
+
+public void hightLightFillamentTopInput(){
+    makeAllHighLight(FillamentTopInput);
+}
+
+public void unHightLightFillamentTopInput(){
+    makeAllNotHighLight(FillamentTopInput);
+}
 
 }
