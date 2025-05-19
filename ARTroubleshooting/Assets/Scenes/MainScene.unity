@@ -2321,6 +2321,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6616720783515300701, guid: e56a6073001982047accb69544cdea86, type: 3}
   m_PrefabInstance: {fileID: 1645174766}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &191117046 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4513220344661996461, guid: e56a6073001982047accb69544cdea86, type: 3}
+  m_PrefabInstance: {fileID: 1645174766}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191117045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7386e3ead892acd41b27f1eb8b4526db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &193339530
 GameObject:
   m_ObjectHideFlags: 0
@@ -25493,8 +25504,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 12
+  m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -25926,8 +25937,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textDisplay: {fileID: 5223482177200620184}
+  titleDisplay: {fileID: 4257112457442961554}
   fileName: textdata
-  fontSize: 12
+  fontSize: 6
+  printerPartIndicator: {fileID: 191117046}
 --- !u!65 &6466278495888624809
 BoxCollider:
   m_ObjectHideFlags: 0

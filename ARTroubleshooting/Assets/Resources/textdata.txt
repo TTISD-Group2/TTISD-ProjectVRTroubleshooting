@@ -1,176 +1,89 @@
-https://wiki.bambulab.com/en/a1-mini/maintenance/hotend-cooling-fan
+https://wiki.bambulab.com/en/a1/maintenance/touchscreen-replacement-guide
 
-In this guide, we will show how to replace the Hotend Fan on the A1 mini.
+# Step-by-Step Guide to Replace the Screen on the A1
 
+### When to Use This Guide
+This guide should be used if the screen of the A1 is faulty and needs replacement. Common issues include:
+- Screen not detecting interaction
+- Screen not turning on
+- Recommended by Bambu Lab Customer Support
 
-¶
-When to use?
+### Tools and Materials Needed
+- **Bambu Lab Screen for A1**
+- **H2.0 Allen Key**
+- **H1.5 Allen Key**
+- **Flat End Screwdriver or Prying Tool**
+- **Sharp Pliers**
+- **Estimated Time: 20-30 minutes**
 
-This guide is intended for use if there is a problem with the Hotend Fan
+### Safety Warning
+**IMPORTANT:** Always power off the printer and disconnect it from the power source before starting maintenance work to prevent short circuits and other electronic damage.
 
-Common issues that may indicate the need for replacement of the A1 mini Hotend Fan include:
+For any concerns or questions, please [open a new ticket on our Support Page](#).
 
+===PAGE_BREAK===
 
-Hotend Fan is noisy
+### Steps to Remove the Old Screen
 
-Hotend Fan has failed and does not turn anymore
+#### Step 1: Place the Printer on Its Front
+1. Flip the printer on its side.
+2. Gently place the printer on its front using a box of filament to support the top side and avoid pressure on the extruder and screen.
 
-Recommended by Bambu Lab Technical Support
+#### Step 2: Disconnect the Wires and Remove the Wire Bracket
+1. Disconnect the cables of the camera, X-axis motor, and Z-axis motor.
+2. Loosen **1 screw**.
+3. Push the cable bracket upwards, disconnect the USB data cable, and remove the bracket.
 
+#### Step 3: Remove the Printer's Bottom Cover
+1. Remove **10 screws** (marked in red) to remove the bottom cover.
 
-¶
-Tools and materials needed
+#### Step 4: Disconnect the Screen Ribbon Cable
+1. Carefully raise the black plastic clip on the mainboard to release the ribbon cable.
+2. Remove the ribbon cable from the board.
 
-Bambu Lab Hotend Fan for A1
+#### Step 5: Remove the Screen Clip
+1. Remove **2 screws** holding the screen metallic clip.
+2. Use sharp pliers to pull the metallic clip towards you with slight resistance.
 
+#### Step 6: Remove the Screen from the Printer
+1. With the clip removed, carefully remove the screen. Note the alignment of the plastic tabs in its holder for correct removal.
 
-H2.0 hex wrench
+===PAGE_BREAK===
 
-H1.5 hex wrench
+### Install the New Screen
 
-25 minutes of your time
+#### Step 1: Attach the Screen to the Printer
+1. Slide the screen halfway through the holder, ensuring the plastic tabs are aligned as shown in the guide.
 
+#### Step 2: Install the Metallic Bracket
+1. Align the metallic bracket as depicted.
+2. Install **2 screws** to hold the bracket in place.
+3. Use a flat end screwdriver to help slide the screen into the bracket until it clicks into place.
 
-¶
-Safety Warning
+#### Step 3: Attach the Screen Ribbon Cable
+1. Gently insert the ribbon cable into the motherboard connector.
+2. Lock the black plastic clip to secure the cable, ensuring the white line on the ribbon cable is aligned.
 
+#### Step 4: Install the Printer's Bottom Cover
+1. Manage the motor wire on the top left side as indicated.
+2. Clip the cover in place and install **10 screws**, making sure not to over-tighten.
 
-IMPORTANT!
+#### Step 5: Install the Wire Bracket and Connect the Wires
+1. Align and push the wire bracket downwards, ensuring the USB cable is fully against the frame.
+2. Tighten the screw to lock the bracket in place.
+3. Reconnect the camera, X-axis motor, and Z-axis motor cables.
 
-It's crucial to
-power off the printer before conducting any maintenance work
-, including work on the printer's electronics and tool head wires. Performing tasks with the printer on can result in a short circuit, leading to electronic damage and safety hazards.
+### Verify the Functionality
+Turn on the printer and interact with the screen to ensure proper functionality.
 
-During maintenance or troubleshooting, you may need to disassemble parts, including the hotend. This exposes wires and electrical components that could short circuit if they contact each other, other metal, or electronic components while the printer is still on.
-This can result in damage to the printer's electronics and additional issues.
+### Calibration Step After the Operation
+No calibration step is required after this operation.
 
-Therefore, it's crucial to
-turn off the printer and disconnect it from the power source before conducting any maintenance
-. This prevents short circuits or damage to the printer's electronics, ensuring safe and effective maintenance. For any concerns or questions about following this guide,
-open a new ticket in our Support Page
-and we will do our best to respond promptly and provide the assistance you need.
+### Potential Problems and Solutions
+- **Camera Not Working:** Check the camera wire installation as described in Step 5.
+- **X-axis / Z-axis Not Working:** Ensure the X and Z motor wires are correctly installed as in Step 5.
+- **Screen Displays an Error Message:** Check the USB cable connection as in Step 5.
+- **Screen Not Turning On/Touch Not Detected:** Confirm the ribbon cable installation as in Step 3.
 
-
-¶
-Remove the Old Hotend Fan
-
-¶
-1. Remove the toolhead rear housing
-
-We start by removing the toolhead rear housing.
-Carefully pry open the toolhead rear housing by pulling on the bottom section as shown below.
-
-
-¶
-2. Disconnect the cable
-
-Remove the hotend fan cable attached to the TH Board.
-Carefully pull it out by the connector, and avoid pulling the cable from the connector.
-We recommend using a flat tool to gently pry them out to avoid any potential damage.
-
-
-¶
-3. Remove the toolhead front cover
-
-Grab the base of the front cover and gently pull towards you.
-The clips holding the cover in place will be released, allowing you to remove the front cover
-
-
-¶
-4. Remove the hotend
-
-Remove the silicone sock for hotend by gently pulling it towards you, then remove the hotend.
-All the steps are labeled on the extruder sticker.
-
-
-¶
-5. Remove the extruder screws
-
-Remove the screws as shown in the picture, and gently pull the extruder forward a little.
-Be careful when pulling it out, as you will need to carefully disconnect the filament sensor ribbon cable.
-
-
-¶
-6. Remove the left cable cover
-
-There are hotend fan cables and filament sensor cables in the left cable channel. Push the left cable cover backwards and remove it, then remove the hotend fan cable from the cable channel.
-
-
-¶
-7. Remove the hotend fan
-
-Remove the 2 screws, then pull out the fan from the toolhead.
-
-
-¶
-Install the New Hotend Fan
-
-¶
-1. Install the new hotend fan
-
-Install the new hotend fan onto the toolhead and tighten the 2 screws (two on each side and one on the back) that secure the fan.
-
-
-¶
-2. Install the left cable cover
-
-Carefully pass the hotend fan cable through the left cable channel and push the cable back in the direction shown.
-
-
-¶
-3. Install the extruder
-
-Secure the extruder to the toolhead using the 4 screws, as shown in the image below.
-
-
-¶
-4. Re-connect the cable
-
-Re-connect the
-Hotend Fan
-cable as shown below.
-
-
-¶
-5. Install the toolhead rear housing
-
-Simply align the two brackets on the rear housing towards the top, then push it until you hear a few clicks.
-
-
-¶
-6. Install the hotend and silicone sock for hotend
-
-Follow the guidance available on the extruder sticker to re-attach the hotend to the toolhead
-Then, lock it in place using the clip and install the silicone sock.
-
-
-¶
-7. Install the toolhead front cover
-
-Simply attach the toolhead front cover on the top of the toolhead by aligning the clips, then gently push on the bottom side. You will hear the clips when the installation is complete.
-
-
-¶
-Verify the function
-
-To make sure everything is working properly, turn on the printer and set the hotend temperature to 100°C. After a few seconds, the hotend fan should start to rotate, indicating that the above operations are correct.
-
-¶
-Calibration step after the operation
-
-We recommend conducting a full calibration of the printer after this operation.
-
-Additionally, it's strongly advised to
-wash the PEI textured plate before use
-, as it may have been contaminated during this process.
-
-¶
-End Notes
-
-
-We hope the detailed guide provided has been helpful and informative.
-
-To ensure a safe and effective execution, if you have any concerns or questions about the process described in this article, we recommend reaching out to technical support team before initiating the operation. We will do our best to respond promptly and provide the assistance you need.
-Click here to open a new ticket in our Support Page
-.
-
+### End Notes
+We hope this guide assists you effectively. For further assistance, feel free to contact our customer service team through our Support Page.
