@@ -1,47 +1,47 @@
 # Replacement guides
 
 circuit-boardwi-fi-antennacamera
-- ac-board-replacement
-- camera-replacement-guide
-- mainboard-replacement-guide
-- replacement_of_power_switch
-- th-board-replacement-guide
-- usb-c-cable-replacement-guide
-- wi-fi-antenna-replacement-guide
+- ac-board-replacement >circuit-boardwi-fi-antennacamera-ac-board-replacement.txt
+- camera-replacement-guide >circuit-boardwi-fi-antennacamera-camera-replacement-guide.txt
+- mainboard-replacement-guide >circuit-boardwi-fi-antennacamera-mainboard-replacement-guide.txt
+- replacement_of_power_switch >circuit-boardwi-fi-antennacamera-replacement_of_power_switch.txt
+- th-board-replacement-guide >circuit-boardwi-fi-antennacamera-th-board-replacement-guide.txt
+- usb-c-cable-replacement-guide >circuit-boardwi-fi-antennacamera-usb-c-cable-replacement-guide.txt
+- wi-fi-antenna-replacement-guide >circuit-boardwi-fi-antennacamera-wi-fi-antenna-replacement-guide.txt
 
 display
-- touchscreen-replacement-guide
+- touchscreen-replacement-guide >display-touchscreen-replacement-guide.txt
 
 heatbed
-- heatbed
+- heatbed >heatbed-heatbed.txt
 
 others
-- power-supply-replacement-guide
+- power-supply-replacement-guide >others-power-supply-replacement-guide.txt
 
 printer-body
-- bottom-base
-- printer
-- spool-holder
-
+- bottom-base >printer-body-bottom-base.txt
+- printer >printer-body-printer.txt
+- spool-holder >printer-body-spool-holder.txt
+@next_col
 toolhead
-- A1_Extruder_motor_replacement
-- a1-extruder
-- extruder-replacement-guide
-- filament-cutter-replacement
-- filament-sensor-replacement
-- guide-for-Replacing-y-axis-components
-- hotend-cooling-fan
-- hotend-heating-assembly-replacement
-- th-board-replacement-guide
-- toolhead
+- A1_Extruder_motor_replacement >toolhead-A1_Extruder_motor_replacement.txt
+- a1-extruder >toolhead-a1-extruder.txt
+- extruder-replacement-guide >toolhead-extruder-replacement-guide.txt
+- filament-cutter-replacement >toolhead-filament-cutter-replacement.txt
+- filament-sensor-replacement >toolhead-filament-sensor-replacement.txt
+- guide-for-Replacing-y-axis-components >toolhead-guide-for-Replacing-y-axis-components.txt
+- hotend-cooling-fan >toolhead-hotend-cooling-fan.txt
+- hotend-heating-assembly-replacement >toolhead-hotend-heating-assembly-replacement.txt
+- th-board-replacement-guide >toolhead-th-board-replacement-guide.txt
+- toolhead >toolhead-toolhead.txt
 
 xyz-axismotorbelt
-- a1-y-belt-replacement-guide
-- a1-z-axis-leadscrew-kit-replacement-guides
-- a1-z-belt-replacement-guide
-- guide-for-Replacing-y-axis-components
-- replace-x-belt
-- x-axis
-- y-axis
-- z-axis
-- z-motor-replacement-guide
+- a1-y-belt-replacement-guide >xyz-axismotorbelt-a1-y-belt-replacement-guide.txt
+- a1-z-axis-leadscrew-kit-replacement-guides >xyz-axismotorbelt-a1-z-axis-leadscrew-kit-replacement-guides.txt
+- a1-z-belt-replacement-guide >xyz-axismotorbelt-a1-z-belt-replacement-guide.txt
+- guide-for-Replacing-y-axis-components >xyz-axismotorbelt-guide-for-Replacing-y-axis-components.txt
+- replace-x-belt >xyz-axismotorbelt-replace-x-belt.txt
+- x-axis >xyz-axismotorbelt-x-axis.txt
+- y-axis >xyz-axismotorbelt-y-axis.txt
+- z-axis >xyz-axismotorbelt-z-axis.txt
+- z-motor-replacement-guide >xyz-axismotorbelt-z-motor-replacement-guide.txt
