@@ -23,7 +23,7 @@ public class VoiceManagerWithGPT : MonoBehaviour
     //[Header("ChatGPT Settings")]
     [SerializeField] private string apiKey = "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";
     [SerializeField] private string apiUrl = "https://api.openai.com/v1/chat/completions";
-    [SerializeField] private string model = "gpt-3.5-turbo";
+    [SerializeField] private string model = "gpt-4.5-turbo";
     [SerializeField] private float temperature = 0.7f;
     [SerializeField] private int maxTokens = 150;
     [SerializeField] private bool saveConversationHistory = true;
