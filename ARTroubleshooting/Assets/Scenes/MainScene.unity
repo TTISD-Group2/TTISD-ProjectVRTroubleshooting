@@ -26234,8 +26234,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37e341aa1d83040a18df5b69599706d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secondPokeMenu: {fileID: 6466278495888624806}
-  secondMenuController: {fileID: 6466278495888624807}
+  selectGuidePokeMenu: {fileID: 2105754574}
+  guidePokeMenu: {fileID: 6466278495888624806}
+  guideController: {fileID: 6466278495888624807}
+  pokeButton: {fileID: 297799501}
+  leftCol: {fileID: 0}
+  rightCol: {fileID: 0}
 --- !u!65 &2105754576
 BoxCollider:
   m_ObjectHideFlags: 0
