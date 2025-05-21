@@ -115,12 +115,13 @@ public class VoiceManagerWithGPT : MonoBehaviour
     private void OnFullTranscription(string transcription)
     {
         if (!_voiceCommandReady) return;
-        _voiceCommandReady = false;
+
         transcriptedText = transcription;
         Debug.Log("Full transcription: " + transcription);
         completeTranscription?.Invoke(transcription);
-        
+
         SendToChatGPT(transcription);
+        _voiceCommandReady = false;
     }
 
     // Send transcribed text to ChatGPT
@@ -190,6 +191,7 @@ public class VoiceManagerWithGPT : MonoBehaviour
         request.SetRequestHeader("Authorization", "Bearer " + apiKey);
 
         Debug.Log("Sending request to ChatGPT API...");
+        HandleGPTResponse("Sending request to servers");
         
         yield return request.SendWebRequest();
 
