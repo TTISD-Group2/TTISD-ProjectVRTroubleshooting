@@ -23,10 +23,10 @@ public class selectGuideController : MonoBehaviour
     void Start()
     {
         // Parse the index to dictionary<DisplayText, filename>
-        this.indexResource = ParseIndexToResource(indexFileName);
+        //this.indexResource = ParseIndexToResource(indexFileName);
 
         // Fill in the display-collumns with the index content
-        FillColumnsFromIndexResource();
+        //FillColumnsFromIndexResource();
     }
     IndexResource ParseIndexToResource(String filename)
     {
@@ -93,15 +93,17 @@ public class selectGuideController : MonoBehaviour
         // Start positions for buttons
         Vector3 leftStart = leftCol.transform.position;
         Vector3 rightStart = rightCol.transform.position;
-        int leftRow = 0;
-        int rightRow = 0;
+        leftStart.z = (float)-3.0;
+        rightStart.z = (float)-2.75;
+        leftStart.y += (float)0.35;
+        rightStart.y += (float)0.35;
+        leftStart.x += (float)-0.25;
+        rightStart.x += (float)-0.25;
+        double leftRow = 0;
+        double rightRow = 0;
 
         // Track which column to use
         bool isLeft = true;
-
-        // Print the index title at the top of both columns
-        leftBuilder.AppendLine(indexResource.title);
-        rightBuilder.AppendLine(indexResource.title);
 
         foreach (var category in indexResource.GetCategories())
         {
@@ -114,13 +116,13 @@ public class selectGuideController : MonoBehaviour
             {
                 leftBuilder.AppendLine();
                 leftBuilder.AppendLine(category.title);
-                leftRow += 2;
+                //leftRow += 2;
             }
             else
             {
                 rightBuilder.AppendLine();
                 rightBuilder.AppendLine(category.title);
-                rightRow += 2;
+                //rightRow += 2;
             }
 
             // Add entries and buttons
@@ -134,18 +136,20 @@ public class selectGuideController : MonoBehaviour
                     leftBuilder.AppendLine(displayText);
 
                     // Calculate button position (adjust as needed)
-                    Vector3 buttonPos = leftStart + new Vector3(200, -verticalDistanceButton * leftRow, 0);
+                    Vector3 buttonPos = leftStart;
+                    buttonPos.y = leftStart.y - (float)leftRow;
                     CreatePokeButtonAt(buttonPos, () => ShowGuide(filename));
-                    leftRow++;
+                    leftRow += 0.1;
                 }
                 else
                 {
                     rightBuilder.AppendLine(displayText);
 
                     // Calculate button position (adjust as needed)
-                    Vector3 buttonPos = rightStart + new Vector3(200, -verticalDistanceButton * rightRow, 0);
+                    Vector3 buttonPos = rightStart;
+                    buttonPos.y = rightStart.y - (float)rightRow;
                     CreatePokeButtonAt(buttonPos, () => ShowGuide(filename));
-                    rightRow++;
+                    rightRow += 0.1;
                 }
             }
         }
@@ -159,7 +163,8 @@ public class selectGuideController : MonoBehaviour
     public GameObject CreatePokeButtonAt(Vector3 newPosition, UnityAction callback)
     {
         // Instantiate a copy of the pokeButton
-        GameObject newButton = Instantiate(pokeButton, newPosition, pokeButton.transform.rotation);
+        GameObject newButton = Instantiate(pokeButton, newPosition, pokeButton.transform.rotation, selectGuidePokeMenu.transform);
+        newButton.transform.position = newPosition;
 
         // Get the InteractableUnityEventWrapper component
         InteractableUnityEventWrapper wrapper = newButton.GetComponent<InteractableUnityEventWrapper>();
@@ -190,7 +195,15 @@ public class selectGuideController : MonoBehaviour
     public void ShowHeatbedGuide()
     {
         guidePokeMenu.SetActive(true);
-        guideController.fileName = "heatbed";
+        guideController.fileName = "heatbed-heatbed";
+        guideController.ShowMenu();
+    }
+
+
+    public void ShowToolheadGuide()
+    {
+        guidePokeMenu.SetActive(true);
+        guideController.fileName = "toolhead-toolhead";
         guideController.ShowMenu();
     }
 }
