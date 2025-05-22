@@ -22,14 +22,37 @@ MonoBehaviour:
     isPrivate: 1
     createdAt: 2025-05-19T12:30:58-0700
     trainingStatus: 1
-    lastTrainDuration: 44
-    lastTrainedAt: 2025-05-19T12:53:04-0700
-    nextTrainAt: 2025-05-19T12:52:20-0700
+    lastTrainDuration: 46
+    lastTrainedAt: 2025-05-19T13:28:01-0700
+    nextTrainAt: 2025-05-19T13:27:15-0700
     intents:
     - id: 2883571178483034
       name: wake_word
-      entities: []
-    entities: []
+      entities:
+      - name: wake_word_e:wake_word_e
+        id: 1148879980345479
+    entities:
+    - name: wake_word_e
+      id: 572975352092992
+      lookups:
+      - free-text
+      - keywords
+      roles:
+      - name: wake_word_e
+        id: 1148879980345479
+      keywords:
+      - keyword: Hallo kwest
+        synonyms:
+        - hallo kwest
+      - keyword: Hey quest
+        synonyms:
+        - Hey quest
+      - keyword: hallo quest
+        synonyms:
+        - hallo quest
+      - keyword: hoi quest
+        synonyms:
+        - hoi quest
     traits: []
     versionTags: []
     voices:

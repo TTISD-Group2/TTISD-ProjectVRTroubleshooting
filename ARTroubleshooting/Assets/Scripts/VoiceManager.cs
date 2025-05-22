@@ -11,6 +11,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Networking;
 using Newtonsoft.Json;
+using Meta.WitAi;
 
 public class VoiceManagerWithGPT : MonoBehaviour
 {
@@ -30,8 +31,7 @@ public class VoiceManagerWithGPT : MonoBehaviour
     [SerializeField] private int maxHistoryMessages = 10;
 
     //[Header("Text-to-Speech")]
-    [SerializeField] private TTSSpeaker ttsSpeaker;
-    [SerializeField] private bool autoPlayResponse = true;
+     public OpenAITTSManager ttsManager;
 
     //[Header("Voice Events")]
     [SerializeField] private UnityEvent wakeWordDetected;
@@ -43,21 +43,28 @@ public class VoiceManagerWithGPT : MonoBehaviour
     private bool _voiceCommandReady;
     private List<ChatMessage> _conversationHistory = new List<ChatMessage>();
     private bool _isProcessingGPT = false;
+   
 
     void Start()
     {
-        if (ttsSpeaker == null)
+        if (ttsManager == null)
         {
-            ttsSpeaker = GetComponent<TTSSpeaker>() ?? gameObject.AddComponent<TTSSpeaker>();
+            ttsManager = GetComponent<OpenAITTSManager>() ?? gameObject.AddComponent<OpenAITTSManager>();
             Debug.Log("TTSSpeaker component initialized.");
+            
         }
+
+
+        
+
+        
 
         if (saveConversationHistory)
         {
-            _conversationHistory.Add(new ChatMessage 
-            { 
-                role = "system", 
-                content = "You are a helpful virtual assistant in a VR application that helps a user troubleshoot his bambulab A1. Keep responses concise and help the user find the best troubleshooting guide." 
+            _conversationHistory.Add(new ChatMessage
+            {
+                role = "system",
+                content = "You are a helpful virtual assistant in a VR application that helps a user troubleshoot his bambulab A1. Keep responses concise and help the user find the best troubleshooting guide."
             });
         }
     }
@@ -77,6 +84,7 @@ public class VoiceManagerWithGPT : MonoBehaviour
         // should activate voice experience
         appVoiceExperience.Activate();
     }
+
 
     private void OnDestroy()
     {
@@ -227,26 +235,14 @@ public class VoiceManagerWithGPT : MonoBehaviour
         _isProcessingGPT = false;
         onProcessingComplete?.Invoke();
     }
-    
+
     private void HandleGPTResponse(string response)
     {
         Debug.Log($"GPT Response: {response}");
 
         onGPTResponseReceived?.Invoke(response);
 
-        if (autoPlayResponse && ttsSpeaker != null)
-        {
-            if (ttsSpeaker.IsSpeaking)
-                ttsSpeaker.Stop();
-
-            Debug.Log("Sending response to TTS...");
-
-            ttsSpeaker.Speak(response);
-        }
-        else
-        {
-            Debug.Log("TTS not triggered: either autoPlayResponse is false or ttsSpeaker is null.");
-        }
+        ttsManager.Speak(response);
     }
 
     
