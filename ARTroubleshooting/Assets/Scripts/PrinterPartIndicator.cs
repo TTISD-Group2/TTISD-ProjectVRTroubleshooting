@@ -20,7 +20,12 @@ public class PrinterPartIndicator : MonoBehaviour
     public List<GameObject> PartCoolingFan;
     public List<GameObject> USBCcable;
 
+    public List<GameObject> texturedBuildPlate;
+    public List<GameObject> LeftFrameBeam;
+    public List<GameObject> RightFrameBeam;
+    public List<GameObject> TopFrameBeam;
 
+    public List<GameObject> FillamentTopInput;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -214,5 +219,54 @@ public class PrinterPartIndicator : MonoBehaviour
         unHightUSBCcable();
     }
 
+    public void hightLightTexturedBuildPlate()
+    {
+        makeAllHighLight(texturedBuildPlate);
+    }
+
+    public void unHightLightTexturedBuildPlate()
+    {
+        makeAllNotHighLight(texturedBuildPlate);
+    }
+
+    public void hightLightLeftFrameBeam()
+    {
+        makeAllHighLight(LeftFrameBeam);
+    }
+
+    public void unHightLightLeftFrameBeam()
+    {
+        makeAllNotHighLight(LeftFrameBeam);
+    }
+
+    public void hightLightRightFrameBeam()
+    {
+        makeAllHighLight(RightFrameBeam);
+    }
+
+    public void unHightLightRightFrameBeam()
+    {
+        makeAllNotHighLight(RightFrameBeam);
+    }
+
+    public void hightLightTopFrameBeam()
+    {
+        makeAllHighLight(TopFrameBeam);
+    }
+
+    public void unHightLightTopFrameBeam()
+    {
+        makeAllNotHighLight(TopFrameBeam);
+    }
+
+    public void hightLightFillamentTopInput()
+    {
+        makeAllHighLight(FillamentTopInput);
+    }
+
+    public void unHightLightFillamentTopInput()
+    {
+        makeAllNotHighLight(FillamentTopInput);
+    }
 
 }
