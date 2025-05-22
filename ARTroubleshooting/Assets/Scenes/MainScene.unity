@@ -20993,7 +20993,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2336590308069278547, guid: e56a6073001982047accb69544cdea86, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.177
+      value: 1.05
       objectReference: {fileID: 0}
     - target: {fileID: 2336590308069278547, guid: e56a6073001982047accb69544cdea86, type: 3}
       propertyPath: m_LocalPosition.z
@@ -26172,6 +26172,10 @@ PrefabInstance:
     - target: {fileID: 19778038399970763, guid: b6b6a0be40850a549ba4409b9a9323fe, type: 3}
       propertyPath: m_Name
       value: BambuA1Mockup
+      objectReference: {fileID: 0}
+    - target: {fileID: 19778038399970763, guid: b6b6a0be40850a549ba4409b9a9323fe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7347426891878732307, guid: b6b6a0be40850a549ba4409b9a9323fe, type: 3}
       propertyPath: m_LocalScale.x
