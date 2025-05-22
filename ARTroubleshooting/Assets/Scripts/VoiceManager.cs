@@ -23,6 +23,7 @@ public class VoiceManagerWithGPT : MonoBehaviour
     [SerializeField] private string apiKey = "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";
     [SerializeField] private string apiUrl = "https://api.openai.com/v1/chat/completions";
     [SerializeField] private string model = "gpt-4-turbo";
+    [SerializeField] private string fallbackModel = "gpt-3.5-turbo"; 
     [SerializeField] private float temperature = 0.7f;
     [SerializeField] private int maxTokens = 150;
     [SerializeField] private bool saveConversationHistory = true;
@@ -47,15 +48,10 @@ public class VoiceManagerWithGPT : MonoBehaviour
     {
         if (ttsSpeaker == null)
         {
-            ttsSpeaker = GetComponent<TTSSpeaker>();
-            if (ttsSpeaker == null)
-            {
-                ttsSpeaker = gameObject.AddComponent<TTSSpeaker>();
-                Debug.Log("TTSSpeaker component added automatically.");
-            }
+            ttsSpeaker = GetComponent<TTSSpeaker>() ?? gameObject.AddComponent<TTSSpeaker>();
+            Debug.Log("TTSSpeaker component initialized.");
         }
 
-        // Add system message to history
         if (saveConversationHistory)
         {
             _conversationHistory.Add(new ChatMessage 
@@ -118,47 +114,38 @@ public class VoiceManagerWithGPT : MonoBehaviour
         Debug.Log("Full transcription: " + transcription);
         completeTranscription?.Invoke(transcription);
 
-        SendToChatGPT(transcription);
+        SendToChatGPT(transcription, model);
         _voiceCommandReady = false;
     }
 
-    // Send transcribed text to ChatGPT
-    private void SendToChatGPT(string userInput)
+    public void ManualSendToChatGPT(string input) {
+        if (!_isProcessingGPT && !string.IsNullOrEmpty(input)) {
+            SendToChatGPT(input, model);
+        }
+    }
+
+    private void SendToChatGPT(string userInput, string modelToUse, bool isRetry = false)
     {
         if (_isProcessingGPT || string.IsNullOrEmpty(userInput))
             return;
 
         _isProcessingGPT = true;
         onProcessingStart?.Invoke();
-        Debug.Log("Sending to ChatGPT: " + userInput);
-        
-        StartCoroutine(SendChatGPTRequest(userInput));
+
+        StartCoroutine(SendChatGPTRequest(userInput, modelToUse, isRetry));
     }
 
-    // For debugging purposes only or triggering from another module/script?
-    public void ManualSendToChatGPT(string input)
-    {
-        if (!_isProcessingGPT && !string.IsNullOrEmpty(input))
-        {
-            SendToChatGPT(input);
-        }
-    }
-
-    private IEnumerator SendChatGPTRequest(string userInput)
+    private IEnumerator SendChatGPTRequest(string userInput, string currentModel, bool isRetry)
     {
         List<ChatMessage> messages = new List<ChatMessage>();
-        
-        if (saveConversationHistory)
-        {
+
+        if (saveConversationHistory) {
             messages.AddRange(_conversationHistory);
-        }
-        else
-        {
-            // Add system message if not using history should only happen in debug mode
-            messages.Add(new ChatMessage 
-            { 
-                role = "system", 
-                content = "You are a helpful virtual assistant in a VR application that helps a user troubleshoot his bambulab A1. Keep responses concise and help the user find the best troubleshooting guide." 
+        } else {
+            messages.Add(new ChatMessage
+            {
+                role = "system",
+                content = "You are a helpful virtual assistant in a VR application that helps a user troubleshoot his bambulab A1. Keep responses concise and help the user find the best troubleshooting guide."
             });
         }
         
@@ -167,47 +154,33 @@ public class VoiceManagerWithGPT : MonoBehaviour
         
         ChatGPTRequestBody requestBody = new ChatGPTRequestBody
         {
-            model = model,
+            model = currentModel,
             messages = messages,
             temperature = temperature,
             max_tokens = maxTokens
         };
-        
-        string requestJson;
-        try
-        {
-            requestJson = JsonConvert.SerializeObject(requestBody, Formatting.None);
-            Debug.Log("Request JSON: " + requestJson);
-        }
-        catch (Exception e)
-        {
-            Debug.LogError("Failed to serialize request: " + e.Message);
-            _isProcessingGPT = false;
-            onProcessingComplete?.Invoke();
-            HandleGPTResponse("Sorry, I had trouble preparing the request.");
-            yield break;
-        }
 
-        // Request creation
+        string requestJson = JsonConvert.SerializeObject(requestBody);
         UnityWebRequest request = new UnityWebRequest(apiUrl, "POST");
-        byte[] bodyRaw = Encoding.UTF8.GetBytes(requestJson);
-        request.uploadHandler = new UploadHandlerRaw(bodyRaw);
+        request.uploadHandler = new UploadHandlerRaw(Encoding.UTF8.GetBytes(requestJson));
         request.downloadHandler = new DownloadHandlerBuffer();
-        
         request.SetRequestHeader("Content-Type", "application/json");
         request.SetRequestHeader("Authorization", "Bearer " + apiKey);
 
-        Debug.Log("Sending request to ChatGPT API...");
-        HandleGPTResponse("Sending request to servers");
-        
         yield return request.SendWebRequest();
 
-        if (request.result == UnityWebRequest.Result.ConnectionError || 
-            request.result == UnityWebRequest.Result.ProtocolError)
+        if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
         {
-            Debug.LogError($"Network Error: {request.error}");
-            Debug.LogError($"Response Code: {request.responseCode}");
+            Debug.LogError($"Error using model {currentModel}: {request.error}");
             Debug.LogError($"Response Text: {request.downloadHandler.text}");
+
+            if (!isRetry && currentModel == model && !string.IsNullOrEmpty(fallbackModel))
+            {
+                Debug.LogWarning($"Retrying with fallback model: {fallbackModel}");
+                SendToChatGPT(userInput, fallbackModel, true);
+                yield break;
+            }
+
             HandleGPTResponse("Sorry, I couldn't connect to my knowledge database right now.");
         }
         else
@@ -215,15 +188,12 @@ public class VoiceManagerWithGPT : MonoBehaviour
             try
             {
                 string responseJson = request.downloadHandler.text;
-                Debug.Log("Full Response JSON: " + responseJson);
-                
                 ChatGPTResponseBody response = JsonConvert.DeserializeObject<ChatGPTResponseBody>(responseJson);
-                
-                if (response?.choices != null && response.choices.Count > 0 && response.choices[0].message != null)
+
+                if (response?.choices?.Count > 0 && response.choices[0].message != null)
                 {
                     string aiResponse = response.choices[0].message.content;
-                    Debug.Log("AI Response: " + aiResponse);
-                    
+
                     if (saveConversationHistory)
                     {
                         _conversationHistory.Add(userMessage);
@@ -241,21 +211,12 @@ public class VoiceManagerWithGPT : MonoBehaviour
                 }
                 else
                 {
-                    Debug.LogError("Invalid response structure from ChatGPT");
-                    Debug.LogError("Response: " + responseJson);
                     HandleGPTResponse("Sorry, I received an unexpected response format.");
                 }
             }
-            catch (JsonException jsonEx)
-            {
-                Debug.LogError("JSON parsing error: " + jsonEx.Message);
-                Debug.LogError("Response text: " + request.downloadHandler.text);
-                HandleGPTResponse("Sorry, I had trouble understanding the response.");
-            }
             catch (Exception e)
             {
-                Debug.LogError("Error processing GPT response: " + e.Message);
-                Debug.LogError("Full response: " + request.downloadHandler.text);
+                Debug.LogError("Error parsing GPT response: " + e.Message);
                 HandleGPTResponse("Sorry, I had trouble processing the response.");
             }
         }
@@ -266,18 +227,25 @@ public class VoiceManagerWithGPT : MonoBehaviour
     
     private void HandleGPTResponse(string response)
     {
+        Debug.Log($"GPT Response: {response}");
+
         onGPTResponseReceived?.Invoke(response);
-        
+
         if (autoPlayResponse && ttsSpeaker != null)
         {
             if (ttsSpeaker.IsSpeaking)
-            {
                 ttsSpeaker.Stop();
-            }
-            
+
+            Debug.Log("Sending response to TTS...");
+
             ttsSpeaker.Speak(response);
         }
+        else
+        {
+            Debug.Log("TTS not triggered: either autoPlayResponse is false or ttsSpeaker is null.");
+        }
     }
+
     
     public void ClearConversationHistory()
     {
@@ -290,7 +258,7 @@ public class VoiceManagerWithGPT : MonoBehaviour
     }
 }
 
-// Classes for JSON serialization
+// JSON Classes
 [Serializable]
 public class ChatGPTRequestBody
 {
