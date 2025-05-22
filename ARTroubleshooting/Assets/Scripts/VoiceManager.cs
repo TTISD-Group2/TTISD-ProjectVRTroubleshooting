@@ -10,11 +10,10 @@ using Oculus.Voice;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Networking;
+using Newtonsoft.Json;
 
 public class VoiceManagerWithGPT : MonoBehaviour
 {
-
-
     //[Header("Wit configuration")]
     [SerializeField] private AppVoiceExperience appVoiceExperience;
     [SerializeField] private WitResponseMatcher responseMatcher;
@@ -23,7 +22,7 @@ public class VoiceManagerWithGPT : MonoBehaviour
     //[Header("ChatGPT Settings")]
     [SerializeField] private string apiKey = "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";
     [SerializeField] private string apiUrl = "https://api.openai.com/v1/chat/completions";
-    [SerializeField] private string model = "gpt-4.5-turbo";
+    [SerializeField] private string model = "gpt-4-turbo";
     [SerializeField] private float temperature = 0.7f;
     [SerializeField] private int maxTokens = 150;
     [SerializeField] private bool saveConversationHistory = true;
@@ -44,7 +43,6 @@ public class VoiceManagerWithGPT : MonoBehaviour
     private List<ChatMessage> _conversationHistory = new List<ChatMessage>();
     private bool _isProcessingGPT = false;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         if (ttsSpeaker == null)
@@ -175,11 +173,20 @@ public class VoiceManagerWithGPT : MonoBehaviour
             max_tokens = maxTokens
         };
         
-        string requestJson = JsonUtility.ToJson(requestBody);
-        
-        requestJson = requestJson.Replace("\"messages\":[{", 
-            "\"messages\":[" + string.Join(",", messages.ConvertAll(
-                m => $"{{\"role\":\"{m.role}\",\"content\":\"{EscapeJsonString(m.content)}\"}}").ToArray()) + "]");
+        string requestJson;
+        try
+        {
+            requestJson = JsonConvert.SerializeObject(requestBody, Formatting.None);
+            Debug.Log("Request JSON: " + requestJson);
+        }
+        catch (Exception e)
+        {
+            Debug.LogError("Failed to serialize request: " + e.Message);
+            _isProcessingGPT = false;
+            onProcessingComplete?.Invoke();
+            HandleGPTResponse("Sorry, I had trouble preparing the request.");
+            yield break;
+        }
 
         // Request creation
         UnityWebRequest request = new UnityWebRequest(apiUrl, "POST");
@@ -198,7 +205,9 @@ public class VoiceManagerWithGPT : MonoBehaviour
         if (request.result == UnityWebRequest.Result.ConnectionError || 
             request.result == UnityWebRequest.Result.ProtocolError)
         {
-            Debug.LogError("Error: " + request.error);
+            Debug.LogError($"Network Error: {request.error}");
+            Debug.LogError($"Response Code: {request.responseCode}");
+            Debug.LogError($"Response Text: {request.downloadHandler.text}");
             HandleGPTResponse("Sorry, I couldn't connect to my knowledge database right now.");
         }
         else
@@ -206,17 +215,13 @@ public class VoiceManagerWithGPT : MonoBehaviour
             try
             {
                 string responseJson = request.downloadHandler.text;
-                Debug.Log("Response received from ChatGPT API");
+                Debug.Log("Full Response JSON: " + responseJson);
                 
-                // Extract the content from the JSON response, maybe too simple? should test later
-                int startIndex = responseJson.IndexOf("\"content\":\"") + 12;
-                int endIndex = responseJson.IndexOf("\"}", startIndex);
+                ChatGPTResponseBody response = JsonConvert.DeserializeObject<ChatGPTResponseBody>(responseJson);
                 
-                if (startIndex >= 12 && endIndex > startIndex)
+                if (response?.choices != null && response.choices.Count > 0 && response.choices[0].message != null)
                 {
-                    string aiResponse = responseJson.Substring(startIndex, endIndex - startIndex);
-                    aiResponse = UnescapeJsonString(aiResponse);
-                    
+                    string aiResponse = response.choices[0].message.content;
                     Debug.Log("AI Response: " + aiResponse);
                     
                     if (saveConversationHistory)
@@ -228,7 +233,7 @@ public class VoiceManagerWithGPT : MonoBehaviour
                         {
                             _conversationHistory.RemoveAt(1); 
                             if (_conversationHistory.Count > 1)
-                                _conversationHistory.RemoveAt(1);
+                                _conversationHistory.RemoveAt(1); 
                         }
                     }
                     
@@ -236,13 +241,21 @@ public class VoiceManagerWithGPT : MonoBehaviour
                 }
                 else
                 {
-                    Debug.LogError("Failed to parse response from ChatGPT: " + responseJson);
-                    HandleGPTResponse("Sorry, I received a response but couldn't understand it.");
+                    Debug.LogError("Invalid response structure from ChatGPT");
+                    Debug.LogError("Response: " + responseJson);
+                    HandleGPTResponse("Sorry, I received an unexpected response format.");
                 }
+            }
+            catch (JsonException jsonEx)
+            {
+                Debug.LogError("JSON parsing error: " + jsonEx.Message);
+                Debug.LogError("Response text: " + request.downloadHandler.text);
+                HandleGPTResponse("Sorry, I had trouble understanding the response.");
             }
             catch (Exception e)
             {
                 Debug.LogError("Error processing GPT response: " + e.Message);
+                Debug.LogError("Full response: " + request.downloadHandler.text);
                 HandleGPTResponse("Sorry, I had trouble processing the response.");
             }
         }
@@ -275,28 +288,6 @@ public class VoiceManagerWithGPT : MonoBehaviour
             _conversationHistory.Add(systemMessage);
         }
     }
-    
-    private string EscapeJsonString(string text)
-    {
-        return text.Replace("\\", "\\\\")
-                  .Replace("\"", "\\\"")
-                  .Replace("\n", "\\n")
-                  .Replace("\r", "\\r")
-                  .Replace("\t", "\\t")
-                  .Replace("\b", "\\b")
-                  .Replace("\f", "\\f");
-    }
-    
-    private string UnescapeJsonString(string text)
-    {
-        return text.Replace("\\\"", "\"")
-                  .Replace("\\n", "\n")
-                  .Replace("\\r", "\r")
-                  .Replace("\\t", "\t")
-                  .Replace("\\b", "\b")
-                  .Replace("\\f", "\f")
-                  .Replace("\\\\", "\\");
-    }
 }
 
 // Classes for JSON serialization
@@ -306,6 +297,7 @@ public class ChatGPTRequestBody
     public string model;
     public List<ChatMessage> messages;
     public float temperature;
+    [JsonProperty("max_tokens")]
     public int max_tokens;
 }
 
@@ -320,10 +312,12 @@ public class ChatMessage
 public class ChatGPTResponseBody
 {
     public string id;
-    public string object_type;
+    [JsonProperty("object")]
+    public string objectType;
     public long created;
     public string model;
     public List<ChatGPTChoice> choices;
+    public ChatGPTUsage usage;
 }
 
 [Serializable]
@@ -331,4 +325,17 @@ public class ChatGPTChoice
 {
     public ChatMessage message;
     public int index;
+    [JsonProperty("finish_reason")]
+    public string finishReason;
+}
+
+[Serializable]
+public class ChatGPTUsage
+{
+    [JsonProperty("prompt_tokens")]
+    public int promptTokens;
+    [JsonProperty("completion_tokens")]
+    public int completionTokens;
+    [JsonProperty("total_tokens")]
+    public int totalTokens;
 }
