@@ -131,6 +131,7 @@ public class VoiceManagerWithGPT : MonoBehaviour
 
         _isProcessingGPT = true;
         onProcessingStart?.Invoke();
+        Debug.Log("Sending to ChatGPT: " + userInput);
 
         StartCoroutine(SendChatGPTRequest(userInput, modelToUse, isRetry));
     }
@@ -166,6 +167,8 @@ public class VoiceManagerWithGPT : MonoBehaviour
         request.downloadHandler = new DownloadHandlerBuffer();
         request.SetRequestHeader("Content-Type", "application/json");
         request.SetRequestHeader("Authorization", "Bearer " + apiKey);
+        Debug.Log("Sending request to ChatGPT API...");
+
 
         yield return request.SendWebRequest();
 
