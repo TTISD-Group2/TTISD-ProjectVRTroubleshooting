@@ -184,7 +184,7 @@ public class PrinterAlignment : MonoBehaviour
 
             // Apply the transformation to the printer model
             printerModel.transform.position = transformation.GetColumn(3);
-            //printerModel.transform.rotation = transformation.rotation;
+            printerModel.transform.rotation = transformation.rotation;
             
             Debug.Log("Model aligned successfully!");
             
