@@ -29,7 +29,7 @@ public class PrinterPartIndicator : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        hightLightToolhead();
+        clearHighlights();
     }
 
     // Update is called once per frame
@@ -202,23 +202,6 @@ public class PrinterPartIndicator : MonoBehaviour
         makeAllNotHighLight(USBCcable);
     }
 
-    public void clearHighlights()
-    {
-        unHightLightFrame();
-        unHightLightScreen();
-        unHightHeatBed();
-        unHightXaxis();
-        unHightToolhead();
-        unHightElectricalCord();
-        unHightFillamentCutter();
-        unHightPurgeWiper();
-        unHightLiveVieuwCamera();
-        unHightNozzle();
-        unHightSiliconeSockforHotend();
-        unHightPartCoolingFan();
-        unHightUSBCcable();
-    }
-
     public void hightLightTexturedBuildPlate()
     {
         makeAllHighLight(texturedBuildPlate);
@@ -267,6 +250,28 @@ public class PrinterPartIndicator : MonoBehaviour
     public void unHightLightFillamentTopInput()
     {
         makeAllNotHighLight(FillamentTopInput);
+    }
+
+    public void clearHighlights()
+    {
+        unHightLightFrame();
+        unHightLightScreen();
+        unHightHeatBed();
+        unHightXaxis();
+        unHightToolhead();
+        unHightElectricalCord();
+        unHightFillamentCutter();
+        unHightPurgeWiper();
+        unHightLiveVieuwCamera();
+        unHightNozzle();
+        unHightSiliconeSockforHotend();
+        unHightPartCoolingFan();
+        unHightUSBCcable();
+        unHightLightTexturedBuildPlate();
+        unHightLightLeftFrameBeam();
+        unHightLightRightFrameBeam();
+        unHightLightTopFrameBeam();
+        unHightLightFillamentTopInput();
     }
 
 }

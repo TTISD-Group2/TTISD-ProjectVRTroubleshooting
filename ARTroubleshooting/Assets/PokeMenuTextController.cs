@@ -35,7 +35,12 @@ public class PokeMenuTextController : MonoBehaviour
         new string[] { "Nozzle" },
         new string[] { "Nozzle Wiper" },
         new string[] { "Screen" },
-        new string[] { "Micro SD Card" }
+        new string[] { "Micro SD Card" },
+        new string[] { "Textured Build Plate" },
+        new string[] { "Left Frame Beam" },
+        new string[] { "Right Frame Beam" },
+        new string[] { "Top Frame Beam" },
+        new string[] { "Filament Top Input" }
     };
 
     /// <summary>
@@ -78,12 +83,17 @@ public class PokeMenuTextController : MonoBehaviour
                 case 6: printerPartIndicator.hightUSBCcable(); break;
                 case 7: printerPartIndicator.hightLightFillamentCutter(); break;
                 case 8: printerPartIndicator.hightLightLiveVieuwCamera(); break;
-                case 9:  break; // Z-axis leadscrew, geen aparte functie? Gebruik Xaxis als placeholder
-                case 10: break;
+                case 9: /* Z-axis leadscrew, no highlight function */ break;
+                case 10: printerPartIndicator.hightSiliconePartCoolingFan(); break;
                 case 11: printerPartIndicator.hightLightNozzle(); break;
-                case 12: break; // Nozzle Wiper, geen aparte functie? Gebruik PurgeWiper als placeholder
+                case 12: /* Nozzle Wiper, no highlight function */ break;
                 case 13: printerPartIndicator.hightLightScreen(); break;
-                case 14: break; // Micro SD Card, geen aparte functie? Gebruik USBCcable als placeholder
+                case 14: /* Micro SD Card, no highlight function */ break;
+                case 15: printerPartIndicator.hightLightTexturedBuildPlate(); break;
+                case 16: printerPartIndicator.hightLightLeftFrameBeam(); break;
+                case 17: printerPartIndicator.hightLightRightFrameBeam(); break;
+                case 18: printerPartIndicator.hightLightTopFrameBeam(); break;
+                case 19: printerPartIndicator.hightLightFillamentTopInput(); break;
             }
         }
     }
