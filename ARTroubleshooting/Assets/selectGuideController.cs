@@ -206,4 +206,26 @@ public class selectGuideController : MonoBehaviour
         guideController.fileName = "toolhead-toolhead";
         guideController.ShowMenu();
     }
+
+    public void ShowToolheadA1ExtruderGuide()
+    {
+        guidePokeMenu.SetActive(true);
+        guideController.fileName = "toolhead-a1-extruder";
+        guideController.ShowMenu();
+    }
+
+    public void ShowPrinterBodyPrinterGuide()
+    {
+        guidePokeMenu.SetActive(true);
+        guideController.fileName = "printer-body-printer";
+        guideController.ShowMenu();
+    }
+
+     public void ShowDisplayTouchscreenReplacementGuide()
+    {
+        guidePokeMenu.SetActive(true);
+        guideController.fileName = "display-touchscreen-replacement-guide";
+        guideController.ShowMenu();
+    }
+
 }
