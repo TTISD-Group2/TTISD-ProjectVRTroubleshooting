@@ -10,7 +10,7 @@ public class OpenAITTSRequest
 {
     public string model = "tts-1"; // or "tts-1-hd" for higher quality
     public string input;
-    public string voice = "alloy"; // alloy, echo, fable, onyx, nova, shimmer
+    public string voice = "nova"; // alloy, echo, fable, onyx, nova, shimmer          alloy
     public string response_format = "mp3"; // mp3, opus, aac, flac
     public float speed = 1.0f; // 0.25 to 4.0
 }
@@ -22,7 +22,7 @@ public class OpenAITTSManager : MonoBehaviour
     [SerializeField] private string apiUrl = "https://api.openai.com/v1/audio/speech";
     
     [Header("TTS Settings")]
-    [SerializeField] private string voice = "alloy"; // alloy, echo, fable, onyx, nova, shimmer
+    [SerializeField] private string voice = "nova"; // alloy, echo, fable, onyx, nova, shimmer            alloy
     [SerializeField] private string model = "tts-1"; // tts-1 or tts-1-hd
     [SerializeField] private float speed = 1.0f;
     [SerializeField] private bool autoPlay = true;
