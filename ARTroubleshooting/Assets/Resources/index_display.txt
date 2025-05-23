@@ -1,0 +1,47 @@
+# Replacement guides
+
+circuit-boardwi-fi-antennacamera
+- ac-board-replacement 
+- camera-replacement-guide 
+- mainboard-replacement-guide 
+- replacement_of_power_switch 
+- th-board-replacement-guide 
+- usb-c-cable-replacement-guide 
+- wi-fi-antenna-replacement-guide 
+
+display
+- touchscreen-replacement-guide 
+
+heatbed
+- heatbed 
+
+others
+- power-supply-replacement-guide 
+
+printer-body
+- bottom-base 
+- printer 
+- spool-holder 
+@next_col
+toolhead
+- A1_Extruder_motor_replacement 
+- a1-extruder 
+- extruder-replacement-guide 
+- filament-cutter-replacement 
+- filament-sensor-replacement 
+- guide-for-Replacing-y-axis-components 
+- hotend-cooling-fan 
+- hotend-heating-assembly-replacement 
+- th-board-replacement-guide 
+- toolhead 
+
+xyz-axismotorbelt
+- a1-y-belt-replacement-guide 
+- a1-z-axis-leadscrew-kit-replacement-guides 
+- a1-z-belt-replacement-guide 
+- guide-for-Replacing-y-axis-components 
+- replace-x-belt 
+- x-axis 
+- y-axis 
+- z-axis 
+- z-motor-replacement-guide 

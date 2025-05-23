@@ -1,0 +1,291 @@
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta charset="UTF-8"><meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1, maximum-scale=5"><meta name="theme-color" content="#1976d2"><meta name="msapplication-TileColor" content="#1976d2"><meta name="msapplication-TileImage" content="/_assets/favicons/mstile-150x150.png"><title>TH Board Replacement Guide - A1 | Bambu Lab Wiki</title><meta name="description" content="This guide shows how to replace the TH Board on the A1"><meta property="og:title" content="TH Board Replacement Guide - A1"><meta property="og:type" content="website"><meta property="og:description" content="This guide shows how to replace the TH Board on the A1"><meta property="og:image"><meta property="og:url" content="https://wiki.bambulab.com/en/a1/maintenance/th-board-replacement-guide"><meta property="og:site_name" content="Bambu Lab Wiki"><link rel="apple-touch-icon" sizes="180x180" href="/_assets/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="192x192" href="/_assets/favicons/android-chrome-192x192.png"><link rel="icon" type="image/png" sizes="32x32" href="/_assets/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/_assets/favicons/favicon-16x16.png"><link rel="mask-icon" href="/_assets/favicons/safari-pinned-tab.svg" color="#1976d2"><link rel="manifest" href="/_assets/manifest.json"><script>var siteConfig = {"title":"Bambu Lab Wiki","theme":"default","darkMode":false,"tocPosition":"left","lang":"en","rtl":false,"company":"Bambu Lab","contentLicense":"alr","footerOverride":"","logoUrl":"/admin/home/logo-large.png"}
+var siteLangs = [{"code":"en","name":"English"},{"code":"zh","name":"中文 (Zhōngwén)"}]
+</script><link type="text/css" rel="stylesheet" href="/_assets/css/app.766a556e9dcc61b7fcd5.css"><script type="text/javascript" src="/_assets/js/runtime.js?1716156900"></script><script type="text/javascript" src="/_assets/js/app.js?1716156900"></script><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-225490854-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-225490854-3');
+</script>
+<style type="text/css">.caption{word-break:break-word}.row.page-header-section.no-gutters.align-content-center{height:auto!important;min-height:90px}blockquote:before{content:""!important}blockquote{border-top:6px solid #1976d2!important;border-left:0!important;padding:1rem!important}blockquote p{padding:0!important;line-height:26px!important}blockquote p li{font-style:normal!important}i{font-style:normal!important}a.v-list-item--link[href='https://wiki.bambulab.com/en/makerworld'] .v-list-item__avatar i::before{content:url('https://wiki.bambulab.com/makerworld/makerworld.svg')!important}a.v-list-item--link[href='https://wiki.bambulab.com/zh/makerworld'] .v-list-item__avatar i::before{content:url('https://wiki.bambulab.com/makerworld/makerworld.svg')!important}.video-responsive{max-width:720px}.video-responsive-inner{position:relative;padding-bottom:56.25%}.video-responsive-inner iframe,.video-responsive-inner video{position:absolute;width:100%;height:100%;left:0;top:0}div.contents img{cursor:pointer}</style><link  href="https://cdn1.bambulab.com/wiki/viewer/viewer.min.css" rel="stylesheet">
+<script src="https://cdn1.bambulab.com/wiki/viewer/viewer.min.js"></script>
+<script type="text/javascript" defer> 
+
+function GetQueryString(sGet, name) {
+	var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)"); 
+	var r = sGet.match(reg);
+	if(r != null) {
+		return unescape(r[2]);
+	} else {
+		return null;
+	}
+}
+
+function getUrlQuery(name) {
+    let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    let r = window.location.search.substr(1).match(reg);
+    if (r != null) {
+        return decodeURIComponent(r[2]);
+    };
+
+    return null;
+}
+
+
+function parseUrl(url) {
+	if(url.startsWith('//')) {
+		url = location.protocol + url;
+	}
+	return new window.URL(url);
+}
+
+function removeUrlParam(param, url = window.location.href) {
+	let obj = parseUrl(url);
+	obj.searchParams.delete(param);
+	return obj.href;
+}
+
+function SetMaskIconColor() {
+	document.querySelector('link[rel="mask-icon"]').setAttribute('color', '#00AE42');
+}
+
+function HandleVideoHtml() {
+    const rxYoutube = /^.*(?:(?:youtu\.be\/|v\/|vi\/|u\/\w\/|embed\/)|(?:(?:watch)?\?v(?:i)?=|\&v(?:i)?=))([^#\&\?]*).*/
+    const rxVimeo = /^.*(vimeo\.com\/)((channels\/[A-z]+\/)|(groups\/[A-z]+\/videos\/))?([0-9]+)/
+	document.querySelectorAll('.contents oembed, .contents a').forEach(elm => {
+		const url = elm.hasAttribute('url') ? elm.getAttribute('url') : elm.getAttribute('href')
+		let newElmHtml = null
+		let nWen = url.indexOf('?');
+		let GetParam = '';
+		let BiliMatch = false;
+		let BiliVID = '';
+		if(nWen >= 0) {
+			GetParam = url.substr(nWen + 1);
+			//alert(GetParam);
+			let sSrc = GetQueryString(GetParam, 'src');
+			let sV = GetQueryString(GetParam, 'v');
+			if(sSrc != null && sV != null && sSrc == 'bilibili') {
+				BiliMatch = true;
+				BiliVID = sV;
+			}
+		}
+		const ytMatch = url.match(rxYoutube)
+		const vmMatch = !ytMatch && url.match(rxVimeo)
+		if(BiliMatch) {
+			newElmHtml = '<iframe src="https://player.bilibili.com/player.html?p=1&autoplay=0&bvid=' + BiliVID + '" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="100%"> </iframe>';
+		} else if(ytMatch) {
+			newElmHtml = `<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/${ytMatch[1]}" frameborder="0" allowfullscreen></iframe>`
+		} else if(vmMatch) {
+			newElmHtml = `<iframe id="vmplayer" type="text/html" width="640" height="360" src="https://player.vimeo.com/video/${vmMatch[5]}" frameborder="0" allowfullscreen></iframe>`
+		} else if(url.endsWith('.mp4')) {
+			newElmHtml = `<video controls autostart="0" name="media" width="640" height="360"><source src="${url}" type="video/mp4"></video>`
+		} else {
+			return
+		}
+        
+		const container = document.createElement('div')
+		container.classList.add('video-responsive')
+
+        const inner = document.createElement('div')
+        inner.classList.add('video-responsive-inner')
+
+		inner. insertAdjacentHTML('beforeend', newElmHtml)
+        container.append(inner)
+
+		elm.replaceWith(container)
+	})
+}
+
+function HandleSearchPage() {
+	const search = getUrlQuery('search')
+	if(search) {
+		const isAPP = window.innerWidth < 960
+		console.log("isAPP: " + isAPP)
+		const headerInner = document.querySelector("header.nav-header.v-sheet.theme--dark.v-toolbar.v-toolbar--flat.v-app-bar.v-app-bar--clipped.v-app-bar--fixed.black")
+		const input = headerInner.__vue__.$parent
+		console.log(input)
+		if(input) {
+			if(isAPP) {
+				input.searchIsShown = true
+			}
+			input.search = search
+			const target = document.querySelector('.v-application--wrap')
+			const observe = new MutationObserver(function(mutations, observe) {
+				mutations.forEach((mutation) => {
+					const nodes = Array.from(mutation.addedNodes)
+					if(nodes.length > 0) {
+						nodes.forEach((node) => {
+							if(node.nodeType === 1) {
+								if(node.classList.contains('search-results')) {
+									const btn = document.querySelector('.search-results div.text-xs-center .mx-2.v-btn')
+									if(btn) {
+										console.log(btn)
+										btn.onclick = function() {
+											const url = removeUrlParam('search')
+											window.location.href = url
+										}
+									}
+								}
+							}
+						})
+					}
+				})
+			});
+			observe.observe(target, {
+				childList: true
+			});
+		}
+	}
+}
+
+function HandleViewerJS()
+{
+  const imageContent = document.querySelector('div.contents')
+  if (imageContent) {
+    const gallery = new Viewer(imageContent,{title:false})
+    imageContent.querySelectorAll('img').forEach((item, index) => {
+      item.addEventListener('click', () => {
+        gallery.view(index)
+      })
+    })
+  }
+}
+
+window.boot.register('vue', () => {
+
+	// window.onload = () => {
+	//    SetMaskIconColor();
+	// 	  HandleVideoHtml();
+	//	  HandleSearchPage();
+	//}
+
+    window.addEventListener('load', () => {
+	    SetMaskIconColor();
+	 	HandleVideoHtml();
+		HandleSearchPage();
+        HandleViewerJS();
+    })
+}) 
+
+</script></head><body><div id="root"><page locale="en" path="a1/maintenance/th-board-replacement-guide" title="TH Board Replacement Guide - A1" description="This guide shows how to replace the TH Board on the A1" :tags="[{&quot;tag&quot;:&quot;a1&quot;,&quot;title&quot;:&quot;a1&quot;}]" created-at="2024-03-12T11:01:54.549Z" updated-at="2025-01-23T07:44:53.036Z" author-name="Sylvia" :author-id="144" editor="ckeditor" :is-published="true" toc="W3sidGl0bGUiOiJXaGVuIHRvIHVzZT8iLCJhbmNob3IiOiIjd2hlbi10by11c2UiLCJjaGlsZHJlbiI6W119LHsidGl0bGUiOiJUb29scyBhbmQgbWF0ZXJpYWxzIG5lZWRlZCIsImFuY2hvciI6IiN0b29scy1hbmQtbWF0ZXJpYWxzLW5lZWRlZCIsImNoaWxkcmVuIjpbeyJ0aXRsZSI6IlNhZmV0eSBXYXJuaW5nIiwiYW5jaG9yIjoiI3NhZmV0eS13YXJuaW5nIiwiY2hpbGRyZW4iOltdfV19LHsidGl0bGUiOiJSZW1vdmUgdGhlIE9sZCBUSCBCb2FyZCIsImFuY2hvciI6IiNyZW1vdmUtdGhlLW9sZC10aC1ib2FyZCIsImNoaWxkcmVuIjpbeyJ0aXRsZSI6IjEuIFJlbW92ZSB0aGUgYmFjayBwcmludGhlYWQgY292ZXIiLCJhbmNob3IiOiIjaC0xLXJlbW92ZS10aGUtYmFjay1wcmludGhlYWQtY292ZXIiLCJjaGlsZHJlbiI6W119LHsidGl0bGUiOiIyLiDCoFJlbW92ZSB0aGUgVVNCLUMgY2FibGUgZnJvbSB0aGUgdG9vbGhlYWQiLCJhbmNob3IiOiIjaC0yLXJlbW92ZS10aGUtdXNiLWMtY2FibGUtZnJvbS10aGUtdG9vbGhlYWQiLCJjaGlsZHJlbiI6W119LHsidGl0bGUiOiIzLiBSZW1vdmUgdGhlIFRIIEJvYXJkIHNjcmV3cyIsImFuY2hvciI6IiNoLTMtcmVtb3ZlLXRoZS10aC1ib2FyZC1zY3Jld3MiLCJjaGlsZHJlbiI6W119LHsidGl0bGUiOiI0LiBEaXNjb25uZWN0IHRoZSBjYWJsZXMiLCJhbmNob3IiOiIjaC00LWRpc2Nvbm5lY3QtdGhlLWNhYmxlcyIsImNoaWxkcmVuIjpbXX0seyJ0aXRsZSI6IjUuIFJlbW92ZSB0aGUgVEggQm9hcmQiLCJhbmNob3IiOiIjaC01LXJlbW92ZS10aGUtdGgtYm9hcmQiLCJjaGlsZHJlbiI6W119XX0seyJ0aXRsZSI6Ikluc3RhbGwgdGhlIE5ldyBUSCBCb2FyZCIsImFuY2hvciI6IiNpbnN0YWxsLXRoZS1uZXctdGgtYm9hcmQiLCJjaGlsZHJlbiI6W3sidGl0bGUiOiIxLiBBdHRhY2ggdGhlIFRIIEJvYXJkIHRvIHRoZSBob3VzaW5nIiwiYW5jaG9yIjoiI2gtMS1hdHRhY2gtdGhlLXRoLWJvYXJkLXRvLXRoZS1ob3VzaW5nIiwiY2hpbGRyZW4iOltdfSx7InRpdGxlIjoiMi4gSW5zdGFsbCB0aGUgVEggQm9hcmQgc2NyZXdzIiwiYW5jaG9yIjoiI2gtMi1pbnN0YWxsLXRoZS10aC1ib2FyZC1zY3Jld3MiLCJjaGlsZHJlbiI6W119LHsidGl0bGUiOiIzLiBSZS1jb25uZWN0IGFsbCB0aGUgY2FibGVzIiwiYW5jaG9yIjoiI2gtMy1yZS1jb25uZWN0LWFsbC10aGUtY2FibGVzIiwiY2hpbGRyZW4iOltdfSx7InRpdGxlIjoiNC4gUmUtY29ubmVjdCB0aGUgVVNCLUMgY2FibGUiLCJhbmNob3IiOiIjaC00LXJlLWNvbm5lY3QtdGhlLXVzYi1jLWNhYmxlIiwiY2hpbGRyZW4iOltdfSx7InRpdGxlIjoiNS4gSW5zdGFsbCB0aGUgdG9vbGhlYWQgYmFjayBjb3ZlciIsImFuY2hvciI6IiNoLTUtaW5zdGFsbC10aGUtdG9vbGhlYWQtYmFjay1jb3ZlciIsImNoaWxkcmVuIjpbXX1dfSx7InRpdGxlIjoiQ2FsaWJyYXRpb24gc3RlcCBhZnRlciB0aGUgb3BlcmF0aW9uIiwiYW5jaG9yIjoiI2NhbGlicmF0aW9uLXN0ZXAtYWZ0ZXItdGhlLW9wZXJhdGlvbiIsImNoaWxkcmVuIjpbXX0seyJ0aXRsZSI6IlBvdGVudGlhbCBwcm9ibGVtcyBhbmQgc29sdXRpb25zIiwiYW5jaG9yIjoiI3BvdGVudGlhbC1wcm9ibGVtcy1hbmQtc29sdXRpb25zIiwiY2hpbGRyZW4iOlt7InRpdGxlIjoiVGhlIGhvdGVuZCB0ZW1wZXJhdHVyZSBpcyAwIiwiYW5jaG9yIjoiI3RoZS1ob3RlbmQtdGVtcGVyYXR1cmUtaXMtMCIsImNoaWxkcmVuIjpbXX0seyJ0aXRsZSI6IlRoZSBob3RlbmQgY2Fubm90IGJlIGhlYXRlZCIsImFuY2hvciI6IiN0aGUtaG90ZW5kLWNhbm5vdC1iZS1oZWF0ZWQiLCJjaGlsZHJlbiI6W119LHsidGl0bGUiOiJQcmludGVyIGlzIG5vdCBob21pbmcgY29ycmVjdGx5IiwiYW5jaG9yIjoiI3ByaW50ZXItaXMtbm90LWhvbWluZy1jb3JyZWN0bHkiLCJjaGlsZHJlbiI6W119LHsidGl0bGUiOiJGaWxhbWVudCBzZW5zb3IgaXMgbm90IHdvcmtpbmciLCJhbmNob3IiOiIjZmlsYW1lbnQtc2Vuc29yLWlzLW5vdC13b3JraW5nIiwiY2hpbGRyZW4iOltdfV19LHsidGl0bGUiOiJBMSBNaW5pIFRIIEJvYXJkIENvbm5lY3RvcnMiLCJhbmNob3IiOiIjYTEtbWluaS10aC1ib2FyZC1jb25uZWN0b3JzIiwiY2hpbGRyZW4iOltdfSx7InRpdGxlIjoiRW5kIE5vdGVzIiwiYW5jaG9yIjoiI2VuZC1ub3RlcyIsImNoaWxkcmVuIjpbXX1d" :page-id="1476" sidebar="W3siaSI6InNkaS0xIiwiayI6ImxpbmsiLCJsIjoiSG9tZSIsImMiOiJtZGktaG9tZSIsInkiOiJob21lIiwidCI6Ii8ifSx7ImkiOiJzZGktMiIsImsiOiJsaW5rIiwibCI6Ildpa2kgVXBkYXRlcyIsImMiOiJtZGktbmV3LWJveCIsInkiOiJleHRlcm5hbCIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL25ldy1hbmQtdXBkYXRlcyJ9LHsiaSI6InNkaS0zIiwiayI6ImxpbmsiLCJsIjoiSDJEIiwiYyI6Im1kaS1hbHBoYS1oLWJveCIsInkiOiJleHRlcm5hbCIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL2gyZCJ9LHsiaSI6InNkaS00IiwiayI6ImxpbmsiLCJsIjoiQU1TIDIgUHJvIiwiYyI6Im1kaS1tb3ZpZS1yb2xsIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vYW1zLTItcHJvIn0seyJpIjoic2RpLTUiLCJrIjoibGluayIsImwiOiJBTVMgSFQiLCJjIjoibWRpLW1vdmllLXJvbGwiLCJ5IjoiZXh0ZXJuYWwiLCJ0IjoiaHR0cHM6Ly93aWtpLmJhbWJ1bGFiLmNvbS9lbi9hbXMtaHQifSx7ImkiOiJzZGktNiIsImsiOiJsaW5rIiwibCI6IlgxIFNlcmllcyIsImMiOiJtZGktYWxwaGEteC1ib3gtb3V0bGluZSIsInkiOiJleHRlcm5hbCIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL3gxIn0seyJpIjoic2RpLTciLCJrIjoibGluayIsImwiOiJQMSBTZXJpZXMiLCJjIjoibWRpLWFscGhhLXAtYm94LW91dGxpbmUiLCJ5IjoiZXh0ZXJuYWwiLCJ0IjoiaHR0cHM6Ly93aWtpLmJhbWJ1bGFiLmNvbS9lbi9wMSJ9LHsiaSI6InNkaS04IiwiayI6ImxpbmsiLCJsIjoiQTEiLCJjIjoibWRpLWFscGhhLWEtYm94LW91dGxpbmUiLCJ5IjoiZXh0ZXJuYWwiLCJ0IjoiaHR0cHM6Ly93aWtpLmJhbWJ1bGFiLmNvbS9lbi9hMSJ9LHsiaSI6InNkaS05IiwiayI6ImxpbmsiLCJsIjoiQTEgbWluaSIsImMiOiJtZGktYWxwaGEtYS1ib3gtb3V0bGluZSIsInkiOiJleHRlcm5hbCIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL2ExLW1pbmkifSx7ImkiOiJzZGktMTAiLCJrIjoibGluayIsImwiOiJBTVMiLCJjIjoibWRpLWFscGhhLWEtY2lyY2xlIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vYW1zIn0seyJpIjoic2RpLTExIiwiayI6ImxpbmsiLCJsIjoiQU1TIGxpdGUiLCJjIjoibWRpLWFscGhhLWwtY2lyY2xlIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vYW1zLWxpdGUifSx7ImkiOiJzZGktMTIiLCJrIjoibGluayIsImwiOiJITVMiLCJjIjoibWRpLXRleHQtYm94LXNlYXJjaC1vdXRsaW5lIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vaG1zL2hvbWUifSx7ImkiOiJzZGktMTMiLCJrIjoibGluayIsImwiOiJTb2Z0d2FyZSIsImMiOiJtZGktdGVsZXZpc2lvbi1ndWlkZSIsInkiOiJleHRlcm5hbCIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL3NvZnR3YXJlIn0seyJpIjoic2RpLTE0IiwiayI6ImxpbmsiLCJsIjoiRmlsYW1lbnRzICYgQWNjZXNzb3JpZXMiLCJjIjoibWRpLXByaW50ZXItM2Qtbm96emxlIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vZmlsYW1lbnQtYWNjIn0seyJpIjoic2RpLTE1IiwiayI6ImxpbmsiLCJsIjoiTWFrZXJXb3JsZCIsImMiOiJtZGktY3ViZS1zY2FuIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vbWFrZXJ3b3JsZCJ9LHsiaSI6InNkaS0xNiIsImsiOiJoZWFkZXIiLCJsIjoiR2VuZXJhbCIsImMiOm51bGwsInkiOm51bGwsInQiOm51bGx9LHsiaSI6InNkaS0xNyIsImsiOiJsaW5rIiwibCI6Iktub3dsZWRnZSBTaGFyaW5nIiwiYyI6Im1kaS1mb3J1bSIsInkiOiJwYWdlIiwidCI6Ii9lbi9rbm93bGVkZ2Utc2hhcmluZyJ9LHsiaSI6InNkaS0xOCIsImsiOiJsaW5rIiwibCI6Ikdsb3NzYXJ5IiwiYyI6Im1kaS10YWJsZS1vZi1jb250ZW50cyIsInkiOiJwYWdlIiwidCI6Ii9lbi9nbG9zc2FyeSJ9LHsiaSI6InNkaS0xOSIsImsiOiJsaW5rIiwibCI6IkZBUSIsImMiOiJtZGktZnJlcXVlbnRseS1hc2tlZC1xdWVzdGlvbnMiLCJ5IjoicGFnZSIsInQiOiIvZW4vZmFxIn0seyJpIjoic2RpLTIwIiwiayI6ImxpbmsiLCJsIjoiQWJvdXQgVXMiLCJjIjoibWRpLWluZm9ybWF0aW9uLW91dGxpbmUiLCJ5IjoicGFnZSIsInQiOiIvZW4vYWJvdXQtdXMifSx7ImkiOiJzZGktMjEiLCJrIjoiZGl2aWRlciIsImwiOm51bGwsImMiOm51bGwsInkiOm51bGwsInQiOm51bGx9LHsiaSI6InNkaS0yMiIsImsiOiJsaW5rIiwibCI6IkNvbW11bml0eSBDb250cmlidXRpb25zIiwiYyI6Im1kaS13aWtpcGVkaWEiLCJ5IjoiZXh0ZXJuYWxibGFuayIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL2NvbnRyaWJ1dGlvbi1ndWlkZSJ9XQ==" nav-mode="STATIC" effective-permissions="eyJjb21tZW50cyI6eyJyZWFkIjpmYWxzZSwid3JpdGUiOmZhbHNlLCJtYW5hZ2UiOmZhbHNlfSwiaGlzdG9yeSI6eyJyZWFkIjpmYWxzZX0sInNvdXJjZSI6eyJyZWFkIjpmYWxzZX0sInBhZ2VzIjp7InJlYWQiOnRydWUsIndyaXRlIjpmYWxzZSwibWFuYWdlIjpmYWxzZSwiZGVsZXRlIjpmYWxzZSwic2NyaXB0IjpmYWxzZSwic3R5bGUiOmZhbHNlfSwic3lzdGVtIjp7Im1hbmFnZSI6ZmFsc2V9fQ==" edit-shortcuts="eyJlZGl0RmFiIjp0cnVlLCJlZGl0TWVudUJhciI6dHJ1ZSwiZWRpdE1lbnVCdG4iOnRydWUsImVkaXRNZW51RXh0ZXJuYWxCdG4iOmZhbHNlLCJlZGl0TWVudUV4dGVybmFsTmFtZSI6IkdpdEh1YiIsImVkaXRNZW51RXh0ZXJuYWxJY29uIjoibWRpLWdpdGh1YiIsImVkaXRNZW51RXh0ZXJuYWxVcmwiOiJodHRwczovL2dpdGh1Yi5jb20vb3JnL3JlcG8vYmxvYi9tYWluL3tmaWxlbmFtZX0ifQ==" filename="en/a1/maintenance/th-board-replacement-guide.html"><template slot="contents"><div><p>In this guide, we will show how to replace the TH Board on the A1.</p>
+<figure class="image image_resized" style="width:56.29%;"><img src="/a1m/replace-th-board/a1_mini_th_board.jpg"></figure>
+<blockquote>
+  <p>Note: The new version of the TH board is missing two terminals (circled in red), leaving only the solder pads.</p>
+  <figure class="image image_resized" style="width:37.92%;"><img src="/a1/maintenance/toolhead-board/20250123-153719.jpg"></figure>
+</blockquote>
+<h2 id="when-to-use" class="toc-header"><a class="toc-anchor" href="#when-to-use">¶</a> When to use?</h2>
+<p>This guide is intended for use if there is a problem with the TH Board.<br><br>Common issues that may indicate the need for replacement of the A1 TH Board include:</p>
+<ul>
+  <li>Problems with bed leveling, where the nozzle doesn't accurately perform the homing procedure</li>
+  <li>The extruder motor is not turning as expected, due to a potentially faulty stepper driver</li>
+  <li>The USB C connector is damaged</li>
+  <li>The Filament Sensor ribbon cable connector is damaged</li>
+  <li>The Heater connector is damaged</li>
+  <li>The tool head is not detected, and an error message is displayed on the printer screen</li>
+  <li>Recommended by Bambu Lab Technical Support</li>
+</ul>
+<p>&nbsp;</p>
+<h2 id="tools-and-materials-needed" class="toc-header"><a class="toc-anchor" href="#tools-and-materials-needed">¶</a> Tools and materials needed</h2>
+<p><a href="https://us.store.bambulab.com/collections/spare-parts-for-a1-series/products/toolhead-board-a1-series" class="is-external-link">Bambu Lab Toolhead Board for A1</a></p>
+<ul>
+  <li>H2.0 hex wrench</li>
+  <li>H1.5 hex wrench</li>
+  <li>15 minutes of your time</li>
+</ul>
+<p>&nbsp;</p>
+<h3 id="safety-warning" class="toc-header"><a class="toc-anchor" href="#safety-warning">¶</a> Safety Warning</h3>
+<blockquote>
+  <p><strong>IMPORTANT!</strong></p>
+  <p>It's crucial to <strong>power off the printer before conducting any maintenance work</strong>, including work on the printer's electronics and tool head wires. Performing tasks with the printer on can result in a short circuit, leading to electronic damage and safety hazards.</p>
+  <p>&nbsp;</p>
+  <p>During maintenance or troubleshooting, you may need to disassemble parts, including the hotend. This exposes wires and electrical components that could short circuit if they contact each other, other metal, or electronic components while the printer is still on. <strong>This can result in damage to the printer's electronics and additional issues.</strong></p>
+  <p><br>Therefore, it's crucial to <strong>turn off the printer and disconnect it from the power source before conducting any maintenance</strong>. This prevents short circuits or damage to the printer's electronics, ensuring safe and effective maintenance. For any concerns or questions about following this guide, <a href="https://bambulab.com/en/my/support/tickets" class="is-external-link">open a new ticket in our Support Page</a> and we will do our best to respond promptly and provide the assistance you need.</p>
+</blockquote>
+<h2 id="remove-the-old-th-board" class="toc-header"><a class="toc-anchor" href="#remove-the-old-th-board">¶</a> Remove the Old TH Board</h2>
+<h3 id="h-1-remove-the-back-printhead-cover" class="toc-header"><a class="toc-anchor" href="#h-1-remove-the-back-printhead-cover">¶</a> 1. Remove the back printhead cover</h3>
+<p>The first step in replacing the faulty TH Board is to remove the back cover of the toolhead.&nbsp;<br>Carefully pry open the back cover by pulling on the bottom section as shown below.</p>
+<figure class="image"><img src="/a1m/replace-th-board/remove_back_cover.jpeg"></figure>
+<h3 id="h-2-remove-the-usb-c-cable-from-the-toolhead" class="toc-header"><a class="toc-anchor" href="#h-2-remove-the-usb-c-cable-from-the-toolhead">¶</a> 2. &nbsp;Remove the USB-C cable from the toolhead</h3>
+<p>Next, remove the four screws holding the USB-C cable secure on the toolhead of the A1.&nbsp;<br>After removing the screws, the USB-C cable can be pulled upwards to remove it.</p>
+<figure class="image image_resized" style="width:73.19%;"><img src="/a1/maintenance/toolhead-board/remove_the_usb_c_cable_of_a1.jpeg"></figure>
+<h3 id="h-3-remove-the-th-board-screws" class="toc-header"><a class="toc-anchor" href="#h-3-remove-the-th-board-screws">¶</a> 3. Remove the TH Board screws</h3>
+<p>Remove the three black screws holding the TH Board in place.&nbsp;</p>
+<figure class="image"><img src="/a1m/replace-th-board/remove_the_th_board_screws.jpeg"></figure>
+<h3 id="h-4-disconnect-the-cables" class="toc-header"><a class="toc-anchor" href="#h-4-disconnect-the-cables">¶</a> 4. Disconnect the cables</h3>
+<p>Next, remove the four cables attached to the TH Board.&nbsp;<br>Carefully pull them out by the connector, and avoid pulling the wires from the connectors.&nbsp;<br>We recommend using a flat tool to gently pry them out to avoid any potential damage.</p>
+<figure class="image image_resized" style="width:84.05%;"><img src="/a1m/replace-th-board/disconnect_the_th_board_cables.jpeg"></figure>
+<p>Don't forget to also remove the Eddy sensor wires which are held in place by two screws.&nbsp;</p>
+<figure class="image"><img src="/a1m/replace-th-board/remove_the_eddy_sensor_screws.jpeg"></figure>
+<h3 id="h-5-remove-the-th-board" class="toc-header"><a class="toc-anchor" href="#h-5-remove-the-th-board">¶</a> 5. Remove the TH Board</h3>
+<p>You can now remove the TH Board from the plastic housing.</p>
+<p>First, open the clip that fixes the cable in place. Then you should be able to disconnect the cable.</p>
+<p><strong>Be careful when pulling it out, as you will need to carefully disconnect the filament sensor ribbon cable.&nbsp;</strong></p>
+<p>Pull it slowly and straight upwards. Avoid wiggling the ribbon cable as it can cause damage to it. If you have damaged it, you can <a href="https://us.store.bambulab.com/products/filament-sensor-a1-series" class="is-external-link">order a replacement from this link</a>&nbsp;</p>
+<figure class="image"><img src="/a1m/replace-th-board/remove_the_filament_sensor_ribbon_cable.jpeg"></figure>
+<h2 id="install-the-new-th-board" class="toc-header"><a class="toc-anchor" href="#install-the-new-th-board">¶</a> Install the New TH Board</h2>
+<h3 id="h-1-attach-the-th-board-to-the-housing" class="toc-header"><a class="toc-anchor" href="#h-1-attach-the-th-board-to-the-housing">¶</a> 1. Attach the TH Board to the housing</h3>
+<p>The first step in installing the new TH Board is to attach it back on the toolhead housing.<br>Start by re-connecting the filament sensor ribbon cable on top of the board. Gently push the ribbon cable in the connector. Then, close the clip that fixes the cable in place.</p>
+<figure class="image"><img src="/a1m/replace-th-board/install_the_filament_sensor_ribbon_cable.jpeg"></figure>
+<p>Carefully route the Extruder Motor cable next to the ribbon cable as shown in the image below.<br>After this step is done, you can gently push the TH Board back in its position.</p>
+<figure class="image"><img src="/a1m/replace-th-board/extruder_motor_wiring_on_th_board.jpeg"></figure>
+<h3 id="h-2-install-the-th-board-screws" class="toc-header"><a class="toc-anchor" href="#h-2-install-the-th-board-screws">¶</a> 2. Install the TH Board screws</h3>
+<p>Use the three black screws to re-attach the TH Board back to the toolhead.&nbsp;</p>
+<figure class="image"><img src="/a1m/replace-th-board/install_the_th_board_screws.jpeg"></figure>
+<blockquote>
+  <p>Important!<br>Do not overtighten the screws to avoid any potential damage.</p>
+</blockquote>
+<h3 id="h-3-re-connect-all-the-cables" class="toc-header"><a class="toc-anchor" href="#h-3-re-connect-all-the-cables">¶</a> 3. Re-connect all the cables</h3>
+<p>With the new TH Board back in its original position, you can re-connect all the wires as shown below.&nbsp;</p>
+<ol>
+  <li><a href="https://us.store.bambulab.com/products/hotend-heating-assembly-a1-series" class="is-external-link">Hotend Heating Assembly</a></li>
+  <li><a href="https://us.store.bambulab.com/products/extruder-unit-a1-series" class="is-external-link">Extruder</a> Motor</li>
+  <li><a href="https://us.store.bambulab.com/products/hotend-cooling-fan-a1-series" class="is-external-link">Hotend Cooling Fan</a></li>
+  <li><a href="https://us.store.bambulab.com/products/part-cooling-fan-a1-series" class="is-external-link">Part Cooling Fan</a></li>
+  <li>Hotend Sensor</li>
+</ol>
+<figure class="image"><img src="/a1m/replace-th-board/th_board_cables_on_a1.jpeg"></figure>
+<h3 id="h-4-re-connect-the-usb-c-cable" class="toc-header"><a class="toc-anchor" href="#h-4-re-connect-the-usb-c-cable">¶</a> 4. Re-connect the USB-C cable</h3>
+<p>Re-install the USB cable using the four screws we removed in the first step, while being careful about the orientation.</p>
+<figure class="image"><img src="/a1/maintenance/toolhead-board/usb_c_a1.jpeg"></figure>
+<blockquote>
+  <p><mark class="marker-yellow"><strong>Important!&nbsp;</strong></mark></p>
+  <p><strong>Do not over-tighten these screws, as the threads can damage the plastic.&nbsp;</strong><br>Take note of the USB-C cable orientation and the small groove from the back that aligns it.<br>The USB-C cable only fits in one position, with the correct orientation having the line in the cable connector aligned to the back of the printer and toolhead.</p>
+  <figure class="image image_resized" style="width:73.01%;"><img src="/a1m/replace-usb-c-cable/usb_cable_orientation.jpeg"></figure>
+</blockquote>
+<h3 id="h-5-install-the-toolhead-back-cover" class="toc-header"><a class="toc-anchor" href="#h-5-install-the-toolhead-back-cover">¶</a> 5. Install the toolhead back cover</h3>
+<p>Finally, install the back cover of the A1 toolhead.&nbsp;<br>The back cover clips in place. Simply align the two brackets on the back cover towards the top, then push it until you hear a few clicks.</p>
+<figure class="image"><img src="/a1m/replace-th-board/install-back-cover.png"></figure>
+<h2 id="calibration-step-after-the-operation" class="toc-header"><a class="toc-anchor" href="#calibration-step-after-the-operation">¶</a> Calibration step after the operation</h2>
+<p>We recommend conducting a full calibration of the printer after this operation.&nbsp;</p>
+<p>Additionally, it's strongly advised to <a href="/en/general/textured-PEI-plate-not-working-as-expected" class="is-internal-link is-valid-page">wash the PEI textured plate before use</a>, as it may have been contaminated during this process.</p>
+<p>&nbsp;</p>
+<h2 id="potential-problems-and-solutions" class="toc-header"><a class="toc-anchor" href="#potential-problems-and-solutions">¶</a> Potential problems and solutions</h2>
+<p>If you encounter problems during the installation of a new Toolhead Board, please check the potential problems and solutions listed below:</p>
+<h3 id="the-hotend-temperature-is-0" class="toc-header"><a class="toc-anchor" href="#the-hotend-temperature-is-0">¶</a> The hotend temperature is 0</h3>
+<p>Check the Hotend Heating Assembly connector and confirm it is correctly inserted, as shown in <u>Step 3. Re-connect all the cables</u><br>It is important to carefully align the connector pins to the <a href="/en/a1-mini/th-board-replacement-guide" class="is-internal-link is-valid-page">Toolhead Board</a>.<br>If the issue persists, the thermistor wires might have been damaged (White wires)</p>
+<h3 id="the-hotend-cannot-be-heated" class="toc-header"><a class="toc-anchor" href="#the-hotend-cannot-be-heated">¶</a> The hotend cannot be heated</h3>
+<p>Check the Hotend Heating Assembly connector and confirm it is correctly inserted, as shown in <u>Step 3. Re-connect all the cables</u><br>It is important to carefully align the connector pins to the <a href="/en/a1-mini/th-board-replacement-guide" class="is-internal-link is-valid-page">Toolhead Board</a>.<br>If the issue persists, the heater wires might have been damaged (Translucent wires)</p>
+<h3 id="printer-is-not-homing-correctly" class="toc-header"><a class="toc-anchor" href="#printer-is-not-homing-correctly">¶</a> Printer is not homing correctly</h3>
+<p>Check the Eddy Sensor wires (5 and 6) and confirm they are correctly installed on the back of the <a href="/en/a1-mini/th-board-replacement-guide" class="is-internal-link is-valid-page">Toolhead Board</a>, as shown in <u>Step 3. Re-connect all the cables</u></p>
+<h3 id="filament-sensor-is-not-working" class="toc-header"><a class="toc-anchor" href="#filament-sensor-is-not-working">¶</a> Filament sensor is not working</h3>
+<p>Check the Ribbon Cable and confirm it is correctly installed on the back of the <a href="/en/a1-mini/th-board-replacement-guide" class="is-internal-link is-valid-page">Toolhead Board</a>, as shown in <u>Step 1. Attach the Toolhead Board to the housing</u><br>If the ribbon cable is damaged, you will need to replace the <a href="/en/a1/maintenance/filament-sensor-replacement" class="is-internal-link is-valid-page">Filament Sensor.</a></p>
+<h2 id="a1-mini-th-board-connectors" class="toc-header"><a class="toc-anchor" href="#a1-mini-th-board-connectors">¶</a> A1 Mini TH Board Connectors</h2>
+<figure class="image"><img src="/a1m/replace-th-board/thboard.png"></figure>
+<ol>
+  <li>Hotend Heating Assembly Connector</li>
+  <li>Filament Sensor Ribbon Cable Connector</li>
+  <li>USB-C Connector</li>
+  <li>Extruder Motor Connector</li>
+  <li>Hotend Cooling Fan Connector</li>
+  <li>Eddy Sensor Connector</li>
+  <li>Part Cooling Fan Connector</li>
+</ol>
+<p>&nbsp;</p>
+<h2 id="end-notes" class="toc-header"><a class="toc-anchor" href="#end-notes">¶</a> End Notes</h2>
+<blockquote>
+  <p>We hope the detailed guide provided has been helpful and informative.</p>
+  <p>To ensure a safe and effective execution, if you have any concerns or questions about the process described in this article, we recommend reaching out to technical support team before initiating the operation. We will do our best to respond promptly and provide the assistance you need. <a href="https://bambulab.com/en/my/support/tickets" class="is-external-link">Click here to open a new ticket in our Support Page</a>.</p>
+</blockquote>
+</div></template><template slot="comments"><div><comments></comments></div></template></page></div><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9422c68d5ef2b750',t:'MTc0NzY0OTEyMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body></html>

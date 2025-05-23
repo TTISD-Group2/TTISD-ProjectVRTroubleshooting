@@ -1,96 +1,208 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Text.RegularExpressions;
 using System;
+using System.Linq;
+using Oculus.Platform;
+
 
 public class PokeMenuTextController : MonoBehaviour
 {
     public TMP_Text textDisplay;
-    public string fileName = "textdata";
-    
-    [Tooltip("Font size for the text display")]
+    public TMP_Text titleDisplay;
+    public string fileName = "";
     public float fontSize = 12f;
-    
-    private List<string> textChunks = new List<string>();
-    private int currentChunkIndex = 0;
+
+    public List<(string header, string content)> sections = new List<(string, string)>();
+    private int currentSectionIndex = 0;
+
+    public PrinterPartIndicator printerPartIndicator;
+
+    private string[][] highlightable_components = new string[][]
+    {
+        new string[] { "Printer Frame" },
+        new string[] { "Toolhead" },
+        new string[] { "X-axis Assembly" },
+        new string[] { "Purge Wiper" },
+        new string[] { "Silicone Sock for Hotend" },
+        new string[] { "Heatbed" },
+        new string[] { "Bambu USB-C Cable" },
+        new string[] { "Filament Cutter Lever" },
+        new string[] { "Live View Camera" },
+        new string[] { "Z-axis leadscrew" },
+        new string[] { "Part Cooling Fan" },
+        new string[] { "Nozzle" },
+        new string[] { "Nozzle Wiper" },
+        new string[] { "Screen" },
+        new string[] { "Micro SD Card" },
+        new string[] { "Textured Build Plate" },
+        new string[] { "Left Frame Beam" },
+        new string[] { "Right Frame Beam" },
+        new string[] { "Top Frame Beam" },
+        new string[] { "Filament Top Input" }
+    };
+
+    /// <summary>
+    /// Zoekt in de inputtekst naar alle highlightable components en geeft een lijst met unieke gevonden indices terug.
+    /// </summary>
+    private List<int> FindAllHighlightableComponentIndices(string inputText)
+    {
+        List<int> foundIndices = new List<int>();
+
+        // Doorzoek de tekst per woord én per volledige componentnaam
+        foreach (var (components, idx) in highlightable_components.Select((arr, i) => (arr, i)))
+        {
+            foreach (var component in components)
+            {
+                // Zoek op volledige naam, hoofdletterongevoelig
+                if (inputText.IndexOf(component, StringComparison.OrdinalIgnoreCase) >= 0)
+                {
+                    if (!foundIndices.Contains(idx))
+                        foundIndices.Add(idx);
+                }
+            }
+        }
+
+        return foundIndices;
+    }
+
+    private void Highlight(List<int> indices)
+    {
+        if (printerPartIndicator == null) return;
+        foreach (int idx in indices)
+        {
+            switch (idx)
+            {
+                case 0: printerPartIndicator.hightLightFrame(); break;
+                case 1: printerPartIndicator.hightLightToolhead(); break;
+                case 2: printerPartIndicator.hightLightXaxis(); break;
+                case 3: printerPartIndicator.hightLightPurgeWiper(); break;
+                case 4: printerPartIndicator.hightSiliconeSockforHotend(); break;
+                case 5: printerPartIndicator.hightLightHeatBed(); break;
+                case 6: printerPartIndicator.hightUSBCcable(); break;
+                case 7: printerPartIndicator.hightLightFillamentCutter(); break;
+                case 8: printerPartIndicator.hightLightLiveVieuwCamera(); break;
+                case 9: /* Z-axis leadscrew, no highlight function */ break;
+                case 10: printerPartIndicator.hightSiliconePartCoolingFan(); break;
+                case 11: printerPartIndicator.hightLightNozzle(); break;
+                case 12: /* Nozzle Wiper, no highlight function */ break;
+                case 13: printerPartIndicator.hightLightScreen(); break;
+                case 14: /* Micro SD Card, no highlight function */ break;
+                case 15: printerPartIndicator.hightLightTexturedBuildPlate(); break;
+                case 16: printerPartIndicator.hightLightLeftFrameBeam(); break;
+                case 17: printerPartIndicator.hightLightRightFrameBeam(); break;
+                case 18: printerPartIndicator.hightLightTopFrameBeam(); break;
+                case 19: printerPartIndicator.hightLightFillamentTopInput(); break;
+            }
+        }
+    }
+
+    private string FormatSectionText(string input)
+    {
+        // Verwijder PAGEBREAK markers
+        string formatted = input.Replace("===PAGE_BREAK===", "");
+
+        // Verwijder alle ### headers (en eventuele whitespace erna)
+        formatted = Regex.Replace(formatted, @"^###.*\n?", "", RegexOptions.Multiline);
+
+        // Verwijder alle #### subheaders (en eventuele whitespace erna)
+        formatted = Regex.Replace(formatted, @"^####.*\n?", "", RegexOptions.Multiline);
+
+        // Zet **tekst** om naar <b>tekst</b>
+        formatted = Regex.Replace(formatted, @"\*\*(.+?)\*\*", "<b>$1</b>");
+
+        // Eventueel: extra whitespace aan begin/einde verwijderen
+        formatted = formatted.Trim();
+
+        return formatted;
+    }
 
     void Start()
     {
+        
+    }
+
+    public void ShowMenu()
+    {
         textDisplay.fontSize = fontSize;
-        
-        textDisplay.overflowMode = TextOverflowModes.Page;
-        
-        LoadTextChunks();
-        
-        if (textChunks.Count > 0)
+        sections.Clear();
+        LoadSections();
+
+        if (sections.Count > 0)
         {
-            DisplayCurrentChunk();
+            currentSectionIndex = 0;
+            DisplayCurrentSection();
         }
     }
-    
-    public void LoadTextChunks()
+
+    public void LoadSections()
     {
         TextAsset textFile = Resources.Load<TextAsset>(fileName);
-        if (textFile != null)
-        {
-            textChunks = new List<string>(textFile.text.Split(new[] { "\n\n" }, System.StringSplitOptions.RemoveEmptyEntries));
-        }
-        else
+        if (textFile == null)
         {
             Debug.LogError("Kon tekstbestand niet laden.");
+            return;
+        }
+
+        string text = textFile.text;
+
+        // Extract title (first line starting with "# ")
+        string title = "";
+        var titleMatch = Regex.Match(text, @"^# (.+)$", RegexOptions.Multiline);
+        if (titleMatch.Success)
+        {
+            title = titleMatch.Groups[1].Value.Trim();
+        }
+        titleDisplay.text = title;
+
+        // Split into sections by "### "
+        var sectionMatches = Regex.Split(text, @"(?=^### )", RegexOptions.Multiline);
+        foreach (var section in sectionMatches)
+        {
+            if (section.StartsWith("### "))
+            {
+                // Extract header and content
+                var headerMatch = Regex.Match(section, @"^### (.+)$", RegexOptions.Multiline);
+                string header = headerMatch.Success ? headerMatch.Groups[1].Value.Trim() : "";
+                string content = section.Substring(headerMatch.Length).Trim();
+                sections.Add((header, content));
+            }
         }
     }
-    
-    public void DisplayCurrentChunk()
-    {
-        if (currentChunkIndex >= 0 && currentChunkIndex < textChunks.Count)
-        {
-            textDisplay.text = textChunks[currentChunkIndex];
 
+    public void DisplayCurrentSection()
+    {
+        if (currentSectionIndex >= 0 && currentSectionIndex < sections.Count)
+        {
+            var section = sections[currentSectionIndex];
+            string formattedContent = FormatSectionText(section.content);
+            textDisplay.text = $"<b>{section.header}</b>\n\n{formattedContent}";
             textDisplay.pageToDisplay = 1;
-            
             textDisplay.ForceMeshUpdate();
 
+            printerPartIndicator.clearHighlights();
+
+            List<int> highlightIndices = FindAllHighlightableComponentIndices(section.content);
+            Highlight(highlightIndices);
         }
     }
-    
-    //below not integerated yet, needs to be added to the UI when creating a second button
+
     public void ShowNextPage()
     {
-        Debug.Log("this gets triggerd");
-        if (textDisplay.pageToDisplay < textDisplay.textInfo.pageCount)
+        if (currentSectionIndex < sections.Count - 1)
         {
-            textDisplay.pageToDisplay += 1;
-        }
-        else
-        {
-            if (currentChunkIndex < textChunks.Count - 1)
-            {
-                currentChunkIndex++;
-                DisplayCurrentChunk();
-            }
-            else
-            {
-                textDisplay.text = "Einde van de tekst.";
-            }
+            currentSectionIndex++;
+            DisplayCurrentSection();
         }
     }
-    
+
     public void ShowPreviousPage()
     {
-        if (textDisplay.pageToDisplay > 1)
+        if (currentSectionIndex > 0)
         {
-            textDisplay.pageToDisplay -= 1;
-        }
-        else
-        {
-            if (currentChunkIndex > 0)
-            {
-                currentChunkIndex--;
-                DisplayCurrentChunk();
-                
-                textDisplay.pageToDisplay = textDisplay.textInfo.pageCount;
-            }
+            currentSectionIndex--;
+            DisplayCurrentSection();
         }
     }
 }

@@ -1,0 +1,296 @@
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta charset="UTF-8"><meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1, maximum-scale=5"><meta name="theme-color" content="#1976d2"><meta name="msapplication-TileColor" content="#1976d2"><meta name="msapplication-TileImage" content="/_assets/favicons/mstile-150x150.png"><title>Power Supply Replacement Guide - A1 | Bambu Lab Wiki</title><meta name="description" content="This guide shows how to replace the Power Supply on the A1"><meta property="og:title" content="Power Supply Replacement Guide - A1"><meta property="og:type" content="website"><meta property="og:description" content="This guide shows how to replace the Power Supply on the A1"><meta property="og:image"><meta property="og:url" content="https://wiki.bambulab.com/en/a1/maintenance/power-supply-replacement-guide"><meta property="og:site_name" content="Bambu Lab Wiki"><link rel="apple-touch-icon" sizes="180x180" href="/_assets/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="192x192" href="/_assets/favicons/android-chrome-192x192.png"><link rel="icon" type="image/png" sizes="32x32" href="/_assets/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/_assets/favicons/favicon-16x16.png"><link rel="mask-icon" href="/_assets/favicons/safari-pinned-tab.svg" color="#1976d2"><link rel="manifest" href="/_assets/manifest.json"><script>var siteConfig = {"title":"Bambu Lab Wiki","theme":"default","darkMode":false,"tocPosition":"left","lang":"en","rtl":false,"company":"Bambu Lab","contentLicense":"alr","footerOverride":"","logoUrl":"/admin/home/logo-large.png"}
+var siteLangs = [{"code":"en","name":"English"},{"code":"zh","name":"中文 (Zhōngwén)"}]
+</script><link type="text/css" rel="stylesheet" href="/_assets/css/app.766a556e9dcc61b7fcd5.css"><script type="text/javascript" src="/_assets/js/runtime.js?1716156900"></script><script type="text/javascript" src="/_assets/js/app.js?1716156900"></script><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-225490854-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-225490854-3');
+</script>
+<style type="text/css">.caption{word-break:break-word}.row.page-header-section.no-gutters.align-content-center{height:auto!important;min-height:90px}blockquote:before{content:""!important}blockquote{border-top:6px solid #1976d2!important;border-left:0!important;padding:1rem!important}blockquote p{padding:0!important;line-height:26px!important}blockquote p li{font-style:normal!important}i{font-style:normal!important}a.v-list-item--link[href='https://wiki.bambulab.com/en/makerworld'] .v-list-item__avatar i::before{content:url('https://wiki.bambulab.com/makerworld/makerworld.svg')!important}a.v-list-item--link[href='https://wiki.bambulab.com/zh/makerworld'] .v-list-item__avatar i::before{content:url('https://wiki.bambulab.com/makerworld/makerworld.svg')!important}.video-responsive{max-width:720px}.video-responsive-inner{position:relative;padding-bottom:56.25%}.video-responsive-inner iframe,.video-responsive-inner video{position:absolute;width:100%;height:100%;left:0;top:0}div.contents img{cursor:pointer}</style><link  href="https://cdn1.bambulab.com/wiki/viewer/viewer.min.css" rel="stylesheet">
+<script src="https://cdn1.bambulab.com/wiki/viewer/viewer.min.js"></script>
+<script type="text/javascript" defer> 
+
+function GetQueryString(sGet, name) {
+	var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)"); 
+	var r = sGet.match(reg);
+	if(r != null) {
+		return unescape(r[2]);
+	} else {
+		return null;
+	}
+}
+
+function getUrlQuery(name) {
+    let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    let r = window.location.search.substr(1).match(reg);
+    if (r != null) {
+        return decodeURIComponent(r[2]);
+    };
+
+    return null;
+}
+
+
+function parseUrl(url) {
+	if(url.startsWith('//')) {
+		url = location.protocol + url;
+	}
+	return new window.URL(url);
+}
+
+function removeUrlParam(param, url = window.location.href) {
+	let obj = parseUrl(url);
+	obj.searchParams.delete(param);
+	return obj.href;
+}
+
+function SetMaskIconColor() {
+	document.querySelector('link[rel="mask-icon"]').setAttribute('color', '#00AE42');
+}
+
+function HandleVideoHtml() {
+    const rxYoutube = /^.*(?:(?:youtu\.be\/|v\/|vi\/|u\/\w\/|embed\/)|(?:(?:watch)?\?v(?:i)?=|\&v(?:i)?=))([^#\&\?]*).*/
+    const rxVimeo = /^.*(vimeo\.com\/)((channels\/[A-z]+\/)|(groups\/[A-z]+\/videos\/))?([0-9]+)/
+	document.querySelectorAll('.contents oembed, .contents a').forEach(elm => {
+		const url = elm.hasAttribute('url') ? elm.getAttribute('url') : elm.getAttribute('href')
+		let newElmHtml = null
+		let nWen = url.indexOf('?');
+		let GetParam = '';
+		let BiliMatch = false;
+		let BiliVID = '';
+		if(nWen >= 0) {
+			GetParam = url.substr(nWen + 1);
+			//alert(GetParam);
+			let sSrc = GetQueryString(GetParam, 'src');
+			let sV = GetQueryString(GetParam, 'v');
+			if(sSrc != null && sV != null && sSrc == 'bilibili') {
+				BiliMatch = true;
+				BiliVID = sV;
+			}
+		}
+		const ytMatch = url.match(rxYoutube)
+		const vmMatch = !ytMatch && url.match(rxVimeo)
+		if(BiliMatch) {
+			newElmHtml = '<iframe src="https://player.bilibili.com/player.html?p=1&autoplay=0&bvid=' + BiliVID + '" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="100%"> </iframe>';
+		} else if(ytMatch) {
+			newElmHtml = `<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/${ytMatch[1]}" frameborder="0" allowfullscreen></iframe>`
+		} else if(vmMatch) {
+			newElmHtml = `<iframe id="vmplayer" type="text/html" width="640" height="360" src="https://player.vimeo.com/video/${vmMatch[5]}" frameborder="0" allowfullscreen></iframe>`
+		} else if(url.endsWith('.mp4')) {
+			newElmHtml = `<video controls autostart="0" name="media" width="640" height="360"><source src="${url}" type="video/mp4"></video>`
+		} else {
+			return
+		}
+        
+		const container = document.createElement('div')
+		container.classList.add('video-responsive')
+
+        const inner = document.createElement('div')
+        inner.classList.add('video-responsive-inner')
+
+		inner. insertAdjacentHTML('beforeend', newElmHtml)
+        container.append(inner)
+
+		elm.replaceWith(container)
+	})
+}
+
+function HandleSearchPage() {
+	const search = getUrlQuery('search')
+	if(search) {
+		const isAPP = window.innerWidth < 960
+		console.log("isAPP: " + isAPP)
+		const headerInner = document.querySelector("header.nav-header.v-sheet.theme--dark.v-toolbar.v-toolbar--flat.v-app-bar.v-app-bar--clipped.v-app-bar--fixed.black")
+		const input = headerInner.__vue__.$parent
+		console.log(input)
+		if(input) {
+			if(isAPP) {
+				input.searchIsShown = true
+			}
+			input.search = search
+			const target = document.querySelector('.v-application--wrap')
+			const observe = new MutationObserver(function(mutations, observe) {
+				mutations.forEach((mutation) => {
+					const nodes = Array.from(mutation.addedNodes)
+					if(nodes.length > 0) {
+						nodes.forEach((node) => {
+							if(node.nodeType === 1) {
+								if(node.classList.contains('search-results')) {
+									const btn = document.querySelector('.search-results div.text-xs-center .mx-2.v-btn')
+									if(btn) {
+										console.log(btn)
+										btn.onclick = function() {
+											const url = removeUrlParam('search')
+											window.location.href = url
+										}
+									}
+								}
+							}
+						})
+					}
+				})
+			});
+			observe.observe(target, {
+				childList: true
+			});
+		}
+	}
+}
+
+function HandleViewerJS()
+{
+  const imageContent = document.querySelector('div.contents')
+  if (imageContent) {
+    const gallery = new Viewer(imageContent,{title:false})
+    imageContent.querySelectorAll('img').forEach((item, index) => {
+      item.addEventListener('click', () => {
+        gallery.view(index)
+      })
+    })
+  }
+}
+
+window.boot.register('vue', () => {
+
+	// window.onload = () => {
+	//    SetMaskIconColor();
+	// 	  HandleVideoHtml();
+	//	  HandleSearchPage();
+	//}
+
+    window.addEventListener('load', () => {
+	    SetMaskIconColor();
+	 	HandleVideoHtml();
+		HandleSearchPage();
+        HandleViewerJS();
+    })
+}) 
+
+</script></head><body><div id="root"><page locale="en" path="a1/maintenance/power-supply-replacement-guide" title="Power Supply Replacement Guide - A1" description="This guide shows how to replace the Power Supply on the A1" :tags="[{&quot;tag&quot;:&quot;a1&quot;,&quot;title&quot;:&quot;a1&quot;}]" created-at="2024-03-13T11:10:06.120Z" updated-at="2025-02-20T06:36:06.085Z" author-name="Aether" :author-id="165" editor="markdown" :is-published="true" toc="W3sidGl0bGUiOiJXaGVuIHRvIHVzZT8iLCJhbmNob3IiOiIjd2hlbi10by11c2UiLCJjaGlsZHJlbiI6W119LHsidGl0bGUiOiJUb29scyBhbmQgbWF0ZXJpYWxzIG5lZWRlZCIsImFuY2hvciI6IiN0b29scy1hbmQtbWF0ZXJpYWxzLW5lZWRlZCIsImNoaWxkcmVuIjpbeyJ0aXRsZSI6IlNhZmV0eSBXYXJuaW5nIiwiYW5jaG9yIjoiI3NhZmV0eS13YXJuaW5nIiwiY2hpbGRyZW4iOltdfV19LHsidGl0bGUiOiJTdGVwcyB0byByZW1vdmUgdGhlIG9sZCBQb3dlciBTdXBwbHkiLCJhbmNob3IiOiIjc3RlcHMtdG8tcmVtb3ZlLXRoZS1vbGQtcG93ZXItc3VwcGx5IiwiY2hpbGRyZW4iOlt7InRpdGxlIjoiMS4gUGxhY2UgdGhlIHByaW50ZXIgb24gaXRzIGZyb250IiwiYW5jaG9yIjoiI2gtMS1wbGFjZS10aGUtcHJpbnRlci1vbi1pdHMtZnJvbnQiLCJjaGlsZHJlbiI6W119LHsidGl0bGUiOiIyLiBSZW1vdmUgdGhlIHByaW50ZXIncyBib3R0b20gY292ZXIiLCJhbmNob3IiOiIjaC0yLXJlbW92ZS10aGUtcHJpbnRlcnMtYm90dG9tLWNvdmVyIiwiY2hpbGRyZW4iOltdfSx7InRpdGxlIjoiMy4gRGlzY29ubmVjdCB0aGUgd2lyZXMgYW5kIHJlbW92ZSB0aGUgd2lyZSBicmFja2V0IiwiYW5jaG9yIjoiI2gtMy1kaXNjb25uZWN0LXRoZS13aXJlcy1hbmQtcmVtb3ZlLXRoZS13aXJlLWJyYWNrZXQiLCJjaGlsZHJlbiI6W119LHsidGl0bGUiOiI0LiBSZW1vdmUgdGhlIHBvd2VyIHN1cHBseSBzY3Jld3MiLCJhbmNob3IiOiIjaC00LXJlbW92ZS10aGUtcG93ZXItc3VwcGx5LXNjcmV3cyIsImNoaWxkcmVuIjpbXX0seyJ0aXRsZSI6IjUuIExvb3NlbiB0aGUgcG93ZXIgdGVybWluYWwgc2NyZXdzIiwiYW5jaG9yIjoiI2gtNS1sb29zZW4tdGhlLXBvd2VyLXRlcm1pbmFsLXNjcmV3cyIsImNoaWxkcmVuIjpbXX0seyJ0aXRsZSI6IjYuIFJlbW92ZSB0aGUgUG93ZXIgU3VwcGx5IiwiYW5jaG9yIjoiI2gtNi1yZW1vdmUtdGhlLXBvd2VyLXN1cHBseSIsImNoaWxkcmVuIjpbXX1dfSx7InRpdGxlIjoiU3RlcHMgdG8gaW5zdGFsbCB0aGUgbmV3IFBvd2VyIFN1cHBseSIsImFuY2hvciI6IiNzdGVwcy10by1pbnN0YWxsLXRoZS1uZXctcG93ZXItc3VwcGx5IiwiY2hpbGRyZW4iOlt7InRpdGxlIjoiMS4gUmUtY29ubmVjdCB0aGUgcG93ZXIgdGVybWluYWwgd2lyZXMiLCJhbmNob3IiOiIjaC0xLXJlLWNvbm5lY3QtdGhlLXBvd2VyLXRlcm1pbmFsLXdpcmVzIiwiY2hpbGRyZW4iOltdfSx7InRpdGxlIjoiMi4gSW5zdGFsbCB0aGUgcG93ZXIgc3VwcGx5IiwiYW5jaG9yIjoiI2gtMi1pbnN0YWxsLXRoZS1wb3dlci1zdXBwbHkiLCJjaGlsZHJlbiI6W119LHsidGl0bGUiOiIzLiBJbnN0YWxsIHRoZSBQb3dlciBTdXBwbHkgU2NyZXdzIiwiYW5jaG9yIjoiI2gtMy1pbnN0YWxsLXRoZS1wb3dlci1zdXBwbHktc2NyZXdzIiwiY2hpbGRyZW4iOltdfSx7InRpdGxlIjoiNC4gSW5zdGFsbCB0aGUgdGhlIHByaW50ZXIncyBib3R0b20gY292ZXIiLCJhbmNob3IiOiIjaC00LWluc3RhbGwtdGhlLXRoZS1wcmludGVycy1ib3R0b20tY292ZXIiLCJjaGlsZHJlbiI6W119LHsidGl0bGUiOiI1LiBJbnN0YWxsIHRoZSB3aXJlIGJyYWNrZXQgYW5kIGNvbm5lY3QgdGhlIHdpcmVzIiwiYW5jaG9yIjoiI2gtNS1pbnN0YWxsLXRoZS13aXJlLWJyYWNrZXQtYW5kLWNvbm5lY3QtdGhlLXdpcmVzIiwiY2hpbGRyZW4iOltdfV19LHsidGl0bGUiOiJWZXJpZnkgdGhlIGZ1bmN0aW9uYWxpdHkiLCJhbmNob3IiOiIjdmVyaWZ5LXRoZS1mdW5jdGlvbmFsaXR5IiwiY2hpbGRyZW4iOltdfSx7InRpdGxlIjoiQ2FsaWJyYXRpb24gc3RlcCBhZnRlciB0aGUgb3BlcmF0aW9uIiwiYW5jaG9yIjoiI2NhbGlicmF0aW9uLXN0ZXAtYWZ0ZXItdGhlLW9wZXJhdGlvbiIsImNoaWxkcmVuIjpbXX0seyJ0aXRsZSI6IlBvdGVudGlhbCBwcm9ibGVtcyBhbmQgc29sdXRpb25zIiwiYW5jaG9yIjoiI3BvdGVudGlhbC1wcm9ibGVtcy1hbmQtc29sdXRpb25zIiwiY2hpbGRyZW4iOlt7InRpdGxlIjoiVGhlIHByaW50ZXIgZG9lc24ndCBwb3dlciBvbiIsImFuY2hvciI6IiN0aGUtcHJpbnRlci1kb2VzbnQtcG93ZXItb24iLCJjaGlsZHJlbiI6W119LHsidGl0bGUiOiJUaGUgQ2FtZXJhIGlzIG5vdCB3b3JraW5nIiwiYW5jaG9yIjoiI3RoZS1jYW1lcmEtaXMtbm90LXdvcmtpbmciLCJjaGlsZHJlbiI6W119LHsidGl0bGUiOiJUaGUgWC1heGlzIC8gWi1heGlzIGlzIG5vdCB3b3JraW5nIiwiYW5jaG9yIjoiI3RoZS14LWF4aXMtei1heGlzLWlzLW5vdC13b3JraW5nIiwiY2hpbGRyZW4iOltdfSx7InRpdGxlIjoiVGhlIHNjcmVlbiBkaXNwbGF5cyBhbiBlcnJvciBtZXNzYWdlIiwiYW5jaG9yIjoiI3RoZS1zY3JlZW4tZGlzcGxheXMtYW4tZXJyb3ItbWVzc2FnZSIsImNoaWxkcmVuIjpbXX1dfSx7InRpdGxlIjoiRW5kIE5vdGVzIiwiYW5jaG9yIjoiI2VuZC1ub3RlcyIsImNoaWxkcmVuIjpbXX1d" :page-id="1478" sidebar="W3siaSI6InNkaS0xIiwiayI6ImxpbmsiLCJsIjoiSG9tZSIsImMiOiJtZGktaG9tZSIsInkiOiJob21lIiwidCI6Ii8ifSx7ImkiOiJzZGktMiIsImsiOiJsaW5rIiwibCI6Ildpa2kgVXBkYXRlcyIsImMiOiJtZGktbmV3LWJveCIsInkiOiJleHRlcm5hbCIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL25ldy1hbmQtdXBkYXRlcyJ9LHsiaSI6InNkaS0zIiwiayI6ImxpbmsiLCJsIjoiSDJEIiwiYyI6Im1kaS1hbHBoYS1oLWJveCIsInkiOiJleHRlcm5hbCIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL2gyZCJ9LHsiaSI6InNkaS00IiwiayI6ImxpbmsiLCJsIjoiQU1TIDIgUHJvIiwiYyI6Im1kaS1tb3ZpZS1yb2xsIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vYW1zLTItcHJvIn0seyJpIjoic2RpLTUiLCJrIjoibGluayIsImwiOiJBTVMgSFQiLCJjIjoibWRpLW1vdmllLXJvbGwiLCJ5IjoiZXh0ZXJuYWwiLCJ0IjoiaHR0cHM6Ly93aWtpLmJhbWJ1bGFiLmNvbS9lbi9hbXMtaHQifSx7ImkiOiJzZGktNiIsImsiOiJsaW5rIiwibCI6IlgxIFNlcmllcyIsImMiOiJtZGktYWxwaGEteC1ib3gtb3V0bGluZSIsInkiOiJleHRlcm5hbCIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL3gxIn0seyJpIjoic2RpLTciLCJrIjoibGluayIsImwiOiJQMSBTZXJpZXMiLCJjIjoibWRpLWFscGhhLXAtYm94LW91dGxpbmUiLCJ5IjoiZXh0ZXJuYWwiLCJ0IjoiaHR0cHM6Ly93aWtpLmJhbWJ1bGFiLmNvbS9lbi9wMSJ9LHsiaSI6InNkaS04IiwiayI6ImxpbmsiLCJsIjoiQTEiLCJjIjoibWRpLWFscGhhLWEtYm94LW91dGxpbmUiLCJ5IjoiZXh0ZXJuYWwiLCJ0IjoiaHR0cHM6Ly93aWtpLmJhbWJ1bGFiLmNvbS9lbi9hMSJ9LHsiaSI6InNkaS05IiwiayI6ImxpbmsiLCJsIjoiQTEgbWluaSIsImMiOiJtZGktYWxwaGEtYS1ib3gtb3V0bGluZSIsInkiOiJleHRlcm5hbCIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL2ExLW1pbmkifSx7ImkiOiJzZGktMTAiLCJrIjoibGluayIsImwiOiJBTVMiLCJjIjoibWRpLWFscGhhLWEtY2lyY2xlIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vYW1zIn0seyJpIjoic2RpLTExIiwiayI6ImxpbmsiLCJsIjoiQU1TIGxpdGUiLCJjIjoibWRpLWFscGhhLWwtY2lyY2xlIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vYW1zLWxpdGUifSx7ImkiOiJzZGktMTIiLCJrIjoibGluayIsImwiOiJITVMiLCJjIjoibWRpLXRleHQtYm94LXNlYXJjaC1vdXRsaW5lIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vaG1zL2hvbWUifSx7ImkiOiJzZGktMTMiLCJrIjoibGluayIsImwiOiJTb2Z0d2FyZSIsImMiOiJtZGktdGVsZXZpc2lvbi1ndWlkZSIsInkiOiJleHRlcm5hbCIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL3NvZnR3YXJlIn0seyJpIjoic2RpLTE0IiwiayI6ImxpbmsiLCJsIjoiRmlsYW1lbnRzICYgQWNjZXNzb3JpZXMiLCJjIjoibWRpLXByaW50ZXItM2Qtbm96emxlIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vZmlsYW1lbnQtYWNjIn0seyJpIjoic2RpLTE1IiwiayI6ImxpbmsiLCJsIjoiTWFrZXJXb3JsZCIsImMiOiJtZGktY3ViZS1zY2FuIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vbWFrZXJ3b3JsZCJ9LHsiaSI6InNkaS0xNiIsImsiOiJoZWFkZXIiLCJsIjoiR2VuZXJhbCIsImMiOm51bGwsInkiOm51bGwsInQiOm51bGx9LHsiaSI6InNkaS0xNyIsImsiOiJsaW5rIiwibCI6Iktub3dsZWRnZSBTaGFyaW5nIiwiYyI6Im1kaS1mb3J1bSIsInkiOiJwYWdlIiwidCI6Ii9lbi9rbm93bGVkZ2Utc2hhcmluZyJ9LHsiaSI6InNkaS0xOCIsImsiOiJsaW5rIiwibCI6Ikdsb3NzYXJ5IiwiYyI6Im1kaS10YWJsZS1vZi1jb250ZW50cyIsInkiOiJwYWdlIiwidCI6Ii9lbi9nbG9zc2FyeSJ9LHsiaSI6InNkaS0xOSIsImsiOiJsaW5rIiwibCI6IkZBUSIsImMiOiJtZGktZnJlcXVlbnRseS1hc2tlZC1xdWVzdGlvbnMiLCJ5IjoicGFnZSIsInQiOiIvZW4vZmFxIn0seyJpIjoic2RpLTIwIiwiayI6ImxpbmsiLCJsIjoiQWJvdXQgVXMiLCJjIjoibWRpLWluZm9ybWF0aW9uLW91dGxpbmUiLCJ5IjoicGFnZSIsInQiOiIvZW4vYWJvdXQtdXMifSx7ImkiOiJzZGktMjEiLCJrIjoiZGl2aWRlciIsImwiOm51bGwsImMiOm51bGwsInkiOm51bGwsInQiOm51bGx9LHsiaSI6InNkaS0yMiIsImsiOiJsaW5rIiwibCI6IkNvbW11bml0eSBDb250cmlidXRpb25zIiwiYyI6Im1kaS13aWtpcGVkaWEiLCJ5IjoiZXh0ZXJuYWxibGFuayIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL2NvbnRyaWJ1dGlvbi1ndWlkZSJ9XQ==" nav-mode="STATIC" effective-permissions="eyJjb21tZW50cyI6eyJyZWFkIjpmYWxzZSwid3JpdGUiOmZhbHNlLCJtYW5hZ2UiOmZhbHNlfSwiaGlzdG9yeSI6eyJyZWFkIjpmYWxzZX0sInNvdXJjZSI6eyJyZWFkIjpmYWxzZX0sInBhZ2VzIjp7InJlYWQiOnRydWUsIndyaXRlIjpmYWxzZSwibWFuYWdlIjpmYWxzZSwiZGVsZXRlIjpmYWxzZSwic2NyaXB0IjpmYWxzZSwic3R5bGUiOmZhbHNlfSwic3lzdGVtIjp7Im1hbmFnZSI6ZmFsc2V9fQ==" edit-shortcuts="eyJlZGl0RmFiIjp0cnVlLCJlZGl0TWVudUJhciI6dHJ1ZSwiZWRpdE1lbnVCdG4iOnRydWUsImVkaXRNZW51RXh0ZXJuYWxCdG4iOmZhbHNlLCJlZGl0TWVudUV4dGVybmFsTmFtZSI6IkdpdEh1YiIsImVkaXRNZW51RXh0ZXJuYWxJY29uIjoibWRpLWdpdGh1YiIsImVkaXRNZW51RXh0ZXJuYWxVcmwiOiJodHRwczovL2dpdGh1Yi5jb20vb3JnL3JlcG8vYmxvYi9tYWluL3tmaWxlbmFtZX0ifQ==" filename="en/a1/maintenance/power-supply-replacement-guide.md"><template slot="contents"><div><p>In this guide we will show the process of replacing the Power Supply on the A1</p>
+<p><img src="/a1m/power-supply/a1_mini_power_supply.jpg" alt="" width="800"></p>
+<h2 id="when-to-use" class="toc-header"><a class="toc-anchor" href="#when-to-use">¶</a> When to use?</h2>
+<p>This guide should be used if the Power Supply of the A1 is faulty, and needs to be replaced.&nbsp;<br>
+Common issues that are caused by the A1 Power Supply are:</p>
+<ul>
+<li>Printer is not turning on</li>
+<li>Recommended by Bambu Lab Customer Support</li>
+</ul>
+<h2 id="tools-and-materials-needed" class="toc-header"><a class="toc-anchor" href="#tools-and-materials-needed">¶</a> Tools and materials needed</h2>
+<p>Bambu Lab Power Supply for A1</p>
+<ul>
+<li>H2.0 hex wrench</li>
+<li>PH2 Philips screwdriver</li>
+<li>20 minutes of your time</li>
+</ul>
+<h3 id="safety-warning" class="toc-header"><a class="toc-anchor" href="#safety-warning">¶</a> Safety Warning</h3>
+<blockquote>
+<p>IMPORTANT!</p>
+<p>It's crucial to power off the printer before performing any maintenance work on the printer and its electronics, including tool head wires, because leaving the printer on while conducting such tasks can cause a short circuit, which can lead to additional electronic damage and safety hazards.</p>
+<p>When you perform maintenane or troubleshooting on the printer, you may be required to disassemble some parts, including the hotend. This process can expose wires and electrical components that could potentially short circuit if they come into contact with each other or with other metal or electronic components while the printer is still on. This can damage the electronics of the printer and cause further damage.</p>
+<p>Therefore, it's essential to switch off the printer and disconnect it from the power source before doing any maintenance work. This will prevent any short circuits or damage to the printer's electronics. By doing so, you can avoid potential damage to the printer's electronic components and ensure that the maintenance work is performed safely and effectively.</p>
+<p>If you have any concerns or questions about following this guide, <a href="https://bambulab.com/en/my/support/tickets" class="is-external-link">open a new ticket in our Support Page</a> and we will do our best to respond promptly and provide you with the assistance you need.</p>
+</blockquote>
+<h2 id="steps-to-remove-the-old-power-supply" class="toc-header"><a class="toc-anchor" href="#steps-to-remove-the-old-power-supply">¶</a> Steps to remove the old Power Supply</h2>
+<h3 id="h-1-place-the-printer-on-its-front" class="toc-header"><a class="toc-anchor" href="#h-1-place-the-printer-on-its-front">¶</a> 1. Place the printer on its front</h3>
+<p>For easy access to the bottom section of the A1, you need to place the printer on the front.&nbsp;<br>
+Start by flipping the screen on its side, then gently place the printer on its front, as shown in the image below.&nbsp;<br>
+<strong>Use a box of filament to keep the top side raised to avoid putting pressure on the extruder and the screen.</strong></p>
+<p><img src="/a1/maintenance/power-supply/place_the_a1_printer_on_its_front.jpeg" alt="" width="800"></p>
+<h3 id="h-2-remove-the-printers-bottom-cover" class="toc-header"><a class="toc-anchor" href="#h-2-remove-the-printers-bottom-cover">¶</a> 2. Remove the printer's bottom cover</h3>
+<p>Remove the 10 screws marked in red to prepare the bottom housing removal.&nbsp;<br>
+Please note that the screw marked in yellow needs to be loosened, but it will not be possible to remove it. It remains attached to the cable bracket.</p>
+<p><img src="/a1/maintenance/power-supply/remove_the_bottom_housing_cover_screws.jpeg" alt="" width="800"></p>
+<h3 id="h-3-disconnect-the-wires-and-remove-the-wire-bracket" class="toc-header"><a class="toc-anchor" href="#h-3-disconnect-the-wires-and-remove-the-wire-bracket">¶</a> 3. Disconnect the wires and remove the wire bracket</h3>
+<p>In the next step, the Camera, Motor X and Motor Z cables need to be disconnected.&nbsp;<br>
+Then, you will be able to simply push the plastic wire bracket upwards, to disconnect the USB cable.</p>
+<p><img src="/a1/maintenance/power-supply/disconnect_the_a1_wires_and_remove_the_wire_bracket.jpeg" alt="" width="800"></p>
+<blockquote>
+<p><strong>Important</strong><br>
+If you cannot easily remove the wire bracket, make sure the screw holding it in place (labeled with Nr. 11 in the previous step) is loosened</p>
+</blockquote>
+<p>After removing the wires, gently pry out the plastic bottom cover.</p>
+<h3 id="h-4-remove-the-power-supply-screws" class="toc-header"><a class="toc-anchor" href="#h-4-remove-the-power-supply-screws">¶</a> 4. Remove the power supply screws</h3>
+<p>The A1 power supply is held in place by two screws, and plastic brackets.&nbsp;<br>
+First, remove the power supply screws shown in the image below.</p>
+<p><img src="/a1/maintenance/power-supply/%E7%94%B5%E6%BA%90%E8%9E%BA%E4%B8%9D.png" alt="power_supply_screws.jpeg" width="800"></p>
+<h3 id="h-5-loosen-the-power-terminal-screws" class="toc-header"><a class="toc-anchor" href="#h-5-loosen-the-power-terminal-screws">¶</a> 5. Loosen the power terminal screws</h3>
+<p>Loosen the power terminal screws listed in the image below.&nbsp;<br>
+Simply make them loose and <strong>avoid removing them completely</strong>, as it will be easier to re-install everything back in place in the next steps.</p>
+<p><img src="/a1/maintenance/power-supply/%E7%94%B5%E6%BA%90%E7%AB%AF%E5%AD%90.png" alt="a1_power_supply_screws_.jpeg" width="800"></p>
+<h3 id="h-6-remove-the-power-supply" class="toc-header"><a class="toc-anchor" href="#h-6-remove-the-power-supply">¶</a> 6. Remove the Power Supply</h3>
+<p>With the power terminal screws loose, we can proceed in removing the power supply from the printer.&nbsp;<br>
+Gently push the plastic clips towards the bottom while also pulling the power supply towards you. This will release the power supply allowing for it to be removed from the printer frame.</p>
+<blockquote class="is-info">
+<p>Some power supply can be removed by removing only two screws</p>
+</blockquote>
+<p><img src="/a1/maintenance/power-supply/a1_power_supply_clips.jpeg" alt="" width="800"></p>
+<blockquote>
+<p>Important<br>
+Do not push the clips too hard as they can break. They need to be pushed about 2-3mm so the power supply is removed.&nbsp;<br>
+Start with the first one then push the second one to release the power supply.</p>
+</blockquote>
+<p>The power supply is now removed</p>
+<p><img src="/a1/maintenance/power-supply/a1_power_supply_removed.jpg" alt="" width="800"></p>
+<h2 id="steps-to-install-the-new-power-supply" class="toc-header"><a class="toc-anchor" href="#steps-to-install-the-new-power-supply">¶</a> Steps to install the new Power Supply</h2>
+<h3 id="h-1-re-connect-the-power-terminal-wires" class="toc-header"><a class="toc-anchor" href="#h-1-re-connect-the-power-terminal-wires">¶</a> 1. Re-connect the power terminal wires</h3>
+<p>While holding the power supply, carefully re-connect the power terminal wires as shown below and <strong>tighten the screws.</strong><br>
+The wire information is as follows:</p>
+<p>1. +V MC Board Wire<br>
+2. &nbsp;-V MC Board Wire<br>
+3. &nbsp;Ground Wires<br>
+4. &nbsp;AC Neutral Wire<br>
+5. &nbsp;AC Live Wire</p>
+<p><img src="/a1/maintenance/power-supply/%E7%94%B5%E6%BA%90%E7%AB%AF%E5%AD%90.png" alt="a1_power_supply_screws_.jpeg" width="800"></p>
+<blockquote>
+<p>IMPORTANT<br>
+After installing all the wires as shown in the image, <strong>ensure there is no movement and all the wires are fixed in place</strong></p>
+</blockquote>
+<h3 id="h-2-install-the-power-supply" class="toc-header"><a class="toc-anchor" href="#h-2-install-the-power-supply">¶</a> 2. Install the power supply</h3>
+<p>Gently insert the power supply by angling the top side first. When the screw hole on the top is aligned, gently push on the bottom of the power supply to engage the bottom clips.</p>
+<div class="table-container"><table>
+<tbody><tr>
+  <td><img src="/a1/maintenance/power-supply/电源安装.png" height="550" width="450"></td>
+  <td><img src="/a1/maintenance/power-supply/下压.png" height="550" width="450"></td>
+</tr>
+</tbody></table></div>
+<h3 id="h-3-install-the-power-supply-screws" class="toc-header"><a class="toc-anchor" href="#h-3-install-the-power-supply-screws">¶</a> 3. Install the Power Supply Screws</h3>
+<p>Next, install the two power supply screws.&nbsp;<br>
+These screws will be threaded inside plastic standoffs. <strong>Avoid over-tightening them as you can damage the plastic threads.</strong></p>
+<p><img src="/a1/maintenance/power-supply/%E7%94%B5%E6%BA%90%E8%9E%BA%E4%B8%9D.png" alt="power_supply_screws.jpeg" width="800"></p>
+<h3 id="h-4-install-the-the-printers-bottom-cover" class="toc-header"><a class="toc-anchor" href="#h-4-install-the-the-printers-bottom-cover">¶</a> 4. Install the the printer's bottom cover</h3>
+<p>You can now proceed with installing the bottom cover back to the printer.&nbsp;<br>
+<strong>Pay close attention to the motor wire in the top left side marked with the red arrow in the image below.</strong> Avoid pressing the cover in place before the wire is correctly managed<br>
+The cover will clip in place, then you can proceed with installing the 10 screws while ensuring you do not over-tighten them.</p>
+<p><img src="/a1/maintenance/power-supply/install_the_back_cover_on_a1.jpeg" alt="" width="800"></p>
+<h3 id="h-5-install-the-wire-bracket-and-connect-the-wires" class="toc-header"><a class="toc-anchor" href="#h-5-install-the-wire-bracket-and-connect-the-wires">¶</a> 5. Install the wire bracket and connect the wires</h3>
+<p>In the final step, carefully align the wire bracket then push it downwards while making sure the USB cable is fully pushed against the printer frame.&nbsp;<br>
+Then, tighten the screw shown in the image to lock it in place. Avoid overtightening the screw as this is screwed into the plastic frame.</p>
+<p><img src="/a1/maintenance/power-supply/install_the_cable_bracket.jpeg" alt="" width="800"></p>
+<p>Next, re-connect the Camera, Motor X and Motor Z cables to finish the installation.</p>
+<p><img src="/a1/maintenance/power-supply/a1_wires.jpeg" alt="" width="800"></p>
+<h2 id="verify-the-functionality" class="toc-header"><a class="toc-anchor" href="#verify-the-functionality">¶</a> Verify the functionality</h2>
+<p>To ensure everything works as expected, turn on the printer.&nbsp;<br>
+If the printer turns on, this confirms the installation was correct.</p>
+<h2 id="calibration-step-after-the-operation" class="toc-header"><a class="toc-anchor" href="#calibration-step-after-the-operation">¶</a> Calibration step after the operation</h2>
+<p>No calibration step is required.</p>
+<h2 id="potential-problems-and-solutions" class="toc-header"><a class="toc-anchor" href="#potential-problems-and-solutions">¶</a> Potential problems and solutions</h2>
+<p>If you encounter problems during the installation of a new Power Supply, please check the potential problems and solutions listed below:</p>
+<h3 id="the-printer-doesnt-power-on" class="toc-header"><a class="toc-anchor" href="#the-printer-doesnt-power-on">¶</a> The printer doesn't power on</h3>
+<p>Confirm the power supply wires are installed correctly, as shown in <em>Step 1. Re-connect the power terminal wires</em></p>
+<h3 id="the-camera-is-not-working" class="toc-header"><a class="toc-anchor" href="#the-camera-is-not-working">¶</a> The Camera is not working</h3>
+<p>Confirm the camera wire is fully installed as shown in <em>Step 5. Install the wire bracket and connect the wires</em></p>
+<h3 id="the-x-axis-z-axis-is-not-working" class="toc-header"><a class="toc-anchor" href="#the-x-axis-z-axis-is-not-working">¶</a> The X-axis / Z-axis is not working</h3>
+<p>Confirm the X motor and Z motor wires are fully installed as shown in <em>Step 5. Install the wire bracket and connect the wires</em></p>
+<h3 id="the-screen-displays-an-error-message" class="toc-header"><a class="toc-anchor" href="#the-screen-displays-an-error-message">¶</a> The screen displays an error message</h3>
+<p>The USB cable might not be fully inserted. Loosen the screw holding the wire bracket in place, then re-connect the USB cable as shown in <em>Step 5. Install the wire bracket and connect the wires</em></p>
+<h2 id="end-notes" class="toc-header"><a class="toc-anchor" href="#end-notes">¶</a> End Notes</h2>
+<blockquote>
+<p>We hope that the detailed guide we shared with you was helpful and informative.</p>
+<p>We want to ensure that you can perform it safely and effectively. If you have any concerns or questions regarding the process described in this article, we encourage you to reach out to our friendly customer service team before starting the operation. Our team is always ready to help you and answer any questions you may have.</p>
+<p><a href="https://bambulab.com/en/my/support/tickets" class="is-external-link">Click here to open a new ticket in our Support Page</a>.</p>
+<p>We will do our best to respond promptly and provide you with the assistance you need.</p>
+</blockquote>
+</div></template><template slot="comments"><div><comments></comments></div></template></page></div><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9422cc3b6d1474fa',t:'MTc0NzY0OTM1Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body></html>

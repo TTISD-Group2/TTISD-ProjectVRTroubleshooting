@@ -1,0 +1,395 @@
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta charset="UTF-8"><meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1, maximum-scale=5"><meta name="theme-color" content="#1976d2"><meta name="msapplication-TileColor" content="#1976d2"><meta name="msapplication-TileImage" content="/_assets/favicons/mstile-150x150.png"><title>Z-axis Motor Replacement Guide for A1 | Bambu Lab Wiki</title><meta name="description" content="This guide describes the procedure for replacing the Z-motor of the A1 series."><meta property="og:title" content="Z-axis Motor Replacement Guide for A1"><meta property="og:type" content="website"><meta property="og:description" content="This guide describes the procedure for replacing the Z-motor of the A1 series."><meta property="og:image"><meta property="og:url" content="https://wiki.bambulab.com/en/a1/maintenance/z-motor-replacement-guide"><meta property="og:site_name" content="Bambu Lab Wiki"><link rel="apple-touch-icon" sizes="180x180" href="/_assets/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="192x192" href="/_assets/favicons/android-chrome-192x192.png"><link rel="icon" type="image/png" sizes="32x32" href="/_assets/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/_assets/favicons/favicon-16x16.png"><link rel="mask-icon" href="/_assets/favicons/safari-pinned-tab.svg" color="#1976d2"><link rel="manifest" href="/_assets/manifest.json"><script>var siteConfig = {"title":"Bambu Lab Wiki","theme":"default","darkMode":false,"tocPosition":"left","lang":"en","rtl":false,"company":"Bambu Lab","contentLicense":"alr","footerOverride":"","logoUrl":"/admin/home/logo-large.png"}
+var siteLangs = [{"code":"en","name":"English"},{"code":"zh","name":"中文 (Zhōngwén)"}]
+</script><link type="text/css" rel="stylesheet" href="/_assets/css/app.766a556e9dcc61b7fcd5.css"><script type="text/javascript" src="/_assets/js/runtime.js?1716156900"></script><script type="text/javascript" src="/_assets/js/app.js?1716156900"></script><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-225490854-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-225490854-3');
+</script>
+<style type="text/css">.caption{word-break:break-word}.row.page-header-section.no-gutters.align-content-center{height:auto!important;min-height:90px}blockquote:before{content:""!important}blockquote{border-top:6px solid #1976d2!important;border-left:0!important;padding:1rem!important}blockquote p{padding:0!important;line-height:26px!important}blockquote p li{font-style:normal!important}i{font-style:normal!important}a.v-list-item--link[href='https://wiki.bambulab.com/en/makerworld'] .v-list-item__avatar i::before{content:url('https://wiki.bambulab.com/makerworld/makerworld.svg')!important}a.v-list-item--link[href='https://wiki.bambulab.com/zh/makerworld'] .v-list-item__avatar i::before{content:url('https://wiki.bambulab.com/makerworld/makerworld.svg')!important}.video-responsive{max-width:720px}.video-responsive-inner{position:relative;padding-bottom:56.25%}.video-responsive-inner iframe,.video-responsive-inner video{position:absolute;width:100%;height:100%;left:0;top:0}div.contents img{cursor:pointer}</style><link  href="https://cdn1.bambulab.com/wiki/viewer/viewer.min.css" rel="stylesheet">
+<script src="https://cdn1.bambulab.com/wiki/viewer/viewer.min.js"></script>
+<script type="text/javascript" defer> 
+
+function GetQueryString(sGet, name) {
+	var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)"); 
+	var r = sGet.match(reg);
+	if(r != null) {
+		return unescape(r[2]);
+	} else {
+		return null;
+	}
+}
+
+function getUrlQuery(name) {
+    let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    let r = window.location.search.substr(1).match(reg);
+    if (r != null) {
+        return decodeURIComponent(r[2]);
+    };
+
+    return null;
+}
+
+
+function parseUrl(url) {
+	if(url.startsWith('//')) {
+		url = location.protocol + url;
+	}
+	return new window.URL(url);
+}
+
+function removeUrlParam(param, url = window.location.href) {
+	let obj = parseUrl(url);
+	obj.searchParams.delete(param);
+	return obj.href;
+}
+
+function SetMaskIconColor() {
+	document.querySelector('link[rel="mask-icon"]').setAttribute('color', '#00AE42');
+}
+
+function HandleVideoHtml() {
+    const rxYoutube = /^.*(?:(?:youtu\.be\/|v\/|vi\/|u\/\w\/|embed\/)|(?:(?:watch)?\?v(?:i)?=|\&v(?:i)?=))([^#\&\?]*).*/
+    const rxVimeo = /^.*(vimeo\.com\/)((channels\/[A-z]+\/)|(groups\/[A-z]+\/videos\/))?([0-9]+)/
+	document.querySelectorAll('.contents oembed, .contents a').forEach(elm => {
+		const url = elm.hasAttribute('url') ? elm.getAttribute('url') : elm.getAttribute('href')
+		let newElmHtml = null
+		let nWen = url.indexOf('?');
+		let GetParam = '';
+		let BiliMatch = false;
+		let BiliVID = '';
+		if(nWen >= 0) {
+			GetParam = url.substr(nWen + 1);
+			//alert(GetParam);
+			let sSrc = GetQueryString(GetParam, 'src');
+			let sV = GetQueryString(GetParam, 'v');
+			if(sSrc != null && sV != null && sSrc == 'bilibili') {
+				BiliMatch = true;
+				BiliVID = sV;
+			}
+		}
+		const ytMatch = url.match(rxYoutube)
+		const vmMatch = !ytMatch && url.match(rxVimeo)
+		if(BiliMatch) {
+			newElmHtml = '<iframe src="https://player.bilibili.com/player.html?p=1&autoplay=0&bvid=' + BiliVID + '" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="100%"> </iframe>';
+		} else if(ytMatch) {
+			newElmHtml = `<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/${ytMatch[1]}" frameborder="0" allowfullscreen></iframe>`
+		} else if(vmMatch) {
+			newElmHtml = `<iframe id="vmplayer" type="text/html" width="640" height="360" src="https://player.vimeo.com/video/${vmMatch[5]}" frameborder="0" allowfullscreen></iframe>`
+		} else if(url.endsWith('.mp4')) {
+			newElmHtml = `<video controls autostart="0" name="media" width="640" height="360"><source src="${url}" type="video/mp4"></video>`
+		} else {
+			return
+		}
+        
+		const container = document.createElement('div')
+		container.classList.add('video-responsive')
+
+        const inner = document.createElement('div')
+        inner.classList.add('video-responsive-inner')
+
+		inner. insertAdjacentHTML('beforeend', newElmHtml)
+        container.append(inner)
+
+		elm.replaceWith(container)
+	})
+}
+
+function HandleSearchPage() {
+	const search = getUrlQuery('search')
+	if(search) {
+		const isAPP = window.innerWidth < 960
+		console.log("isAPP: " + isAPP)
+		const headerInner = document.querySelector("header.nav-header.v-sheet.theme--dark.v-toolbar.v-toolbar--flat.v-app-bar.v-app-bar--clipped.v-app-bar--fixed.black")
+		const input = headerInner.__vue__.$parent
+		console.log(input)
+		if(input) {
+			if(isAPP) {
+				input.searchIsShown = true
+			}
+			input.search = search
+			const target = document.querySelector('.v-application--wrap')
+			const observe = new MutationObserver(function(mutations, observe) {
+				mutations.forEach((mutation) => {
+					const nodes = Array.from(mutation.addedNodes)
+					if(nodes.length > 0) {
+						nodes.forEach((node) => {
+							if(node.nodeType === 1) {
+								if(node.classList.contains('search-results')) {
+									const btn = document.querySelector('.search-results div.text-xs-center .mx-2.v-btn')
+									if(btn) {
+										console.log(btn)
+										btn.onclick = function() {
+											const url = removeUrlParam('search')
+											window.location.href = url
+										}
+									}
+								}
+							}
+						})
+					}
+				})
+			});
+			observe.observe(target, {
+				childList: true
+			});
+		}
+	}
+}
+
+function HandleViewerJS()
+{
+  const imageContent = document.querySelector('div.contents')
+  if (imageContent) {
+    const gallery = new Viewer(imageContent,{title:false})
+    imageContent.querySelectorAll('img').forEach((item, index) => {
+      item.addEventListener('click', () => {
+        gallery.view(index)
+      })
+    })
+  }
+}
+
+window.boot.register('vue', () => {
+
+	// window.onload = () => {
+	//    SetMaskIconColor();
+	// 	  HandleVideoHtml();
+	//	  HandleSearchPage();
+	//}
+
+    window.addEventListener('load', () => {
+	    SetMaskIconColor();
+	 	HandleVideoHtml();
+		HandleSearchPage();
+        HandleViewerJS();
+    })
+}) 
+
+</script></head><body><div id="root"><page locale="en" path="a1/maintenance/z-motor-replacement-guide" title="Z-axis Motor Replacement Guide for A1" description="This guide describes the procedure for replacing the Z-motor of the A1 series." :tags="[{&quot;tag&quot;:&quot;a1&quot;,&quot;title&quot;:&quot;a1&quot;}]" created-at="2024-09-12T03:16:05.177Z" updated-at="2025-02-06T08:36:48.824Z" author-name="Sylvia" :author-id="144" editor="markdown" :is-published="true" toc="W3sidGl0bGUiOiJBcHBsaWNhYmxlIG1vZGVscyBvZiBwcmludGVycyIsImFuY2hvciI6IiNhcHBsaWNhYmxlLW1vZGVscy1vZi1wcmludGVycyIsImNoaWxkcmVuIjpbXX0seyJ0aXRsZSI6IlotYXhpcyBtb3RvciIsImFuY2hvciI6IiN6LWF4aXMtbW90b3IiLCJjaGlsZHJlbiI6W119LHsidGl0bGUiOiJXaGF0IHRvIHVzZT8iLCJhbmNob3IiOiIjd2hhdC10by11c2UiLCJjaGlsZHJlbiI6W119LHsidGl0bGUiOiJTYWZldHkgd2FybmluZyIsImFuY2hvciI6IiNzYWZldHktd2FybmluZyIsImNoaWxkcmVuIjpbXX0seyJ0aXRsZSI6IlRvb2xzIGFuZCBtYXRlcmlhbHMgbmVlZGVkIiwiYW5jaG9yIjoiI3Rvb2xzLWFuZC1tYXRlcmlhbHMtbmVlZGVkIiwiY2hpbGRyZW4iOltdfSx7InRpdGxlIjoiUmVtb3ZlIFotYXhpcyBtb3RvciIsImFuY2hvciI6IiNyZW1vdmUtei1heGlzLW1vdG9yIiwiY2hpbGRyZW4iOlt7InRpdGxlIjoiUmVtb3ZlIHRoZSBZLWF4aXMgdG9wIGNvdmVyIiwiYW5jaG9yIjoiI3JlbW92ZS10aGUteS1heGlzLXRvcC1jb3ZlciIsImNoaWxkcmVuIjpbXX0seyJ0aXRsZSI6Ikxvb3NlbiB0aGUgWi1heGlzIGJlbHQgdGVuc2lvbiBzY3Jld3MiLCJhbmNob3IiOiIjbG9vc2VuLXRoZS16LWF4aXMtYmVsdC10ZW5zaW9uLXNjcmV3cyIsImNoaWxkcmVuIjpbXX0seyJ0aXRsZSI6IkRpc2Nvbm5lY3QgdGhlIGNhYmxlcyIsImFuY2hvciI6IiNkaXNjb25uZWN0LXRoZS1jYWJsZXMiLCJjaGlsZHJlbiI6W119LHsidGl0bGUiOiJSZW1vdmUgdGhlIGJvdHRvbSBiYXNlIGFzc2VtYmx5IiwiYW5jaG9yIjoiI3JlbW92ZS10aGUtYm90dG9tLWJhc2UtYXNzZW1ibHkiLCJjaGlsZHJlbiI6W119LHsidGl0bGUiOiJSZW1vdmUgdGhlIG1ldGFsIGJhc2UgcGxhdGUiLCJhbmNob3IiOiIjcmVtb3ZlLXRoZS1tZXRhbC1iYXNlLXBsYXRlIiwiY2hpbGRyZW4iOltdfSx7InRpdGxlIjoiUmVtb3ZlIHRoZSBaLW1vdG9yIiwiYW5jaG9yIjoiI3JlbW92ZS10aGUtei1tb3RvciIsImNoaWxkcmVuIjpbXX1dfSx7InRpdGxlIjoiSW5zdGFsbCB0aGUgWi1tb3RvciIsImFuY2hvciI6IiNpbnN0YWxsLXRoZS16LW1vdG9yIiwiY2hpbGRyZW4iOlt7InRpdGxlIjoiUmFpc2UgdGhlIFgtYXhpcyIsImFuY2hvciI6IiNyYWlzZS10aGUteC1heGlzIiwiY2hpbGRyZW4iOltdfSx7InRpdGxlIjoiSW5zdGFsbCB0aGUgWi1tb3RvciIsImFuY2hvciI6IiNpbnN0YWxsLXRoZS16LW1vdG9yLTEiLCJjaGlsZHJlbiI6W119LHsidGl0bGUiOiJJbnN0YWxsIHRoZSBtZXRhbCBiYXNlIHBsYXRlIiwiYW5jaG9yIjoiI2luc3RhbGwtdGhlLW1ldGFsLWJhc2UtcGxhdGUiLCJjaGlsZHJlbiI6W119LHsidGl0bGUiOiJJbnN0YWxsIHRoZSBib3R0b20gYmFzZSBhc3NlbWJseSIsImFuY2hvciI6IiNpbnN0YWxsLXRoZS1ib3R0b20tYmFzZS1hc3NlbWJseSIsImNoaWxkcmVuIjpbXX0seyJ0aXRsZSI6IkNvbm5lY3QgdGhlIGNhYmxlcyIsImFuY2hvciI6IiNjb25uZWN0LXRoZS1jYWJsZXMiLCJjaGlsZHJlbiI6W119LHsidGl0bGUiOiJJbnN0YWxsIFktYXhpcyB0b3AgY292ZXIiLCJhbmNob3IiOiIjaW5zdGFsbC15LWF4aXMtdG9wLWNvdmVyIiwiY2hpbGRyZW4iOltdfSx7InRpdGxlIjoiVGVuc2lvbiB0aGUgWi1iZWx0IiwiYW5jaG9yIjoiI3RlbnNpb24tdGhlLXotYmVsdCIsImNoaWxkcmVuIjpbXX1dfSx7InRpdGxlIjoiQ2FsaWJyYXRpb24gU3RlcCIsImFuY2hvciI6IiNjYWxpYnJhdGlvbi1zdGVwIiwiY2hpbGRyZW4iOltdfSx7InRpdGxlIjoiRW5kIG5vdGVzIiwiYW5jaG9yIjoiI2VuZC1ub3RlcyIsImNoaWxkcmVuIjpbXX1d" :page-id="1973" sidebar="W3siaSI6InNkaS0xIiwiayI6ImxpbmsiLCJsIjoiSG9tZSIsImMiOiJtZGktaG9tZSIsInkiOiJob21lIiwidCI6Ii8ifSx7ImkiOiJzZGktMiIsImsiOiJsaW5rIiwibCI6Ildpa2kgVXBkYXRlcyIsImMiOiJtZGktbmV3LWJveCIsInkiOiJleHRlcm5hbCIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL25ldy1hbmQtdXBkYXRlcyJ9LHsiaSI6InNkaS0zIiwiayI6ImxpbmsiLCJsIjoiSDJEIiwiYyI6Im1kaS1hbHBoYS1oLWJveCIsInkiOiJleHRlcm5hbCIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL2gyZCJ9LHsiaSI6InNkaS00IiwiayI6ImxpbmsiLCJsIjoiQU1TIDIgUHJvIiwiYyI6Im1kaS1tb3ZpZS1yb2xsIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vYW1zLTItcHJvIn0seyJpIjoic2RpLTUiLCJrIjoibGluayIsImwiOiJBTVMgSFQiLCJjIjoibWRpLW1vdmllLXJvbGwiLCJ5IjoiZXh0ZXJuYWwiLCJ0IjoiaHR0cHM6Ly93aWtpLmJhbWJ1bGFiLmNvbS9lbi9hbXMtaHQifSx7ImkiOiJzZGktNiIsImsiOiJsaW5rIiwibCI6IlgxIFNlcmllcyIsImMiOiJtZGktYWxwaGEteC1ib3gtb3V0bGluZSIsInkiOiJleHRlcm5hbCIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL3gxIn0seyJpIjoic2RpLTciLCJrIjoibGluayIsImwiOiJQMSBTZXJpZXMiLCJjIjoibWRpLWFscGhhLXAtYm94LW91dGxpbmUiLCJ5IjoiZXh0ZXJuYWwiLCJ0IjoiaHR0cHM6Ly93aWtpLmJhbWJ1bGFiLmNvbS9lbi9wMSJ9LHsiaSI6InNkaS04IiwiayI6ImxpbmsiLCJsIjoiQTEiLCJjIjoibWRpLWFscGhhLWEtYm94LW91dGxpbmUiLCJ5IjoiZXh0ZXJuYWwiLCJ0IjoiaHR0cHM6Ly93aWtpLmJhbWJ1bGFiLmNvbS9lbi9hMSJ9LHsiaSI6InNkaS05IiwiayI6ImxpbmsiLCJsIjoiQTEgbWluaSIsImMiOiJtZGktYWxwaGEtYS1ib3gtb3V0bGluZSIsInkiOiJleHRlcm5hbCIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL2ExLW1pbmkifSx7ImkiOiJzZGktMTAiLCJrIjoibGluayIsImwiOiJBTVMiLCJjIjoibWRpLWFscGhhLWEtY2lyY2xlIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vYW1zIn0seyJpIjoic2RpLTExIiwiayI6ImxpbmsiLCJsIjoiQU1TIGxpdGUiLCJjIjoibWRpLWFscGhhLWwtY2lyY2xlIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vYW1zLWxpdGUifSx7ImkiOiJzZGktMTIiLCJrIjoibGluayIsImwiOiJITVMiLCJjIjoibWRpLXRleHQtYm94LXNlYXJjaC1vdXRsaW5lIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vaG1zL2hvbWUifSx7ImkiOiJzZGktMTMiLCJrIjoibGluayIsImwiOiJTb2Z0d2FyZSIsImMiOiJtZGktdGVsZXZpc2lvbi1ndWlkZSIsInkiOiJleHRlcm5hbCIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL3NvZnR3YXJlIn0seyJpIjoic2RpLTE0IiwiayI6ImxpbmsiLCJsIjoiRmlsYW1lbnRzICYgQWNjZXNzb3JpZXMiLCJjIjoibWRpLXByaW50ZXItM2Qtbm96emxlIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vZmlsYW1lbnQtYWNjIn0seyJpIjoic2RpLTE1IiwiayI6ImxpbmsiLCJsIjoiTWFrZXJXb3JsZCIsImMiOiJtZGktY3ViZS1zY2FuIiwieSI6ImV4dGVybmFsIiwidCI6Imh0dHBzOi8vd2lraS5iYW1idWxhYi5jb20vZW4vbWFrZXJ3b3JsZCJ9LHsiaSI6InNkaS0xNiIsImsiOiJoZWFkZXIiLCJsIjoiR2VuZXJhbCIsImMiOm51bGwsInkiOm51bGwsInQiOm51bGx9LHsiaSI6InNkaS0xNyIsImsiOiJsaW5rIiwibCI6Iktub3dsZWRnZSBTaGFyaW5nIiwiYyI6Im1kaS1mb3J1bSIsInkiOiJwYWdlIiwidCI6Ii9lbi9rbm93bGVkZ2Utc2hhcmluZyJ9LHsiaSI6InNkaS0xOCIsImsiOiJsaW5rIiwibCI6Ikdsb3NzYXJ5IiwiYyI6Im1kaS10YWJsZS1vZi1jb250ZW50cyIsInkiOiJwYWdlIiwidCI6Ii9lbi9nbG9zc2FyeSJ9LHsiaSI6InNkaS0xOSIsImsiOiJsaW5rIiwibCI6IkZBUSIsImMiOiJtZGktZnJlcXVlbnRseS1hc2tlZC1xdWVzdGlvbnMiLCJ5IjoicGFnZSIsInQiOiIvZW4vZmFxIn0seyJpIjoic2RpLTIwIiwiayI6ImxpbmsiLCJsIjoiQWJvdXQgVXMiLCJjIjoibWRpLWluZm9ybWF0aW9uLW91dGxpbmUiLCJ5IjoicGFnZSIsInQiOiIvZW4vYWJvdXQtdXMifSx7ImkiOiJzZGktMjEiLCJrIjoiZGl2aWRlciIsImwiOm51bGwsImMiOm51bGwsInkiOm51bGwsInQiOm51bGx9LHsiaSI6InNkaS0yMiIsImsiOiJsaW5rIiwibCI6IkNvbW11bml0eSBDb250cmlidXRpb25zIiwiYyI6Im1kaS13aWtpcGVkaWEiLCJ5IjoiZXh0ZXJuYWxibGFuayIsInQiOiJodHRwczovL3dpa2kuYmFtYnVsYWIuY29tL2VuL2NvbnRyaWJ1dGlvbi1ndWlkZSJ9XQ==" nav-mode="STATIC" effective-permissions="eyJjb21tZW50cyI6eyJyZWFkIjpmYWxzZSwid3JpdGUiOmZhbHNlLCJtYW5hZ2UiOmZhbHNlfSwiaGlzdG9yeSI6eyJyZWFkIjpmYWxzZX0sInNvdXJjZSI6eyJyZWFkIjpmYWxzZX0sInBhZ2VzIjp7InJlYWQiOnRydWUsIndyaXRlIjpmYWxzZSwibWFuYWdlIjpmYWxzZSwiZGVsZXRlIjpmYWxzZSwic2NyaXB0IjpmYWxzZSwic3R5bGUiOmZhbHNlfSwic3lzdGVtIjp7Im1hbmFnZSI6ZmFsc2V9fQ==" edit-shortcuts="eyJlZGl0RmFiIjp0cnVlLCJlZGl0TWVudUJhciI6dHJ1ZSwiZWRpdE1lbnVCdG4iOnRydWUsImVkaXRNZW51RXh0ZXJuYWxCdG4iOmZhbHNlLCJlZGl0TWVudUV4dGVybmFsTmFtZSI6IkdpdEh1YiIsImVkaXRNZW51RXh0ZXJuYWxJY29uIjoibWRpLWdpdGh1YiIsImVkaXRNZW51RXh0ZXJuYWxVcmwiOiJodHRwczovL2dpdGh1Yi5jb20vb3JnL3JlcG8vYmxvYi9tYWluL3tmaWxlbmFtZX0ifQ==" filename="en/a1/maintenance/z-motor-replacement-guide.md"><template slot="contents"><div><h2 id="applicable-models-of-printers" class="toc-header"><a class="toc-anchor" href="#applicable-models-of-printers">¶</a> Applicable models of printers</h2>
+<p>A1</p>
+<h2 id="z-axis-motor" class="toc-header"><a class="toc-anchor" href="#z-axis-motor">¶</a> Z-axis motor</h2>
+<p>The Z-axis motor is a stepper motor mounted on the bottom of the printer that drives the toolhead in the Z-axis.</p>
+<h2 id="what-to-use" class="toc-header"><a class="toc-anchor" href="#what-to-use">¶</a> What to use?</h2>
+<ul>
+<li>
+<p>Z-axis motor is burned out</p>
+</li>
+<li>
+<p>After analyzing the logs, official technical support confirmed that the Z-axis motor is faulty.</p>
+</li>
+</ul>
+<h2 id="safety-warning" class="toc-header"><a class="toc-anchor" href="#safety-warning">¶</a> Safety warning</h2>
+<blockquote>
+<p><strong>Important!</strong></p>
+<p>It's crucial to <strong>power off the printer before conducting any maintenance work</strong>, including work on the printer's electronics and tool head wires. Performing tasks with the printer on can result in a short circuit, leading to electronic damage and safety hazards.<br>
+During maintenance or troubleshooting, you may need to disassemble parts, including the hotend. This exposes wires and electrical components that could short circuit if they contact each other, other metal, or electronic components while the printer is still on. <strong>This can result in damage to the printer's electronics and additional issues.</strong><br>
+Therefore, it's crucial to <strong>turn off the printer and disconnect it from the power source before conducting any maintenance</strong>. This prevents short circuits or damage to the printer's electronics, ensuring safe and effective maintenance.<br>
+For any concerns or questions about following this guide, please <a href="https://bambulab.com/en/my/support/tickets" target="_blank" class="is-external-link">open a new ticket in our Support Page</a> and we will do our best to respond promptly and provide the assistance you need.</p>
+</blockquote>
+<h2 id="tools-and-materials-needed" class="toc-header"><a class="toc-anchor" href="#tools-and-materials-needed">¶</a> Tools and materials needed</h2>
+<ul>
+<li>Z-axis motor for Bambu Lab A1（Contact Customer Support for purchase）</li>
+<li>H2.0 hex wrench</li>
+<li>20 minutes</li>
+</ul>
+<h2 id="remove-z-axis-motor" class="toc-header"><a class="toc-anchor" href="#remove-z-axis-motor">¶</a> Remove Z-axis motor</h2>
+<h3 id="remove-the-y-axis-top-cover" class="toc-header"><a class="toc-anchor" href="#remove-the-y-axis-top-cover">¶</a> Remove the Y-axis top cover</h3>
+<p>Step 1. Stand the printer upright and raise the X-axis to the top position.</p>
+<p><img src="https://wiki.bambulab.com/a1/maintenance/printer/raise_x_axis.jpg" alt="" width="800"></p>
+<p>Step 2. Push the heatbed forward and take off the Y-axis Top Cover.</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://wiki.bambulab.com/a1/maintenance/printer/move_heatbed.jpg" alt=""></td>
+<td><img src="https://wiki.bambulab.com/a1/maintenance/printer/remove_y_cover.jpg" alt=""></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="loosen-the-z-axis-belt-tension-screws" class="toc-header"><a class="toc-anchor" href="#loosen-the-z-axis-belt-tension-screws">¶</a> Loosen the Z-axis belt tension screws</h3>
+<p>Using an H2.0 hex wrench, loosen the Z-belt tension screws one turn (<strong>do not loosen completely</strong>).</p>
+<blockquote>
+<p>The tension screws for the Z-belt is located in the base against the right column and can be seen by moving the heatbed forward.</p>
+</blockquote>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://wiki.bambulab.com/a1/maintenance/z-belt-replacement/4.png" alt="" width="600"></td>
+<td><img src="https://wiki.bambulab.com/a1/maintenance/belt_tension/z_position.jpg" alt="" width="600"></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="disconnect-the-cables" class="toc-header"><a class="toc-anchor" href="#disconnect-the-cables">¶</a> Disconnect the cables</h3>
+<p>Step 1. Left side down the printer to expose the cable box on the bottom, and disconnect the camera cable, X motor cable, and Z-motor cable in sequence.</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://wiki.bambulab.com/a1/maintenance/printer/side_down1.jpg" alt="" width="600"></td>
+<td><img src="https://wiki.bambulab.com/a1/maintenance/printer/disconnect_cables_1_.jpg" alt="" width="600"></td>
+</tr>
+</tbody>
+</table></div>
+<p>Step 2. Loosen a silver screw and slide the cable box to disconnect the USB cable, then open the Z-motor cable cover and remove the Z-motor cable from the box.</p>
+<p><img src="https://wiki.bambulab.com/a1/maintenance/printer/open_the_cover.jpg" alt="" width="500"> |</p>
+<h3 id="remove-the-bottom-base-assembly" class="toc-header"><a class="toc-anchor" href="#remove-the-bottom-base-assembly">¶</a> Remove the bottom base assembly</h3>
+<p>Move the heatbed forward and remove 10 screws with the H2.0 hex wrench. Then push the heatbed backward to the bottom and remove 2 screws with the H2.0 hex wrench. Finally, lift up one side of the base and remove the entire base.</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://wiki.bambulab.com/a1/maintenance/printer/10_screws.jpg" alt="" width="600"></td>
+<td><img src="https://wiki.bambulab.com/a1/maintenance/printer/2_screws.jpg" alt="" width="600"></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="remove-the-metal-base-plate" class="toc-header"><a class="toc-anchor" href="#remove-the-metal-base-plate">¶</a> Remove the metal base plate</h3>
+<p>Unscrew the 8 long screws that lock the Z-axis column with the H2.0 hex wrench, and the 4 short screws at the middle part of the metal base plate.</p>
+<p><img src="https://wiki.bambulab.com/a1/maintenance/z-axis/8_and_4_screws.jpg" alt="" width="800"></p>
+<h3 id="remove-the-z-motor" class="toc-header"><a class="toc-anchor" href="#remove-the-z-motor">¶</a> Remove the Z-motor</h3>
+<p>Step 1. Remove the tapes.</p>
+<p><img src="https://wiki.bambulab.com/a1/maintenance/z-axis/tapes_2.jpg" alt="" width="600"></p>
+<p>Step 2. Unscrew the 4 screws with the H2.0 hex key, remove the Z-Motor, Z Belt and driving wheel.</p>
+<p><img src="https://wiki.bambulab.com/a1/maintenance/z-axis/remove_z_motor.jpg" alt="" width="600"></p>
+<blockquote>
+<p>It is recommended that a corner of the tape be attached to the table and reused for subsequent installations.</p>
+</blockquote>
+<h2 id="install-the-z-motor" class="toc-header"><a class="toc-anchor" href="#install-the-z-motor">¶</a> Install the Z-motor</h2>
+<h3 id="raise-the-x-axis" class="toc-header"><a class="toc-anchor" href="#raise-the-x-axis">¶</a> Raise the X-axis</h3>
+<p>Raise the X-axis to the top position, and both left and right sides are pushed in the top, to avoid the X-axis being skewed.</p>
+<p><img src="https://wiki.bambulab.com/a1/maintenance/lead-screw-kit-replacement/pic11.png" alt="" width="700"></p>
+<h3 id="install-the-z-motor-1" class="toc-header"><a class="toc-anchor" href="#install-the-z-motor-1">¶</a> Install the Z-motor</h3>
+<p>Step 1. Install the driving wheel onto the new Z motor. Arrange the Z Belt according to the motion path, pass the Z-motor through the Z Belt and install it in place, lock in the 4 screws.</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="/a1-z/20240912-164730.jpg" alt="20240912-164730.jpg" width="644"></td>
+<td><img src="https://wiki.bambulab.com/a1/maintenance/z-axis/install_belt_2.jpg" alt="" width="644"></td>
+<td><img src="https://wiki.bambulab.com/a1/maintenance/z-axis/install_motor1.jpg" alt="" width="644"></td>
+</tr>
+</tbody>
+</table></div>
+<p>Step 2. Arrange the motor cable and secure it with tapes.</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://wiki.bambulab.com/a1/maintenance/z-axis/lock_4_screws.jpg" alt="" width="500"></td>
+<td><img src="https://wiki.bambulab.com/a1/maintenance/z-axis/tapes_3.jpg" alt="" width="500"></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="install-the-metal-base-plate" class="toc-header"><a class="toc-anchor" href="#install-the-metal-base-plate">¶</a> Install the metal base plate</h3>
+<p>Install the metal base plate and confirm the installation direction according to the screw position. Lock 4 short screws marked orange in the middle part of the base plate. Pay attention to the position and do not lock them wrongly.</p>
+<p><img src="/a1-z/20240912-181507.jpg" alt="20240912-181507.jpg" width="800"></p>
+<h3 id="install-the-bottom-base-assembly" class="toc-header"><a class="toc-anchor" href="#install-the-bottom-base-assembly">¶</a> Install the bottom base assembly</h3>
+<p>Step 1. Keep the Printer Frame upright and carefully install the bottom base assembly onto it, ensuring to avoid the Z-motor cable.</p>
+<p><img src="https://wiki.bambulab.com/a1/maintenance/printer/remove_the_bottom_base.jpg" alt="" width="600"></p>
+<p>Step 2. Move the heatbed forward to its furthest position and securely fasten 10 screws. Then, move the heatbed backward to its furthest position and tighten 2 screws.</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://wiki.bambulab.com/a1/maintenance/printer/10_screws.jpg" alt="" width="640" height="280"></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="connect-the-cables" class="toc-header"><a class="toc-anchor" href="#connect-the-cables">¶</a> Connect the cables</h3>
+<p>Step 1. Place the printer in a backward position and connect the Z-motor cable to the cable management box.</p>
+<p><img src="https://wiki.bambulab.com/a1/maintenance/printer/install_x_motor_cable_1.jpg" alt="" width="600"></p>
+<p>Step 2. Install the cable management box onto the bottom base, slide it along the slot direction, connect the USB cable, and tighten one silver screw.</p>
+<p><img src="https://wiki.bambulab.com/a1/maintenance/printer/connect_usb.jpg" alt="" width="600"></p>
+<p>Step 3. Follow the text prompts and color labels to connect the X motor cable, Z motor cable, and camera cable. Organize the cables properly and ensure they are not being pressed or tangled.</p>
+<p><img src="https://wiki.bambulab.com/a1/maintenance/printer/connect_cables.jpg" alt="" width="600"></p>
+<h3 id="install-y-axis-top-cover" class="toc-header"><a class="toc-anchor" href="#install-y-axis-top-cover">¶</a> Install Y-axis top cover</h3>
+<p>Step 1. Place the printer upright and move the heatbed forward to its furthest position.</p>
+<p><img src="https://wiki.bambulab.com/a1/maintenance/printer/move_heatbed_2.jpg" alt="" width="600"></p>
+<p>Step 2. Take the Y-axis Top Cover and pass it over through the bottom of the heatbed. Push the cover forward until it reaches the end, ensuring that the cover aligns with the clips.</p>
+<p><img src="https://wiki.bambulab.com/a1/maintenance/printer/install_y_cover_2.jpg" alt="" width="600"></p>
+<p>Step 3. Install the cover in place easily by securing it onto the clips.</p>
+<p><img src="https://wiki.bambulab.com/a1/maintenance/printer/install_y_cover_3.jpg" alt="" width="600"></p>
+<blockquote>
+<p><strong>Special note</strong>: If the heatbed is not moved all the way to the end, the Y-axis Top Cover may get stuck in the wrong position. In such a case, you can manually lift the Y-axis cover slightly to assist in its installation.<br>
+<img src="https://wiki.bambulab.com/a1/maintenance/printer/not_standard.jpg" alt="" width="500"></p>
+</blockquote>
+<h3 id="tension-the-z-belt" class="toc-header"><a class="toc-anchor" href="#tension-the-z-belt">¶</a> Tension the Z-belt</h3>
+<p>Step 1. Turn on the printer. Go to the screen below, and then perform a homing process.</p>
+<p><img src="https://wiki.bambulab.com/a1/maintenance/lead-screw-kit-replacement/screen5.png" alt="" width="500"></p>
+<p>Step 2. After homing completes, press the up and down buttons on the right only once respectively, to move the X-axis up and down once.</p>
+<blockquote>
+<p>Before moving the X-axis down, please make sure that the nozzle will not touch the heatbed!</p>
+</blockquote>
+<p><img src="https://wiki.bambulab.com/a1/maintenance/lead-screw-kit-replacement/screen7.png" alt="" width="500"></p>
+<p>Step 3. Use the H2.0 hex wrench to tighten the 2 tension screws.</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://wiki.bambulab.com/a1/maintenance/z-belt-replacement/4.png" alt="" width="553" height="553"></td>
+<td><img src="/a1-z/screenshot-20240912-171706.png" alt="screenshot-20240912-171706.png" width="553" height="553"></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="calibration-step" class="toc-header"><a class="toc-anchor" href="#calibration-step">¶</a> Calibration Step</h2>
+<p>In the Calibration screen, select only Vibration Compensation, and then tap Start.</p>
+<p>The calibration will confirm the printer is running as expected.</p>
+<div class="table-container"><table>
+  <tbody><tr>
+    <td><img src="/a1/maintenance/lead-screw-kit-replacement/screen1.jpg" height="300"></td>
+    <td><img src="/a1/maintenance/lead-screw-kit-replacement/screen2.jpg" height="300"></td>
+  </tr>
+</tbody></table></div>
+<h2 id="end-notes" class="toc-header"><a class="toc-anchor" href="#end-notes">¶</a> End notes</h2>
+<blockquote>
+<p>We hope the detailed guide provided has been helpful and informative.</p>
+<p>To ensure a safe and effective execution, if you have any concerns or questions about the process described in this article, we recommend submitting a <a href="https://bambulab.com/en/my/support/tickets" target="_blank" class="is-external-link">technical ticket</a> regarding your issue. Please include a picture or video illustrating the problem, as well as any additional information related to your inquiry.</p>
+</blockquote>
+</div></template><template slot="comments"><div><comments></comments></div></template></page></div><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9422c4998a62b77d',t:'MTc0NzY0OTA0My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body></html>
