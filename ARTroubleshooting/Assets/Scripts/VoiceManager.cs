@@ -43,7 +43,8 @@ public class VoiceManagerWithGPT : MonoBehaviour
     private bool _voiceCommandReady;
     private List<ChatMessage> _conversationHistory = new List<ChatMessage>();
     private bool _isProcessingGPT = false;
-   
+
+    private bool readyToLisn = true;
 
     void Start()
     {
@@ -103,9 +104,14 @@ public class VoiceManagerWithGPT : MonoBehaviour
 
     private void WakeWordDetected(String[] arg0)
     {
+        if (!readyToLisn)
+        {
+            return;
+        }
         _voiceCommandReady = true;
         Debug.Log("Wake word detected");
         wakeWordDetected?.Invoke();
+        readyToLisn = false;
     }
 
     private void OnPartialTranscription(string transcription)
@@ -124,6 +130,7 @@ public class VoiceManagerWithGPT : MonoBehaviour
 
         SendToChatGPT(transcription, model);
         _voiceCommandReady = false;
+        readyToLisn = true;
     }
 
     public void ManualSendToChatGPT(string input) {
@@ -243,6 +250,7 @@ public class VoiceManagerWithGPT : MonoBehaviour
         onGPTResponseReceived?.Invoke(response);
 
         ttsManager.Speak(response);
+        
     }
 
     
