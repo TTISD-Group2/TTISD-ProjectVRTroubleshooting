@@ -718,7 +718,7 @@ MonoBehaviour:
   Voice: {fileID: 32121423}
   ValidateEarly: 0
   intent: wake_word
-  confidenceThreshold: 0.861
+  confidenceThreshold: 0.942
   valueMatchers:
   - path: entities.wake_word_e:wake_word_e[0].value
     witValueReference: {fileID: 0}
@@ -920,11 +920,11 @@ MonoBehaviour:
         m_Calls: []
   witRuntimeConfiguration:
     witConfiguration: {fileID: 11400000, guid: 154bef7c3afd19b4896028f8d1d6019c, type: 2}
-    minKeepAliveVolume: 0.0005
+    minKeepAliveVolume: 0.0015
     minKeepAliveTimeInSeconds: 2
     minTranscriptionKeepAliveTimeInSeconds: 1
     maxRecordingTime: 20
-    soundWakeThreshold: 0.0005
+    soundWakeThreshold: 0.00505
     sampleLengthInMs: 10
     micBufferLengthInSeconds: 1
     maxConcurrentRequests: 5
@@ -27979,7 +27979,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 552089340465265741, guid: 9eb7c01f561777f4799c5170af50fd93, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.061
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 552089340465265741, guid: 9eb7c01f561777f4799c5170af50fd93, type: 3}
       propertyPath: m_LocalPosition.z
