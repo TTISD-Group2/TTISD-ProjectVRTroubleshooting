@@ -28,7 +28,7 @@ public class OpenAITTSManager : MonoBehaviour
     [SerializeField] private bool autoPlay = true;
     
     [Header("Audio Settings")]
-    [SerializeField] private AudioSource audioSource;
+    [SerializeField] public AudioSource audioSource;
     [SerializeField] private float volume = 1.0f;
     
     [Header("Events")]

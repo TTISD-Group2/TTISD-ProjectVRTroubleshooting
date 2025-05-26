@@ -130,7 +130,7 @@ public class VoiceManagerWithGPT : MonoBehaviour
 
         SendToChatGPT(transcription, model);
         _voiceCommandReady = false;
-        readyToLisn = true;
+       
     }
 
     public void ManualSendToChatGPT(string input) {
@@ -250,6 +250,13 @@ public class VoiceManagerWithGPT : MonoBehaviour
         onGPTResponseReceived?.Invoke(response);
 
         ttsManager.Speak(response);
+
+        while (ttsManager.audioSource.isPlaying) //This might give problems
+        {
+            Debug.Log("Still playing text");
+        }
+        
+        readyToLisn = true;
         
     }
 

@@ -718,7 +718,7 @@ MonoBehaviour:
   Voice: {fileID: 32121423}
   ValidateEarly: 0
   intent: wake_word
-  confidenceThreshold: 0.701
+  confidenceThreshold: 0.861
   valueMatchers:
   - path: entities.wake_word_e:wake_word_e[0].value
     witValueReference: {fileID: 0}
@@ -27413,7 +27413,7 @@ Transform:
   m_GameObject: {fileID: 2105754574}
   serializedVersion: 2
   m_LocalRotation: {x: 0.062192407, y: 0.7672908, z: 0.6329283, w: -0.08245429}
-  m_LocalPosition: {x: 0.244, y: 1.035, z: -2.467}
+  m_LocalPosition: {x: 0.564, y: 1.134, z: -0.938}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -27855,7 +27855,7 @@ Transform:
   m_GameObject: {fileID: 6466278495888624806}
   serializedVersion: 2
   m_LocalRotation: {x: 0.41613588, y: 0.5716913, z: 0.41613588, w: -0.5716913}
-  m_LocalPosition: {x: -1.191, y: 0.998, z: 0.12}
+  m_LocalPosition: {x: -1.039, y: 1.016, z: 0.12}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -27983,11 +27983,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 552089340465265741, guid: 9eb7c01f561777f4799c5170af50fd93, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.578
+      value: -0.077
       objectReference: {fileID: 0}
     - target: {fileID: 552089340465265741, guid: 9eb7c01f561777f4799c5170af50fd93, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 552089340465265741, guid: 9eb7c01f561777f4799c5170af50fd93, type: 3}
       propertyPath: m_LocalRotation.x
@@ -27995,11 +27995,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 552089340465265741, guid: 9eb7c01f561777f4799c5170af50fd93, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 552089340465265741, guid: 9eb7c01f561777f4799c5170af50fd93, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 552089340465265741, guid: 9eb7c01f561777f4799c5170af50fd93, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -28007,7 +28007,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 552089340465265741, guid: 9eb7c01f561777f4799c5170af50fd93, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 552089340465265741, guid: 9eb7c01f561777f4799c5170af50fd93, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
