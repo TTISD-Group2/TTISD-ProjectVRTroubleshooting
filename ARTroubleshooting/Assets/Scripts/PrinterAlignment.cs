@@ -21,8 +21,6 @@ public class PrinterAlignment : MonoBehaviour
     private List<GameObject> pointMarkers = new List<GameObject>();
 
     private static List<ARRaycastHit> hits = new List<ARRaycastHit>();
-
-    private LineRenderer lineRenderer;
     public float rayLength = 10f;
     private void Start()
     {
@@ -48,13 +46,6 @@ public class PrinterAlignment : MonoBehaviour
             new Vector3(-0.1f, 0.1f, 0f)
         };
 
-        // Add line renderer for visualization
-        lineRenderer = gameObject.AddComponent<LineRenderer>();
-        lineRenderer.startWidth = 0.01f;
-        lineRenderer.endWidth = 0.01f;
-        lineRenderer.material = new Material(Shader.Find("Universal Render Pipeline/Unlit"));
-        lineRenderer.material.color = Color.red;
-        lineRenderer.positionCount = 2;
 
     }
 
@@ -71,8 +62,6 @@ public class PrinterAlignment : MonoBehaviour
             Transform rightHandAnchor = GameObject.Find("RightHandAnchor")?.transform;
             Transform leftHandAnchor = GameObject.Find("LeftHandAnchor")?.transform;
             // Set laser line positions
-            lineRenderer.SetPosition(0, rightHandAnchor.position);
-            lineRenderer.SetPosition(1, rightHandAnchor.position + rightHandAnchor.forward * rayLength);
 
                 // Then in your Update method
             if (rightHandAnchor != null &&
