@@ -18,7 +18,7 @@ public class OpenAITTSRequest
 public class OpenAITTSManager : MonoBehaviour
 {
     [Header("OpenAI Settings")]
-    [SerializeField] private string apiKey = "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"; // Move this to a config file!
+    [SerializeField] private string apiKey = "APIKEYEHER"; 
     [SerializeField] private string apiUrl = "https://api.openai.com/v1/audio/speech";
     
     [Header("TTS Settings")]
