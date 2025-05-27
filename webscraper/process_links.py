@@ -6,7 +6,7 @@ from globals import OUTPUT_DIR, DOMAIN, BASE_URL
 from openai import OpenAI
 
 PAGE_DELIMITER = "===PAGE_BREAK==="
-client = OpenAI(api_key="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") 
+client = OpenAI(api_key="APIKEYHERE") 
 
 def get_last_path_segment(url):
     path = urlparse(url).path
