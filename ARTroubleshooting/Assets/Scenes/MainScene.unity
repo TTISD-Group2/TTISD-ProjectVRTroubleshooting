@@ -751,7 +751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f24a9ba13ce56474fa330689b3450c2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  apiKey: 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
+  apiKey: '"APIKEYHERE"'
   apiUrl: https://api.openai.com/v1/audio/speech
   voice: alloy
   model: tts-1
@@ -783,7 +783,7 @@ MonoBehaviour:
   appVoiceExperience: {fileID: 32121423}
   responseMatcher: {fileID: 32121419}
   transcriptedText: 
-  apiKey: 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
+  apiKey: '"APIKEYHERE"'
   apiUrl: https://api.openai.com/v1/chat/completions
   model: gpt-4-turbo
   fallbackModel: gpt-3.5-turbo
